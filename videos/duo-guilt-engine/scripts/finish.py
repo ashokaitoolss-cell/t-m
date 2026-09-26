@@ -53,11 +53,18 @@ def build_static():
     pitch = 6.0
     screen = (np.cos(2 * np.pi * u / pitch) * np.cos(2 * np.pi * v / pitch)).astype(np.float32)
 
-    paper_path = ROOT / "assets/scene/paper.jpg"
-    paper = cv2.imread(str(paper_path), cv2.IMREAD_GRAYSCALE)
+    # The scanned paper plate once it has been downloaded; until then a procedural one
+    # (fibres + soft mottling), so a placeholder's label never prints into the texture.
+    paper = None
+    if (ROOT / "assets/plates/paper.png").exists():
+        paper = cv2.imread(str(ROOT / "assets/scene/paper.jpg"), cv2.IMREAD_GRAYSCALE)
     if paper is None:
-        paper = np.full((H, W), 235, np.uint8)
-    paper = cv2.resize(paper, (W, H), interpolation=cv2.INTER_AREA).astype(np.float32)
+        rng = np.random.default_rng(3)
+        mottle = cv2.GaussianBlur(rng.standard_normal((H, W)).astype(np.float32), (0, 0), 40) * 60
+        fibres = cv2.GaussianBlur(rng.standard_normal((H, W)).astype(np.float32), (0, 0), 0.8)
+        fibres = cv2.GaussianBlur(fibres, (9, 1), 0) * 10
+        paper = 230 + mottle + fibres
+    paper = cv2.resize(paper.astype(np.float32), (W, H), interpolation=cv2.INTER_AREA)
     paper = paper / max(1.0, paper.mean())
     paper = (1 + 0.07 * (paper - 1))[..., None]
 

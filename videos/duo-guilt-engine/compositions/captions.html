@@ -93,7 +93,7 @@
         tl.fromTo("#cap1", { opacity: 0, scale: 1.08, y: 8, filter: "blur(12px)" }, { opacity: 1, scale: 1, y: 0, filter: "blur(0px)", duration: 0.1, ease: "power2.out", immediateRender: false }, 0.86);
         tl.set("#cap1", { opacity: 0 }, 1.42);
         tl.fromTo("#cap2", { opacity: 0, scale: 1.08, y: 8, filter: "blur(12px)" }, { opacity: 1, scale: 1, y: 0, filter: "blur(0px)", duration: 0.1, ease: "power2.out", immediateRender: false }, 1.42);
-        (function(){ var p = document.getElementById("cap2-mk"); var l = p.getTotalLength(); gsap.set(p, { strokeDasharray: l, strokeDashoffset: l }); tl.fromTo(p, { strokeDashoffset: l }, { strokeDashoffset: 0, duration: 0.3, ease: "power2.out", immediateRender: false }, 1.95); })();
+        (function(){ var p = document.getElementById("cap2-mk"); var l = p.getTotalLength(); gsap.set(p, { strokeDasharray: l, strokeDashoffset: l, opacity: 0 }); tl.set(p, { opacity: 1 }, 1.95); tl.fromTo(p, { strokeDashoffset: l }, { strokeDashoffset: 0, duration: 0.3, ease: "power2.out", immediateRender: false }, 1.95); })();
         tl.set("#cap2", { opacity: 0 }, 2.4);
         tl.fromTo("#cap3", { opacity: 0, scale: 1.08, y: 8, filter: "blur(12px)" }, { opacity: 1, scale: 1, y: 0, filter: "blur(0px)", duration: 0.1, ease: "power2.out", immediateRender: false }, 2.52);
         tl.set("#cap3", { opacity: 0 }, 3.34);

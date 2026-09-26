@@ -445,7 +445,7 @@ function captionsHtml() {
       if (c.anim === "jitter") jitters.push({ i, t0, t1 });
     }
     if (c.mark) {
-      build.push(`(function(){ var p = document.getElementById("cap${i}-mk"); var l = p.getTotalLength(); gsap.set(p, { strokeDasharray: l, strokeDashoffset: l }); tl.fromTo(p, { strokeDashoffset: l }, { strokeDashoffset: 0, duration: 0.3, ease: "power2.out", immediateRender: false }, ${r3(c.mark.t)}); })();`);
+      build.push(`(function(){ var p = document.getElementById("cap${i}-mk"); var l = p.getTotalLength(); gsap.set(p, { strokeDasharray: l, strokeDashoffset: l, opacity: 0 }); tl.set(p, { opacity: 1 }, ${r3(c.mark.t)}); tl.fromTo(p, { strokeDashoffset: l }, { strokeDashoffset: 0, duration: 0.3, ease: "power2.out", immediateRender: false }, ${r3(c.mark.t)}); })();`);
     }
     build.push(`tl.set("#cap${i}", { opacity: 0 }, ${t1});`);
   });

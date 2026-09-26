@@ -207,7 +207,9 @@
       draw: function (pathId, t, dur) {
         var path = el(pathId);
         var len = path.getTotalLength();
-        gsap.set(path, { strokeDasharray: len, strokeDashoffset: len });
+        // Hidden until the draw begins: round caps on an undrawn dash still paint a dot.
+        gsap.set(path, { strokeDasharray: len, strokeDashoffset: len, opacity: 0 });
+        tl.set(path, { opacity: 1 }, t);
         tl.fromTo(
           path,
           { strokeDashoffset: len },
