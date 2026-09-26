@@ -1,0 +1,231 @@
+{
+ "base": "https://gen-xi-audio.netlify.app/audio",
+ "note": "Library: https://genxi-media-sfx.netlify.app/. t0/dur in seconds inside the file; lufs = max momentary loudness target; lead = seconds from clip start to the sound's hit point (the cue time lands on it).",
+ "picks": {
+  "tick": {
+   "cat": "24. USER INTERFACE",
+   "file": "7 User Interface.mp3",
+   "t0": 0.0,
+   "dur": 0.1,
+   "lufs": -28,
+   "fadeOut": 0.05,
+   "why": "dry broadband click for hard cuts"
+  },
+  "pop": {
+   "cat": "30. CARTOON",
+   "file": "51 CARTOON .mp3",
+   "t0": 0.57,
+   "dur": 0.2,
+   "lufs": -21,
+   "fadeOut": 0.1,
+   "why": "round cartoon pop for punch-ins and bubbles"
+  },
+  "heart-pop": {
+   "cat": "24. USER INTERFACE",
+   "file": "53 User Interface.mp3",
+   "t0": 0.0,
+   "dur": 0.075,
+   "lufs": -24,
+   "fadeOut": 0.02,
+   "why": "single bright UI blip for each TikTok heart"
+  },
+  "whoosh": {
+   "cat": "4. SWOOSHES AND WOOOSHES",
+   "file": "14 Swooshes & Wooshes.mp3",
+   "t0": 3.62,
+   "dur": 0.55,
+   "lufs": -18,
+   "lead": 0.19,
+   "why": "full-band air whoosh"
+  },
+  "whoosh-low": {
+   "cat": "4. SWOOSHES AND WOOOSHES",
+   "file": "101 Swooshes & Wooshes.mp3",
+   "t0": 1.51,
+   "dur": 0.75,
+   "lufs": -20,
+   "lead": 0.22,
+   "why": "darker, slower whoosh for pans and push-ins"
+  },
+  "whip": {
+   "cat": "4. SWOOSHES AND WOOOSHES",
+   "file": "100 Swooshes & Wooshes.mp3",
+   "t0": 0.19,
+   "dur": 0.42,
+   "lufs": -18,
+   "lead": 0.16,
+   "why": "falling whip for the icon whip-in"
+  },
+  "riser": {
+   "cat": "2. RISERS",
+   "file": "9 Risers.mp3",
+   "t0": 1.47,
+   "dur": 1.3,
+   "lufs": -21,
+   "lead": 1.19,
+   "fadeOut": 0.08,
+   "why": "1.2 s swell"
+  },
+  "riser-long": {
+   "cat": "2. RISERS",
+   "file": "5 Risers.mp3",
+   "t0": 0.88,
+   "dur": 1.62,
+   "lufs": -20,
+   "lead": 1.53,
+   "fadeOut": 0.08,
+   "why": "1.5 s swell into the culture boom"
+  },
+  "low-hit": {
+   "cat": "3. HITS",
+   "file": "15 Hits.mp3",
+   "t0": 0.0,
+   "dur": 1.0,
+   "lufs": -11.5,
+   "fadeOut": 0.4,
+   "why": "tight sub hit"
+  },
+  "boom": {
+   "cat": "8. STINGERS",
+   "file": "24 Stingers.mp3",
+   "t0": 0.0,
+   "dur": 2.6,
+   "lufs": -10,
+   "fadeOut": 1.2,
+   "why": "cinematic boom with a bright transient"
+  },
+  "paper": {
+   "cat": "28. PAPER",
+   "file": "34 Paper.mp3",
+   "t0": 0.02,
+   "dur": 0.45,
+   "lufs": -22,
+   "why": "paper slap/slide for cards landing"
+  },
+  "paper-flip": {
+   "cat": "28. PAPER",
+   "file": "25 Paper.mp3",
+   "t0": 0.04,
+   "dur": 0.38,
+   "lufs": -19,
+   "lead": 0.12,
+   "why": "fluttering flip"
+  },
+  "marker": {
+   "cat": "9. OBJECTS",
+   "file": "6 Objects.mp3",
+   "t0": 10.5,
+   "dur": 0.55,
+   "lufs": -22,
+   "fadeIn": 0.02,
+   "why": "squeaky rhythmic marker strokes"
+  },
+  "marker-long": {
+   "cat": "9. OBJECTS",
+   "file": "6 Objects.mp3",
+   "t0": 10.5,
+   "dur": 1.1,
+   "lufs": -21,
+   "fadeIn": 0.02,
+   "fadeOut": 0.2,
+   "why": "longer scribble for arrow + word"
+  },
+  "chalk": {
+   "cat": "9. OBJECTS",
+   "file": "33 Objects.mp3",
+   "t0": 1.75,
+   "dur": 0.45,
+   "lufs": -22,
+   "fadeIn": 0.015,
+   "why": "scratchy strokes for the chalk arrows"
+  },
+  "chime": {
+   "cat": "44. MAGIC",
+   "file": "19 MAGIC.mp3",
+   "t0": 3.43,
+   "dur": 0.7,
+   "lufs": -19.5,
+   "fadeOut": 0.3,
+   "why": "high sparkle for glints"
+  },
+  "buzz": {
+   "cat": "29. PHONE AND COMMUNICATION",
+   "file": "40 Phone & Communication.mp3",
+   "t0": 0.18,
+   "dur": 0.45,
+   "lufs": -17.7,
+   "why": "phone vibration"
+  },
+  "ding": {
+   "cat": "24. USER INTERFACE",
+   "file": "16 User Interface.mp3",
+   "t0": 0.0,
+   "dur": 0.9,
+   "lufs": -14.4,
+   "fadeOut": 0.3,
+   "why": "two-step notification chime"
+  },
+  "drawer": {
+   "cat": "38. DRAWERS",
+   "file": "2 DRAWERS.mp3",
+   "t0": 5.83,
+   "dur": 0.5,
+   "lufs": -16,
+   "fadeOut": 0.2,
+   "why": "drawer slam"
+  },
+  "bell": {
+   "cat": "40. MUSICAL",
+   "file": "3 MUSICALS.mp3",
+   "t0": 0.0,
+   "dur": 1.6,
+   "lufs": -14,
+   "fadeOut": 0.6,
+   "why": "metallic ring for the boxing beat"
+  },
+  "punch": {
+   "cat": "23. FIGHT",
+   "file": "14 Fight.mp3",
+   "t0": 1.6,
+   "dur": 0.35,
+   "lufs": -14,
+   "why": "punch with body and snap"
+  },
+  "crowd": {
+   "cat": "18. HUMANS",
+   "file": "109 Humans.mp3",
+   "t0": 0.5,
+   "dur": 2.6,
+   "lufs": -22,
+   "fadeIn": 0.3,
+   "fadeOut": 0.6,
+   "why": "city walla"
+  },
+  "crowd-ring": {
+   "cat": "42. SPORTS",
+   "file": "79 SPORTS.mp3",
+   "t0": 0.3,
+   "dur": 3.5,
+   "lufs": -21,
+   "fadeIn": 0.25,
+   "fadeOut": 0.8,
+   "why": "arena cheer at ringside"
+  },
+  "shutter": {
+   "cat": "5. CAMERA",
+   "file": "5 Camera.mp3",
+   "t0": 3.23,
+   "dur": 0.3,
+   "lufs": -22,
+   "why": "mechanical double-click shutter"
+  },
+  "glitch": {
+   "cat": "57. STATIC",
+   "file": "18 STATIC.mp3",
+   "t0": 1.06,
+   "dur": 0.3,
+   "lufs": -21,
+   "why": "stuttered digital static"
+  }
+ }
+}

@@ -1,4 +1,6 @@
 // Sound-design cue sheet: [absolute time (s), sound name in assets/sfx/, gain 0..1, note].
+// The time is the visual beat; sounds with a build-up (whooshes, risers) start early by
+// their "lead" from data/sfx-picks.json so their peak lands on it.
 // One effect per visual event, matched to its material (paper for cards, marker for
 // scribbles, UI sounds for the phone, glass chimes for glints, sub hits for big moments).
 // Typewriter ticks for paper cards are added automatically from data/scenes.mjs.
@@ -41,7 +43,7 @@ export const cues = [
   [19.76, "pop", 0.65, "bubble"],
   // 10 personality
   [20.42, "low-hit", 0.55, "big moment"],
-  [20.55, "riser", 0.3, "bold push-in"],
+  [21.7, "riser", 0.35, "swell peaks on the billboard glint"],
   [21.7, "chime", 0.6, "glint on billboard"],
   // 11 not a logo
   [23.3, "whip", 0.75, "whip in"],
@@ -71,7 +73,7 @@ export const cues = [
   [36.18, "tick", 0.45, "cut"],
   [36.8, "marker-long", 0.75, "arrow + guilt"],
   // 21 culture
-  [39.38, "riser", 0.45, "exaggerated"],
+  [41.36, "riser-long", 0.5, "swell peaks on culture"],
   [39.5, "crowd", 0.35, "city crowd"],
   [41.36, "boom", 0.75, "culture"],
   // 22 tiktok
@@ -95,7 +97,7 @@ export const cues = [
   [50.0, "whoosh-low", 0.45, "bold push-in"],
   [51.12, "chime", 0.75, "recognizable"],
   // 27 beats polished
-  [52.08, "crowd", 0.4, "ringside"],
+  [52.08, "crowd-ring", 0.4, "ringside"],
   [53.68, "bell", 0.65, "beats"],
   [53.72, "punch", 0.6, "punch"],
   // 28 whole play

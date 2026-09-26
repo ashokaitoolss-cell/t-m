@@ -141,11 +141,19 @@ const sceneHosts = frames
 
 // SFX clips: the cue sheet plus the user's keyboard recording, cut per typing moment
 // by scripts/prep-typing.mjs (paper-card typewriter reveals and the phone notification).
-const sfx = cues.map(([t, name, gain, note]) => ({ t, name, gain, note }));
+// Library cuts (scripts/prep-sfx.py) carry a lead: seconds from clip start to the sound's
+// peak. Starting the clip that much early puts the peak of a whoosh or riser on the beat.
+const picks = JSON.parse(readFileSync(join(ROOT, "data/sfx-picks.json"), "utf8")).picks;
+const sfx = cues.map(([t, name, gain, note]) => ({
+  t: Math.max(0, Math.round((t - (picks[name]?.lead ?? 0)) * 1000) / 1000),
+  name,
+  gain,
+  note,
+}));
 const typing = JSON.parse(readFileSync(join(ROOT, "data/typing.json"), "utf8"));
 for (const c of typing) sfx.push({ t: c.t, name: c.file.replace(/\.wav$/, ""), gain: 0.55, note: `typing (${c.label})` });
 sfx.sort((a, b) => a.t - b.t);
-// 16-bit mono 48 kHz WAVs with a 44-byte header (scripts/synth-sfx.py).
+// 16-bit mono 48 kHz WAVs with a 44-byte header (scripts/synth-sfx.py, scripts/prep-sfx.py).
 const wavSeconds = (name) => (statSync(join(ROOT, `assets/sfx/${name}.wav`)).size - 44) / (48000 * 2);
 const laneEnds = [];
 for (const c of sfx) {
