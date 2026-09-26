@@ -63,14 +63,17 @@
         <div id="f21-cam" class="sk-cam">
           <div id="f21-bgp" class="sk-plane"><img class="sk-img" src="assets/scene/f21-bg.jpg" alt="" /></div>
           <div id="f21-subp" class="sk-plane"><img id="f21-sub" class="sk-img" src="assets/scene/f21-sub.png" alt="" /></div>
+          <div id="f21-ovp" class="sk-plane">
+            
+            
+          </div>
         </div>
         <div id="f21-ov" class="sk-ov">
-          
           
         </div>
       </div>
       <script>
-        SceneKit.mount("f21", Object.assign({"duration":2.62,"focus":[540,900],"camera":[{"t":0,"s":1.12},{"t":2.62,"s":1,"ease":"power1.out"}],"punches":[],"shake":[{"t":1.98,"dur":0.4,"amp":10}],"planes":[{"id":"f21-bgp","depth":0.45},{"id":"f21-subp","depth":1}],"puppets":[{"id":"f21-sub","origin":"50% 100%","keys":[{"t":0,"s":0.82},{"t":0.22,"s":0.82},{"t":0.72,"s":1,"ease":"back.out(1.6)"}]}],"breathe":[],"glints":[]}, {
+        SceneKit.mount("f21", Object.assign({"duration":2.62,"focus":[540,900],"camera":[{"t":0,"s":1.12},{"t":2.62,"s":1,"ease":"power1.out"}],"punches":[],"shake":[{"t":1.98,"dur":0.4,"amp":10}],"planes":[{"id":"f21-bgp","depth":0.45},{"id":"f21-subp","depth":1},{"id":"f21-ovp","depth":1}],"puppets":[{"id":"f21-sub","origin":"50% 100%","keys":[{"t":0,"s":0.82},{"t":0.22,"s":0.82},{"t":0.72,"s":1,"ease":"back.out(1.6)"}]}],"breathe":[],"glints":[]}, {
           
           build: function (tl, kit) {
             

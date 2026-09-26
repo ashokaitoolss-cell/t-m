@@ -2,7 +2,7 @@
 // Generates every scene sub-composition (compositions/frames/NN-slug.html) and the
 // caption track (compositions/captions.html) from data/scenes.mjs.
 // Re-run after editing a spec; the generated files are not hand-edited.
-import { writeFileSync, mkdirSync } from "node:fs";
+import { writeFileSync, mkdirSync, existsSync, readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { scenes } from "../data/scenes.mjs";
@@ -14,6 +14,11 @@ const TOTAL = 60.5;
 const r3 = (v) => Math.round(v * 1000) / 1000;
 const esc = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 const pad = (n) => String(n).padStart(2, "0");
+
+// Measurements of the real plates (scripts/analyze-plates.py). Absent until the plates
+// have been downloaded and analysed; the specs' own positions are used meanwhile.
+const LAYOUT_PATH = join(ROOT, "data/layout.json");
+const LAYOUT = existsSync(LAYOUT_PATH) ? JSON.parse(readFileSync(LAYOUT_PATH, "utf8")) : {};
 
 const FONTS = `@font-face { font-family: "Instrument Serif"; font-style: normal; font-weight: 400; src: url("assets/fonts/InstrumentSerif-Regular.woff2") format("woff2"); }
         @font-face { font-family: "Instrument Serif"; font-style: italic; font-weight: 400; src: url("assets/fonts/InstrumentSerif-Italic.woff2") format("woff2"); }
@@ -151,20 +156,110 @@ function cloudPath(cx, cy, rx, ry, seed) {
   return d + " Z";
 }
 
+// ---------------------------------------------------------------- pin specs to the plates
+const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
+const centre = (b) => [Math.round((b[0] + b[2]) / 2), Math.round((b[1] + b[3]) / 2)];
+
+function applyLayout(sc0) {
+  const sc = structuredClone(sc0);
+  const L = sc.kind === "plate" ? LAYOUT[sc.plate] : null;
+  if (!L) return sc;
+  const subj = L.subject;
+  const anchors = {
+    subject: subj && [centre(subj)[0], Math.round(subj[1] + (subj[3] - subj[1]) * 0.35)],
+    duo: L.duo && L.duo.c,
+    glow: L.glow && L.glow.c,
+    face: L.face,
+    brass: L.brass && L.brass.c,
+    blue: L.blue && L.blue.c,
+    screen: L.screen && centre(L.screen.bbox),
+  };
+  const boxes = { duo: L.duo && L.duo.bbox, glow: L.glow && L.glow.bbox, brass: L.brass && L.brass.bbox, blue: L.blue && L.blue.bbox, subject: subj };
+
+  if (sc.focusAnchor && anchors[sc.focusAnchor]) sc.focus = anchors[sc.focusAnchor];
+  else if (anchors.subject) sc.focus = anchors.subject;
+  if (L.caption_y) for (const c of sc.captions || []) if (!c.lockY) c.y = L.caption_y;
+
+  for (const o of sc.overlays || []) {
+    const a = o.at && anchors[o.at === "subject-right" ? "subject" : o.at];
+    const b = o.at && boxes[o.at === "subject-right" ? "subject" : o.at];
+    if (!a) continue;
+    if (o.type === "circle" || o.type === "buzz") {
+      o.x = a[0];
+      o.y = a[1];
+      if (o.type === "circle" && b) {
+        o.rx = clamp((b[2] - b[0]) / 2 + 70, 110, 320);
+        o.ry = clamp((b[3] - b[1]) / 2 + 60, 90, 300);
+      }
+    } else if (o.type === "x") {
+      o.x = a[0];
+      o.y = a[1];
+      if (b) o.size = o.at === "blue" ? clamp(Math.min(b[2] - b[0], b[3] - b[1]) * 0.8, 360, 760) : clamp(Math.max(b[2] - b[0], b[3] - b[1]) + 80, 220, 520);
+    } else if (o.type === "arrow" && o.at === "face") {
+      const hx = a[0] - 95, hy = a[1] + 75;
+      const tx = clamp(a[0] - 340, 110, 700), ty = clamp(a[1] + 420, 400, 1500);
+      o.d = `M ${tx} ${ty} C ${tx + 40} ${ty - 150}, ${hx - 130} ${hy + 70}, ${hx} ${hy}`;
+      o.head = [hx, hy, Math.round((Math.atan2(-70, 130) * 180) / Math.PI)];
+      sc._tail = [tx, ty];
+    } else if (o.type === "arrow" && o.at === "subject-right" && b) {
+      const x = clamp(b[2] + 55, 140, 990);
+      const y0 = clamp(b[3] - 160, 500, 1600), y1 = clamp(b[1] + 110, 260, y0 - 300);
+      o.d = `M ${x - 25} ${y0} C ${x + 10} ${y0 - 180}, ${x - 30} ${y1 + 200}, ${x + 30} ${y1}`;
+      o.head = [x + 30, y1, -78];
+    } else if (o.type === "scrawl" && o.at === "face" && sc._tail) {
+      o.x = clamp(sc._tail[0] - 120, 40, 700);
+      o.y = clamp(sc._tail[1] + 20, 300, 1560);
+    }
+  }
+
+  if (sc.notification && sc.notification.at === "screen" && L.screen) {
+    const [x0, y0, x1] = L.screen.bbox;
+    sc.notification.w = clamp(x1 - x0 - 36, 420, 620);
+    sc.notification.x = Math.round((x0 + x1) / 2);
+    sc.notification.y = y0 + 40;
+  }
+  if (sc.screen && sc.screen.at === "screen" && L.screen) {
+    const [x0, y0, x1, y1] = L.screen.bbox;
+    Object.assign(sc.screen, { x: Math.round((x0 + x1) / 2), y: Math.round((y0 + y1) / 2), w: x1 - x0, h: y1 - y0, r: Math.round(Math.min(48, (x1 - x0) * 0.09)) });
+    sc.heartsTop = y1 - 240;
+    (sc.hearts || []).forEach((h, i) => (h.x = x1 - 150 + [0, -40, 20, -25, 10][i % 5]));
+  }
+  if (sc.bubbles && L.heads && L.heads.length) {
+    sc.bubbles.forEach((bb, i) => {
+      const hd = L.heads[Math.min(i, L.heads.length - 1)];
+      if (i >= L.heads.length) return;
+      bb.x = clamp(hd[0], 170, 910);
+      bb.y = clamp(hd[1] - 250, 250, 1500);
+      bb.tail = [hd[0] + 10, hd[1] - 45];
+    });
+  }
+  for (const g of sc.glints || []) {
+    const b = g.near && boxes[g.near];
+    if (!b) continue;
+    const k = (sc.glints.indexOf(g) * 5 + sc.num) % 4;
+    const pts = [[b[2] + 10, b[1] + 20], [b[0] - 10, (b[1] + b[3]) / 2], [b[2] - 20, b[3] - 30], [b[0] + 30, b[1] - 10]];
+    g.x = Math.round(clamp(pts[k][0], 60, 1020));
+    g.y = Math.round(clamp(pts[k][1], 140, 1780));
+  }
+  return sc;
+}
+
 // ---------------------------------------------------------------- scene builders
 function localize(keys, start) {
   return (keys || []).map((k) => ({ ...k, t: r3(k.t - start) }));
 }
 
-function sceneHtml(sc) {
-  const id = `f${pad(sc.num)}`;
+function sceneHtml(spec) {
+  const sc = applyLayout(spec);
+  const id = `f${pad(spec.num)}`;
   const L = (t) => r3(t - sc.start);
   const dur = r3(sc.end - sc.start);
   const planes = [];
   const puppets = [];
   const breathe = [];
   const cam = [];
-  const ov = [];
+  const ov = []; // annotation layer: rides the camera so marks stay pinned to the picture
+  const screenOv = []; // screen-space: flashes (glints are added here by scenekit)
   const build = [];
 
   const bgSrc =
@@ -326,7 +421,7 @@ function sceneHtml(sc) {
 
   // Hearts floating up from a phone screen (stepped); they ride the camera with the phone.
   if (sc.hearts) {
-    const hearts = sc.hearts.map((h, i) => `<svg id="${id}-h${i}" class="heart" viewBox="0 0 32 30" style="left:${h.x}px;top:1180px"><path d="M16 29 C 6 21, 0 15, 0 8.5 C 0 3.6, 3.8 0, 8.5 0 C 11.6 0, 14.3 1.7, 16 4.3 C 17.7 1.7, 20.4 0, 23.5 0 C 28.2 0, 32 3.6, 32 8.5 C 32 15, 26 21, 16 29 Z"/></svg>`);
+    const hearts = sc.hearts.map((h, i) => `<svg id="${id}-h${i}" class="heart" viewBox="0 0 32 30" style="left:${h.x}px;top:${sc.heartsTop || 1180}px"><path d="M16 29 C 6 21, 0 15, 0 8.5 C 0 3.6, 3.8 0, 8.5 0 C 11.6 0, 14.3 1.7, 16 4.3 C 17.7 1.7, 20.4 0, 23.5 0 C 28.2 0, 32 3.6, 32 8.5 C 32 15, 26 21, 16 29 Z"/></svg>`);
     cam.push(`<div id="${id}-heartp" class="sk-plane">${hearts.join("")}</div>`);
     planes.push({ id: `${id}-heartp`, depth: 1 });
     sc.hearts.forEach((h, i) =>
@@ -338,7 +433,7 @@ function sceneHtml(sc) {
   }
 
   if (sc.flash) {
-    ov.push(`<div id="${id}-flash" class="flash"></div>`);
+    screenOv.push(`<div id="${id}-flash" class="flash"></div>`);
     build.push(`tl.fromTo("#${id}-flash", { opacity: 0.92 }, { opacity: 0, duration: ${sc.flash.dur}, ease: "power2.out", immediateRender: false }, ${L(sc.flash.t)});`);
   }
 
@@ -356,6 +451,8 @@ function sceneHtml(sc) {
           }
         },`;
   }
+
+  planes.push({ id: `${id}-ovp`, depth: 1 });
 
   const cfg = {
     duration: dur,
@@ -386,10 +483,13 @@ function sceneHtml(sc) {
       <div id="root" data-composition-id="${id}" data-width="${W}" data-height="${H}">
         <div id="${id}-cam" class="sk-cam">
           ${cam.join("\n          ")}
+          <div id="${id}-ovp" class="sk-plane">
+            ${svg.length ? `<svg class="sk-svg" viewBox="0 0 ${W} ${H}">${svg.join("")}</svg>` : ""}
+            ${ov.join("\n            ")}
+          </div>
         </div>
         <div id="${id}-ov" class="sk-ov">
-          ${svg.length ? `<svg class="sk-svg" viewBox="0 0 ${W} ${H}">${svg.join("")}</svg>` : ""}
-          ${ov.join("\n          ")}
+          ${screenOv.join("\n          ")}
         </div>
       </div>
       <script>
@@ -409,7 +509,8 @@ function sceneHtml(sc) {
 // ---------------------------------------------------------------- captions track
 function captionsHtml() {
   const chunks = [];
-  for (const sc of scenes) {
+  for (const spec of scenes) {
+    const sc = applyLayout(spec);
     const caps = sc.captions || [];
     caps.forEach((c, i) => {
       const next = caps[i + 1];

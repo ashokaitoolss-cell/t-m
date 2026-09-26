@@ -62,14 +62,18 @@
       <div id="root" data-composition-id="f26" data-width="1080" data-height="1920">
         <div id="f26-cam" class="sk-cam">
           <div id="f26-bgp" class="sk-plane"><img class="sk-img" src="assets/scene/f26-bg.jpg" alt="" /></div>
+          <div id="f26-subp" class="sk-plane"><img id="f26-sub" class="sk-img" src="assets/scene/f26-sub.png" alt="" /></div>
+          <div id="f26-ovp" class="sk-plane">
+            
+            
+          </div>
         </div>
         <div id="f26-ov" class="sk-ov">
-          
           
         </div>
       </div>
       <script>
-        SceneKit.mount("f26", Object.assign({"duration":2.08,"focus":[540,1000],"camera":[{"t":0,"s":1},{"t":2.08,"s":1.5,"ease":"power2.in"}],"punches":[],"shake":[],"planes":[{"id":"f26-bgp","depth":1}],"puppets":[],"breathe":[],"glints":[{"x":620,"y":900,"t":1.15},{"x":460,"y":1060,"t":1.35}]}, {
+        SceneKit.mount("f26", Object.assign({"duration":2.08,"focus":[540,1000],"camera":[{"t":0,"s":1},{"t":2.08,"s":1.5,"ease":"power2.in"}],"punches":[],"shake":[],"planes":[{"id":"f26-bgp","depth":0.45},{"id":"f26-subp","depth":1},{"id":"f26-ovp","depth":1}],"puppets":[],"breathe":[],"glints":[{"x":620,"y":900,"t":1.15,"near":"duo"},{"x":460,"y":1060,"t":1.35,"near":"duo"}]}, {
           
           build: function (tl, kit) {
             

@@ -63,14 +63,17 @@
         <div id="f12-cam" class="sk-cam">
           <div id="f12-bgp" class="sk-plane"><img class="sk-img" src="assets/scene/f12-bg.jpg" alt="" /></div>
           <div id="f12-subp" class="sk-plane"><img id="f12-sub" class="sk-img" src="assets/scene/f12-sub.png" alt="" /></div>
+          <div id="f12-ovp" class="sk-plane">
+            
+            
+          </div>
         </div>
         <div id="f12-ov" class="sk-ov">
-          
           <div id="f12-flash" class="flash"></div>
         </div>
       </div>
       <script>
-        SceneKit.mount("f12", Object.assign({"duration":1.14,"focus":[540,1000],"camera":[{"t":0,"s":1},{"t":1.14,"s":1.04}],"punches":[{"t":0.4,"s":1.15}],"shake":[],"planes":[{"id":"f12-bgp","depth":0.45},{"id":"f12-subp","depth":1}],"puppets":[],"breathe":[],"glints":[{"x":330,"y":700,"t":0.08},{"x":760,"y":640,"t":0.33},{"x":800,"y":1100,"t":0.58},{"x":290,"y":1150,"t":0.83}]}, {
+        SceneKit.mount("f12", Object.assign({"duration":1.14,"focus":[540,1000],"camera":[{"t":0,"s":1},{"t":1.14,"s":1.04}],"punches":[{"t":0.4,"s":1.15}],"shake":[],"planes":[{"id":"f12-bgp","depth":0.45},{"id":"f12-subp","depth":1},{"id":"f12-ovp","depth":1}],"puppets":[],"breathe":[],"glints":[{"x":330,"y":700,"t":0.08,"near":"subject"},{"x":760,"y":640,"t":0.33,"near":"subject"},{"x":800,"y":1100,"t":0.58,"near":"subject"},{"x":290,"y":1150,"t":0.83,"near":"subject"}]}, {
           
           build: function (tl, kit) {
             tl.fromTo("#f12-flash", { opacity: 0.92 }, { opacity: 0, duration: 0.28, ease: "power2.out", immediateRender: false }, 0);

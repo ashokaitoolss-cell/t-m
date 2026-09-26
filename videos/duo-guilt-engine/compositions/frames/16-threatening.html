@@ -62,14 +62,17 @@
       <div id="root" data-composition-id="f16" data-width="1080" data-height="1920">
         <div id="f16-cam" class="sk-cam">
           <div id="f16-bgp" class="sk-plane"><img class="sk-img" src="assets/scene/f16-bg.jpg" alt="" /></div>
+          <div id="f16-ovp" class="sk-plane">
+            
+            
+          </div>
         </div>
         <div id="f16-ov" class="sk-ov">
-          
           
         </div>
       </div>
       <script>
-        SceneKit.mount("f16", Object.assign({"duration":1.36,"focus":[540,760],"camera":[{"t":0,"s":1},{"t":1.36,"s":1.15,"ease":"power1.in"}],"punches":[],"shake":[{"t":0.7,"dur":0.25,"amp":6}],"planes":[{"id":"f16-bgp","depth":1}],"puppets":[],"breathe":[],"glints":[]}, {
+        SceneKit.mount("f16", Object.assign({"duration":1.36,"focus":[540,760],"camera":[{"t":0,"s":1},{"t":1.36,"s":1.15,"ease":"power1.in"}],"punches":[],"shake":[{"t":0.7,"dur":0.25,"amp":6}],"planes":[{"id":"f16-bgp","depth":1},{"id":"f16-ovp","depth":1}],"puppets":[],"breathe":[],"glints":[]}, {
           
           build: function (tl, kit) {
             

@@ -64,14 +64,17 @@
           <div id="f01-bgp" class="sk-plane"><img class="sk-img" src="assets/scene/f01-bg.jpg" alt="" /></div>
           <div id="f01-subp" class="sk-plane"><img id="f01-sub" class="sk-img" src="assets/scene/f01-sub.png" alt="" /></div>
           <div id="f01-fgp" class="sk-plane"><img id="f01-fg" class="sk-fg" src="assets/scene/fg-man.png" alt="" style="top:760px;transform-origin:0 0" /></div>
+          <div id="f01-ovp" class="sk-plane">
+            
+            
+          </div>
         </div>
         <div id="f01-ov" class="sk-ov">
-          
           
         </div>
       </div>
       <script>
-        SceneKit.mount("f01", Object.assign({"duration":2.4,"focus":[540,1050],"camera":[{"t":0,"s":1},{"t":2.4,"s":1.07}],"punches":[{"t":0.86,"s":1.06}],"shake":[],"planes":[{"id":"f01-bgp","depth":0.45},{"id":"f01-subp","depth":1},{"id":"f01-fgp","depth":1.8}],"puppets":[{"id":"f01-fg","keys":[{"t":0,"x":-980,"s":1.9},{"t":0.95,"x":-980,"s":1.9},{"t":2.4,"x":1250,"s":1.9,"ease":"none"}]}],"breathe":[{"id":"f01-sub"}],"glints":[{"x":700,"y":760,"t":0.35},{"x":380,"y":980,"t":1.6}]}, {
+        SceneKit.mount("f01", Object.assign({"duration":2.4,"focus":[540,1050],"camera":[{"t":0,"s":1},{"t":2.4,"s":1.07}],"punches":[{"t":0.86,"s":1.06}],"shake":[],"planes":[{"id":"f01-bgp","depth":0.45},{"id":"f01-subp","depth":1},{"id":"f01-fgp","depth":1.8},{"id":"f01-ovp","depth":1}],"puppets":[{"id":"f01-fg","keys":[{"t":0,"x":-980,"s":1.9},{"t":0.95,"x":-980,"s":1.9},{"t":2.4,"x":1250,"s":1.9,"ease":"none"}]}],"breathe":[{"id":"f01-sub"}],"glints":[{"x":700,"y":760,"t":0.35,"near":"subject"},{"x":380,"y":980,"t":1.6,"near":"subject"}]}, {
           
           build: function (tl, kit) {
             

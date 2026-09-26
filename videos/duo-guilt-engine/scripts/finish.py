@@ -14,6 +14,7 @@ Applies the style guide's texture stack to every frame, in this order:
 Audio is taken from the clean render and normalised to -14 LUFS / -1 dBTP.
 Deterministic: all noise is seeded by frame index.
 """
+import os
 import subprocess
 import sys
 from concurrent.futures import ProcessPoolExecutor
@@ -150,7 +151,7 @@ def main():
             i += 1
 
     n = 0
-    with ProcessPoolExecutor(max_workers=4, initializer=init) as pool:
+    with ProcessPoolExecutor(max_workers=os.cpu_count() or 4, initializer=init) as pool:
         for _, out in pool.map(process, frames(), chunksize=4):
             enc.stdin.write(out)
             n += 1

@@ -62,14 +62,18 @@
       <div id="root" data-composition-id="f24" data-width="1080" data-height="1920">
         <div id="f24-cam" class="sk-cam">
           <div id="f24-bgp" class="sk-plane"><img class="sk-img" src="assets/scene/f24-bg.jpg" alt="" /></div>
+          <div id="f24-subp" class="sk-plane"><img id="f24-sub" class="sk-img" src="assets/scene/f24-sub.png" alt="" /></div>
+          <div id="f24-ovp" class="sk-plane">
+            
+            
+          </div>
         </div>
         <div id="f24-ov" class="sk-ov">
-          
           
         </div>
       </div>
       <script>
-        SceneKit.mount("f24", Object.assign({"duration":2.46,"focus":[540,950],"camera":[{"t":0,"s":1},{"t":2.46,"s":1.1}],"punches":[],"shake":[],"planes":[{"id":"f24-bgp","depth":1}],"puppets":[],"breathe":[],"glints":[{"x":620,"y":780,"t":1.4},{"x":430,"y":880,"t":1.6},{"x":700,"y":1000,"t":1.8}]}, {
+        SceneKit.mount("f24", Object.assign({"duration":2.46,"focus":[540,950],"camera":[{"t":0,"s":1},{"t":2.46,"s":1.1}],"punches":[],"shake":[],"planes":[{"id":"f24-bgp","depth":0.45},{"id":"f24-subp","depth":1},{"id":"f24-ovp","depth":1}],"puppets":[],"breathe":[],"glints":[{"x":620,"y":780,"t":1.4,"near":"duo"},{"x":430,"y":880,"t":1.6,"near":"duo"},{"x":700,"y":1000,"t":1.8,"near":"duo"}]}, {
           
           build: function (tl, kit) {
             

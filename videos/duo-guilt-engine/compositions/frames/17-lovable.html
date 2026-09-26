@@ -63,14 +63,17 @@
         <div id="f17-cam" class="sk-cam">
           <div id="f17-bgp" class="sk-plane"><img class="sk-img" src="assets/scene/f17-bg.jpg" alt="" /></div>
           <div id="f17-subp" class="sk-plane"><img id="f17-sub" class="sk-img" src="assets/scene/f17-sub.png" alt="" /></div>
+          <div id="f17-ovp" class="sk-plane">
+            
+            
+          </div>
         </div>
         <div id="f17-ov" class="sk-ov">
-          
           
         </div>
       </div>
       <script>
-        SceneKit.mount("f17", Object.assign({"duration":1.74,"focus":[540,850],"camera":[{"t":0,"s":1.02},{"t":1.74,"s":1.08}],"punches":[],"shake":[],"planes":[{"id":"f17-bgp","depth":0.45},{"id":"f17-subp","depth":1}],"puppets":[],"breathe":[{"id":"f17-sub"}],"glints":[{"x":300,"y":620,"t":0.72},{"x":800,"y":700,"t":0.92},{"x":700,"y":1050,"t":1.17}]}, {
+        SceneKit.mount("f17", Object.assign({"duration":1.74,"focus":[540,850],"camera":[{"t":0,"s":1.02},{"t":1.74,"s":1.08}],"punches":[],"shake":[],"planes":[{"id":"f17-bgp","depth":0.45},{"id":"f17-subp","depth":1},{"id":"f17-ovp","depth":1}],"puppets":[],"breathe":[{"id":"f17-sub"}],"glints":[{"x":300,"y":620,"t":0.72,"near":"subject"},{"x":800,"y":700,"t":0.92,"near":"subject"},{"x":700,"y":1050,"t":1.17,"near":"subject"}]}, {
           
           build: function (tl, kit) {
             

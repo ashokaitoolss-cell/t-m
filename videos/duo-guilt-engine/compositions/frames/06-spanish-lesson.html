@@ -67,14 +67,17 @@
           <div class="noti-icon"><img src="assets/scene/duo.png" alt="" /></div>
           <div class="noti-body"><div class="noti-top"><span class="noti-app">Duo</span><span class="noti-time">now</span></div>
           <div class="noti-l1">hey,</div><div class="noti-l2"><span id="f06-n0" class="tw">y</span><span id="f06-n1" class="tw">o</span><span id="f06-n2" class="tw">u</span><span id="f06-n3" class="tw"> </span><span id="f06-n4" class="tw">f</span><span id="f06-n5" class="tw">o</span><span id="f06-n6" class="tw">r</span><span id="f06-n7" class="tw">g</span><span id="f06-n8" class="tw">o</span><span id="f06-n9" class="tw">t</span><span id="f06-n10" class="tw"> </span><span id="f06-n11" class="tw">y</span><span id="f06-n12" class="tw">o</span><span id="f06-n13" class="tw">u</span><span id="f06-n14" class="tw">r</span><span id="f06-n15" class="tw"> </span><span id="f06-n16" class="tw">S</span><span id="f06-n17" class="tw">p</span><span id="f06-n18" class="tw">a</span><span id="f06-n19" class="tw">n</span><span id="f06-n20" class="tw">i</span><span id="f06-n21" class="tw">s</span><span id="f06-n22" class="tw">h</span><span id="f06-n23" class="tw"> </span><span id="f06-n24" class="tw">l</span><span id="f06-n25" class="tw">e</span><span id="f06-n26" class="tw">s</span><span id="f06-n27" class="tw">s</span><span id="f06-n28" class="tw">o</span><span id="f06-n29" class="tw">n</span><span id="f06-n30" class="tw">.</span></div></div></div></div>
+          <div id="f06-ovp" class="sk-plane">
+            
+            
+          </div>
         </div>
         <div id="f06-ov" class="sk-ov">
-          
           
         </div>
       </div>
       <script>
-        SceneKit.mount("f06", Object.assign({"duration":2.4,"focus":[540,900],"camera":[{"t":0,"s":1},{"t":2.4,"s":1.04}],"punches":[{"t":0.61,"s":1.18}],"shake":[{"t":0.07,"dur":0.3,"amp":5}],"planes":[{"id":"f06-bgp","depth":0.45},{"id":"f06-subp","depth":1},{"id":"f06-notip","depth":1}],"puppets":[],"breathe":[],"glints":[]}, {
+        SceneKit.mount("f06", Object.assign({"duration":2.4,"focus":[540,900],"camera":[{"t":0,"s":1},{"t":2.4,"s":1.04}],"punches":[{"t":0.61,"s":1.18}],"shake":[{"t":0.07,"dur":0.3,"amp":5}],"planes":[{"id":"f06-bgp","depth":0.45},{"id":"f06-subp","depth":1},{"id":"f06-notip","depth":1},{"id":"f06-ovp","depth":1}],"puppets":[],"breathe":[],"glints":[]}, {
           
           build: function (tl, kit) {
             tl.fromTo("#f06-noti", { y: -150, opacity: 0, scale: 0.96 }, { y: 0, opacity: 1, scale: 1, duration: 0.36, ease: "back.out(1.7)", immediateRender: false }, 0.07);

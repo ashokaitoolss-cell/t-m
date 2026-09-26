@@ -7,11 +7,12 @@ cd "$(dirname "$0")/.."
 
 node scripts/fetch-plates.mjs || echo "some plates could not be downloaded; placeholders will stand in"
 python3 scripts/prep-plates.py
+[[ -d assets/plates && -n "$(ls assets/plates 2>/dev/null)" ]] && python3 scripts/analyze-plates.py > /dev/null
 python3 scripts/synth-sfx.py
 node scripts/prep-typing.mjs
 node scripts/build-scenes.mjs
 node scripts/build-timeline.mjs
-node "${HYPERFRAMES_AUDIO_SKILL:-$HOME/.claude/skills/hyperframes-audio}/scripts/carve.mjs" --comp index.html
+node scripts/carve.mjs --comp index.html
 npx hyperframes lint
 
 [[ "${1:-}" == "--no-render" ]] && exit 0

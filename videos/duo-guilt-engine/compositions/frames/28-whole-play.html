@@ -62,14 +62,17 @@
       <div id="root" data-composition-id="f28" data-width="1080" data-height="1920">
         <div id="f28-cam" class="sk-cam">
           <div id="f28-bgp" class="sk-plane"><img class="sk-img" src="assets/scene/f28-bg.jpg" alt="" /></div>
+          <div id="f28-ovp" class="sk-plane">
+            <svg class="sk-svg" viewBox="0 0 1080 1920"><path id="f28-c1" class="chalk" stroke="#f3f0e6" d="M 220 1250 C 300 1080, 420 1000, 520 930"/><path id="f28-c1h" class="chalk" stroke="#f3f0e6" d="M 499.581 971.22 L 520 930 L 474.282 935.089"/><path id="f28-c2" class="chalk" stroke="#f3f0e6" d="M 860 1260 C 800 1100, 700 1000, 600 940"/><path id="f28-c2h" class="chalk" stroke="#f3f0e6" d="M 645.1 949.055 L 600 940 L 616.749 982.843"/></svg>
+            
+          </div>
         </div>
         <div id="f28-ov" class="sk-ov">
-          <svg class="sk-svg" viewBox="0 0 1080 1920"><path id="f28-c1" class="chalk" stroke="#f3f0e6" d="M 220 1250 C 300 1080, 420 1000, 520 930"/><path id="f28-c1h" class="chalk" stroke="#f3f0e6" d="M 499.581 971.22 L 520 930 L 474.282 935.089"/><path id="f28-c2" class="chalk" stroke="#f3f0e6" d="M 860 1260 C 800 1100, 700 1000, 600 940"/><path id="f28-c2h" class="chalk" stroke="#f3f0e6" d="M 645.1 949.055 L 600 940 L 616.749 982.843"/></svg>
           
         </div>
       </div>
       <script>
-        SceneKit.mount("f28", Object.assign({"duration":1.36,"focus":[540,900],"camera":[{"t":0,"s":1},{"t":1.36,"s":1.04}],"punches":[{"t":0.56,"s":1.12}],"shake":[],"planes":[{"id":"f28-bgp","depth":1}],"puppets":[],"breathe":[],"glints":[]}, {
+        SceneKit.mount("f28", Object.assign({"duration":1.36,"focus":[540,900],"camera":[{"t":0,"s":1},{"t":1.36,"s":1.04}],"punches":[{"t":0.56,"s":1.12}],"shake":[],"planes":[{"id":"f28-bgp","depth":1},{"id":"f28-ovp","depth":1}],"puppets":[],"breathe":[],"glints":[]}, {
           
           build: function (tl, kit) {
             kit.draw("f28-c1", 0.15, 0.35);
