@@ -1,0 +1,51 @@
+[
+  {
+    "t": 12.46,
+    "file": "typing-01.wav",
+    "dur": 1.177,
+    "source_start": 2.424,
+    "label": "notification"
+  },
+  {
+    "t": 16.08,
+    "file": "typing-02.wav",
+    "dur": 0.499,
+    "source_start": 3.304,
+    "label": "card 8"
+  },
+  {
+    "t": 17.12,
+    "file": "typing-03.wav",
+    "dur": 0.534,
+    "source_start": 4.116,
+    "label": "card 8"
+  },
+  {
+    "t": 32,
+    "file": "typing-04.wav",
+    "dur": 0.427,
+    "source_start": 4.928,
+    "label": "card 18"
+  },
+  {
+    "t": 32.48,
+    "file": "typing-05.wav",
+    "dur": 0.499,
+    "source_start": 5.664,
+    "label": "card 18"
+  },
+  {
+    "t": 44,
+    "file": "typing-06.wav",
+    "dur": 0.749,
+    "source_start": 6.32,
+    "label": "card 23"
+  },
+  {
+    "t": 44.96,
+    "file": "typing-07.wav",
+    "dur": 0.463,
+    "source_start": 7.34,
+    "label": "card 23"
+  }
+]
