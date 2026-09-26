@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
-"""Synthesize the fallback SFX kit and the music bed (deterministic, 48 kHz).
+"""Synthesize the placeholder SFX kit and music bed (deterministic, 48 kHz).
 
-Every cue name gets a synthesized sound here; scripts/prep-sfx.py then overwrites the
-ones with a pick from the user's SFX library (data/sfx-picks.json), so only unpicked
-roles (the megaphone) and the bed stay synthesized.
+These stand in until the user's SFX library can be reached; each file is referenced by
+name from data/scenes.mjs, so swapping in a library sound is a file replacement.
 Writes assets/sfx/<name>.wav and assets/audio/bed.wav.
 """
 import wave
