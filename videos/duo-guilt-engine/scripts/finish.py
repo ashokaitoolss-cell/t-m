@@ -17,6 +17,7 @@ Deterministic: all noise is seeded by frame index.
 import os
 import subprocess
 import sys
+from collections import deque
 from concurrent.futures import ProcessPoolExecutor
 from pathlib import Path
 
@@ -150,13 +151,22 @@ def main():
             yield i, buf
             i += 1
 
+    # Executor.map would read every raw frame (6 MB each) up front; keep a bounded
+    # window in flight instead and write results back in order.
     n = 0
-    with ProcessPoolExecutor(max_workers=os.cpu_count() or 4, initializer=init) as pool:
-        for _, out in pool.map(process, frames(), chunksize=4):
-            enc.stdin.write(out)
+    workers = os.cpu_count() or 4
+    with ProcessPoolExecutor(max_workers=workers, initializer=init) as pool:
+        pending = deque()
+        for item in frames():
+            pending.append(pool.submit(process, item))
+            if len(pending) >= workers * 3:
+                enc.stdin.write(pending.popleft().result()[1])
+                n += 1
+                if n % 150 == 0:
+                    print(f"  {n} frames", flush=True)
+        while pending:
+            enc.stdin.write(pending.popleft().result()[1])
             n += 1
-            if n % 150 == 0:
-                print(f"  {n} frames", flush=True)
     enc.stdin.close()
     enc.wait()
     dec.wait()
