@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="assets/vendor/gsap.min.js"></script>
+    <style>
+      @font-face {
+        font-family: "Instrument Serif";
+        font-style: normal;
+        font-weight: 400;
+        src: url("assets/fonts/InstrumentSerif-Regular.woff2") format("woff2");
+      }
+      @font-face {
+        font-family: "Instrument Serif";
+        font-style: italic;
+        font-weight: 400;
+        src: url("assets/fonts/InstrumentSerif-Italic.woff2") format("woff2");
+      }
+      @font-face {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 100 900;
+        src: url("assets/fonts/Inter.woff2") format("woff2");
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        background: #0c0b0a;
+      }
+      #root {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: #0c0b0a;
+      }
+      .clip {
+        position: absolute;
+        inset: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="60.5"
+      data-width="1080"
+      data-height="1920"
+    >
+      <!-- Track 0: scenes, one sub-composition per spoken phrase (generated from STORYBOARD.md) -->
+      <div id="f01-host" class="clip scene" data-composition-id="f01" data-composition-src="compositions/frames/01-hook.html" data-start="0.00" data-duration="2.40" data-track-index="0" data-width="1080" data-height="1920" data-label="01 Hook: not a mascot"></div>
+      <div id="f02-host" class="clip scene" data-composition-id="f02" data-composition-src="compositions/frames/02-growth-engine.html" data-start="2.40" data-duration="2.50" data-track-index="0" data-width="1080" data-height="1920" data-label="02 Guilt into a growth engine"></div>
+      <div id="f03-host" class="clip scene" data-composition-id="f03" data-composition-src="compositions/frames/03-before-famous.html" data-start="4.90" data-duration="2.15" data-track-index="0" data-width="1080" data-height="1920" data-label="03 Before he was famous"></div>
+      <div id="f04-host" class="clip scene" data-composition-id="f04" data-composition-src="compositions/frames/04-most-annoying.html" data-start="7.05" data-duration="2.80" data-track-index="0" data-width="1080" data-height="1920" data-label="04 The most annoying part"></div>
+      <div id="f05-host" class="clip scene" data-composition-id="f05" data-composition-src="compositions/frames/05-showing-up.html" data-start="9.85" data-duration="2.00" data-track-index="0" data-width="1080" data-height="1920" data-label="05 Showing up like"></div>
+      <div id="f06-host" class="clip scene" data-composition-id="f06" data-composition-src="compositions/frames/06-spanish-lesson.html" data-start="11.85" data-duration="2.40" data-track-index="0" data-width="1080" data-height="1920" data-label="06 Hey, you forgot your Spanish lesson"></div>
+      <div id="f07-host" class="clip scene" data-composition-id="f07" data-composition-src="compositions/frames/07-hide-that.html" data-start="14.25" data-duration="1.75" data-track-index="0" data-width="1080" data-height="1920" data-label="07 Most brands would hide that"></div>
+      <div id="f08-host" class="clip scene" data-composition-id="f08" data-composition-src="compositions/frames/08-card-opposite.html" data-start="16.00" data-duration="1.92" data-track-index="0" data-width="1080" data-height="1920" data-label="08 Paper card: the opposite"></div>
+      <div id="f09-host" class="clip scene" data-composition-id="f09" data-composition-src="compositions/frames/09-joke-in-head.html" data-start="17.92" data-duration="2.50" data-track-index="0" data-width="1080" data-height="1920" data-label="09 The joke in everyone's head"></div>
+      <div id="f10-host" class="clip scene" data-composition-id="f10" data-composition-src="compositions/frames/10-personality.html" data-start="20.42" data-duration="2.88" data-track-index="0" data-width="1080" data-height="1920" data-label="10 The entire personality"></div>
+      <div id="f11-host" class="clip scene" data-composition-id="f11" data-composition-src="compositions/frames/11-not-a-logo.html" data-start="23.30" data-duration="2.22" data-track-index="0" data-width="1080" data-height="1920" data-label="11 Suddenly, not a logo"></div>
+      <div id="f12-host" class="clip scene" data-composition-id="f12" data-composition-src="compositions/frames/12-character.html" data-start="25.52" data-duration="1.14" data-track-index="0" data-width="1080" data-height="1920" data-label="12 He was a character"></div>
+      <div id="f13-host" class="clip scene" data-composition-id="f13" data-composition-src="compositions/frames/13-petty.html" data-start="26.66" data-duration="0.64" data-track-index="0" data-width="1080" data-height="1920" data-label="13 Petty"></div>
+      <div id="f14-host" class="clip scene" data-composition-id="f14" data-composition-src="compositions/frames/14-needy.html" data-start="27.30" data-duration="0.72" data-track-index="0" data-width="1080" data-height="1920" data-label="14 Needy"></div>
+      <div id="f15-host" class="clip scene" data-composition-id="f15" data-composition-src="compositions/frames/15-unhinged.html" data-start="28.02" data-duration="0.80" data-track-index="0" data-width="1080" data-height="1920" data-label="15 Unhinged"></div>
+      <div id="f16-host" class="clip scene" data-composition-id="f16" data-composition-src="compositions/frames/16-threatening.html" data-start="28.82" data-duration="1.36" data-track-index="0" data-width="1080" data-height="1920" data-label="16 Low-key threatening"></div>
+      <div id="f17-host" class="clip scene" data-composition-id="f17" data-composition-src="compositions/frames/17-lovable.html" data-start="30.18" data-duration="1.74" data-track-index="0" data-width="1080" data-height="1920" data-label="17 Weirdly lovable"></div>
+      <div id="f18-host" class="clip scene" data-composition-id="f18" data-composition-src="compositions/frames/18-card-genius.html" data-start="31.92" data-duration="1.36" data-track-index="0" data-width="1080" data-height="1920" data-label="18 Paper card: the genius part"></div>
+      <div id="f19-host" class="clip scene" data-composition-id="f19" data-composition-src="compositions/frames/19-brand-voice.html" data-start="33.28" data-duration="2.90" data-track-index="0" data-width="1080" data-height="1920" data-label="19 Didn't force a brand voice"></div>
+      <div id="f20-host" class="clip scene" data-composition-id="f20" data-composition-src="compositions/frames/20-found-emotion.html" data-start="36.18" data-duration="3.20" data-track-index="0" data-width="1080" data-height="1920" data-label="20 They found the emotion"></div>
+      <div id="f21-host" class="clip scene" data-composition-id="f21" data-composition-src="compositions/frames/21-culture.html" data-start="39.38" data-duration="2.62" data-track-index="0" data-width="1080" data-height="1920" data-label="21 Exaggerated into culture"></div>
+      <div id="f22-host" class="clip scene" data-composition-id="f22" data-composition-src="compositions/frames/22-tiktok.html" data-start="42.00" data-duration="1.92" data-track-index="0" data-width="1080" data-height="1920" data-label="22 Why the TikTok worked"></div>
+      <div id="f23-host" class="clip scene" data-composition-id="f23" data-composition-src="compositions/frames/23-card-random.html" data-start="43.92" data-duration="1.78" data-track-index="0" data-width="1080" data-height="1920" data-label="23 Paper card: not random"></div>
+      <div id="f24-host" class="clip scene" data-composition-id="f24" data-composition-src="compositions/frames/24-alive.html" data-start="45.70" data-duration="2.46" data-track-index="0" data-width="1080" data-height="1920" data-label="24 The product feels alive"></div>
+      <div id="f25-host" class="clip scene" data-composition-id="f25" data-composition-src="compositions/frames/25-professional.html" data-start="48.16" data-duration="1.84" data-track-index="0" data-width="1080" data-height="1920" data-label="25 Most brands look professional"></div>
+      <div id="f26-host" class="clip scene" data-composition-id="f26" data-composition-src="compositions/frames/26-recognizable.html" data-start="50.00" data-duration="2.08" data-track-index="0" data-width="1080" data-height="1920" data-label="26 Duolingo became recognizable"></div>
+      <div id="f27-host" class="clip scene" data-composition-id="f27" data-composition-src="compositions/frames/27-beats-polished.html" data-start="52.08" data-duration="3.52" data-track-index="0" data-width="1080" data-height="1920" data-label="27 Recognizable beats polished"></div>
+      <div id="f28-host" class="clip scene" data-composition-id="f28" data-composition-src="compositions/frames/28-whole-play.html" data-start="55.60" data-duration="1.36" data-track-index="0" data-width="1080" data-height="1920" data-label="28 The whole play"></div>
+      <div id="f29-host" class="clip scene" data-composition-id="f29" data-composition-src="compositions/frames/29-dont-build.html" data-start="56.96" data-duration="1.44" data-track-index="0" data-width="1080" data-height="1920" data-label="29 Don't build a mascot"></div>
+      <div id="f30-host" class="clip scene" data-composition-id="f30" data-composition-src="compositions/frames/30-memory.html" data-start="58.40" data-duration="2.10" data-track-index="0" data-width="1080" data-height="1920" data-label="30 Build a memory"></div>
+
+      <!-- Track 4: voiceover -->
+      <audio
+        id="vo"
+        src="assets/audio/vo.mp3"
+        data-start="0"
+        data-duration="60.5"
+        data-track-index="4"
+        data-volume="1"
+      ></audio>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

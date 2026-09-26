@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template>
+      <style>
+        @font-face {
+          font-family: "Instrument Serif";
+          font-style: normal;
+          font-weight: 400;
+          src: url("assets/fonts/InstrumentSerif-Regular.woff2") format("woff2");
+        }
+        @font-face {
+          font-family: "Instrument Serif";
+          font-style: italic;
+          font-weight: 400;
+          src: url("assets/fonts/InstrumentSerif-Italic.woff2") format("woff2");
+        }
+        #root {
+          position: absolute;
+          inset: 0;
+          background: #e9e4d8;
+          color: #1d1b17;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 36px;
+          padding: 0 110px;
+          text-align: center;
+        }
+        #f14-num {
+          font-family: "Instrument Serif", serif;
+          font-size: 40px;
+          letter-spacing: 0.12em;
+          opacity: 0.55;
+        }
+        #f14-vo {
+          font-family: "Instrument Serif", serif;
+          font-style: italic;
+          font-size: 64px;
+          line-height: 1.1;
+        }
+        #f14-scene {
+          font-family: "Instrument Serif", serif;
+          font-size: 36px;
+          line-height: 1.3;
+          opacity: 0.6;
+        }
+      </style>
+      <div id="root" data-composition-id="f14" data-width="1080" data-height="1920">
+        <div id="f14-num">SCENE 14 · OUTLINE</div>
+        <div id="f14-vo">needy,</div>
+        <div id="f14-scene">Duo clings to a man's trouser leg with huge pleading eyes</div>
+      </div>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo("#f14-vo", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.3, ease: "power2.out" }, 0);
+        window.__timelines["f14"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

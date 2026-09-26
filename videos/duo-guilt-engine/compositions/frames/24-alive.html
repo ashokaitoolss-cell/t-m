@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template>
+      <style>
+        @font-face {
+          font-family: "Instrument Serif";
+          font-style: normal;
+          font-weight: 400;
+          src: url("assets/fonts/InstrumentSerif-Regular.woff2") format("woff2");
+        }
+        @font-face {
+          font-family: "Instrument Serif";
+          font-style: italic;
+          font-weight: 400;
+          src: url("assets/fonts/InstrumentSerif-Italic.woff2") format("woff2");
+        }
+        #root {
+          position: absolute;
+          inset: 0;
+          background: #e9e4d8;
+          color: #1d1b17;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 36px;
+          padding: 0 110px;
+          text-align: center;
+        }
+        #f24-num {
+          font-family: "Instrument Serif", serif;
+          font-size: 40px;
+          letter-spacing: 0.12em;
+          opacity: 0.55;
+        }
+        #f24-vo {
+          font-family: "Instrument Serif", serif;
+          font-style: italic;
+          font-size: 64px;
+          line-height: 1.1;
+        }
+        #f24-scene {
+          font-family: "Instrument Serif", serif;
+          font-size: 36px;
+          line-height: 1.3;
+          opacity: 0.6;
+        }
+      </style>
+      <div id="root" data-composition-id="f24" data-width="1080" data-height="1920">
+        <div id="f24-num">SCENE 24 · OUTLINE</div>
+        <div id="f24-vo">because the owl made the product feel alive.</div>
+        <div id="f24-scene">tabletop, a phone on a desk; Duo climbs out of the screen and waves</div>
+      </div>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo("#f24-vo", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.3, ease: "power2.out" }, 0);
+        window.__timelines["f24"] = tl;
+      </script>
+    </template>
+  </body>
+</html>
