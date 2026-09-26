@@ -35,9 +35,9 @@ export const scenes = [
     puppet: { origin: "50% 90%", keys: [
       { t: 2.4, r: 0 }, { t: 2.8, r: -3 }, { t: 3.2, r: 1.5 }, { t: 3.6, r: -3 }, { t: 4.0, r: 1.5 }, { t: 4.4, r: -3 }, { t: 4.9, r: 0 },
     ] },
-    overlays: [{ type: "arrow", id: "arrow", at: "subject-right", t: 3.76, dur: 0.45, color: "#7ccf3a",
-      d: "M 830 1330 C 850 1150, 820 980, 900 760", head: [900, 760, -70] }],
-    glints: [{ x: 905, y: 730, t: 4.2 }, { x: 760, y: 880, t: 4.45 }],
+    overlays: [{ type: "arrow", id: "arrow", t: 3.76, dur: 0.45, color: "#7ccf3a",
+      d: "M 880 960 C 900 850, 890 740, 930 640", head: [930, 640, -75] }],
+    glints: [{ x: 935, y: 610, t: 4.2 }, { x: 760, y: 880, t: 4.45 }],
     captions: [
       C(2.52, "they turned guilt", { y: 1270 }),
       C(3.34, "into a", { y: 1270 }),
@@ -226,11 +226,11 @@ export const scenes = [
   {
     num: 20, slug: "found-emotion", start: 36.18, end: 39.38, kind: "plate", plate: "f20", cut: true,
     focus: [540, 780], focusAnchor: "face",
-    camera: [{ t: 36.18, s: 1.0 }, { t: 39.38, s: 1.35, ease: "power1.inOut" }],
+    camera: [{ t: 36.18, s: 1.0 }, { t: 39.38, s: 1.25, ease: "power1.inOut" }],
     overlays: [
-      { type: "arrow", id: "arrow", at: "face", t: 36.8, dur: 0.4, color: "#f2c230",
-        d: "M 190 1130 C 230 1010, 300 930, 400 880", head: [400, 880, -25] },
-      { type: "scrawl", id: "word", at: "face", text: "guilt", x: 120, y: 1150, t: 36.95, dur: 0.45, color: "#f2c230", size: 96, rot: -8 },
+      { type: "arrow", id: "arrow", t: 36.95, dur: 0.4, color: "#f2c230",
+        d: "M 200 650 C 205 750, 250 830, 320 880", head: [320, 880, 35] },
+      { type: "scrawl", id: "word", text: "guilt", x: 70, y: 540, t: 36.7, dur: 0.4, color: "#f2c230", size: 96, rot: -10 },
     ],
     captions: [
       C(36.24, "they found", { y: 1390 }),
@@ -240,10 +240,9 @@ export const scenes = [
     ],
   },
   {
-    num: 21, slug: "culture", start: 39.38, end: 42.0, kind: "plate", plate: "f21", cut: true,
+    num: 21, slug: "culture", start: 39.38, end: 42.0, kind: "plate", plate: "f21", cut: false,
     focus: [540, 900], focusAnchor: "duo",
-    camera: [{ t: 39.38, s: 1.12 }, { t: 42.0, s: 1.0, ease: "power1.out" }],
-    puppet: { origin: "50% 100%", keys: [{ t: 39.38, s: 0.82 }, { t: 39.6, s: 0.82 }, { t: 40.1, s: 1.0, ease: "back.out(1.6)" }] },
+    camera: [{ t: 39.38, s: 1.3 }, { t: 39.6, s: 1.3 }, { t: 40.3, s: 1.06, ease: "back.out(1.4)" }, { t: 42.0, s: 1.0 }],
     shake: [{ t: 41.36, dur: 0.4, amp: 10 }],
     captions: [
       C(39.6, "exaggerated it", { y: 1390 }),
@@ -260,8 +259,8 @@ export const scenes = [
     screen: { at: "screen", x: 540, y: 900, w: 470, h: 960, r: 44, t: 42.0 },
     hearts: [{ t: 42.6, x: 700 }, { t: 42.85, x: 650 }, { t: 43.05, x: 730 }, { t: 43.3, x: 680 }, { t: 43.5, x: 720 }],
     captions: [
-      C(42.08, "that's why", { y: 470, lockY: true }),
-      C(42.56, "the TikTok worked.", { y: 470, lockY: true }),
+      C(42.08, "that's why", { y: 1460, lockY: true }),
+      C(42.56, "the TikTok worked.", { y: 1460, lockY: true }),
     ],
   },
   {
@@ -323,8 +322,8 @@ export const scenes = [
     camera: [{ t: 55.6, s: 1.0 }, { t: 56.96, s: 1.04 }],
     punches: [{ t: 56.16, s: 1.12 }],
     overlays: [
-      { type: "chalk", id: "c1", t: 55.75, dur: 0.35, d: "M 220 1250 C 300 1080, 420 1000, 520 930", head: [520, 930, -35] },
-      { type: "chalk", id: "c2", t: 55.95, dur: 0.35, d: "M 860 1260 C 800 1100, 700 1000, 600 940", head: [600, 940, -140] },
+      { type: "chalk", id: "c1", t: 55.75, dur: 0.35, d: "M 250 1330 C 300 1180, 360 1080, 440 1030", head: [440, 1030, -40] },
+      { type: "chalk", id: "c2", t: 55.95, dur: 0.35, d: "M 900 1300 C 850 1150, 720 1060, 620 1030", head: [620, 1030, -163] },
     ],
     captions: [C(55.68, "that's the whole play.", { y: 1400 })],
   },

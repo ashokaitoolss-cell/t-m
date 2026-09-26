@@ -19,6 +19,13 @@ const pad = (n) => String(n).padStart(2, "0");
 // have been downloaded and analysed; the specs' own positions are used meanwhile.
 const LAYOUT_PATH = join(ROOT, "data/layout.json");
 const LAYOUT = existsSync(LAYOUT_PATH) ? JSON.parse(readFileSync(LAYOUT_PATH, "utf8")) : {};
+// Hand-checked corrections (data/layout-overrides.json) win over the automatic measurements.
+const OVERRIDES_PATH = join(ROOT, "data/layout-overrides.json");
+if (Object.keys(LAYOUT).length && existsSync(OVERRIDES_PATH)) {
+  for (const [key, fix] of Object.entries(JSON.parse(readFileSync(OVERRIDES_PATH, "utf8")))) {
+    if (!key.startsWith("_")) LAYOUT[key] = { ...(LAYOUT[key] || {}), ...fix };
+  }
+}
 
 const FONTS = `@font-face { font-family: "Instrument Serif"; font-style: normal; font-weight: 400; src: url("assets/fonts/InstrumentSerif-Regular.woff2") format("woff2"); }
         @font-face { font-family: "Instrument Serif"; font-style: italic; font-weight: 400; src: url("assets/fonts/InstrumentSerif-Italic.woff2") format("woff2"); }
@@ -178,7 +185,12 @@ function applyLayout(sc0) {
 
   if (sc.focusAnchor && anchors[sc.focusAnchor]) sc.focus = anchors[sc.focusAnchor];
   else if (anchors.subject) sc.focus = anchors.subject;
-  if (L.caption_y) for (const c of sc.captions || []) if (!c.lockY) c.y = L.caption_y;
+  for (const c of sc.captions || []) {
+    if (c.lockY) continue;
+    if (L.caption_y) c.y = L.caption_y;
+    if (L.caption_x) c.x = L.caption_x;
+    if (L.caption_ink) c.ink = L.caption_ink;
+  }
 
   for (const o of sc.overlays || []) {
     const a = o.at && anchors[o.at === "subject-right" ? "subject" : o.at];
@@ -214,7 +226,7 @@ function applyLayout(sc0) {
 
   if (sc.notification && sc.notification.at === "screen" && L.screen) {
     const [x0, y0, x1] = L.screen.bbox;
-    sc.notification.w = clamp(x1 - x0 - 36, 420, 620);
+    sc.notification.w = clamp(x1 - x0 - 36, 380, 620);
     sc.notification.x = Math.round((x0 + x1) / 2);
     sc.notification.y = y0 + 40;
   }
@@ -228,7 +240,7 @@ function applyLayout(sc0) {
     sc.bubbles.forEach((bb, i) => {
       const hd = L.heads[Math.min(i, L.heads.length - 1)];
       if (i >= L.heads.length) return;
-      bb.x = clamp(hd[0], 170, 910);
+      bb.x = clamp(hd[0], 215, 865);
       bb.y = clamp(hd[1] - 250, 250, 1500);
       bb.tail = [hd[0] + 10, hd[1] - 45];
     });
@@ -264,16 +276,30 @@ function sceneHtml(spec) {
 
   const bgSrc =
     sc.kind === "plate" ? `assets/scene/${sc.plate}-bg.jpg` : "assets/scene/paper.jpg";
+  // Far plane, then (when the plate has distinct layers) a midground cut from it by depth.
+  // Parallax speeds follow the guide: far 0.3x, midground ~0.55x, subject 1x, foreground ~2x.
+  const hasMid = sc.kind === "plate" && existsSync(join(ROOT, `assets/scene/${sc.plate}-mid.png`));
   cam.push(`<div id="${id}-bgp" class="sk-plane"><img class="sk-img" src="${bgSrc}" alt="" /></div>`);
-  planes.push({ id: `${id}-bgp`, depth: sc.kind === "plate" && sc.cut ? 0.45 : 1 });
+  planes.push({ id: `${id}-bgp`, depth: sc.kind !== "plate" ? 1 : sc.cut ? 0.3 : 0.5 });
+  if (hasMid) {
+    cam.push(`<div id="${id}-midp" class="sk-plane"><img class="sk-img" src="assets/scene/${sc.plate}-mid.png" alt="" /></div>`);
+    planes.push({ id: `${id}-midp`, depth: sc.cut ? 0.55 : 0.85 });
+  }
 
   if (sc.kind === "plate" && sc.cut) {
     cam.push(`<div id="${id}-subp" class="sk-plane"><img id="${id}-sub" class="sk-img" src="assets/scene/${sc.plate}-sub.png" alt="" /></div>`);
     planes.push({ id: `${id}-subp`, depth: 1 });
     if (sc.puppet) puppets.push({ id: `${id}-sub`, origin: sc.puppet.origin, keys: localize(sc.puppet.keys, sc.start) });
     if (sc.breathe) breathe.push({ id: `${id}-sub` });
+
   } else if (sc.kind === "plate" && sc.puppet) {
     puppets.push({ id: `${id}-bgp`, origin: sc.puppet.origin, keys: localize(sc.puppet.keys, sc.start) });
+  }
+
+  // Layer nearer than the subject (e.g. the crowd in front of giant Duo): above it, faster.
+  if (sc.kind === "plate" && existsSync(join(ROOT, `assets/scene/${sc.plate}-front.png`))) {
+    cam.push(`<div id="${id}-frontp" class="sk-plane"><img class="sk-img" src="assets/scene/${sc.plate}-front.png" alt="" /></div>`);
+    planes.push({ id: `${id}-frontp`, depth: 1.35 });
   }
 
   // Phone notification (rides the camera with the phone).
@@ -454,10 +480,19 @@ function sceneHtml(spec) {
 
   planes.push({ id: `${id}-ovp`, depth: 1 });
 
+  // A gentle lateral drift on every painted scene (alternating direction) so the plane
+  // speeds read as parallax even without a push-in.
+  let camera = localize(sc.camera, sc.start);
+  if (sc.kind === "plate" && !camera.some((k) => k.x !== undefined)) {
+    const dir = sc.num % 2 ? 1 : -1;
+    camera = camera.map((k, i) => ({ ...k, x: i === 0 ? 14 * dir : i === camera.length - 1 ? -14 * dir : 0 }));
+    if (camera.length > 2) camera = camera.map((k) => ({ ...k, x: r3(14 * dir * (1 - 2 * (k.t / dur))) }));
+  }
+
   const cfg = {
     duration: dur,
     focus: sc.focus || [W / 2, H / 2],
-    camera: localize(sc.camera, sc.start),
+    camera,
     punches: localize(sc.punches, sc.start),
     shake: localize(sc.shake, sc.start),
     wiggle: sc.wiggle,
@@ -484,8 +519,8 @@ function sceneHtml(spec) {
         <div id="${id}-cam" class="sk-cam">
           ${cam.join("\n          ")}
           <div id="${id}-ovp" class="sk-plane">
-            ${svg.length ? `<svg class="sk-svg" viewBox="0 0 ${W} ${H}">${svg.join("")}</svg>` : ""}
             ${ov.join("\n            ")}
+            ${svg.length ? `<svg class="sk-svg" viewBox="0 0 ${W} ${H}">${svg.join("")}</svg>` : ""}
           </div>
         </div>
         <div id="${id}-ov" class="sk-ov">

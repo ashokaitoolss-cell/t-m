@@ -62,6 +62,7 @@
       <div id="root" data-composition-id="f27" data-width="1080" data-height="1920">
         <div id="f27-cam" class="sk-cam">
           <div id="f27-bgp" class="sk-plane"><img class="sk-img" src="assets/scene/f27-bg.jpg" alt="" /></div>
+          <div id="f27-midp" class="sk-plane"><img class="sk-img" src="assets/scene/f27-mid.png" alt="" /></div>
           <div id="f27-subp" class="sk-plane"><img id="f27-sub" class="sk-img" src="assets/scene/f27-sub.png" alt="" /></div>
           <div id="f27-ovp" class="sk-plane">
             
@@ -73,7 +74,7 @@
         </div>
       </div>
       <script>
-        SceneKit.mount("f27", Object.assign({"duration":3.52,"focus":[540,900],"camera":[{"t":0,"s":1},{"t":3.52,"s":1.06}],"punches":[{"t":1.6,"s":1.25}],"shake":[{"t":1.64,"dur":0.3,"amp":8}],"planes":[{"id":"f27-bgp","depth":0.45},{"id":"f27-subp","depth":1},{"id":"f27-ovp","depth":1}],"puppets":[],"breathe":[],"glints":[]}, {
+        SceneKit.mount("f27", Object.assign({"duration":3.52,"focus":[540,920],"camera":[{"t":0,"s":1,"x":14},{"t":3.52,"s":1.06,"x":-14}],"punches":[{"t":1.6,"s":1.25}],"shake":[{"t":1.64,"dur":0.3,"amp":8}],"planes":[{"id":"f27-bgp","depth":0.3},{"id":"f27-midp","depth":0.55},{"id":"f27-subp","depth":1},{"id":"f27-ovp","depth":1}],"puppets":[],"breathe":[],"glints":[]}, {
           
           build: function (tl, kit) {
             

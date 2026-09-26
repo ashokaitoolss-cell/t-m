@@ -62,6 +62,7 @@
       <div id="root" data-composition-id="f10" data-width="1080" data-height="1920">
         <div id="f10-cam" class="sk-cam">
           <div id="f10-bgp" class="sk-plane"><img class="sk-img" src="assets/scene/f10-bg.jpg" alt="" /></div>
+          <div id="f10-midp" class="sk-plane"><img class="sk-img" src="assets/scene/f10-mid.png" alt="" /></div>
           <div id="f10-ovp" class="sk-plane">
             
             
@@ -72,7 +73,7 @@
         </div>
       </div>
       <script>
-        SceneKit.mount("f10", Object.assign({"duration":2.88,"focus":[540,700],"camera":[{"t":0,"s":1},{"t":2.88,"s":1.6,"ease":"power2.inOut"}],"punches":[],"shake":[],"planes":[{"id":"f10-bgp","depth":1},{"id":"f10-ovp","depth":1}],"puppets":[],"breathe":[],"glints":[{"x":700,"y":560,"t":1.28,"near":"duo"},{"x":420,"y":760,"t":1.78,"near":"duo"}]}, {
+        SceneKit.mount("f10", Object.assign({"duration":2.88,"focus":[560,640],"camera":[{"t":0,"s":1,"x":-14},{"t":2.88,"s":1.6,"ease":"power2.inOut","x":14}],"punches":[],"shake":[],"planes":[{"id":"f10-bgp","depth":0.5},{"id":"f10-midp","depth":0.85},{"id":"f10-ovp","depth":1}],"puppets":[],"breathe":[],"glints":[{"x":840,"y":860,"t":1.28,"near":"duo"},{"x":320,"y":350,"t":1.78,"near":"duo"}]}, {
           
           build: function (tl, kit) {
             

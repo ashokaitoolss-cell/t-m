@@ -64,8 +64,8 @@
           <div id="f20-bgp" class="sk-plane"><img class="sk-img" src="assets/scene/f20-bg.jpg" alt="" /></div>
           <div id="f20-subp" class="sk-plane"><img id="f20-sub" class="sk-img" src="assets/scene/f20-sub.png" alt="" /></div>
           <div id="f20-ovp" class="sk-plane">
-            <svg class="sk-svg" viewBox="0 0 1080 1920"><path id="f20-arrow" class="marker" stroke="#f2c230" d="M 190 1130 C 230 1010, 300 930, 400 880"/><path id="f20-arrowh" class="marker" stroke="#f2c230" d="M 372.734 917.048 L 400 880 L 354.093 877.073"/></svg>
-            <div id="f20-word" class="scrawl" style="left:120px;top:1150px;color:#f2c230;font-size:96px;transform:rotate(-8deg)">guilt</div>
+            <div id="f20-word" class="scrawl" style="left:70px;top:540px;color:#f2c230;font-size:96px;transform:rotate(-10deg)">guilt</div>
+            <svg class="sk-svg" viewBox="0 0 1080 1920"><path id="f20-arrow" class="marker" stroke="#f2c230" d="M 200 650 C 205 750, 250 830, 320 880"/><path id="f20-arrowh" class="marker" stroke="#f2c230" d="M 274.282 874.911 L 320 880 L 299.581 838.78"/></svg>
           </div>
         </div>
         <div id="f20-ov" class="sk-ov">
@@ -73,12 +73,12 @@
         </div>
       </div>
       <script>
-        SceneKit.mount("f20", Object.assign({"duration":3.2,"focus":[540,780],"camera":[{"t":0,"s":1},{"t":3.2,"s":1.35,"ease":"power1.inOut"}],"punches":[],"shake":[],"planes":[{"id":"f20-bgp","depth":0.45},{"id":"f20-subp","depth":1},{"id":"f20-ovp","depth":1}],"puppets":[],"breathe":[],"glints":[]}, {
+        SceneKit.mount("f20", Object.assign({"duration":3.2,"focus":[420,900],"camera":[{"t":0,"s":1,"x":-14},{"t":3.2,"s":1.25,"ease":"power1.inOut","x":14}],"punches":[],"shake":[],"planes":[{"id":"f20-bgp","depth":0.3},{"id":"f20-subp","depth":1},{"id":"f20-ovp","depth":1}],"puppets":[],"breathe":[],"glints":[]}, {
           
           build: function (tl, kit) {
-            kit.draw("f20-arrow", 0.62, 0.4);
-            kit.draw("f20-arrowh", 1.02, 0.12);
-            tl.fromTo("#f20-word", { clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0% 0 0)", duration: 0.45, ease: "power1.inOut", immediateRender: false }, 0.77);
+            kit.draw("f20-arrow", 0.77, 0.4);
+            kit.draw("f20-arrowh", 1.17, 0.12);
+            tl.fromTo("#f20-word", { clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0% 0 0)", duration: 0.4, ease: "power1.inOut", immediateRender: false }, 0.52);
           },
         }));
       </script>
