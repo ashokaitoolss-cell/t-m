@@ -45,4 +45,9 @@ const marker = "      <!-- audio -->";
 if (!out.includes(marker)) throw new Error("audio marker not found");
 out = out.replace(marker, `      <!-- audio: score + ${clips.length} sound cues from data/cues.mjs -->\n${audio}`);
 writeFileSync(root + "index.html", out);
+// The same resolved cues for scripts/mix.py, which remixes the audio without a video re-render.
+writeFileSync(
+  root + "data/cues.json",
+  JSON.stringify({ total: TOTAL, music: { src: "assets/audio/music.wav", gain: 0.8 }, clips: clips.map(({ start, dur, name, gain }) => ({ start, dur, name, gain })) }, null, 1) + "\n",
+);
 console.log(`index.html built: ${clips.length} sfx on ${laneEnds.length} lanes`);

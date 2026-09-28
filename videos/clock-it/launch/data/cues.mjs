@@ -52,7 +52,8 @@ export const cues = [
   [B(46), "warm", 0.6, "brand bloom"],
   [B(46.4), "tick", 0.45, "Clock"], [B(46.9), "tock", 0.4, "It"],
   [B(47.1), "clinkA", 0.35, "the bar of the !"],
-  [B(46.2) + 0.8, "clinkB", 0.5, "the dot lands as the ! dot"],
+  // The dot's hops end in bounce.out, which first touches down 0.145 s into its 0.4 s fall.
+  [B(46.2) + 0.545, "clinkB", 0.5, "the dot lands as the ! dot"], [B(46.2) + 0.69, "tick", 0.2, "small rebound"],
   [B(48), "air2", 0.3, "tagline"],
   // ACT V — it isn't real
   [B(50.4), "ratchet2", 0.5, "tagline decodes"],
@@ -62,6 +63,6 @@ export const cues = [
   [B(59.2), "suck", 0.5, "the wireframe collapses into the dot"],
   [B(59.3), "bellA", 0.65, "the dot"],
   [B(59.6), "tick", 0.45, "All"], [B(59.6) + 0.2, "tock", 0.4, "made"], [B(59.6) + 0.4, "tick", 0.45, "with"], [B(59.6) + 0.6, "tock", 0.4, "AI"],
-  [B(59.6) + 1.2, "clinkB", 0.45, "the full stop"],
+  [B(59.6) + 0.945, "clinkB", 0.45, "the full stop"], [B(59.6) + 1.09, "tick", 0.2, "small rebound"],
   [B(61), "air2", 0.25, "small print"],
 ];
