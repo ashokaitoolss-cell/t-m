@@ -6,7 +6,7 @@ applied), so the mix lands the same sounds at the same times as index.html does.
 Tactile sounds (ticks, clicks, clinks, the latch) stay dry and centred. Ethereal ones
 (glass bells, shimmer, air) get a short stereo room send so they bloom around the centre.
 
-    python3 scripts/mix.py  -> renders/mix.wav (48 kHz stereo 24-bit, -14 LUFS, true peak <= -1.3 dBTP)
+    python3 scripts/mix.py  -> renders/mix.wav (48 kHz stereo 24-bit, -14 LUFS, true peak <= -1.8 dBTP, so AAC stays under -1)
 
 scripts/finish.sh muxes it onto the clean render and makes the share copy.
 """
@@ -76,7 +76,7 @@ def main():
     mix += wet
 
     raw_peak = np.abs(mix).max()
-    master, gain_db, ceiling = master_to(mix, lufs_target=-14.0, tp_ceiling=-1.3)
+    master, gain_db, ceiling = master_to(mix, lufs_target=-14.0, tp_ceiling=-1.8)
     out = ROOT / "renders/mix.wav"
     out.parent.mkdir(exist_ok=True)
     with wave.open(str(out), "wb") as w:
