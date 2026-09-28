@@ -1,0 +1,225 @@
+{
+ "base": "https://gen-xi-audio.netlify.app/audio",
+ "library": "https://genxi-media-sfx.netlify.app/",
+ "note": "t0/dur in seconds inside the library file; lufs = max momentary loudness target; lead = seconds from clip start to its peak ('peak' = measured), so the cue time lands on the peak.",
+ "picks": {
+  "tick": {
+   "cat": "16. CLOCKS AND ALARMS",
+   "file": "66 Clocks and Alarms.mp3",
+   "t0": 4.645,
+   "dur": 0.12,
+   "lufs": -27,
+   "fadeOut": 0.05,
+   "why": "bright watch tick"
+  },
+  "tock": {
+   "cat": "16. CLOCKS AND ALARMS",
+   "file": "31 Clocks and Alarms.mp3",
+   "t0": 11.395,
+   "dur": 0.16,
+   "lufs": -28,
+   "fadeOut": 0.06,
+   "why": "tonal answering tick"
+  },
+  "click": {
+   "cat": "49. MECHANICAL",
+   "file": "35 MECHANICAL.mp3",
+   "t0": 0.72,
+   "dur": 0.18,
+   "lufs": -22,
+   "why": "crisp mechanical press: crown, power-off"
+  },
+  "clinkA": {
+   "cat": "11. CHAINS",
+   "file": "19 Chains.mp3",
+   "t0": 12.34,
+   "dur": 0.2,
+   "lufs": -26,
+   "why": "small metal clink: links"
+  },
+  "clinkB": {
+   "cat": "31. CERAMICS",
+   "file": "7 CERAMICS.mp3",
+   "t0": 15.14,
+   "dur": 0.25,
+   "lufs": -27,
+   "why": "glassy tink: the dot lands"
+  },
+  "latch": {
+   "cat": "49. MECHANICAL",
+   "file": "33 MECHANICAL.mp3",
+   "t0": 5.07,
+   "dur": 0.35,
+   "lufs": -18,
+   "why": "the lock: links become the logo"
+  },
+  "ratchet": {
+   "cat": "49. MECHANICAL",
+   "file": "79 MECHANICAL.mp3",
+   "t0": 0.11,
+   "dur": 0.85,
+   "lufs": -24,
+   "fadeOut": 0.15,
+   "why": "winding: hands spin"
+  },
+  "ratchet2": {
+   "cat": "49. MECHANICAL",
+   "file": "84 MECHANICAL.mp3",
+   "t0": 0.03,
+   "dur": 0.6,
+   "lufs": -26,
+   "fadeOut": 0.12,
+   "why": "fast winding: text decodes"
+  },
+  "slide": {
+   "cat": "11. CHAINS",
+   "file": "5 Chains.mp3",
+   "t0": 23.32,
+   "dur": 0.55,
+   "lufs": -26,
+   "fadeIn": 0.03,
+   "fadeOut": 0.12,
+   "why": "links slide together"
+  },
+  "bellA": {
+   "cat": "44. MAGIC",
+   "file": "48 MAGIC.mp3",
+   "t0": 2.17,
+   "dur": 0.9,
+   "lufs": -24,
+   "fadeOut": 0.3,
+   "why": "pure glass bell: the dot"
+  },
+  "bellB": {
+   "cat": "44. MAGIC",
+   "file": "55 MAGIC.mp3",
+   "t0": 10.5,
+   "dur": 0.9,
+   "lufs": -23,
+   "fadeOut": 0.3,
+   "why": "harmonic bell: landings"
+  },
+  "shimmer": {
+   "cat": "44. MAGIC",
+   "file": "44 MAGIC.mp3",
+   "t0": 0.01,
+   "dur": 1.0,
+   "lufs": -24,
+   "fadeOut": 0.3,
+   "why": "rising shimmer: arrivals"
+  },
+  "warm": {
+   "cat": "44. MAGIC",
+   "file": "18 MAGIC.mp3",
+   "t0": 4.29,
+   "dur": 1.5,
+   "lufs": -24,
+   "fadeIn": 0.02,
+   "fadeOut": 0.5,
+   "why": "warm tone: the brand"
+  },
+  "sparkle": {
+   "cat": "44. MAGIC",
+   "file": "19 MAGIC.mp3",
+   "t0": 3.43,
+   "dur": 0.7,
+   "lufs": -25,
+   "fadeOut": 0.3,
+   "why": "sparkle: light across the ridges"
+  },
+  "air": {
+   "cat": "10. AIR",
+   "file": "18 Air.mp3",
+   "t0": 1.18,
+   "dur": 0.6,
+   "lufs": -24,
+   "fadeIn": 0.02,
+   "lead": "peak",
+   "why": "soft air: camera moves"
+  },
+  "air2": {
+   "cat": "10. AIR",
+   "file": "11 Air.mp3",
+   "t0": 12.37,
+   "dur": 0.65,
+   "lufs": -25,
+   "fadeIn": 0.02,
+   "lead": "peak",
+   "why": "soft air, second take"
+  },
+  "suck": {
+   "cat": "44. MAGIC",
+   "file": "52 MAGIC.mp3",
+   "t0": 3.15,
+   "dur": 0.62,
+   "lufs": -24,
+   "fadeIn": 0.02,
+   "fadeOut": 0.02,
+   "lead": "peak",
+   "why": "ethereal build: collapses"
+  },
+  "suckLow": {
+   "cat": "4. SWOOSHES AND WOOOSHES",
+   "file": "70 Swooshes & Wooshes.mp3",
+   "t0": 0.25,
+   "dur": 0.55,
+   "lufs": -23,
+   "fadeIn": 0.02,
+   "lead": "peak",
+   "why": "low swell: implosion, dive"
+  },
+  "whoosh": {
+   "cat": "4. SWOOSHES AND WOOOSHES",
+   "file": "14 Swooshes & Wooshes.mp3",
+   "t0": 3.62,
+   "dur": 0.55,
+   "lufs": -21,
+   "lead": 0.19,
+   "why": "full whoosh: the burst"
+  },
+  "whip": {
+   "cat": "4. SWOOSHES AND WOOOSHES",
+   "file": "100 Swooshes & Wooshes.mp3",
+   "t0": 0.19,
+   "dur": 0.42,
+   "lufs": -21,
+   "lead": 0.16,
+   "why": "whip: spins and flips"
+  },
+  "ping": {
+   "cat": "24. USER INTERFACE",
+   "file": "16 User Interface.mp3",
+   "t0": 0.0,
+   "dur": 0.9,
+   "lufs": -22,
+   "fadeOut": 0.3,
+   "why": "notification: the problem"
+  },
+  "buzz": {
+   "cat": "29. PHONE AND COMMUNICATION",
+   "file": "40 Phone & Communication.mp3",
+   "t0": 0.18,
+   "dur": 0.45,
+   "lufs": -21,
+   "why": "vibration: the problem"
+  },
+  "thump": {
+   "cat": "3. HITS",
+   "file": "15 Hits.mp3",
+   "t0": 0.0,
+   "dur": 0.5,
+   "lufs": -19,
+   "fadeOut": 0.25,
+   "why": "soft low landing"
+  },
+  "uiclick": {
+   "cat": "24. USER INTERFACE",
+   "file": "7 User Interface.mp3",
+   "t0": 0.0,
+   "dur": 0.1,
+   "lufs": -28,
+   "fadeOut": 0.05,
+   "why": "tiny UI click: the wall appears"
+  }
+ }
+}

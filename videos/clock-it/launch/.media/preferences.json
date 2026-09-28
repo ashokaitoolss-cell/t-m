@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "preferences": {
+    "aspect": {
+      "value": "1920x1080",
+      "confirmed_in": [
+        "launch"
+      ],
+      "updated_at": "2026-09-28T09:53:35.370Z"
+    },
+    "flow": {
+      "value": "companion",
+      "confirmed_in": [
+        "launch"
+      ],
+      "updated_at": "2026-09-28T09:53:35.439Z"
+    },
+    "storyboard": {
+      "value": "no",
+      "confirmed_in": [
+        "launch"
+      ],
+      "updated_at": "2026-09-28T09:53:35.501Z"
+    }
+  },
+  "sightings": {}
+}

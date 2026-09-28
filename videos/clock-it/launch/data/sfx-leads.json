@@ -1,0 +1,98 @@
+{
+ "tick": {
+  "lead": 0,
+  "dur": 0.12
+ },
+ "tock": {
+  "lead": 0,
+  "dur": 0.16
+ },
+ "click": {
+  "lead": 0,
+  "dur": 0.18
+ },
+ "clinkA": {
+  "lead": 0,
+  "dur": 0.2
+ },
+ "clinkB": {
+  "lead": 0,
+  "dur": 0.25
+ },
+ "latch": {
+  "lead": 0,
+  "dur": 0.35
+ },
+ "ratchet": {
+  "lead": 0,
+  "dur": 0.85
+ },
+ "ratchet2": {
+  "lead": 0,
+  "dur": 0.6
+ },
+ "slide": {
+  "lead": 0,
+  "dur": 0.55
+ },
+ "bellA": {
+  "lead": 0,
+  "dur": 0.9
+ },
+ "bellB": {
+  "lead": 0,
+  "dur": 0.9
+ },
+ "shimmer": {
+  "lead": 0,
+  "dur": 1.0
+ },
+ "warm": {
+  "lead": 0,
+  "dur": 1.5
+ },
+ "sparkle": {
+  "lead": 0,
+  "dur": 0.7
+ },
+ "air": {
+  "lead": 0.165,
+  "dur": 0.6
+ },
+ "air2": {
+  "lead": 0.261,
+  "dur": 0.65
+ },
+ "suck": {
+  "lead": 0.579,
+  "dur": 0.62
+ },
+ "suckLow": {
+  "lead": 0.312,
+  "dur": 0.55
+ },
+ "whoosh": {
+  "lead": 0.19,
+  "dur": 0.55
+ },
+ "whip": {
+  "lead": 0.16,
+  "dur": 0.42
+ },
+ "ping": {
+  "lead": 0,
+  "dur": 0.9
+ },
+ "buzz": {
+  "lead": 0,
+  "dur": 0.45
+ },
+ "thump": {
+  "lead": 0,
+  "dur": 0.5
+ },
+ "uiclick": {
+  "lead": 0,
+  "dur": 0.1
+ }
+}
