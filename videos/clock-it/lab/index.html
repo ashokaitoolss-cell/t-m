@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>html,body{margin:0;background:#F2F0E7;overflow:hidden}canvas{display:block}</style>
+<script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+<script type="module">
+import * as THREE from "three";
+import { RoomEnvironment } from "./vendor/RoomEnvironment.js";
+import { buildWatch, setTime, curlBracelet, buildLogo, brassMaterial, COLORS } from "./watch.js";
+
+const shot = new URLSearchParams(location.hash.slice(1)).get("shot") || "front";
+const W = innerWidth, H = innerHeight;
+const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true });
+renderer.setPixelRatio(1);
+renderer.setSize(W, H);
+renderer.toneMapping = THREE.NeutralToneMapping;
+renderer.toneMappingExposure = 1.0;
+renderer.outputColorSpace = THREE.SRGBColorSpace;
+document.body.appendChild(renderer.domElement);
+
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(COLORS.paper);
+const pmrem = new THREE.PMREMGenerator(renderer);
+scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
+const key = new THREE.DirectionalLight(0xfff4e6, 1.6); key.position.set(-60, 90, 80); scene.add(key);
+const rim = new THREE.DirectionalLight(0xe8f0ff, 0.6); rim.position.set(80, -20, -60); scene.add(rim);
+
+const cam = new THREE.PerspectiveCamera(20, W / H, 1, 2000);
+const w = buildWatch({ links: 7 });
+setTime(w, 10, 9);
+scene.add(w.group);
+
+if (shot === "front") {
+  cam.position.set(0, 0, 330); cam.lookAt(0, 0, 0);
+} else if (shot === "macro") {
+  w.group.rotation.y = -0.62; w.group.rotation.x = 0.08;
+  cam.position.set(0, 0, 118); cam.lookAt(0, 0, 0);
+} else if (shot === "side") {
+  // Bracelet wrapped round a wrist, seen from the side with the crown up (photo 7).
+  curlBracelet(w, 28);
+  const pivot = new THREE.Group(); scene.add(pivot); pivot.add(w.group);
+  w.group.rotation.set(0, 0, Math.PI / 2);      // crown (+X) points up
+  w.group.position.set(0, 0, 0);
+  pivot.rotation.set(0.35, -1.25, 0);           // dial turns to face right, loop recedes left
+  cam.position.set(0, 0, 300); cam.lookAt(-18, 0, 0);
+} else if (shot === "table") {
+  w.group.rotation.z = Math.PI / 2;
+  w.group.rotation.x = -1.15;
+  cam.position.set(0, 0, 300); cam.lookAt(0, 0, 0);
+} else if (shot === "logo") {
+  scene.remove(w.group);
+  const logo = buildLogo(brassMaterial({ anisotropy: 0.4 }), 10);
+  logo.rotation.set(-0.25, 0.45, 0);
+  scene.add(logo);
+  cam.position.set(0, 0, 420); cam.lookAt(0, 0, 0);
+} else if (shot === "logo-olive") {
+  scene.remove(w.group);
+  const logo = buildLogo(new THREE.MeshPhysicalMaterial({ color: COLORS.olive, roughness: 0.5, metalness: 0.1, clearcoat: 0.6, clearcoatRoughness: 0.35 }), 10);
+  logo.rotation.set(-0.25, 0.45, 0);
+  scene.add(logo);
+  cam.position.set(0, 0, 420); cam.lookAt(0, 0, 0);
+}
+cam.updateProjectionMatrix();
+renderer.render(scene, cam);
+document.title = "done";
+</script>
+</body>
+</html>
