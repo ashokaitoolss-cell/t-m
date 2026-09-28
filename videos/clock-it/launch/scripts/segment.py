@@ -7,10 +7,12 @@ root timeline is a scrubbing tween over [start, start + length) of the real one 
 
     python3 scripts/segment.py make DIR F0:N [F0:N ...]   # one project per range, DIR/<i>/
     (cd DIR/<i> && npx hyperframes render --fps 60 --quality delivery --output DIR/<i>.mp4)
-    python3 scripts/segment.py splice DIR F0:N [F0:N ...] # -> renders/clean-patched.mp4
+    python3 scripts/segment.py splice DIR F0:N [F0:N ...] [--base IN.mp4] [--out OUT.mp4]
 
-F0 is the first frame (at 60 fps) and N the number of frames. splice checks each seam:
-the segment's first and last frames must match the clean render where nothing changed.
+F0 is the first frame (at 60 fps) and N the number of frames; ranges are in film order and
+may abut. splice (base renders/clean.mp4, output renders/clean-patched.mp4 by default)
+checks every seam against untouched base frames: the frame on each side of a seam must
+match the base, so a segment that is off by a frame never gets spliced in.
 """
 import re
 import shutil
@@ -68,27 +70,43 @@ def psnr(a, b):
     return 99.0 if mse == 0 else 10 * np.log10(255 ** 2 / mse)
 
 
-def splice(out, spans):
-    clean = ROOT / "renders/clean.mp4"
+def splice(out, spans, base, dst):
+    ends = {f0 + n for f0, n in spans}
+    starts = {f0 for f0, _ in spans}
     for i, (f0, n) in enumerate(spans):
         seg = out / f"{i}.mp4"
-        first, last = psnr(frame(seg, 0), frame(clean, f0)), psnr(frame(seg, n - 1), frame(clean, f0 + n - 1))
-        print(f"segment {i}: seam PSNR first {first:.1f} dB, last {last:.1f} dB")
-        if min(first, last) < 38:
-            sys.exit(f"segment {i} does not line up with the clean render at its seams")
-    inputs, parts, cursor = ["-i", str(clean)], [], 0
-    k = len(spans) + 1
-    filt = [f"[0:v]split={k}" + "".join(f"[c{j}]" for j in range(k))]
+        checks = []
+        if f0 not in ends:  # an untouched base frame precedes this segment
+            checks.append(("first", 0, f0))
+        if f0 + n not in starts:  # and one follows it
+            checks.append(("last", n - 1, f0 + n - 1))
+        for name, k, fb in checks:
+            p = psnr(frame(seg, k), frame(base, fb))
+            print(f"segment {i}: {name} frame vs base {fb}: PSNR {p:.1f} dB")
+            if p < 38:
+                sys.exit(f"segment {i} does not line up with the base render at frame {fb}")
+    # Base pieces between segments (skipping empty ones where segments abut), then concat.
+    pieces, cursor, inputs = [], 0, ["-i", str(base)]
     for i, (f0, n) in enumerate(spans):
+        if f0 > cursor:
+            pieces.append(("base", cursor, f0))
         inputs += ["-i", str(out / f"{i}.mp4")]
-        filt.append(f"[c{i}]trim=start_frame={cursor}:end_frame={f0},setpts=PTS-STARTPTS[k{i}]")
-        filt.append(f"[{i + 1}:v]setpts=PTS-STARTPTS[s{i}]")
-        parts += [f"[k{i}]", f"[s{i}]"]
+        pieces.append(("seg", i + 1, None))
         cursor = f0 + n
-    filt.append(f"[c{len(spans)}]trim=start_frame={cursor},setpts=PTS-STARTPTS[k{len(spans)}]")
-    parts.append(f"[k{len(spans)}]")
-    filt.append("".join(parts) + f"concat=n={len(parts)}:v=1:a=0[v]")
-    dst = ROOT / "renders/clean-patched.mp4"
+    pieces.append(("base", cursor, None))
+    nb = sum(1 for p in pieces if p[0] == "base")
+    filt = [f"[0:v]split={nb}" + "".join(f"[c{j}]" for j in range(nb))] if nb > 1 else ["[0:v]null[c0]"]
+    labels, j = [], 0
+    for kind, a, b in pieces:
+        lab = f"p{len(labels)}"
+        if kind == "base":
+            end = f":end_frame={b}" if b is not None else ""
+            filt.append(f"[c{j}]trim=start_frame={a}{end},setpts=PTS-STARTPTS[{lab}]")
+            j += 1
+        else:
+            filt.append(f"[{a}:v]setpts=PTS-STARTPTS[{lab}]")
+        labels.append(f"[{lab}]")
+    filt.append("".join(labels) + f"concat=n={len(labels)}:v=1:a=0[v]")
     subprocess.run(
         ["ffmpeg", "-v", "error", "-y", *inputs, "-filter_complex", ";".join(filt), "-map", "[v]",
          "-c:v", "libx264", "-preset", "slow", "-crf", "12", "-pix_fmt", "yuv420p",
@@ -96,9 +114,19 @@ def splice(out, spans):
          "-r", str(FPS), str(dst)],
         check=True,
     )
-    print(f"{dst.relative_to(ROOT)} written")
+    print(f"{dst} written")
 
 
 if __name__ == "__main__":
-    cmd, out, *spans = sys.argv[1:]
-    {"make": make, "splice": splice}[cmd](Path(out), ranges(spans))
+    args = sys.argv[1:]
+    opt = {}
+    for flag in ("--base", "--out"):
+        if flag in args:
+            i = args.index(flag)
+            opt[flag] = Path(args[i + 1])
+            del args[i : i + 2]
+    cmd, out, *spans = args
+    if cmd == "make":
+        make(Path(out), ranges(spans))
+    else:
+        splice(Path(out), ranges(spans), opt.get("--base", ROOT / "renders/clean.mp4"), opt.get("--out", ROOT / "renders/clean-patched.mp4"))

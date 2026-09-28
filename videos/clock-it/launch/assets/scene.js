@@ -9,7 +9,7 @@
 import * as THREE from "three";
 import { RoomEnvironment } from "./vendor/RoomEnvironment.js";
 import { RoundedBoxGeometry } from "./vendor/RoundedBoxGeometry.js";
-import { buildWatch, setTime, buildLogo, brassMaterial, linkGeometry, linkSpecs, COLORS } from "./watch.js";
+import { buildWatch, setTime, buildLogo, brassMaterial, linkGeometry, linkSpecs, COLORS, BRASS_ENV } from "./watch.js";
 
 const W = 1920, H = 1080, FPS = 60, FOV = 22;
 const TAN = Math.tan((FOV / 2) * Math.PI / 180);
@@ -38,7 +38,8 @@ export const E = {
   },
 };
 const lerp = (a, b, x) => (Array.isArray(a) ? a.map((v, i) => v + (b[i] - v) * x) : a + (b - a) * x);
-// keys: [[time, value, ease-into-this-key], ...]
+// keys: [[time, value, ease-into-this-key, "log"?], ...]. A "log" key interpolates the
+// logarithm, so a camera push reads as an even zoom instead of racing at the end.
 function track(keys) {
   return (t) => {
     if (t <= keys[0][0]) return keys[0][1];
@@ -47,7 +48,8 @@ function track(keys) {
       if (t <= t1) {
         const [t0, v0] = keys[i - 1];
         const x = t1 > t0 ? (t - t0) / (t1 - t0) : 1;
-        return lerp(v0, v1, (e || E.io2)(clamp01(x)));
+        const k = (e || E.io2)(clamp01(x));
+        return keys[i][3] === "log" ? v0 * Math.pow(v1 / v0, k) : lerp(v0, v1, k);
       }
     }
     return keys[keys.length - 1][1];
@@ -84,7 +86,8 @@ const quadGeo = new THREE.PlaneGeometry(2, 2);
 const addMat = new THREE.ShaderMaterial({
   uniforms: { tex: { value: null }, w: { value: 1 } },
   vertexShader: "varying vec2 vUv; void main(){ vUv = uv; gl_Position = vec4(position.xy, 0.0, 1.0); }",
-  fragmentShader: "uniform sampler2D tex; uniform float w; varying vec2 vUv; void main(){ gl_FragColor = texture2D(tex, vUv) * w; }",
+  // A rare NaN sample (degenerate shading on a sub-pixel flute) would poison the sum; drop it.
+  fragmentShader: "uniform sampler2D tex; uniform float w; varying vec2 vUv; void main(){ vec4 s = texture2D(tex, vUv); if (any(isnan(s)) || any(isinf(s))) s = vec4(0.0); gl_FragColor = s * w; }",
   // Plain sum (ONE, ONE) on premultiplied samples; additive blending would square the weight.
   blending: THREE.CustomBlending, blendEquation: THREE.AddEquation, blendSrc: THREE.OneFactor, blendDst: THREE.OneFactor,
   blendSrcAlpha: THREE.OneFactor, blendDstAlpha: THREE.OneFactor, depthTest: false, depthWrite: false, transparent: true,
@@ -195,6 +198,13 @@ scene.add(smartRoot);
 const LOGO_S = 0.3;
 const logoMat = new THREE.MeshPhysicalMaterial({ color: COLORS.brassMetal, metalness: 1, roughness: 0.42, clearcoat: 0.3, clearcoatRoughness: 0.4 });
 const logo = buildLogo(logoMat, 10);
+// Brass takes a dimmer share of the room than the rest of the scene, so the key light carves
+// highlights and the flutes fall into warm shadow as in the product photos. (Without its own
+// envMap a material's envMapIntensity is replaced by the scene's, so each gets the texture.)
+const brassify = (m) => { m.envMap = scene.environment; m.envMapIntensity = BRASS_ENV; };
+watch.group.traverse((o) => o.material?.metalness === 1 && brassify(o.material));
+brassify(brassLinkMat);
+brassify(logoMat);
 logo.scale.setScalar(LOGO_S);
 logo.visible = false;
 scene.add(logo);
@@ -234,10 +244,13 @@ scene.add(logoWire);
 
 // ---------------------------------------------------------------- the choreography
 // Camera rig: always looks at `target`; distance, azimuth (deg), elevation (deg), roll (deg).
+// The dive into the dial: an even push from the hands settling at 10:10 until the dial fills
+// the frame (distance under 27 mm), where the canvas dissolves into the olive stage.
+const DIVE_A = B(25.4), DIVE_B = B(27.3), DIVE_FADE = B(26.9);
 const camD = track([
   [B(9.3), 150], [B(10.0), 150], [B(11), 178, E.io2], [B(12), 640, E.io3], [B(13.75), 662, E.lin], [B(14.6), 320, E.in3],
   [B(16), 240], [B(17.8), 210, E.out3], [B(18.2), 215], [B(21), 345, E.io3], [B(25.2), 330, E.lin],
-  [B(26), 300, E.io2], [B(27.3), 18, E.in3], [B(27.5), 270, E.lin], [B(28), 270], [B(32), 262, E.lin], [B(33.8), 178, E.io3],
+  [DIVE_A, 328, E.lin], [DIVE_B, 18, E.io2, "log"], [B(27.5), 270, E.lin], [B(28), 270], [B(32), 262, E.lin], [B(33.8), 178, E.io3],
   [B(36), 168, E.lin], [B(37.4), 262, E.io3], [B(40), 255, E.lin], [B(41), 300, E.io2], [B(43), 330, E.lin],
   [B(44.4), 200, E.io3], [B(46), 200], [B(47.2), 597, E.io3], [B(52.5), 597], [B(53.6), 215, E.io3], [B(59.6), 200, E.lin], [B(64), 200],
 ]);
@@ -251,7 +264,7 @@ const camEl = track([
 // Camera target offset (mm): dive aims at the empty lower dial; macro aims at the bezel.
 const camTarget = track([
   [B(0), [0, 0, 0]], [B(10), [0, 0, 0]], [B(11), [-12.5, -16.5, 0], E.io3], [B(13.75), [-12.5, -16.5, 0]],
-  [B(14.6), [0, 0, 0], E.in3], [B(26.2), [0, 0, 0]], [B(27.3), [0, -8, -1], E.in3], [B(27.5), [0, 0, 0], E.lin],
+  [B(14.6), [0, 0, 0], E.in3], [DIVE_A, [0, 0, 0]], [DIVE_B, [0, -5, -1], E.io2], [B(27.5), [0, 0, 0], E.lin],
   [B(32), [0, 0, 0]], [B(33.8), [3, 3, 2], E.io3], [B(36), [3, 3, 2]], [B(37.4), [0, 0, 0], E.io3],
 ]);
 
@@ -401,6 +414,7 @@ function burstPose(t) {
   if (logoOn) {
     const c = prog(t, LOCK, LOCK + 0.6, E.out2);
     logoMat.color.copy(BRASS).lerp(OLIVE, c);
+    logoMat.envMapIntensity = BRASS_ENV + (1 - BRASS_ENV) * c; // the olive lockup keeps the full room
     logoMat.metalness = lerp(1, 0.08, c);
     logoMat.roughness = lerp(0.42, 0.5, c);
     // Settle face-on with a little life; slide left for the wordmark.
@@ -432,7 +446,7 @@ function wirePose(t) {
 
 // Which frames get motion blur, and how many sub-frame samples.
 const BLUR = [
-  [B(13.7), B(14.7), 6], [WATCH_IN, WATCH_LAND - 0.25, 7], [B(18.2), B(19.4), 4], [B(26.5), B(27.4), 6],
+  [B(13.7), B(14.7), 6], [WATCH_IN, WATCH_LAND - 0.25, 7], [B(18.2), B(19.4), 4], [B(25.9), DIVE_B, 10],
   [B(30.1), B(31.2), 6], [B(40.3), B(41.3), 4], [BURST - 0.05, BURST + 0.55, 8], [B(43.6), LOCK + 0.05, 4],
   [B(43), B(43.9), 6],
 ];
@@ -442,6 +456,7 @@ function samplesAt(t) { let k = 1; for (const [a, b, n] of BLUR) if (t >= a && t
 const dom = {
   dot: document.getElementById("dot"),
   olive: document.getElementById("olive"),
+  gl: document.getElementById("gl"),
 };
 const pxPerMm = (d) => H / (2 * d * TAN);
 function project(v) {
@@ -477,11 +492,15 @@ function applyDom(t) {
   // Olive stage: its circular edge matches the dial on the way in (dive) and out (collapse).
   const dialR = 13.45;
   let r = 0;
-  if (t >= B(26.6) && t < B(40.8)) {
-    if (t < B(27.3)) {
-      const [cx, cy] = project(new THREE.Vector3(0, 0, -1).applyMatrix4(watchRoot.matrixWorld));
-      const px = dialR * pxPerMm(Math.max(8, cam.position.distanceTo(new THREE.Vector3(0, 0, -1))));
-      r = px; dom.olive.style.setProperty("--cx", `${cx}px`); dom.olive.style.setProperty("--cy", `${cy}px`);
+  if (t >= B(26.2) && t < B(40.8)) {
+    if (t < DIVE_B) {
+      // The dial's own circle, projected from the dial plane (not the case centre, which sits
+      // deeper): its centre and the farthest of four rim points, so it always covers the dial.
+      const at = (x, y) => project(new THREE.Vector3(x, y, 7.8).applyMatrix4(watch.head.matrixWorld));
+      const [cx, cy] = at(0, 0);
+      const rim = [at(dialR, 0), at(-dialR, 0), at(0, dialR), at(0, -dialR)];
+      r = Math.max(...rim.map(([x, y]) => Math.hypot(x - cx, y - cy)));
+      dom.olive.style.setProperty("--cx", `${cx}px`); dom.olive.style.setProperty("--cy", `${cy}px`);
     } else if (t < B(40)) r = 2600;
     else {
       const d = cam.position.length();
@@ -492,6 +511,8 @@ function applyDom(t) {
   }
   dom.olive.style.setProperty("--r", `${Math.max(0, r)}px`);
   dom.olive.style.opacity = r > 0 ? 1 : 0;
+  // Once the dial fills the frame, the 3D dissolves into the olive stage behind it.
+  dom.gl.style.opacity = win(t, DIVE_FADE, DIVE_B) ? 1 - prog(t, DIVE_FADE, DIVE_B, E.io2) : 1;
 }
 
 // ---------------------------------------------------------------- render
@@ -513,6 +534,7 @@ function renderAt(t) {
     renderer.render(quadScene, quadCam);
   }
   pose(t);
+  scene.updateMatrixWorld(); // the DOM projections below read this exact pose
   applyDom(t);
   renderer.setRenderTarget(null);
   outMat.uniforms.tex.value = accum.texture;

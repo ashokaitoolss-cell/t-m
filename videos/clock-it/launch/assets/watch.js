@@ -13,8 +13,8 @@ export const COLORS = {
   olive: 0x596047,
   brass: 0xac9167,
   oxide: 0x913f3b,
-  dial: 0x434433, // dial olive as photographed: a shade under the brand olive
-  brassMetal: 0xb1a085, // brand brass, desaturated so the rendered metal matches the photos
+  dial: 0x403f2c, // dial olive as photographed: a khaki shade under the brand olive
+  brassMetal: 0xbc9c71, // brand brass, desaturated so the rendered metal matches the photos
 };
 
 // A seeded, repeatable "brushed metal" texture: fine streaks along U. Used as a roughness
@@ -42,7 +42,9 @@ function brushed() {
   return brushedTex;
 }
 
-// Brushed brass: fully metallic, satin, brushed in one direction.
+// Brushed brass: fully metallic, satin, brushed in one direction. The room reflection is
+// kept low so the key light carves highlights and the flutes fall into warm shadow.
+export const BRASS_ENV = 0.7;
 export function brassMaterial(opts = {}) {
   const map = brushed().clone();
   map.needsUpdate = true;
@@ -54,10 +56,12 @@ export function brassMaterial(opts = {}) {
     roughness: opts.roughness ?? 0.5,
     roughnessMap: opts.brush === false ? null : map,
     bumpMap: null,
-    anisotropy: opts.anisotropy ?? 0.35,
+    // Anisotropy only where there is brushing: on the fine flutes its derivative-based
+    // tangents can go degenerate and shade a stray pixel NaN.
+    anisotropy: opts.brush === false ? 0 : opts.anisotropy ?? 0.35,
     anisotropyRotation: opts.anisotropyRotation ?? 0,
     vertexColors: !!opts.vertexColors,
-    envMapIntensity: 1.0,
+    envMapIntensity: opts.envMapIntensity ?? BRASS_ENV,
   });
 }
 
@@ -184,8 +188,8 @@ export function linkGeometry(spec) {
 export function buildWatch(opts = {}) {
   const links = opts.links ?? 7;
   const group = new THREE.Group();
-  const brass = brassMaterial({ brush: false, vertexColors: true, roughness: 0.42 });
-  const brassPlain = brassMaterial({ brush: false, roughness: 0.42 });
+  const brass = brassMaterial({ brush: false, vertexColors: true, roughness: 0.5 });
+  const brassPlain = brassMaterial({ brush: false, roughness: 0.5 });
   const brassLink = brassMaterial({ repeat: [1, 2.5] });
 
   const head = new THREE.Group();
@@ -196,7 +200,7 @@ export function buildWatch(opts = {}) {
 
   const dial = new THREE.Mesh(
     new THREE.CylinderGeometry(13.45, 13.45, 0.4, 128),
-    new THREE.MeshPhysicalMaterial({ color: COLORS.dial, roughness: 0.42, metalness: 0.25, clearcoat: 0.35, clearcoatRoughness: 0.45 }),
+    new THREE.MeshPhysicalMaterial({ color: COLORS.dial, roughness: 0.55, metalness: 0, clearcoat: 0.1, clearcoatRoughness: 0.5 }),
   );
   dial.rotation.x = Math.PI / 2;
   dial.position.z = 7.8;
@@ -229,7 +233,7 @@ export function buildWatch(opts = {}) {
   // Crystal: a faint reflective disc, barely visible, as on a real watch.
   const crystal = new THREE.Mesh(
     new THREE.CylinderGeometry(14.15, 14.15, 0.2, 128),
-    new THREE.MeshPhysicalMaterial({ color: 0xffffff, roughness: 0.04, metalness: 0, transparent: true, opacity: 0.07, clearcoat: 1, envMapIntensity: 1.6 }),
+    new THREE.MeshPhysicalMaterial({ color: 0x000000, roughness: 0.04, metalness: 0, transparent: true, opacity: 0.07, clearcoat: 1, envMapIntensity: 1.6 }),
   );
   crystal.rotation.x = Math.PI / 2;
   crystal.position.z = 9.25;
