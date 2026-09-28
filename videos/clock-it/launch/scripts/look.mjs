@@ -12,7 +12,11 @@ import { extname, join } from "node:path";
 const { chromium } = createRequire(import.meta.url)("playwright");
 
 const root = new URL("..", import.meta.url).pathname;
-const [out, ...times] = process.argv.slice(2);
+// Times in seconds, or --frames F0:N for exact 60 fps frames saved as frame-<n>.png.
+const [out, ...rest] = process.argv.slice(2);
+const fr = rest[0] === "--frames" ? rest[1].split(":").map(Number) : null;
+const times = fr ? Array.from({ length: fr[1] }, (_, i) => (fr[0] + i) / 60) : rest.map(Number);
+const names = fr ? Array.from({ length: fr[1] }, (_, i) => `frame-${String(fr[0] + i).padStart(5, "0")}.png`) : times.map((t) => `look-${t.toFixed(2)}.png`);
 const types = { ".html": "text/html", ".js": "text/javascript", ".mjs": "text/javascript", ".css": "text/css", ".woff2": "font/woff2", ".wav": "audio/wav", ".json": "application/json", ".png": "image/png" };
 const server = createServer(async (req, res) => {
   try {
@@ -33,12 +37,12 @@ page.on("pageerror", (e) => console.error("pageerror:", e.message));
 await page.goto(`http://127.0.0.1:${port}/index.html`);
 await page.waitForFunction(() => window.__timelines?.main && window.__renderAt, null, { timeout: 60000 });
 await page.evaluate(() => document.fonts.ready);
-for (const t of times.map(Number)) {
+for (const [i, t] of times.entries()) {
   await page.evaluate(async (t) => {
     window.__timelines.main.seek(t, false);
     await window.__renderAt(t);
   }, t);
-  const f = join(out, `look-${t.toFixed(2)}.png`);
+  const f = join(out, names[i]);
   await page.screenshot({ path: f, timeout: 180000 });
   console.log(f);
 }
