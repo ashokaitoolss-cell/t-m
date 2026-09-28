@@ -98,7 +98,7 @@
   }
   // Particles: small outline shapes that drift out from the hero and fade.
   let partN = 0;
-  function particles(t, r0, color, count = 8, cx = CX, cy = CY) {
+  function particles(t, r0, color, count = 8, cx = CX, cy = CY, fade = 0.8) {
     const g = $("particles");
     const shapes = ["M -7 5 L 0 -7 L 7 5 Z", "M 0 -8 L 8 0 L 0 8 L -8 0 Z", "M -6 0 A 6 6 0 1 0 6 0 A 6 6 0 1 0 -6 0", "M -7 0 L 7 0 M 0 -7 L 0 7"];
     for (let i = 0; i < count; i++) {
@@ -113,7 +113,8 @@
       tl.fromTo(p, { x: cx + Math.cos(a) * r0, y: cy + Math.sin(a) * r0, rotation: 0, scale: 0.4, opacity: 0 },
         { x: cx + Math.cos(a) * r1, y: cy + Math.sin(a) * r1, rotation: (hash(k + 3) - 0.5) * 240, scale: 1, opacity: 0.85,
           duration: 0.6, ease: "power3.out", immediateRender: false }, t + hash(k + 5) * 0.12);
-      tl.to(p, { opacity: 0, duration: 0.7, ease: "power1.in" }, t + 0.8 + hash(k + 7) * 0.3);
+      const f = fade / 0.8;
+      tl.to(p, { opacity: 0, duration: 0.7 * f, ease: "power1.in" }, t + fade + hash(k + 7) * 0.3 * f);
     }
   }
 
@@ -236,7 +237,26 @@
     tl.set(dot, { x: CX, y: CY, scale: 0.9, opacity: 0 }, B(42.9));
     tl.to(dot, { opacity: 1, duration: 0.12, ease: "none" }, B(43.05));
     rings(B(45), 200, 380, OLIVE, 2);
-    particles(B(45), 220, OLIVE, 6);
+    particles(B(45), 220, OLIVE, 6, CX, CY, 0.35); // gone before the wordmark arrives
+
+    // A ballistic hop: x glides while y rises and falls on gravity curves. x arrives a beat
+    // early so the last of the fall is straight down (never across a letter), then a squash
+    // and two small rebounds in place make the contact tactile. Lands at t + dur.
+    const hop = (t, x1, yLand, yPeak, dur, s) => {
+      tl.to(dot, { x: x1, duration: dur * 0.85, ease: "sine.inOut" }, t);
+      tl.to(dot, { keyframes: [
+        { y: yPeak, duration: dur * 0.45, ease: "power2.out" },
+        { y: yLand, duration: dur * 0.55, ease: "power2.in" },
+        { y: yLand - 14, duration: 0.09, ease: "power2.out" },
+        { y: yLand, duration: 0.09, ease: "power2.in" },
+        { y: yLand - 4, duration: 0.05, ease: "power2.out" },
+        { y: yLand, duration: 0.05, ease: "power2.in" },
+      ] }, t);
+      tl.to(dot, { keyframes: [
+        { scaleX: s * 1.22, scaleY: s * 0.8, duration: 0.05, ease: "power2.out" },
+        { scaleX: s, scaleY: s, duration: 0.4, ease: "elastic.out(1, 0.45)" },
+      ] }, t + dur);
+    };
 
     const mark = $("mark"), bang = $("bang"), tag = $("tagline");
     const mSize = 150, mbl = baseline(mSize);
@@ -249,10 +269,9 @@
     const baseY = CY + 50;
     gsap.set(bang, { x: bangX, y: baseY - 108, scaleY: 0, transformOrigin: "50% 100%", opacity: 1 });
     tl.to(bang, { scaleY: 1, duration: 0.45, ease: "back.out(2)" }, B(47.1));
-    // The dot hops from the logo's interval into place under the bar.
-    tl.to(dot, { x: bangX + 5.5, duration: 0.8, ease: "power3.inOut" }, B(46.2));
-    tl.to(dot, { keyframes: [{ y: CY - 90, duration: 0.4, ease: "power2.out" }, { y: baseY - 12, duration: 0.4, ease: "bounce.out" }] }, B(46.2));
+    // The dot hops from the logo's interval over the wordmark into place under the bar.
     tl.to(dot, { scale: 1.25, duration: 0.3, ease: "power2.out" }, B(46.6));
+    hop(B(46.2), bangX + 5.5, baseY - 12, CY - 210, 0.55, 1.25);
 
     const tbl = baseline(40, "Inter", 400);
     gsap.set(tag, { x: markLeft + 6, y: baseY + 54 - tbl + 22, opacity: 0 });
@@ -297,9 +316,8 @@
     tl.set(dot, { x: CX, y: CY, scale: 0, opacity: 1 }, B(59.2));
     tl.to(dot, { scale: 1.15, duration: 0.3, ease: "back.out(3)" }, B(59.3));
     wf.spans.forEach((s, i) => wordIn(B(59.6) + i * 0.2, s, { dy: 34, from: i === 3 ? OLIVE : CHARCOAL, to: i === 3 ? OLIVE : CHARCOAL, blur: 10, dur: 0.5 }));
-    // The dot hops over the words (never across them) and lands as the full stop.
-    tl.to(dot, { x: finLeft + wf.total + 14 + 10, duration: 0.8, ease: "power3.inOut" }, B(59.6) + 0.4);
-    tl.to(dot, { keyframes: [{ y: CY - 120, duration: 0.4, ease: "power2.out" }, { y: CY + 34 - 12, duration: 0.4, ease: "bounce.out" }] }, B(59.6) + 0.4);
+    // The dot rises out of the line as the words arrive, arcs over them and lands as the full stop.
+    hop(B(59.6) - 0.05, finLeft + wf.total + 14 + 10, CY + 34 - 12, CY - 200, 1.0, 1.15);
     const sp = $("smallprint");
     sp.textContent = "Clock It! is a concept brand. Every part of it was made with AI.";
     const spW = width(sp.textContent, '400 30px "Inter"');

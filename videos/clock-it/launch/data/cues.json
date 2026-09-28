@@ -522,13 +522,13 @@
    "gain": 0.35
   },
   {
-   "start": 28.265,
+   "start": 28.27,
    "dur": 0.25,
    "name": "clinkB",
    "gain": 0.5
   },
   {
-   "start": 28.41,
+   "start": 28.45,
    "dur": 0.12,
    "name": "tick",
    "gain": 0.2
@@ -538,6 +538,12 @@
    "dur": 0.65,
    "name": "air2",
    "gain": 0.3
+  },
+  {
+   "start": 28.55,
+   "dur": 0.12,
+   "name": "tick",
+   "gain": 0.08
   },
   {
    "start": 30.24,
@@ -630,16 +636,22 @@
    "gain": 0.4
   },
   {
-   "start": 36.705,
+   "start": 36.71,
    "dur": 0.25,
    "name": "clinkB",
    "gain": 0.45
   },
   {
-   "start": 36.85,
+   "start": 36.89,
    "dur": 0.12,
    "name": "tick",
    "gain": 0.2
+  },
+  {
+   "start": 36.99,
+   "dur": 0.12,
+   "name": "tick",
+   "gain": 0.08
   }
  ]
 }
