@@ -35,6 +35,8 @@ scene.add(w.group);
 
 if (shot === "front") {
   cam.position.set(0, 0, 330); cam.lookAt(0, 0, 0);
+} else if (shot === "t-front") {
+  cam.position.set(0, 0, 500); cam.lookAt(0, 0, 0);
 } else if (shot === "macro") {
   w.group.rotation.y = -0.62; w.group.rotation.x = 0.08;
   cam.position.set(0, 0, 118); cam.lookAt(0, 0, 0);
@@ -46,6 +48,17 @@ if (shot === "front") {
   w.group.position.set(0, 0, 0);
   pivot.rotation.set(0.35, -1.25, 0);           // dial turns to face right, loop recedes left
   cam.position.set(0, 0, 300); cam.lookAt(-18, 0, 0);
+} else if (shot === "profile") {
+  // Pure side view, crown towards the camera, dial facing left (turnaround panel 3).
+  cam.position.set(300, 0, 4); cam.up.set(0, 1, 0); cam.lookAt(0, 0, 4);
+} else if (shot === "q34") {
+  // Three-quarter view from the right (turnaround panel 2).
+  w.group.rotation.y = -0.72;
+  cam.position.set(0, 0, 230); cam.lookAt(0, 0, 0);
+} else if (shot === "flat") {
+  // Lying flat, bracelet left to right, seen from above and in front (panel 4).
+  w.group.rotation.set(-0.5, 0, Math.PI / 2);
+  cam.position.set(0, 0, 560); cam.lookAt(0, 0, 0);
 } else if (shot === "table") {
   w.group.rotation.z = Math.PI / 2;
   w.group.rotation.x = -1.15;
