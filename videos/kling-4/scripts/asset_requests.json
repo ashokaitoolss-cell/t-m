@@ -193,174 +193,30 @@
  },
  {
   "index": 16,
-  "tag": "@PROJECTOR",
-  "part": "hero",
+  "tag": "@CINEMA_EXT_NIGHT",
+  "part": "1.1 wide · marquee dark",
   "params": {
    "model": "soul_cinematic",
-   "aspect_ratio": "16:9",
+   "aspect_ratio": "21:9",
    "quality": "2k",
-   "prompt": "Museum object photograph, the whole object in frame with space around it, seen three-quarter from slightly above: a heavy mid-century cinema film projector standing on a cast-iron pedestal, about the height of a man. Dark green-grey enamel chipped to bare iron at the edges; a tall lamp house at the back with vent louvres and a short chimney; two large round spoked metal reels on arms, one above and one below, the upper reel loaded with dark film; the film path running down through a gate beside a brass lens barrel that points forward; oil stains and paint worn bright on the handles. Flat mid-grey seamless ground, even neutral grey, no seam, no gradient, no floor line. One broad soft source from camera-left and slightly above, a soft shadow falling right, no rim light, no hair light. The machine reads matte at its true colour, never cool-shifted by the grey. Real 65mm film capture (Vision3 500T), fine organic grain, softer than digital, NOT digital-clean. OVER-real: chipped enamel, bare iron, oil film, worn brass, dust in the vent louvres. If any surface looks clean, smooth, plastic, CGI or rendered — WRONG. NOT: text, labels, logos, brand names, watermark, captions, frame borders, mannequin, furniture, CGI, 3D render, plastic sheen, glossy, digital clean, people, hands, modern equipment, digital projector, other objects.",
+   "prompt": "Location plate, no people. Night, steady rain. A wide frame from across a narrow cobbled street, taken from under the dripping scalloped edge of a shop awning that crosses the top of frame. A small single-screen cinema fills the right two-thirds: a 1950s rendered facade, dark; a projecting marquee with rows of unlit bulbs and a blank letter board; dark glass front doors; a narrow side door at the far right edge. A single street lamp stands on the left third. The street is empty: no cars, no shop signs, no lit windows. Horizon a few degrees off level. LIGHT — PRACTICAL LIGHT ONLY, NIGHT, DIM & COLD (KEY): the only light is the single cold blue-white street lamp on the left; the rain shows only inside its cone; the cobbles shine wet in its pool and go black beyond it; the cinema facade is barely lifted out of the dark. Deep shadow, real falloff, strong chiaroscuro, low-key, underexposed. NO bright light, NO studio light, NO flat even light, NO fill light, NO daylight, NO milky blacks. Style: a real photographed frame of 35mm FILM shot through a vintage anamorphic lens, aspect ratio 21:9 — indistinguishable from a still lifted out of a modern photochemical arthouse feature. Cinematic, filmic, MEGA-REAL, NOT a render, NOT 3D, NOT AI-CGI, NOT digital-clean. Absolute live-action naturalism. NOBODY can tell this is AI. VINTAGE ANAMORPHIC LENS (KEY): a 35mm film camera with an old 2x anamorphic prime — 21:9 aspect ratio, strong squeeze, gentle barrel distortion and softness toward the edges, vertical oval bokeh, shallow cinemascope focus, low contrast with a faint veil in the blacks; heavy organic film grain, halation around the practical lights, slight softness — NOT over-sharpened, NOT digital-clean, NOT crisp AI look. No lens flares, no light streaks, no floating bokeh orbs, no glow overlays. The lamp stays a small contained source. HYPER-REAL CAPTURE: real 35mm film (Vision3 500T pushed one stop), heavy organic grain, softer than digital, MEGA-REAL. OVER-real: wet cobbles, rain streaks in the lamp cone, peeling render, rust on the marquee edge, water beading on the unlit bulbs. If any surface looks clean, smooth, plastic, CGI or rendered — WRONG. COLOUR: graphite and deep cold blue everywhere; warm amber only where a person made the light by hand — nowhere in this frame; nobody has made a light here yet. No teal-and-orange grade, no saturated colour, no HDR. NOT: centred, symmetrical, bright light, daylight, flat even light, milky blacks, plastic skin, waxy, smooth skin, clean faces, modern clothes, lens flare, subtitles, captions, on-screen text, watermark, over-sharpened, clean 4K, digital clean, CGI, 3D render, doll, HDR glow, warped hands, extra fingers, teal-and-orange grade, sodium-orange streetlight, light rays from nowhere, modern cars, phones, neon, letters, people, cars, lit windows, lit marquee.",
    "folder_id": "bacdfb1d-ac88-4446-a945-24b7dc558d01"
   }
  },
  {
   "index": 17,
-  "tag": "@PROJECTOR",
-  "part": "hero",
+  "tag": "@CINEMA_EXT_NIGHT",
+  "part": "1.1 wide · marquee dark",
   "params": {
    "model": "soul_cinematic",
-   "aspect_ratio": "16:9",
+   "aspect_ratio": "21:9",
    "quality": "2k",
-   "prompt": "Museum object photograph, the whole object in frame with space around it, seen three-quarter from slightly above: a heavy mid-century cinema film projector standing on a cast-iron pedestal, about the height of a man. Dark green-grey enamel chipped to bare iron at the edges; a tall lamp house at the back with vent louvres and a short chimney; two large round spoked metal reels on arms, one above and one below, the upper reel loaded with dark film; the film path running down through a gate beside a brass lens barrel that points forward; oil stains and paint worn bright on the handles. Flat mid-grey seamless ground, even neutral grey, no seam, no gradient, no floor line. One broad soft source from camera-left and slightly above, a soft shadow falling right, no rim light, no hair light. The machine reads matte at its true colour, never cool-shifted by the grey. Real 65mm film capture (Vision3 500T), fine organic grain, softer than digital, NOT digital-clean. OVER-real: chipped enamel, bare iron, oil film, worn brass, dust in the vent louvres. If any surface looks clean, smooth, plastic, CGI or rendered — WRONG. NOT: text, labels, logos, brand names, watermark, captions, frame borders, mannequin, furniture, CGI, 3D render, plastic sheen, glossy, digital clean, people, hands, modern equipment, digital projector, other objects.",
+   "prompt": "Location plate, no people. Night, steady rain. A wide frame from across a narrow cobbled street, taken from under the dripping scalloped edge of a shop awning that crosses the top of frame. A small single-screen cinema fills the right two-thirds: a 1950s rendered facade, dark; a projecting marquee with rows of unlit bulbs and a blank letter board; dark glass front doors; a narrow side door at the far right edge. A single street lamp stands on the left third. The street is empty: no cars, no shop signs, no lit windows. Horizon a few degrees off level. LIGHT — PRACTICAL LIGHT ONLY, NIGHT, DIM & COLD (KEY): the only light is the single cold blue-white street lamp on the left; the rain shows only inside its cone; the cobbles shine wet in its pool and go black beyond it; the cinema facade is barely lifted out of the dark. Deep shadow, real falloff, strong chiaroscuro, low-key, underexposed. NO bright light, NO studio light, NO flat even light, NO fill light, NO daylight, NO milky blacks. Style: a real photographed frame of 35mm FILM shot through a vintage anamorphic lens, aspect ratio 21:9 — indistinguishable from a still lifted out of a modern photochemical arthouse feature. Cinematic, filmic, MEGA-REAL, NOT a render, NOT 3D, NOT AI-CGI, NOT digital-clean. Absolute live-action naturalism. NOBODY can tell this is AI. VINTAGE ANAMORPHIC LENS (KEY): a 35mm film camera with an old 2x anamorphic prime — 21:9 aspect ratio, strong squeeze, gentle barrel distortion and softness toward the edges, vertical oval bokeh, shallow cinemascope focus, low contrast with a faint veil in the blacks; heavy organic film grain, halation around the practical lights, slight softness — NOT over-sharpened, NOT digital-clean, NOT crisp AI look. No lens flares, no light streaks, no floating bokeh orbs, no glow overlays. The lamp stays a small contained source. HYPER-REAL CAPTURE: real 35mm film (Vision3 500T pushed one stop), heavy organic grain, softer than digital, MEGA-REAL. OVER-real: wet cobbles, rain streaks in the lamp cone, peeling render, rust on the marquee edge, water beading on the unlit bulbs. If any surface looks clean, smooth, plastic, CGI or rendered — WRONG. COLOUR: graphite and deep cold blue everywhere; warm amber only where a person made the light by hand — nowhere in this frame; nobody has made a light here yet. No teal-and-orange grade, no saturated colour, no HDR. NOT: centred, symmetrical, bright light, daylight, flat even light, milky blacks, plastic skin, waxy, smooth skin, clean faces, modern clothes, lens flare, subtitles, captions, on-screen text, watermark, over-sharpened, clean 4K, digital clean, CGI, 3D render, doll, HDR glow, warped hands, extra fingers, teal-and-orange grade, sodium-orange streetlight, light rays from nowhere, modern cars, phones, neon, letters, people, cars, lit windows, lit marquee.",
    "folder_id": "bacdfb1d-ac88-4446-a945-24b7dc558d01"
   }
  },
  {
   "index": 18,
-  "tag": "@PROJECTOR_GATE",
-  "part": "threading detail",
-  "params": {
-   "model": "soul_cinematic",
-   "aspect_ratio": "16:9",
-   "quality": "2k",
-   "prompt": "Close detail photograph of the threading side of an old cinema film projector: a brass gate with a small rectangular aperture, two toothed sprocket wheels, and a strip of dark 35mm film threaded down through the gate and round the sprockets in two loose loops, the perforations catching the light. Oil on the steel, paint worn bright where fingers have threaded it for fifty years. LIGHT — PRACTICAL LIGHT ONLY, NIGHT, DIM & WARM (KEY): the only light is one bare tungsten bulb above and to camera-right; it rakes across the sprocket teeth and the brass gate; the rest of the machine falls into black. Deep shadow, real falloff, strong chiaroscuro, low-key, underexposed. NO bright light, NO studio light, NO flat even light, NO fill light, NO daylight, NO milky blacks. Style: a real photographed frame of 65mm anamorphic FILM — indistinguishable from a still lifted out of a modern photochemical arthouse feature. Cinematic, filmic, MEGA-REAL, NOT a render, NOT 3D, NOT AI-CGI, NOT digital-clean. Absolute live-action naturalism. NOBODY can tell this is AI. HARD ANAMORPHIC LENS (KEY): true 65mm ANAMORPHIC — strong squeeze, edge distortion, oval bokeh, shallow cinemascope focus, anamorphic breathing; heavy organic film grain, halation, slight softness — NOT over-sharpened, NOT digital-clean, NOT crisp AI look. No lens flares, no light streaks, no floating bokeh orbs, no glow overlays. The bulb stays out of frame. HYPER-REAL CAPTURE: real 65mm film (Vision3 500T pushed), heavy organic grain, softer than digital, MEGA-REAL. OVER-real: sprocket teeth, film perforations, oil on steel, worn brass, dust. If any surface looks clean, smooth, plastic, CGI or rendered — WRONG. COLOUR: graphite and deep cold blue everywhere; warm amber only where a person made the light by hand — the warm light of the bulb on the metal. No teal-and-orange grade, no saturated colour, no HDR. NOT: centred, symmetrical, bright light, daylight, flat even light, milky blacks, plastic skin, waxy, smooth skin, clean faces, modern clothes, lens flare, subtitles, captions, on-screen text, watermark, over-sharpened, clean 4K, digital clean, CGI, 3D render, doll, HDR glow, warped hands, extra fingers, teal-and-orange grade, sodium-orange streetlight, light rays from nowhere, modern cars, phones, neon, letters, people, hands, modern equipment, digital parts.",
-   "folder_id": "bacdfb1d-ac88-4446-a945-24b7dc558d01"
-  }
- },
- {
-  "index": 19,
-  "tag": "@PROJECTOR_GATE",
-  "part": "threading detail",
-  "params": {
-   "model": "soul_cinematic",
-   "aspect_ratio": "16:9",
-   "quality": "2k",
-   "prompt": "Close detail photograph of the threading side of an old cinema film projector: a brass gate with a small rectangular aperture, two toothed sprocket wheels, and a strip of dark 35mm film threaded down through the gate and round the sprockets in two loose loops, the perforations catching the light. Oil on the steel, paint worn bright where fingers have threaded it for fifty years. LIGHT — PRACTICAL LIGHT ONLY, NIGHT, DIM & WARM (KEY): the only light is one bare tungsten bulb above and to camera-right; it rakes across the sprocket teeth and the brass gate; the rest of the machine falls into black. Deep shadow, real falloff, strong chiaroscuro, low-key, underexposed. NO bright light, NO studio light, NO flat even light, NO fill light, NO daylight, NO milky blacks. Style: a real photographed frame of 65mm anamorphic FILM — indistinguishable from a still lifted out of a modern photochemical arthouse feature. Cinematic, filmic, MEGA-REAL, NOT a render, NOT 3D, NOT AI-CGI, NOT digital-clean. Absolute live-action naturalism. NOBODY can tell this is AI. HARD ANAMORPHIC LENS (KEY): true 65mm ANAMORPHIC — strong squeeze, edge distortion, oval bokeh, shallow cinemascope focus, anamorphic breathing; heavy organic film grain, halation, slight softness — NOT over-sharpened, NOT digital-clean, NOT crisp AI look. No lens flares, no light streaks, no floating bokeh orbs, no glow overlays. The bulb stays out of frame. HYPER-REAL CAPTURE: real 65mm film (Vision3 500T pushed), heavy organic grain, softer than digital, MEGA-REAL. OVER-real: sprocket teeth, film perforations, oil on steel, worn brass, dust. If any surface looks clean, smooth, plastic, CGI or rendered — WRONG. COLOUR: graphite and deep cold blue everywhere; warm amber only where a person made the light by hand — the warm light of the bulb on the metal. No teal-and-orange grade, no saturated colour, no HDR. NOT: centred, symmetrical, bright light, daylight, flat even light, milky blacks, plastic skin, waxy, smooth skin, clean faces, modern clothes, lens flare, subtitles, captions, on-screen text, watermark, over-sharpened, clean 4K, digital clean, CGI, 3D render, doll, HDR glow, warped hands, extra fingers, teal-and-orange grade, sodium-orange streetlight, light rays from nowhere, modern cars, phones, neon, letters, people, hands, modern equipment, digital parts.",
-   "folder_id": "bacdfb1d-ac88-4446-a945-24b7dc558d01"
-  }
- },
- {
-  "index": 20,
-  "tag": "@FILM_CANS",
-  "part": "old cans + the new can",
-  "params": {
-   "model": "soul_cinematic",
-   "aspect_ratio": "16:9",
-   "quality": "2k",
-   "prompt": "Museum object photograph, seen three-quarter from slightly above: a leaning stack of old round metal film cans, dented, rusted at the rims, paint scratched and worn, and beside them one new film can, clean and unscratched bright silver aluminium that catches the light. The new can's paper label is on the side turned away from the camera, so no writing is visible anywhere. Flat mid-grey seamless ground, even neutral grey, no seam, no gradient, no floor line. One broad soft source from camera-left and slightly above, a soft shadow falling right, no rim light, no hair light. The metal reads matte at its true colour, never cool-shifted by the grey. Real 65mm film capture (Vision3 500T), fine organic grain, softer than digital, NOT digital-clean. OVER-real: rust blooms, dents, scratched paint, the flawless bright aluminium of the one new can. If any surface looks clean, smooth, plastic, CGI or rendered — WRONG. NOT: text, labels, logos, brand names, watermark, captions, frame borders, mannequin, furniture, CGI, 3D render, plastic sheen, glossy, digital clean, readable labels, people, hands, other objects.",
-   "folder_id": "bacdfb1d-ac88-4446-a945-24b7dc558d01"
-  }
- },
- {
-  "index": 21,
-  "tag": "@FILM_CANS",
-  "part": "old cans + the new can",
-  "params": {
-   "model": "soul_cinematic",
-   "aspect_ratio": "16:9",
-   "quality": "2k",
-   "prompt": "Museum object photograph, seen three-quarter from slightly above: a leaning stack of old round metal film cans, dented, rusted at the rims, paint scratched and worn, and beside them one new film can, clean and unscratched bright silver aluminium that catches the light. The new can's paper label is on the side turned away from the camera, so no writing is visible anywhere. Flat mid-grey seamless ground, even neutral grey, no seam, no gradient, no floor line. One broad soft source from camera-left and slightly above, a soft shadow falling right, no rim light, no hair light. The metal reads matte at its true colour, never cool-shifted by the grey. Real 65mm film capture (Vision3 500T), fine organic grain, softer than digital, NOT digital-clean. OVER-real: rust blooms, dents, scratched paint, the flawless bright aluminium of the one new can. If any surface looks clean, smooth, plastic, CGI or rendered — WRONG. NOT: text, labels, logos, brand names, watermark, captions, frame borders, mannequin, furniture, CGI, 3D render, plastic sheen, glossy, digital clean, readable labels, people, hands, other objects.",
-   "folder_id": "bacdfb1d-ac88-4446-a945-24b7dc558d01"
-  }
- },
- {
-  "index": 22,
-  "tag": "@SWITCH",
-  "part": "hero",
-  "params": {
-   "model": "soul_cinematic",
-   "aspect_ratio": "16:9",
-   "quality": "2k",
-   "prompt": "Museum object photograph, seen almost straight on and slightly from the side: an old black bakelite rotary switch with a ridged pointer knob, mounted on a rectangular grey-painted steel plate with four slotted screws. The paint is rubbed away to bright metal in a crescent around the knob where thumbs have turned it for decades; two positions marked only by small engraved dots. Flat mid-grey seamless ground, even neutral grey, no seam, no gradient, no floor line. One broad soft source from camera-left and slightly above, a soft shadow falling right, no rim light, no hair light. The switch reads matte at its true colour, never cool-shifted by the grey. Real 65mm film capture (Vision3 500T), fine organic grain, softer than digital, NOT digital-clean. OVER-real: bakelite with fine scratches, rubbed paint, bright worn steel, slotted screw heads. If any surface looks clean, smooth, plastic, CGI or rendered — WRONG. NOT: text, labels, logos, brand names, watermark, captions, frame borders, mannequin, furniture, CGI, 3D render, plastic sheen, glossy, digital clean, engraved words, numbers, people, hands, modern switch, plastic.",
-   "folder_id": "bacdfb1d-ac88-4446-a945-24b7dc558d01"
-  }
- },
- {
-  "index": 23,
-  "tag": "@SWITCH",
-  "part": "hero",
-  "params": {
-   "model": "soul_cinematic",
-   "aspect_ratio": "16:9",
-   "quality": "2k",
-   "prompt": "Museum object photograph, seen almost straight on and slightly from the side: an old black bakelite rotary switch with a ridged pointer knob, mounted on a rectangular grey-painted steel plate with four slotted screws. The paint is rubbed away to bright metal in a crescent around the knob where thumbs have turned it for decades; two positions marked only by small engraved dots. Flat mid-grey seamless ground, even neutral grey, no seam, no gradient, no floor line. One broad soft source from camera-left and slightly above, a soft shadow falling right, no rim light, no hair light. The switch reads matte at its true colour, never cool-shifted by the grey. Real 65mm film capture (Vision3 500T), fine organic grain, softer than digital, NOT digital-clean. OVER-real: bakelite with fine scratches, rubbed paint, bright worn steel, slotted screw heads. If any surface looks clean, smooth, plastic, CGI or rendered — WRONG. NOT: text, labels, logos, brand names, watermark, captions, frame borders, mannequin, furniture, CGI, 3D render, plastic sheen, glossy, digital clean, engraved words, numbers, people, hands, modern switch, plastic.",
-   "folder_id": "bacdfb1d-ac88-4446-a945-24b7dc558d01"
-  }
- },
- {
-  "index": 24,
-  "tag": "@BOOTH_LAMP",
-  "part": "hero",
-  "params": {
-   "model": "soul_cinematic",
-   "aspect_ratio": "16:9",
-   "quality": "2k",
-   "prompt": "Museum object photograph, seen from the side and slightly below: an old industrial work lamp, a bare clear tungsten bulb inside a round steel wire cage, hung from a steel hook on a cloth-covered cable. The bulb is switched on and glows warm; dust on the cage wires. Flat mid-grey seamless ground, even neutral grey, no seam, no gradient, no floor line. One broad soft source from camera-left and slightly above, a soft shadow falling right, no rim light, no hair light. The lamp reads matte at its true colour, never cool-shifted by the grey. Real 65mm film capture (Vision3 500T), fine organic grain, softer than digital, NOT digital-clean. OVER-real: the glowing filament, the dusty wire cage, the frayed cloth cable. If any surface looks clean, smooth, plastic, CGI or rendered — WRONG. NOT: text, labels, logos, brand names, watermark, captions, frame borders, mannequin, furniture, CGI, 3D render, plastic sheen, glossy, digital clean, people, hands, modern LED bulb, other objects.",
-   "folder_id": "bacdfb1d-ac88-4446-a945-24b7dc558d01"
-  }
- },
- {
-  "index": 25,
-  "tag": "@BOOTH_LAMP",
-  "part": "hero",
-  "params": {
-   "model": "soul_cinematic",
-   "aspect_ratio": "16:9",
-   "quality": "2k",
-   "prompt": "Museum object photograph, seen from the side and slightly below: an old industrial work lamp, a bare clear tungsten bulb inside a round steel wire cage, hung from a steel hook on a cloth-covered cable. The bulb is switched on and glows warm; dust on the cage wires. Flat mid-grey seamless ground, even neutral grey, no seam, no gradient, no floor line. One broad soft source from camera-left and slightly above, a soft shadow falling right, no rim light, no hair light. The lamp reads matte at its true colour, never cool-shifted by the grey. Real 65mm film capture (Vision3 500T), fine organic grain, softer than digital, NOT digital-clean. OVER-real: the glowing filament, the dusty wire cage, the frayed cloth cable. If any surface looks clean, smooth, plastic, CGI or rendered — WRONG. NOT: text, labels, logos, brand names, watermark, captions, frame borders, mannequin, furniture, CGI, 3D render, plastic sheen, glossy, digital clean, people, hands, modern LED bulb, other objects.",
-   "folder_id": "bacdfb1d-ac88-4446-a945-24b7dc558d01"
-  }
- },
- {
-  "index": 26,
-  "tag": "@MARQUEE_BULBS",
-  "part": "marquee edge",
-  "params": {
-   "model": "soul_cinematic",
-   "aspect_ratio": "16:9",
-   "quality": "2k",
-   "prompt": "Museum object photograph: a section of an old cinema marquee edge, a painted riveted steel strip carrying a row of clear round incandescent bulbs in brass sockets. The nearest bulb is lit, its filament glowing orange-amber; the rest of the row is unlit. Raindrops bead on the glass. Flat mid-grey seamless ground, even neutral grey, no seam, no gradient, no floor line. One broad soft source from camera-left and slightly above, a soft shadow falling right, no rim light, no hair light. The marquee edge reads matte at its true colour, never cool-shifted by the grey. Real 65mm film capture (Vision3 500T), fine organic grain, softer than digital, NOT digital-clean. OVER-real: rivets, flaking paint, brass sockets, raindrops on glass, the glowing filament. If any surface looks clean, smooth, plastic, CGI or rendered — WRONG. NOT: text, labels, logos, brand names, watermark, captions, frame borders, mannequin, furniture, CGI, 3D render, plastic sheen, glossy, digital clean, letters, people, hands, LED, other objects.",
-   "folder_id": "bacdfb1d-ac88-4446-a945-24b7dc558d01"
-  }
- },
- {
-  "index": 27,
-  "tag": "@MARQUEE_BULBS",
-  "part": "marquee edge",
-  "params": {
-   "model": "soul_cinematic",
-   "aspect_ratio": "16:9",
-   "quality": "2k",
-   "prompt": "Museum object photograph: a section of an old cinema marquee edge, a painted riveted steel strip carrying a row of clear round incandescent bulbs in brass sockets. The nearest bulb is lit, its filament glowing orange-amber; the rest of the row is unlit. Raindrops bead on the glass. Flat mid-grey seamless ground, even neutral grey, no seam, no gradient, no floor line. One broad soft source from camera-left and slightly above, a soft shadow falling right, no rim light, no hair light. The marquee edge reads matte at its true colour, never cool-shifted by the grey. Real 65mm film capture (Vision3 500T), fine organic grain, softer than digital, NOT digital-clean. OVER-real: rivets, flaking paint, brass sockets, raindrops on glass, the glowing filament. If any surface looks clean, smooth, plastic, CGI or rendered — WRONG. NOT: text, labels, logos, brand names, watermark, captions, frame borders, mannequin, furniture, CGI, 3D render, plastic sheen, glossy, digital clean, letters, people, hands, LED, other objects.",
-   "folder_id": "bacdfb1d-ac88-4446-a945-24b7dc558d01"
-  }
- },
- {
-  "index": 28,
-  "tag": "@CINEMA_EXT_NIGHT",
-  "part": "1.1 wide · marquee dark",
-  "params": {
-   "model": "soul_cinematic",
-   "aspect_ratio": "21:9",
-   "quality": "2k",
-   "prompt": "Location plate, no people. Night, steady rain. A wide frame from across a narrow cobbled street, taken from under the dripping scalloped edge of a shop awning that crosses the top of frame. A small single-screen cinema fills the right two-thirds: a 1950s rendered facade, dark; a projecting marquee with rows of unlit bulbs and a blank letter board; dark glass front doors; a narrow side door at the far right edge. A single street lamp stands on the left third. The street is empty: no cars, no shop signs, no lit windows. Horizon a few degrees off level. LIGHT — PRACTICAL LIGHT ONLY, NIGHT, DIM & COLD (KEY): the only light is the single cold blue-white street lamp on the left; the rain shows only inside its cone; the cobbles shine wet in its pool and go black beyond it; the cinema facade is barely lifted out of the dark. Deep shadow, real falloff, strong chiaroscuro, low-key, underexposed. NO bright light, NO studio light, NO flat even light, NO fill light, NO daylight, NO milky blacks. Style: a real photographed frame of 35mm FILM shot through a vintage anamorphic lens, aspect ratio 21:9 — indistinguishable from a still lifted out of a modern photochemical arthouse feature. Cinematic, filmic, MEGA-REAL, NOT a render, NOT 3D, NOT AI-CGI, NOT digital-clean. Absolute live-action naturalism. NOBODY can tell this is AI. VINTAGE ANAMORPHIC LENS (KEY): a 35mm film camera with an old 2x anamorphic prime — 21:9 aspect ratio, strong squeeze, gentle barrel distortion and softness toward the edges, vertical oval bokeh, shallow cinemascope focus, low contrast with a faint veil in the blacks; heavy organic film grain, halation around the practical lights, slight softness — NOT over-sharpened, NOT digital-clean, NOT crisp AI look. No lens flares, no light streaks, no floating bokeh orbs, no glow overlays. The lamp stays a small contained source. HYPER-REAL CAPTURE: real 35mm film (Vision3 500T pushed one stop), heavy organic grain, softer than digital, MEGA-REAL. OVER-real: wet cobbles, rain streaks in the lamp cone, peeling render, rust on the marquee edge, water beading on the unlit bulbs. If any surface looks clean, smooth, plastic, CGI or rendered — WRONG. COLOUR: graphite and deep cold blue everywhere; warm amber only where a person made the light by hand — nowhere in this frame; nobody has made a light here yet. No teal-and-orange grade, no saturated colour, no HDR. NOT: centred, symmetrical, bright light, daylight, flat even light, milky blacks, plastic skin, waxy, smooth skin, clean faces, modern clothes, lens flare, subtitles, captions, on-screen text, watermark, over-sharpened, clean 4K, digital clean, CGI, 3D render, doll, HDR glow, warped hands, extra fingers, teal-and-orange grade, sodium-orange streetlight, light rays from nowhere, modern cars, phones, neon, letters, people, cars, lit windows, lit marquee.",
-   "folder_id": "bacdfb1d-ac88-4446-a945-24b7dc558d01"
-  }
- },
- {
-  "index": 29,
-  "tag": "@CINEMA_EXT_NIGHT",
-  "part": "1.1 wide · marquee dark",
-  "params": {
-   "model": "soul_cinematic",
-   "aspect_ratio": "21:9",
-   "quality": "2k",
-   "prompt": "Location plate, no people. Night, steady rain. A wide frame from across a narrow cobbled street, taken from under the dripping scalloped edge of a shop awning that crosses the top of frame. A small single-screen cinema fills the right two-thirds: a 1950s rendered facade, dark; a projecting marquee with rows of unlit bulbs and a blank letter board; dark glass front doors; a narrow side door at the far right edge. A single street lamp stands on the left third. The street is empty: no cars, no shop signs, no lit windows. Horizon a few degrees off level. LIGHT — PRACTICAL LIGHT ONLY, NIGHT, DIM & COLD (KEY): the only light is the single cold blue-white street lamp on the left; the rain shows only inside its cone; the cobbles shine wet in its pool and go black beyond it; the cinema facade is barely lifted out of the dark. Deep shadow, real falloff, strong chiaroscuro, low-key, underexposed. NO bright light, NO studio light, NO flat even light, NO fill light, NO daylight, NO milky blacks. Style: a real photographed frame of 35mm FILM shot through a vintage anamorphic lens, aspect ratio 21:9 — indistinguishable from a still lifted out of a modern photochemical arthouse feature. Cinematic, filmic, MEGA-REAL, NOT a render, NOT 3D, NOT AI-CGI, NOT digital-clean. Absolute live-action naturalism. NOBODY can tell this is AI. VINTAGE ANAMORPHIC LENS (KEY): a 35mm film camera with an old 2x anamorphic prime — 21:9 aspect ratio, strong squeeze, gentle barrel distortion and softness toward the edges, vertical oval bokeh, shallow cinemascope focus, low contrast with a faint veil in the blacks; heavy organic film grain, halation around the practical lights, slight softness — NOT over-sharpened, NOT digital-clean, NOT crisp AI look. No lens flares, no light streaks, no floating bokeh orbs, no glow overlays. The lamp stays a small contained source. HYPER-REAL CAPTURE: real 35mm film (Vision3 500T pushed one stop), heavy organic grain, softer than digital, MEGA-REAL. OVER-real: wet cobbles, rain streaks in the lamp cone, peeling render, rust on the marquee edge, water beading on the unlit bulbs. If any surface looks clean, smooth, plastic, CGI or rendered — WRONG. COLOUR: graphite and deep cold blue everywhere; warm amber only where a person made the light by hand — nowhere in this frame; nobody has made a light here yet. No teal-and-orange grade, no saturated colour, no HDR. NOT: centred, symmetrical, bright light, daylight, flat even light, milky blacks, plastic skin, waxy, smooth skin, clean faces, modern clothes, lens flare, subtitles, captions, on-screen text, watermark, over-sharpened, clean 4K, digital clean, CGI, 3D render, doll, HDR glow, warped hands, extra fingers, teal-and-orange grade, sodium-orange streetlight, light rays from nowhere, modern cars, phones, neon, letters, people, cars, lit windows, lit marquee.",
-   "folder_id": "bacdfb1d-ac88-4446-a945-24b7dc558d01"
-  }
- },
- {
-  "index": 30,
   "tag": "@CINEMA_EXT_NIGHT",
   "part": "1.1 wide · marquee dark",
   "params": {
@@ -372,7 +228,7 @@
   }
  },
  {
-  "index": 31,
+  "index": 19,
   "tag": "@CINEMA_EXT_LIT",
   "part": "4.2 wide · marquee lit",
   "params": {
@@ -384,7 +240,7 @@
   }
  },
  {
-  "index": 32,
+  "index": 20,
   "tag": "@CINEMA_EXT_LIT",
   "part": "4.2 wide · marquee lit",
   "params": {
@@ -396,7 +252,7 @@
   }
  },
  {
-  "index": 33,
+  "index": 21,
   "tag": "@CINEMA_EXT_LIT",
   "part": "4.2 wide · marquee lit",
   "params": {
@@ -408,7 +264,7 @@
   }
  },
  {
-  "index": 34,
+  "index": 22,
   "tag": "@SIDE_DOOR",
   "part": "1.2 medium",
   "params": {
@@ -420,7 +276,7 @@
   }
  },
  {
-  "index": 35,
+  "index": 23,
   "tag": "@SIDE_DOOR",
   "part": "1.2 medium",
   "params": {
@@ -432,7 +288,7 @@
   }
  },
  {
-  "index": 36,
+  "index": 24,
   "tag": "@SIDE_DOOR",
   "part": "1.2 medium",
   "params": {
@@ -444,7 +300,7 @@
   }
  },
  {
-  "index": 37,
+  "index": 25,
   "tag": "@STAIRWELL",
   "part": "1.3 close-side",
   "params": {
@@ -456,7 +312,7 @@
   }
  },
  {
-  "index": 38,
+  "index": 26,
   "tag": "@STAIRWELL",
   "part": "1.3 close-side",
   "params": {
@@ -468,7 +324,7 @@
   }
  },
  {
-  "index": 39,
+  "index": 27,
   "tag": "@STAIRWELL",
   "part": "1.3 close-side",
   "params": {
@@ -480,7 +336,7 @@
   }
  },
  {
-  "index": 40,
+  "index": 28,
   "tag": "@BOOTH",
   "part": "2.1 wide from the door corner",
   "params": {
@@ -492,7 +348,7 @@
   }
  },
  {
-  "index": 41,
+  "index": 29,
   "tag": "@BOOTH",
   "part": "2.1 wide from the door corner",
   "params": {
@@ -504,7 +360,7 @@
   }
  },
  {
-  "index": 42,
+  "index": 30,
   "tag": "@BOOTH",
   "part": "2.1 wide from the door corner",
   "params": {
@@ -516,7 +372,7 @@
   }
  },
  {
-  "index": 43,
+  "index": 31,
   "tag": "@BOOTH_PORT_WALL",
   "part": "booth front wall · ports",
   "params": {
@@ -528,7 +384,7 @@
   }
  },
  {
-  "index": 44,
+  "index": 32,
   "tag": "@BOOTH_PORT_WALL",
   "part": "booth front wall · ports",
   "params": {
@@ -540,7 +396,7 @@
   }
  },
  {
-  "index": 45,
+  "index": 33,
   "tag": "@BOOTH_PORT_WALL",
   "part": "booth front wall · ports",
   "params": {
@@ -552,7 +408,7 @@
   }
  },
  {
-  "index": 46,
+  "index": 34,
   "tag": "@AUDITORIUM",
   "part": "3.2 reverse · beam on",
   "params": {
@@ -564,7 +420,7 @@
   }
  },
  {
-  "index": 47,
+  "index": 35,
   "tag": "@AUDITORIUM",
   "part": "3.2 reverse · beam on",
   "params": {
@@ -576,7 +432,7 @@
   }
  },
  {
-  "index": 48,
+  "index": 36,
   "tag": "@AUDITORIUM",
   "part": "3.2 reverse · beam on",
   "params": {
@@ -588,7 +444,7 @@
   }
  },
  {
-  "index": 49,
+  "index": 37,
   "tag": "@PORT_EXTERIOR",
   "part": "3.3 port from the auditorium side",
   "params": {
@@ -600,7 +456,7 @@
   }
  },
  {
-  "index": 50,
+  "index": 38,
   "tag": "@PORT_EXTERIOR",
   "part": "3.3 port from the auditorium side",
   "params": {
@@ -612,7 +468,7 @@
   }
  },
  {
-  "index": 51,
+  "index": 39,
   "tag": "@PORT_EXTERIOR",
   "part": "3.3 port from the auditorium side",
   "params": {

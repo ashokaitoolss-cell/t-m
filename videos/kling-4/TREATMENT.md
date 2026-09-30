@@ -53,6 +53,11 @@ No product talk inside the film. After the marquee: black, then a small card.
 Each asset has one `@` tag, a text description, and a reference sheet. Faces are generated once
 and never run through a model again. A new state gets a new tag.
 
+Props are locked from the location plates so they cannot drift from the rooms they live in
+(`assets/props`, built by `scripts/prop_prompts.py` and `scripts/build_prop_sheets.py`). The
+projector and the marquee are lifted straight out of the plates; the rest are Soul Cinema museum
+stills on grey, described from the plates.
+
 | Tag | Description (describe, don't name) |
 |---|---|
 | `@GRANDPA` | Late 70s, tall and stooped. Large, thick-fingered hands with small old burn scars on the fingertips. Grey stubble, deep-set eyes, a knitted charcoal cardigan over a collared shirt, reading glasses on a cord. **Voice lock:** low, dry, unhurried, a slight rasp, words formed on the tail of an exhale. |
@@ -61,9 +66,13 @@ and never run through a model again. A new state gets a new tag.
 | `@CINEMA_EXT_LIT` | The same frame after the marquee is lit. New tag, not an overwrite. |
 | `@BOOTH` | A cramped projection room with a low ceiling, bare brick, film cans stacked on shelves, a small square port window in the front wall, one caged work lamp. |
 | `@AUDITORIUM` | Dark and empty. Rows of worn seats falling away into black, a high ceiling you can't see. |
-| `@PROJECTOR` | A heavy cast-iron machine the height of a man, two big metal reels on arms above and below, a lamp housing at the back, the film running through a gate past a small bright lens. |
-| `@NEW_CAN` | A clean, unscratched silver film can sitting among dented, rusted old ones, a paper label on its side always turned away from camera (LABEL NOT SHOWN in every block). |
-| `@SWITCH` | A worn black bakelite rotary switch on a metal plate, the paint rubbed off where thumbs have turned it for decades. |
+| `@PROJECTOR` | The machine in the BOOTH plate, taken from the plate itself: a tapered dark blue-green steel pedestal; a gunmetal housing with a five-spoked handwheel over a round glass door; a four-spoked wheel on a short column on top; a thick steel lens tube aimed at the port, a ribbed motor drum under it; at the back a black cylindrical lamp house with a pale riveted end cap and a curved cable arm. |
+| `@FILM_CANS` · `@NEW_CAN` | Plain round flat tins in dull grey tin plate, dented and scuffed, no labels; one new tin of the same size, bright and unscratched. Its label is never shown (LABEL NOT SHOWN in every block). |
+| `@FILM_REEL` | A dark pressed-steel 35mm reel about 40 cm across, five wide curved cut-outs, loaded with dark brown film. |
+| `@CRATE` | A low, wide, open-topped crate of honey-coloured pine, about 60 × 40 × 35 cm, the top edges worn smooth. She stands on it. |
+| `@BOOTH_LAMP` | A clear pear-shaped bulb inside a round cage of thin black wire loops, on a single black cord. |
+| `@SWITCH` | A big round black bakelite disc on a small square of pale painted brick, a cream knob crossed by a raised grip bar, rubbed smooth by decades of thumbs. |
+| `@MARQUEE` | The lit board from the CINEMA_EXT_LIT plate: milk glass framed by a single row of warm clear bulbs, black block letters on two lines. |
 
 ## Shot list and storyboard
 
@@ -95,6 +104,9 @@ scene, and the full shot table) are in `storyboard.html`, built by `scripts/buil
 
 ## Open decisions
 
+- **Reels on the projector.** The story gives the machine two big reels on arms; the BOOTH plate
+  shows one wheel on a column on top and no lower arm. Proposed: the reel mounts on that top
+  spindle, and the story line becomes "a big reel on top".
 - **Marquee wording.** `NOW SHOWING` if the film goes out on release day; `OCTOBER` or
   `PREMIERE TONIGHT` if it goes out before, as a teaser.
 - **Marquee text in Seedance.** Short text can still break in generation. If the letters don't hold,

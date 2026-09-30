@@ -179,53 +179,8 @@ ASSETS = [
         SHEET("The skin", "fine skin texture, cold-pink knuckles, the wool of the cuffs"),
         SHEET_NEG + ", face, second person, props, rings, jewellery, nail polish, adult hands, extra fingers."])),
 
-    # ---------------- props (shot like museum objects on plain grounds)
-    dict(tag="@PROJECTOR", kind="prop", part="hero", model="soul_cinematic", ar="16:9", n=2, prompt=" ".join([
-        "Museum object photograph, the whole object in frame with space around it, seen three-quarter from slightly "
-        "above: a heavy mid-century cinema film projector standing on a cast-iron pedestal, about the height of a man. "
-        "Dark green-grey enamel chipped to bare iron at the edges; a tall lamp house at the back with vent louvres and a "
-        "short chimney; two large round spoked metal reels on arms, one above and one below, the upper reel loaded with "
-        "dark film; the film path running down through a gate beside a brass lens barrel that points forward; oil "
-        "stains and paint worn bright on the handles.",
-        SHEET("The machine", "chipped enamel, bare iron, oil film, worn brass, dust in the vent louvres"),
-        SHEET_NEG + ", people, hands, modern equipment, digital projector, other objects."])),
-    dict(tag="@PROJECTOR_GATE", kind="prop", part="threading detail", model="soul_cinematic", ar="16:9", n=2, prompt=" ".join([
-        "Close detail photograph of the threading side of an old cinema film projector: a brass gate with a small "
-        "rectangular aperture, two toothed sprocket wheels, and a strip of dark 35mm film threaded down through the gate "
-        "and round the sprockets in two loose loops, the perforations catching the light. Oil on the steel, paint worn "
-        "bright where fingers have threaded it for fifty years.",
-        LIGHT("WARM", "the only light is one bare tungsten bulb above and to camera-right; it rakes across the sprocket "
-              "teeth and the brass gate; the rest of the machine falls into black."),
-        STYLE(False), ANAMORPHIC(False), NO_FLARES("The bulb stays out of frame."),
-        CAPTURE("sprocket teeth, film perforations, oil on steel, worn brass, dust"),
-        COLOUR("the warm light of the bulb on the metal"),
-        NEG("people, hands, modern equipment, digital parts")])),
-    dict(tag="@FILM_CANS", kind="prop", part="old cans + the new can", model="soul_cinematic", ar="16:9", n=2, prompt=" ".join([
-        "Museum object photograph, seen three-quarter from slightly above: a leaning stack of old round metal film cans, "
-        "dented, rusted at the rims, paint scratched and worn, and beside them one new film can, clean and unscratched "
-        "bright silver aluminium that catches the light. The new can's paper label is on the side turned away from the "
-        "camera, so no writing is visible anywhere.",
-        SHEET("The metal", "rust blooms, dents, scratched paint, the flawless bright aluminium of the one new can"),
-        SHEET_NEG + ", readable labels, people, hands, other objects."])),
-    dict(tag="@SWITCH", kind="prop", part="hero", model="soul_cinematic", ar="16:9", n=2, prompt=" ".join([
-        "Museum object photograph, seen almost straight on and slightly from the side: an old black bakelite rotary "
-        "switch with a ridged pointer knob, mounted on a rectangular grey-painted steel plate with four slotted screws. "
-        "The paint is rubbed away to bright metal in a crescent around the knob where thumbs have turned it for decades; "
-        "two positions marked only by small engraved dots.",
-        SHEET("The switch", "bakelite with fine scratches, rubbed paint, bright worn steel, slotted screw heads"),
-        SHEET_NEG + ", engraved words, numbers, people, hands, modern switch, plastic."])),
-    dict(tag="@BOOTH_LAMP", kind="prop", part="hero", model="soul_cinematic", ar="16:9", n=2, prompt=" ".join([
-        "Museum object photograph, seen from the side and slightly below: an old industrial work lamp, a bare clear "
-        "tungsten bulb inside a round steel wire cage, hung from a steel hook on a cloth-covered cable. The bulb is "
-        "switched on and glows warm; dust on the cage wires.",
-        SHEET("The lamp", "the glowing filament, the dusty wire cage, the frayed cloth cable"),
-        SHEET_NEG + ", people, hands, modern LED bulb, other objects."])),
-    dict(tag="@MARQUEE_BULBS", kind="prop", part="marquee edge", model="soul_cinematic", ar="16:9", n=2, prompt=" ".join([
-        "Museum object photograph: a section of an old cinema marquee edge, a painted riveted steel strip carrying a row "
-        "of clear round incandescent bulbs in brass sockets. The nearest bulb is lit, its filament glowing orange-amber; "
-        "the rest of the row is unlit. Raindrops bead on the glass.",
-        SHEET("The marquee edge", "rivets, flaking paint, brass sockets, raindrops on glass, the glowing filament"),
-        SHEET_NEG + ", letters, people, hands, LED, other objects."])),
+    # ---------------- props: locked from the location picks in prop_prompts.py and
+    # build_prop_sheets.py (assets/props). One description per object lives there, not here.
 
     # ---------------- locations (plates: no people, lit the way the film lights them)
     dict(tag="@CINEMA_EXT_NIGHT", kind="location", part="1.1 wide · marquee dark", model="soul_cinematic", ar="21:9", n=2, prompt=" ".join([

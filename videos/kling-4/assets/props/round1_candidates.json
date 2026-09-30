@@ -1,0 +1,108 @@
+[
+ {
+  "index": 0,
+  "tag": "@PROJECTOR",
+  "from_ref": true,
+  "job_id": "7b2635da-3bbf-4f42-9008-48bfdf067ed8",
+  "verdict": "reject: rebuilt the booth around the machine"
+ },
+ {
+  "index": 1,
+  "tag": "@PROJECTOR",
+  "from_ref": false,
+  "job_id": "fc17bdc4-7bd5-4092-8ff2-badeee25df3c",
+  "verdict": "reject: reads as a cannon on a pole"
+ },
+ {
+  "index": 2,
+  "tag": "@PROJECTOR_BACK",
+  "from_ref": true,
+  "job_id": "b07dfef0-0242-46e2-9264-644574f84272",
+  "verdict": "reject: rebuilt the port wall"
+ },
+ {
+  "index": 3,
+  "tag": "@PROJECTOR_BACK",
+  "from_ref": false,
+  "job_id": "365cfc81-f102-4a0b-b7c3-3cb0b8252120",
+  "verdict": "reject: reads as a telescope"
+ },
+ {
+  "index": 4,
+  "tag": "@FILM_REEL",
+  "from_ref": true,
+  "job_id": "9fdd8fe2-6107-4fe8-a50f-b8286faa05c1",
+  "verdict": "reject: rebuilt a booth with a small projector"
+ },
+ {
+  "index": 5,
+  "tag": "@FILM_REEL",
+  "from_ref": false,
+  "job_id": "891a44d9-1b7c-4025-9c91-2100d1db2871",
+  "verdict": "keep: @FILM_REEL"
+ },
+ {
+  "index": 6,
+  "tag": "@FILM_CANS",
+  "from_ref": true,
+  "job_id": "4c898eb9-1b89-4802-8633-f46e42325ae9",
+  "verdict": "reject: rebuilt a film vault"
+ },
+ {
+  "index": 7,
+  "tag": "@FILM_CANS",
+  "from_ref": false,
+  "job_id": "1cb7ed5c-b51b-4c9c-88c6-38b5bf530539",
+  "verdict": "close: new tin shows a label and a wooden lid"
+ },
+ {
+  "index": 8,
+  "tag": "@CRATE",
+  "from_ref": true,
+  "job_id": "73bba920-43ef-4d93-b79f-308308304631",
+  "verdict": "reject: rebuilt the shelves"
+ },
+ {
+  "index": 9,
+  "tag": "@CRATE",
+  "from_ref": false,
+  "job_id": "1acaef5a-c904-4b1b-8856-f8bcc3aca54e",
+  "verdict": "reject: tall narrow grey box, the booth crate is low, wide, honey pine",
+  "note": "first submission 1c7d583c-c4fe-42a8-a749-7e2cabcf7f21 failed; resubmitted"
+ },
+ {
+  "index": 10,
+  "tag": "@BOOTH_LAMP",
+  "from_ref": true,
+  "job_id": "f59d758b-e41d-437d-ad78-28dd8d2f5c95",
+  "verdict": "reject: rebuilt the booth"
+ },
+ {
+  "index": 11,
+  "tag": "@BOOTH_LAMP",
+  "from_ref": false,
+  "job_id": "406bee30-2a58-461c-9914-ebd519801231",
+  "verdict": "keep: @BOOTH_LAMP"
+ },
+ {
+  "index": 12,
+  "tag": "@SWITCH",
+  "from_ref": true,
+  "job_id": "5a9deee5-85ca-4f51-b1b5-545179683e1b",
+  "verdict": "reject: rebuilt the port"
+ },
+ {
+  "index": 13,
+  "tag": "@SWITCH",
+  "from_ref": false,
+  "job_id": "5fa0c0e0-af70-4ad6-8f61-7e27ac304829",
+  "verdict": "keep: @SWITCH"
+ },
+ {
+  "index": 14,
+  "tag": "@MARQUEE_BULBS",
+  "from_ref": true,
+  "job_id": "aec21013-a9cf-49c7-8956-54ba05c80292",
+  "verdict": "reject: rebuilt the whole lit front; the CINEMA_EXT_LIT pick is the marquee lock"
+ }
+]

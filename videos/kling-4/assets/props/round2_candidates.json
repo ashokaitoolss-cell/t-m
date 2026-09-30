@@ -1,0 +1,51 @@
+[
+ {
+  "index": 0,
+  "tag": "@PROJECTOR",
+  "model": "soul_cinematic",
+  "job_id": "2f2b4f42-5741-4d7f-9266-6ec8b0aaed82",
+  "verdict": "reject: right pedestal, but a small brown housing, not the BOOTH machine"
+ },
+ {
+  "index": 1,
+  "tag": "@PROJECTOR",
+  "model": "soul_cinematic",
+  "job_id": "4bc57e81-d022-421c-81b3-be42bf20574f",
+  "verdict": "reject: reads as a tabletop projector with two reel wheels"
+ },
+ {
+  "index": 2,
+  "tag": "@PROJECTOR",
+  "model": "soul_2",
+  "job_id": "47891ec4-4db5-42dc-a671-9d307dc06806",
+  "verdict": "reject: strong machine, but the pedestal is fused into the body; not the BOOTH silhouette"
+ },
+ {
+  "index": 3,
+  "tag": "@PROJECTOR_BACK",
+  "model": "soul_cinematic",
+  "job_id": "e5a0683b-43b1-4dc0-aa4d-f75a31fe6190",
+  "verdict": "reject: the lens points at camera, no lamp house"
+ },
+ {
+  "index": 4,
+  "tag": "@FILM_CANS",
+  "model": "soul_cinematic",
+  "job_id": "a0d066c9-4a9a-401c-a4c0-9de64f0bb613",
+  "verdict": "keep: @FILM_CANS (no labels)"
+ },
+ {
+  "index": 5,
+  "tag": "@CRATE",
+  "model": "soul_cinematic",
+  "job_id": "b704e5da-a545-4327-b591-f83c1be11a72",
+  "verdict": "keep: @CRATE"
+ },
+ {
+  "tag": "@PROJECTOR",
+  "model": "image_background_remover",
+  "job_id": "6ad4ec46-3b91-4bf3-af05-58961a759562",
+  "source": "BOOTH pick crop (620,20)-(1450,830), gamma 0.55, 2x",
+  "verdict": "keep: @PROJECTOR, cut out of the plate"
+ }
+]
