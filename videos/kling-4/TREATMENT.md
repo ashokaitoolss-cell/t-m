@@ -4,7 +4,8 @@ purpose: a short film for the Kling 4.0 release
 length: 58s
 aspect: 21:9
 method: Anerneq (20-block prompts, tagged assets, one source of light, fix one block at a time)
-status: treatment, awaiting approval
+engine: Seedance 2.5 (every shot and the spoken line)
+status: story approved; storyboard in storyboard.html
 ---
 
 # FIRST LIGHT
@@ -21,7 +22,7 @@ projectionist lets his granddaughter start it. It's her first time.
 
 **Visual language (functional, not decorative).**
 
-- **21:9.** Two people stay small inside a big, dark building. 21:9 is also new in Kling 4.0.
+- **21:9.** Two people stay small inside a big, dark building.
 - **Practical light only, one source per scene.** A cold street lamp outside, one caged work lamp in
   the booth, then the projector beam. Everything past two metres goes to darkness.
 - **Handheld, never travels.** An operator who stands or kneels, breathes, drifts a beat late. No
@@ -42,9 +43,8 @@ The release is the story, told as a premiere night. It isn't an ad added to the 
    picture.
 3. **The name lands last, inside the world.** The marquee bulbs warm up and the letters read
    `KLING 4.0 / NOW SHOWING`. The film we just watched was the premiere of Kling 4.0.
-4. **Made the way 4.0 works.** 21:9 ultra-wide (new in 4.0). The one spoken line is lip-synced in
-   camera. The marquee relies on 4.0's text that holds legible as the camera moves. Shots 1.1 and
-   4.1 are the same frame, dark and then lit, using first/last-frame keyframes.
+4. **Nods to what 4.0 adds.** The 21:9 frame (4.0's new ultra-wide) and a legible sign that holds
+   while the camera breathes. Shots 1.1 and 4.2 are the same frame, dark and then lit.
 
 No product talk inside the film. After the marquee: black, then a small card.
 
@@ -65,44 +65,19 @@ and never run through a model again. A new state gets a new tag.
 | `@NEW_CAN` | A clean, unscratched silver film can sitting among dented, rusted old ones, a paper label on its side always turned away from camera (LABEL NOT SHOWN in every block). |
 | `@SWITCH` | A worn black bakelite rotary switch on a metal plate, the paint rubbed off where thumbs have turned it for decades. |
 
-## Shot list
+## Shot list and storyboard
 
-Every sequence is covered wide, medium and close, the way a scene is shot for real.
+The story is in `STORY.md`. The shot list and storyboard (drawn 21:9 panels, an overhead plan per
+scene, and the full shot table) are in `storyboard.html`, built by `scripts/build_storyboard.py`.
 
-### SEQ 1 · THE STREET · 0:00–0:13 · cold
+| Scene | Time | Shots |
+|---|---|---|
+| 1 · The street | 0:00–0:13 | 1.1 wide · 1.2 medium · 1.3 close |
+| 2 · The booth | 0:13–0:35 | 2.1 wide · 2.2 insert · 2.3 medium two-shot · 2.4 insert · 2.5 close |
+| 3 · The beam | 0:35–0:48 | 3.1 close · 3.2 wide reverse · 3.3 medium |
+| 4 · Now showing | 0:48–0:58 | 4.1 insert · 4.2 wide (= 1.1) · card |
 
-| # | Size | Len | What happens | Sound |
-|---|---|---|---|---|
-| 1.1 | WIDE | 6s | Night, rain, the empty corner. The cinema is dark, the marquee blank. A small figure runs across the wet street with a coat held over her head, toward the side door. The operator is across the street under an awning and does not travel. | rain on the awning, her boots in water |
-| 1.2 | MEDIUM | 4s | The side door. He opens it before she knocks, warm lamp spill behind him. She ducks under his arm without stopping. He glances once up the empty street, then shuts it. | latch; the rain cuts off |
-| 1.3 | CLOSE | 3s | Iron stairs. Her wet boots climb two at a time, water dripping from the coat hem. His slower, heavier steps follow into frame. | boots on iron, his breath |
-
-### SEQ 2 · THE BOOTH · 0:13–0:35 · one lamp
-
-| # | Size | Len | What happens | Sound |
-|---|---|---|---|---|
-| 2.1 | WIDE | 5s | The booth, low and cramped, the projector, the one caged lamp. He hangs her dripping coat on a nail; she climbs onto a film crate to see. On the shelf among the dented cans, the one new can. Beyond the lamp, darkness. | drips, the lamp's faint buzz |
-| 2.2 | CLOSE | 4s | The new can is open, its reel on the projector. His hands thread the film through the gate and round the sprockets. Thick, scarred, certain; he isn't looking at them. | film ticking over metal |
-| 2.3 | MEDIUM | 5s | Two-shot. He stops with the last loop undone, looks at her, holds out the loose end. **"Your turn."** She takes it. | the line, then nothing |
-| 2.4 | CLOSE | 4s | Her small hands. The film slips off the sprocket once. She seats it again; the teeth catch. | one small click |
-| 2.5 | CLOSE | 4s | Him, watching her hands, not her face. His thumb rubs across his fingertips as if he were doing it himself. | his breath, held |
-
-### SEQ 3 · THE BEAM · 0:35–0:49
-
-| # | Size | Len | What happens | Sound |
-|---|---|---|---|---|
-| 3.1 | CLOSE | 3s | Her finger over the switch. A held beat. Behind her, out of focus, he nods once. She turns it. | silence, then the clunk |
-| 3.2 | WIDE | 5s | Reverse, from the empty auditorium: the beam fires out of the small port window and across the dark over the empty rows, dust turning in it. The screen is never shown. | the projector starts to chatter |
-| 3.3 | MEDIUM | 6s | Through the port glass: both faces in the flicker. She stares at the screen, lips parted, breath held. He isn't watching the screen. He's watching her. | projector, muffled by glass |
-
-### SEQ 4 · NOW SHOWING · 0:49–0:58
-
-| # | Size | Len | What happens | Sound |
-|---|---|---|---|---|
-| 4.1 | WIDE | 6s | The same frame as 1.1. Rain, the empty corner. The marquee bulbs warm up a few at a time, and the letters read **KLING 4.0 / NOW SHOWING**. | rain, the projector faint through the wall, the bulbs' tick |
-| card | — | 3s | Black. `Kling 4.0`, small, centred. | silence |
-
-**Runtime 58s** · 12 shots + card · 11 cuts.
+**Runtime 58s** · 13 shots + card.
 
 ## Method (from *Anerneq, Decoded*)
 
@@ -122,7 +97,5 @@ Every sequence is covered wide, medium and close, the way a scene is shot for re
 
 - **Marquee wording.** `NOW SHOWING` if the film goes out on release day; `OCTOBER` or
   `PREMIERE TONIGHT` if it goes out before, as a teaser.
-- **Engine.** Kling 4.0 isn't on Higgsfield yet (the account lists Kling 3.0: 16:9 max, 15s).
-  Kling's full 4.0 release is due in October. Seedance 2.5 is available now with 21:9 and 30s clips.
-- **Credits.** Stills and the animatic are cheap. Video iteration at Anerneq's rate (about 15
-  rounds per shot) is not.
+- **Marquee text in Seedance.** Short text can still break in generation. If the letters don't hold,
+  composite them onto 4.2 in the edit.
