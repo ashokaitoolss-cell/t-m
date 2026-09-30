@@ -10,6 +10,29 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 
 # ------------------------------------------------------------------ FIXED BLOCKS (paste verbatim, never rewrite)
 
+# Locations: a 35mm film camera with a vintage anamorphic lens (the user's call for the location pass).
+def STYLE_35(wide=True):
+    ar = ", aspect ratio 21:9" if wide else ""
+    return (f"Style: a real photographed frame of 35mm FILM shot through a vintage anamorphic lens{ar} — "
+            "indistinguishable from a still lifted out of a modern photochemical arthouse feature. Cinematic, filmic, "
+            "MEGA-REAL, NOT a render, NOT 3D, NOT AI-CGI, NOT digital-clean. Absolute live-action naturalism. NOBODY "
+            "can tell this is AI.")
+
+
+def LENS_35(wide=True):
+    ar = "21:9 aspect ratio, " if wide else ""
+    return (f"VINTAGE ANAMORPHIC LENS (KEY): a 35mm film camera with an old 2x anamorphic prime — {ar}strong squeeze, "
+            "gentle barrel distortion and softness toward the edges, vertical oval bokeh, shallow cinemascope focus, "
+            "low contrast with a faint veil in the blacks; heavy organic film grain, halation around the practical "
+            "lights, slight softness — NOT over-sharpened, NOT digital-clean, NOT crisp AI look.")
+
+
+def CAPTURE_35(materials):
+    return (f"HYPER-REAL CAPTURE: real 35mm film (Vision3 500T pushed one stop), heavy organic grain, softer than "
+            f"digital, MEGA-REAL. OVER-real: {materials}. If any surface looks clean, smooth, plastic, CGI or "
+            "rendered — WRONG.")
+
+
 def STYLE(wide=True):
     ar = ", aspect ratio 21:9" if wide else ""
     return (f"Style: a real photographed frame of 65mm anamorphic FILM{ar} — indistinguishable from a still lifted out of a "
@@ -214,8 +237,8 @@ ASSETS = [
         LIGHT("COLD", "the only light is the single cold blue-white street lamp on the left; the rain shows only inside its "
               "cone; the cobbles shine wet in its pool and go black beyond it; the cinema facade is barely lifted out "
               "of the dark."),
-        STYLE(), ANAMORPHIC(), NO_FLARES("The lamp stays a small contained source."),
-        CAPTURE("wet cobbles, rain streaks in the lamp cone, peeling render, rust on the marquee edge, water beading on "
+        STYLE_35(), LENS_35(), NO_FLARES("The lamp stays a small contained source."),
+        CAPTURE_35("wet cobbles, rain streaks in the lamp cone, peeling render, rust on the marquee edge, water beading on "
                 "the unlit bulbs"),
         COLOUR("nowhere in this frame; nobody has made a light here yet"),
         NEG("people, cars, lit windows, lit marquee")])),
@@ -230,8 +253,8 @@ ASSETS = [
         LIGHT("COLD", "two sources only: the cold blue-white street lamp on the left with rain showing inside its cone, and "
               "the warm lit marquee on the right, its light dying on the pavement a few metres out; between them the "
               "street stays dark."),
-        STYLE(), ANAMORPHIC(), NO_FLARES("The bulbs stay small contained points."),
-        CAPTURE("wet cobbles, rain streaks in both pools of light, peeling render, the glowing bulb filaments, the black "
+        STYLE_35(), LENS_35(), NO_FLARES("The bulbs stay small contained points."),
+        CAPTURE_35("wet cobbles, rain streaks in both pools of light, peeling render, the glowing bulb filaments, the black "
                 "letters on the lit board"),
         COLOUR("the lit marquee and its spill on the wet pavement"),
         NEG("people, cars, lit windows, any other text or signs", letters=False)])),
@@ -242,8 +265,8 @@ ASSETS = [
         LIGHT("COLD", "the only light is warm tungsten spilling out through the open door from a bulb inside the stairwell; "
               "it paints the threshold and a tongue of the wet cobbles and dies within two metres; outside it the wall "
               "and street are cold blue and dark."),
-        STYLE(), ANAMORPHIC(), NO_FLARES("The bulb inside stays out of sight."),
-        CAPTURE("wet brick, flaking paint on the door, a worn brass handle, the wet cobbles in the spill"),
+        STYLE_35(), LENS_35(), NO_FLARES("The bulb inside stays out of sight."),
+        CAPTURE_35("wet brick, flaking paint on the door, a worn brass handle, the wet cobbles in the spill"),
         COLOUR("the warm spill from the open door"),
         NEG("people, signs, lit windows")])),
     dict(tag="@STAIRWELL", kind="location", part="1.3 close-side", model="soul_cinematic", ar="21:9", n=2, prompt=" ".join([
@@ -252,8 +275,8 @@ ASSETS = [
         "treads, water dripping from the edges.",
         LIGHT("WARM", "the only light is a caged tungsten bulb at the top of the flight, out of frame above right; it "
               "catches the edges of the upper treads warm; the bottom of the flight falls into darkness."),
-        STYLE(), ANAMORPHIC(), NO_FLARES("The bulb stays out of frame."),
-        CAPTURE("diamond-plate iron worn smooth in the middle of each tread, rust, wet footprints, water drops, damp brick"),
+        STYLE_35(), LENS_35(), NO_FLARES("The bulb stays out of frame."),
+        CAPTURE_35("diamond-plate iron worn smooth in the middle of each tread, rust, wet footprints, water drops, damp brick"),
         COLOUR("the warm light of the bulb on the upper treads"),
         NEG("people, feet, handrail signs")])),
     dict(tag="@BOOTH", kind="location", part="2.1 wide from the door corner", model="soul_cinematic", ar="21:9", n=2, prompt=" ".join([
@@ -264,8 +287,8 @@ ASSETS = [
         "one clean bright silver can. A wooden crate on the floor near the projector. A nail on the right wall.",
         LIGHT("WARM", "the only light is one bare tungsten bulb in a wire cage on the right wall; it makes a warm pool "
               "around the projector; everything beyond two metres falls into black."),
-        STYLE(), ANAMORPHIC(), NO_FLARES("The bulb stays a small contained source."),
-        CAPTURE("bare brick, chipped enamel on the projector, rust on the old cans, the one bright silver can, dust in "
+        STYLE_35(), LENS_35(), NO_FLARES("The bulb stays a small contained source."),
+        CAPTURE_35("bare brick, chipped enamel on the projector, rust on the old cans, the one bright silver can, dust in "
                 "the air, worn floorboards"),
         COLOUR("the pool of the caged bulb; the port window stays black"),
         NEG("people, readable labels, modern equipment, digital projector, computers")])),
@@ -276,8 +299,8 @@ ASSETS = [
         "auditorium. A worn black rotary switch on a steel plate on the wall beside the projector.",
         LIGHT("WARM", "the only light is a caged tungsten bulb behind camera-right; it grazes the brick and the projector; "
               "the ports stay black."),
-        STYLE(), ANAMORPHIC(), NO_FLARES("No reflections of the bulb in the port glass."),
-        CAPTURE("bare brick, chipped enamel, worn brass, the scratched bakelite switch, dust on the glass"),
+        STYLE_35(), LENS_35(), NO_FLARES("No reflections of the bulb in the port glass."),
+        CAPTURE_35("bare brick, chipped enamel, worn brass, the scratched bakelite switch, dust on the glass"),
         COLOUR("the bulb's light on the wall"),
         NEG("people, reflections, readable labels, modern equipment")])),
     dict(tag="@AUDITORIUM", kind="location", part="3.2 reverse · beam on", model="soul_cinematic", ar="21:9", n=2, prompt=" ".join([
@@ -287,8 +310,8 @@ ASSETS = [
         "toward a screen behind the camera, dust turning slowly inside the beam. The screen is never visible.",
         LIGHT("WARM", "the only light is the projector beam itself; it lights the dust inside it and faintly grazes the "
               "tops of the nearest seat backs; the walls and ceiling stay black."),
-        STYLE(), ANAMORPHIC(), NO_FLARES("The beam never hits the lens; the port stays a small contained source."),
-        CAPTURE("dust in the beam, worn velvet nap on the seat tops, the rear wall's old plaster"),
+        STYLE_35(), LENS_35(), NO_FLARES("The beam never hits the lens; the port stays a small contained source."),
+        CAPTURE_35("dust in the beam, worn velvet nap on the seat tops, the rear wall's old plaster"),
         COLOUR("the projector beam"),
         NEG("people, screen, exit signs, modern seats")])),
     dict(tag="@PORT_EXTERIOR", kind="location", part="3.3 port from the auditorium side", model="soul_cinematic", ar="21:9", n=2, prompt=" ".join([
@@ -298,23 +321,37 @@ ASSETS = [
         "The glass is clean and shows no reflections.",
         LIGHT("WARM", "the only light is the flicker of the projected film bouncing back off the screen onto the port "
               "glass and the booth's back wall; the auditorium wall around the port stays black."),
-        STYLE(), ANAMORPHIC(), NO_FLARES("No reflections in the glass."),
-        CAPTURE("old plaster, the worn wooden frame of the port, fine dust on the glass"),
+        STYLE_35(), LENS_35(), NO_FLARES("No reflections in the glass."),
+        CAPTURE_35("old plaster, the worn wooden frame of the port, fine dust on the glass"),
         COLOUR("the warm flicker through the glass"),
         NEG("people, faces, reflections, exit signs")])),
 ]
 
 
-def requests_json():
+# Locations also run on Soul 2.0 for a side-by-side model test. Soul 2.0 has no 21:9, so it renders 16:9 and
+# the plate is cropped to 21:9 afterwards.
+SOUL2_ALT = dict(model="soul_2", ar="16:9", n=1)
+
+
+def variants(a):
+    yield a["model"], a["ar"], a["n"], a["prompt"]
+    if a["kind"] == "location":
+        p = a["prompt"].replace(", aspect ratio 21:9", "").replace("21:9 aspect ratio, ", "")
+        yield SOUL2_ALT["model"], SOUL2_ALT["ar"], SOUL2_ALT["n"], p
+
+
+def requests_json(kind=None):
     out = []
     i = 0
     for a in ASSETS:
-        for _ in range(a["n"]):
-            out.append({"index": i, "tag": a["tag"], "part": a["part"],
-                        "params": {"model": a["model"], "aspect_ratio": a["ar"], "quality": "2k",
-                                   "prompt": a["prompt"],
-                                   "folder_id": "bacdfb1d-ac88-4446-a945-24b7dc558d01"}})
-            i += 1
+        if kind and a["kind"] != kind:
+            continue
+        for model, ar, n, prompt in variants(a):
+            for _ in range(n):
+                out.append({"index": i, "tag": a["tag"], "part": a["part"],
+                            "params": {"model": model, "aspect_ratio": ar, "quality": "2k", "prompt": prompt,
+                                       "folder_id": "bacdfb1d-ac88-4446-a945-24b7dc558d01"}})
+                i += 1
     return out
 
 
@@ -322,6 +359,8 @@ if __name__ == "__main__":
     reqs = requests_json()
     with open(os.path.join(HERE, "asset_requests.json"), "w") as fh:
         json.dump(reqs, fh, indent=1, ensure_ascii=False)
+    with open(os.path.join(HERE, "location_requests.json"), "w") as fh:
+        json.dump(requests_json("location"), fh, indent=1, ensure_ascii=False)
     print(len(reqs), "requests;", len(ASSETS), "assets")
     for a in ASSETS:
         print(f'{a["tag"]:<18} {a["part"]:<34} {a["model"]:<15} {a["ar"]:<5} x{a["n"]}  {len(a["prompt"].split())} words')
