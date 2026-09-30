@@ -1,0 +1,230 @@
+[
+ {
+  "index": 0,
+  "tag": "@PROJECTOR",
+  "ref": true,
+  "params": {
+   "model": "soul_cinematic",
+   "aspect_ratio": "16:9",
+   "quality": "2k",
+   "folder_id": "bacdfb1d-ac88-4446-a945-24b7dc558d01",
+   "prompt": "Museum object photograph of the huge film projector from the reference image, carried over exactly — the same shape, proportions, parts, colour, wear and materials — lifted out of its room and set alone on a flat mid-grey seamless ground, seen three-quarter from the operator side and slightly above, the lens barrel pointing to camera-right, the whole object in frame with grey space around it, nothing else in frame. The object: a huge old theatre film projector, as tall as a man and about two metres long: a heavy horizontal cast-iron machine body painted dark blue-green, the enamel worn and chipped to bare dark metal at the edges and handles, standing on a tall tapered sheet-steel pedestal with a riveted flat top plate; a long polished steel lens barrel, as long as an arm, projecting forward from the front of the body; a large five-spoked cast-iron handwheel on the operator side; a smaller four-spoked handwheel on a short column on top; a squat round drum housing with ribbed bands under the lens; small levers and a curved arm on the body; at the back a large black cylindrical lamp house with a pale, weathered, riveted end cap and a curved black cable arm rising from it. Flat mid-grey seamless ground, even neutral grey, no seam, no floor line, a soft shadow under the object. One broad soft source from camera-left and slightly above, no rim light. The object reads matte at its true colour, never cool-shifted by the grey. Real 35mm film capture (Vision3 500T), fine organic grain, softer than digital, NOT digital-clean. OVER-real: chipped blue-green enamel, bare iron, the polished steel lens barrel, oil, dust in the rivets. If any surface looks clean, smooth, plastic, CGI or rendered — WRONG. NOT: people, hands, room, walls, shelves, other objects, text, labels, logos, brand names, numbers, watermark, frame borders, CGI, 3D render, plastic, toy, miniature, glossy, new paint.",
+   "medias": [
+    {
+     "role": "image",
+     "value": "e2af997e-6881-4344-b445-a3e05a90148a"
+    }
+   ]
+  }
+ },
+ {
+  "index": 1,
+  "tag": "@PROJECTOR",
+  "ref": false,
+  "params": {
+   "model": "soul_cinematic",
+   "aspect_ratio": "16:9",
+   "quality": "2k",
+   "folder_id": "bacdfb1d-ac88-4446-a945-24b7dc558d01",
+   "prompt": "Museum object photograph of the huge film projector, set alone on a flat mid-grey seamless ground, seen three-quarter from the operator side and slightly above, the lens barrel pointing to camera-right, the whole object in frame with grey space around it, nothing else in frame. The object: a huge old theatre film projector, as tall as a man and about two metres long: a heavy horizontal cast-iron machine body painted dark blue-green, the enamel worn and chipped to bare dark metal at the edges and handles, standing on a tall tapered sheet-steel pedestal with a riveted flat top plate; a long polished steel lens barrel, as long as an arm, projecting forward from the front of the body; a large five-spoked cast-iron handwheel on the operator side; a smaller four-spoked handwheel on a short column on top; a squat round drum housing with ribbed bands under the lens; small levers and a curved arm on the body; at the back a large black cylindrical lamp house with a pale, weathered, riveted end cap and a curved black cable arm rising from it. Flat mid-grey seamless ground, even neutral grey, no seam, no floor line, a soft shadow under the object. One broad soft source from camera-left and slightly above, no rim light. The object reads matte at its true colour, never cool-shifted by the grey. Real 35mm film capture (Vision3 500T), fine organic grain, softer than digital, NOT digital-clean. OVER-real: chipped blue-green enamel, bare iron, the polished steel lens barrel, oil, dust in the rivets. If any surface looks clean, smooth, plastic, CGI or rendered — WRONG. NOT: people, hands, room, walls, shelves, other objects, text, labels, logos, brand names, numbers, watermark, frame borders, CGI, 3D render, plastic, toy, miniature, glossy, new paint."
+  }
+ },
+ {
+  "index": 2,
+  "tag": "@PROJECTOR_BACK",
+  "ref": true,
+  "params": {
+   "model": "soul_cinematic",
+   "aspect_ratio": "16:9",
+   "quality": "2k",
+   "folder_id": "bacdfb1d-ac88-4446-a945-24b7dc558d01",
+   "prompt": "Museum object photograph of the huge film projector from the reference image, carried over exactly — the same shape, proportions, parts, colour, wear and materials — lifted out of its room and set alone on a flat mid-grey seamless ground, seen three-quarter from behind, the black lamp house nearest the camera and the lens barrel pointing away, the whole object in frame with grey space around it, nothing else in frame. The object: a huge old theatre film projector, as tall as a man and about two metres long: a heavy horizontal cast-iron machine body painted dark blue-green, the enamel worn and chipped to bare dark metal at the edges and handles, standing on a tall tapered sheet-steel pedestal with a riveted flat top plate; a long polished steel lens barrel, as long as an arm, projecting forward from the front of the body; a large five-spoked cast-iron handwheel on the operator side; a smaller four-spoked handwheel on a short column on top; a squat round drum housing with ribbed bands under the lens; small levers and a curved arm on the body; at the back a large black cylindrical lamp house with a pale, weathered, riveted end cap and a curved black cable arm rising from it. Flat mid-grey seamless ground, even neutral grey, no seam, no floor line, a soft shadow under the object. One broad soft source from camera-left and slightly above, no rim light. The object reads matte at its true colour, never cool-shifted by the grey. Real 35mm film capture (Vision3 500T), fine organic grain, softer than digital, NOT digital-clean. OVER-real: the scorched black lamp house, the pale riveted end cap, chipped blue-green enamel, polished steel. If any surface looks clean, smooth, plastic, CGI or rendered — WRONG. NOT: people, hands, room, walls, shelves, other objects, text, labels, logos, brand names, numbers, watermark, frame borders, CGI, 3D render, plastic, toy, miniature, glossy, new paint.",
+   "medias": [
+    {
+     "role": "image",
+     "value": "3e65feae-e9ec-4c49-b920-8eb7e160996b"
+    }
+   ]
+  }
+ },
+ {
+  "index": 3,
+  "tag": "@PROJECTOR_BACK",
+  "ref": false,
+  "params": {
+   "model": "soul_cinematic",
+   "aspect_ratio": "16:9",
+   "quality": "2k",
+   "folder_id": "bacdfb1d-ac88-4446-a945-24b7dc558d01",
+   "prompt": "Museum object photograph of the huge film projector, set alone on a flat mid-grey seamless ground, seen three-quarter from behind, the black lamp house nearest the camera and the lens barrel pointing away, the whole object in frame with grey space around it, nothing else in frame. The object: a huge old theatre film projector, as tall as a man and about two metres long: a heavy horizontal cast-iron machine body painted dark blue-green, the enamel worn and chipped to bare dark metal at the edges and handles, standing on a tall tapered sheet-steel pedestal with a riveted flat top plate; a long polished steel lens barrel, as long as an arm, projecting forward from the front of the body; a large five-spoked cast-iron handwheel on the operator side; a smaller four-spoked handwheel on a short column on top; a squat round drum housing with ribbed bands under the lens; small levers and a curved arm on the body; at the back a large black cylindrical lamp house with a pale, weathered, riveted end cap and a curved black cable arm rising from it. Flat mid-grey seamless ground, even neutral grey, no seam, no floor line, a soft shadow under the object. One broad soft source from camera-left and slightly above, no rim light. The object reads matte at its true colour, never cool-shifted by the grey. Real 35mm film capture (Vision3 500T), fine organic grain, softer than digital, NOT digital-clean. OVER-real: the scorched black lamp house, the pale riveted end cap, chipped blue-green enamel, polished steel. If any surface looks clean, smooth, plastic, CGI or rendered — WRONG. NOT: people, hands, room, walls, shelves, other objects, text, labels, logos, brand names, numbers, watermark, frame borders, CGI, 3D render, plastic, toy, miniature, glossy, new paint."
+  }
+ },
+ {
+  "index": 4,
+  "tag": "@FILM_REEL",
+  "ref": true,
+  "params": {
+   "model": "soul_cinematic",
+   "aspect_ratio": "16:9",
+   "quality": "2k",
+   "folder_id": "bacdfb1d-ac88-4446-a945-24b7dc558d01",
+   "prompt": "Museum object photograph of the projector's film reel from the reference image, carried over exactly — the same shape, proportions, parts, colour, wear and materials — lifted out of its room and set alone on a flat mid-grey seamless ground, seen standing upright on its edge, three-quarter, the whole object in frame with grey space around it, nothing else in frame. The object: a large 35mm film reel about forty centimetres across, pressed dark steel with five curved spokes in the same pattern as the projector's handwheels and a square centre hole, loaded with a thick coil of dark brown film; the flanges dented and scratched. Flat mid-grey seamless ground, even neutral grey, no seam, no floor line, a soft shadow under the object. One broad soft source from camera-left and slightly above, no rim light. The object reads matte at its true colour, never cool-shifted by the grey. Real 35mm film capture (Vision3 500T), fine organic grain, softer than digital, NOT digital-clean. OVER-real: dented steel flanges, the edge of the film coil, scratches, oil. If any surface looks clean, smooth, plastic, CGI or rendered — WRONG. NOT: people, hands, room, walls, shelves, other objects, text, labels, logos, brand names, numbers, watermark, frame borders, CGI, 3D render, plastic, toy, miniature, glossy, new paint.",
+   "medias": [
+    {
+     "role": "image",
+     "value": "e2af997e-6881-4344-b445-a3e05a90148a"
+    }
+   ]
+  }
+ },
+ {
+  "index": 5,
+  "tag": "@FILM_REEL",
+  "ref": false,
+  "params": {
+   "model": "soul_cinematic",
+   "aspect_ratio": "16:9",
+   "quality": "2k",
+   "folder_id": "bacdfb1d-ac88-4446-a945-24b7dc558d01",
+   "prompt": "Museum object photograph of the projector's film reel, set alone on a flat mid-grey seamless ground, seen standing upright on its edge, three-quarter, the whole object in frame with grey space around it, nothing else in frame. The object: a large 35mm film reel about forty centimetres across, pressed dark steel with five curved spokes in the same pattern as the projector's handwheels and a square centre hole, loaded with a thick coil of dark brown film; the flanges dented and scratched. Flat mid-grey seamless ground, even neutral grey, no seam, no floor line, a soft shadow under the object. One broad soft source from camera-left and slightly above, no rim light. The object reads matte at its true colour, never cool-shifted by the grey. Real 35mm film capture (Vision3 500T), fine organic grain, softer than digital, NOT digital-clean. OVER-real: dented steel flanges, the edge of the film coil, scratches, oil. If any surface looks clean, smooth, plastic, CGI or rendered — WRONG. NOT: people, hands, room, walls, shelves, other objects, text, labels, logos, brand names, numbers, watermark, frame borders, CGI, 3D render, plastic, toy, miniature, glossy, new paint."
+  }
+ },
+ {
+  "index": 6,
+  "tag": "@FILM_CANS",
+  "ref": true,
+  "params": {
+   "model": "soul_cinematic",
+   "aspect_ratio": "16:9",
+   "quality": "2k",
+   "folder_id": "bacdfb1d-ac88-4446-a945-24b7dc558d01",
+   "prompt": "Museum object photograph of the film tins from the reference image, carried over exactly — the same shape, proportions, parts, colour, wear and materials — lifted out of its room and set alone on a flat mid-grey seamless ground, seen three-quarter from slightly above, the whole object in frame with grey space around it, nothing else in frame. The object: a leaning stack of plain round flat film tins in dull grey tin plate, each about forty centimetres across and five centimetres deep, lids with a rolled rim, dented, scuffed, with spots of rust, no labels; beside the stack one new tin of the same size: bright, unscratched, mirror-clean tin plate, its paper label band on the side turned away from the camera so no writing shows. Flat mid-grey seamless ground, even neutral grey, no seam, no floor line, a soft shadow under the object. One broad soft source from camera-left and slightly above, no rim light. The object reads matte at its true colour, never cool-shifted by the grey. Real 35mm film capture (Vision3 500T), fine organic grain, softer than digital, NOT digital-clean. OVER-real: dull tin plate, dents, rust spots, the flawless bright new tin. If any surface looks clean, smooth, plastic, CGI or rendered — WRONG. NOT: people, hands, room, walls, shelves, other objects, text, labels, logos, brand names, numbers, watermark, frame borders, CGI, 3D render, plastic, toy, miniature, glossy, new paint.",
+   "medias": [
+    {
+     "role": "image",
+     "value": "5ec92e3e-b968-4588-aafd-b9c690147c6e"
+    }
+   ]
+  }
+ },
+ {
+  "index": 7,
+  "tag": "@FILM_CANS",
+  "ref": false,
+  "params": {
+   "model": "soul_cinematic",
+   "aspect_ratio": "16:9",
+   "quality": "2k",
+   "folder_id": "bacdfb1d-ac88-4446-a945-24b7dc558d01",
+   "prompt": "Museum object photograph of the film tins, set alone on a flat mid-grey seamless ground, seen three-quarter from slightly above, the whole object in frame with grey space around it, nothing else in frame. The object: a leaning stack of plain round flat film tins in dull grey tin plate, each about forty centimetres across and five centimetres deep, lids with a rolled rim, dented, scuffed, with spots of rust, no labels; beside the stack one new tin of the same size: bright, unscratched, mirror-clean tin plate, its paper label band on the side turned away from the camera so no writing shows. Flat mid-grey seamless ground, even neutral grey, no seam, no floor line, a soft shadow under the object. One broad soft source from camera-left and slightly above, no rim light. The object reads matte at its true colour, never cool-shifted by the grey. Real 35mm film capture (Vision3 500T), fine organic grain, softer than digital, NOT digital-clean. OVER-real: dull tin plate, dents, rust spots, the flawless bright new tin. If any surface looks clean, smooth, plastic, CGI or rendered — WRONG. NOT: people, hands, room, walls, shelves, other objects, text, labels, logos, brand names, numbers, watermark, frame borders, CGI, 3D render, plastic, toy, miniature, glossy, new paint."
+  }
+ },
+ {
+  "index": 8,
+  "tag": "@CRATE",
+  "ref": true,
+  "params": {
+   "model": "soul_cinematic",
+   "aspect_ratio": "16:9",
+   "quality": "2k",
+   "folder_id": "bacdfb1d-ac88-4446-a945-24b7dc558d01",
+   "prompt": "Museum object photograph of the wooden crate from the reference image, carried over exactly — the same shape, proportions, parts, colour, wear and materials — lifted out of its room and set alone on a flat mid-grey seamless ground, seen three-quarter from slightly above, the whole object in frame with grey space around it, nothing else in frame. The object: a plain open-topped wooden crate of pale pine planks nailed at the corners, about forty centimetres tall, the wood greyed and worn smooth at the edges, a dark knot in one plank. Flat mid-grey seamless ground, even neutral grey, no seam, no floor line, a soft shadow under the object. One broad soft source from camera-left and slightly above, no rim light. The object reads matte at its true colour, never cool-shifted by the grey. Real 35mm film capture (Vision3 500T), fine organic grain, softer than digital, NOT digital-clean. OVER-real: pine grain, nail heads, worn edges. If any surface looks clean, smooth, plastic, CGI or rendered — WRONG. NOT: people, hands, room, walls, shelves, other objects, text, labels, logos, brand names, numbers, watermark, frame borders, CGI, 3D render, plastic, toy, miniature, glossy, new paint.",
+   "medias": [
+    {
+     "role": "image",
+     "value": "5ec92e3e-b968-4588-aafd-b9c690147c6e"
+    }
+   ]
+  }
+ },
+ {
+  "index": 9,
+  "tag": "@CRATE",
+  "ref": false,
+  "params": {
+   "model": "soul_cinematic",
+   "aspect_ratio": "16:9",
+   "quality": "2k",
+   "folder_id": "bacdfb1d-ac88-4446-a945-24b7dc558d01",
+   "prompt": "Museum object photograph of the wooden crate, set alone on a flat mid-grey seamless ground, seen three-quarter from slightly above, the whole object in frame with grey space around it, nothing else in frame. The object: a plain open-topped wooden crate of pale pine planks nailed at the corners, about forty centimetres tall, the wood greyed and worn smooth at the edges, a dark knot in one plank. Flat mid-grey seamless ground, even neutral grey, no seam, no floor line, a soft shadow under the object. One broad soft source from camera-left and slightly above, no rim light. The object reads matte at its true colour, never cool-shifted by the grey. Real 35mm film capture (Vision3 500T), fine organic grain, softer than digital, NOT digital-clean. OVER-real: pine grain, nail heads, worn edges. If any surface looks clean, smooth, plastic, CGI or rendered — WRONG. NOT: people, hands, room, walls, shelves, other objects, text, labels, logos, brand names, numbers, watermark, frame borders, CGI, 3D render, plastic, toy, miniature, glossy, new paint."
+  }
+ },
+ {
+  "index": 10,
+  "tag": "@BOOTH_LAMP",
+  "ref": true,
+  "params": {
+   "model": "soul_cinematic",
+   "aspect_ratio": "16:9",
+   "quality": "2k",
+   "folder_id": "bacdfb1d-ac88-4446-a945-24b7dc558d01",
+   "prompt": "Museum object photograph of the caged work lamp from the reference image, carried over exactly — the same shape, proportions, parts, colour, wear and materials — lifted out of its room and set alone on a flat mid-grey seamless ground, seen from the side, slightly below, the whole object in frame with grey space around it, nothing else in frame. The object: a bare clear pear-shaped tungsten bulb, switched on and glowing warm, inside an open round cage of thin black wire loops, hanging from a single straight black cord with a small black socket at the top. Flat mid-grey seamless ground, even neutral grey, no seam, no floor line, a soft shadow under the object. One broad soft source from camera-left and slightly above, no rim light. The object reads matte at its true colour, never cool-shifted by the grey. Real 35mm film capture (Vision3 500T), fine organic grain, softer than digital, NOT digital-clean. OVER-real: the glowing filament, thin black wire, the cloth cord. If any surface looks clean, smooth, plastic, CGI or rendered — WRONG. NOT: people, hands, room, walls, shelves, other objects, text, labels, logos, brand names, numbers, watermark, frame borders, CGI, 3D render, plastic, toy, miniature, glossy, new paint.",
+   "medias": [
+    {
+     "role": "image",
+     "value": "a173f52e-b065-429a-b548-840924914688"
+    }
+   ]
+  }
+ },
+ {
+  "index": 11,
+  "tag": "@BOOTH_LAMP",
+  "ref": false,
+  "params": {
+   "model": "soul_cinematic",
+   "aspect_ratio": "16:9",
+   "quality": "2k",
+   "folder_id": "bacdfb1d-ac88-4446-a945-24b7dc558d01",
+   "prompt": "Museum object photograph of the caged work lamp, set alone on a flat mid-grey seamless ground, seen from the side, slightly below, the whole object in frame with grey space around it, nothing else in frame. The object: a bare clear pear-shaped tungsten bulb, switched on and glowing warm, inside an open round cage of thin black wire loops, hanging from a single straight black cord with a small black socket at the top. Flat mid-grey seamless ground, even neutral grey, no seam, no floor line, a soft shadow under the object. One broad soft source from camera-left and slightly above, no rim light. The object reads matte at its true colour, never cool-shifted by the grey. Real 35mm film capture (Vision3 500T), fine organic grain, softer than digital, NOT digital-clean. OVER-real: the glowing filament, thin black wire, the cloth cord. If any surface looks clean, smooth, plastic, CGI or rendered — WRONG. NOT: people, hands, room, walls, shelves, other objects, text, labels, logos, brand names, numbers, watermark, frame borders, CGI, 3D render, plastic, toy, miniature, glossy, new paint."
+  }
+ },
+ {
+  "index": 12,
+  "tag": "@SWITCH",
+  "ref": true,
+  "params": {
+   "model": "soul_cinematic",
+   "aspect_ratio": "16:9",
+   "quality": "2k",
+   "folder_id": "bacdfb1d-ac88-4446-a945-24b7dc558d01",
+   "prompt": "Museum object photograph of the projector switch from the reference image, carried over exactly — the same shape, proportions, parts, colour, wear and materials — lifted out of its room and set alone on a flat mid-grey seamless ground, seen almost straight on, slightly from the side, the whole object in frame with grey space around it, nothing else in frame. The object: a large round black bakelite switch plate the size of a saucer, mounted on a small square of pale painted brick, with a pale cream round knob in the centre crossed by a raised grip bar; the bakelite worn to a soft sheen, the knob rubbed smooth by decades of thumbs. Flat mid-grey seamless ground, even neutral grey, no seam, no floor line, a soft shadow under the object. One broad soft source from camera-left and slightly above, no rim light. The object reads matte at its true colour, never cool-shifted by the grey. Real 35mm film capture (Vision3 500T), fine organic grain, softer than digital, NOT digital-clean. OVER-real: worn bakelite, the rubbed cream knob, painted brick. If any surface looks clean, smooth, plastic, CGI or rendered — WRONG. NOT: people, hands, room, walls, shelves, other objects, text, labels, logos, brand names, numbers, watermark, frame borders, CGI, 3D render, plastic, toy, miniature, glossy, new paint.",
+   "medias": [
+    {
+     "role": "image",
+     "value": "7d79c9b9-dd36-4920-a30a-5a1d74f2e679"
+    }
+   ]
+  }
+ },
+ {
+  "index": 13,
+  "tag": "@SWITCH",
+  "ref": false,
+  "params": {
+   "model": "soul_cinematic",
+   "aspect_ratio": "16:9",
+   "quality": "2k",
+   "folder_id": "bacdfb1d-ac88-4446-a945-24b7dc558d01",
+   "prompt": "Museum object photograph of the projector switch, set alone on a flat mid-grey seamless ground, seen almost straight on, slightly from the side, the whole object in frame with grey space around it, nothing else in frame. The object: a large round black bakelite switch plate the size of a saucer, mounted on a small square of pale painted brick, with a pale cream round knob in the centre crossed by a raised grip bar; the bakelite worn to a soft sheen, the knob rubbed smooth by decades of thumbs. Flat mid-grey seamless ground, even neutral grey, no seam, no floor line, a soft shadow under the object. One broad soft source from camera-left and slightly above, no rim light. The object reads matte at its true colour, never cool-shifted by the grey. Real 35mm film capture (Vision3 500T), fine organic grain, softer than digital, NOT digital-clean. OVER-real: worn bakelite, the rubbed cream knob, painted brick. If any surface looks clean, smooth, plastic, CGI or rendered — WRONG. NOT: people, hands, room, walls, shelves, other objects, text, labels, logos, brand names, numbers, watermark, frame borders, CGI, 3D render, plastic, toy, miniature, glossy, new paint."
+  }
+ },
+ {
+  "index": 14,
+  "tag": "@MARQUEE_BULBS",
+  "ref": true,
+  "params": {
+   "model": "soul_cinematic",
+   "aspect_ratio": "21:9",
+   "quality": "2k",
+   "folder_id": "bacdfb1d-ac88-4446-a945-24b7dc558d01",
+   "prompt": "Night detail plate, no people. The lower corner of the lit cinema marquee from the reference image, carried over exactly: a long rectangular letter board of white milk glass framed all round by a single row of round clear incandescent bulbs in small sockets, spaced a hand's width apart, the curved edge of one black block letter at the frame edge. The bulbs glow warm amber with visible filaments; raindrops bead on the glass. Everything beyond the board falls to black. LIGHT — PRACTICAL LIGHT ONLY, NIGHT, DIM & WARM (KEY): the only light is the marquee bulbs themselves; deep shadow, real falloff, low-key. Style: a real photographed frame of 35mm FILM shot through a vintage anamorphic lens — indistinguishable from a still lifted out of a modern photochemical arthouse feature. NOT a render, NOT 3D, NOT AI-CGI, NOT digital-clean. VINTAGE ANAMORPHIC LENS (KEY): vertical oval bokeh on the out-of-focus bulbs, soft edges, halation around each filament, heavy organic film grain. No lens flares, no light streaks, no glow overlays. HYPER-REAL CAPTURE: real 35mm film (Vision3 500T pushed one stop). OVER-real: the milk glass, the filaments, the raindrops, the sockets. NOT: people, readable words, other signs, neon, LED, CGI.",
+   "medias": [
+    {
+     "role": "image",
+     "value": "0d611cce-e7a6-4139-80bc-615c13207600"
+    }
+   ]
+  }
+ }
+]

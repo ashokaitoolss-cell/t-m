@@ -1,0 +1,11 @@
+{
+  "note": "Round 1 location plates. Soul Cinema at 21:9 (a, b) and Soul 2.0 at 16:9 (s2, cropped to 21:9 on the contact sheet). 35mm film camera + vintage 2x anamorphic prime, Vision3 500T. IDs are Higgsfield job IDs: pass one as a media value to reuse the image.",
+  "@CINEMA_EXT_NIGHT": {"a": "f7f552cf-1fb1-45a5-a64a-57ed5ce18af8", "b": "bc323020-9f6c-4a6b-a46b-30246f5800d1", "s2": "5100efb5-31f0-4c4b-858c-868a1790e62b"},
+  "@CINEMA_EXT_LIT": {"a": "79856652-7d9c-46c6-a9d1-109fecbe77f4", "b": "4fe51f9c-11c6-473f-9f3b-441faa05c887", "s2": "1a81a15d-db29-4280-93a2-cf2a7e59464d"},
+  "@SIDE_DOOR": {"a": "6be7b248-45bb-4c4c-b28a-dd89892c1d7b", "b": "145205ef-123b-4ccf-96db-f59372427bbd", "s2": "d68184d8-3c12-4c62-aa6f-34ff67bb8b41"},
+  "@STAIRWELL": {"a": "b3fef99f-b529-4514-9034-fef56b8ba39a", "b": "0a307eaa-73b4-48e7-a88b-b05e4844bc25", "s2": "d174f157-115a-4835-8ea4-dc8aa7ea459b"},
+  "@BOOTH": {"a": "43bd71f2-4873-4f3a-bf07-b0812468b9a8", "b": "31626504-3be3-40b4-9f1e-393a07d86cf9", "s2": "29e012e2-aa66-4bdf-b944-7c8a511239aa"},
+  "@BOOTH_PORT_WALL": {"a": "1dbc1346-9ac8-42d9-b820-2177653a5975", "b": "521f5147-e7ef-4c2f-ae86-5f931fa896fa", "s2": "2afd1aac-f5ad-450f-a531-86d2da51786d"},
+  "@AUDITORIUM": {"a": "e8c0703f-cb2d-4d43-9949-0eb1b4ec61ed", "b": "7da88aa1-7659-4fb9-b399-01c56e0468fd", "s2": "a739be12-3ecd-46a9-a229-ada1cb6e70c7"},
+  "@PORT_EXTERIOR": {"a": "5ce7b6fd-e5bf-447b-8374-487c2c34cc89", "b": "bc886e9e-1c85-4fa3-b9e3-9105e0307d39", "s2": "ffc472fd-4769-4767-8919-92d52962901d"}
+}
