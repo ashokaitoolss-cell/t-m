@@ -157,6 +157,10 @@ Empty plates rendered with Soul Cinema, 16:9, in the film grade. Same room in ev
 | `L3-washroom-interior-sink-mirror.png` | Inside, facing basin and mirror, bulb above, water heater, bucket | Ashok's close-up brushing |
 | `L4-room-reverse-from-washroom.png` | From the washroom door back toward the bed and window, sun flaring | Reverse angles, Muse's eyeline, scene 3 and scene 8 backgrounds |
 
+Location sheets (two 4K pages, built from these plates, not new renders): `locations/sheets/LS1-ashoks-room.png` and `locations/sheets/LS2-washroom.png`. Each page: hero plate, two secondary angles, a top-down plan with camera positions and light sources, locked dressing, light, continuity notes. Source HTML and the render script are in `locations/sheets/src/` (render with `node render.mjs <outdir>`).
+
+Open continuity point from the sheets: L1 puts the window on the left wall, L4 puts one behind the bed. Treat as two windows or lock one before scene plates. Recommendation: left wall is the key, the end-wall window stays for the flare shot only.
+
 ## Scene prompts (`scenes/`)
 
 - `04-washroom/seedance-prompt.md`: the Washroom beat as one 15 s Seedance clip plus a two-clip split, with the @Image reference map.
