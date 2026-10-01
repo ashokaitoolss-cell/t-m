@@ -166,7 +166,8 @@ Open continuity point from the sheets: L1 puts the window on the left wall, L4 p
 
 ## Scene prompts (`scenes/`)
 
-- `04-washroom/seedance-prompt.md`: the Washroom beat as one 15 s Seedance clip plus a two-clip split, with the @Image reference map.
+- `04-washroom/seedance-prompt.md`: the Washroom beat as one 15 s Seedance clip plus a two-clip split, with the @Image reference map (Seedance 2.0 grammar).
+- `04-washroom/run-01-seedance-2.5.md`: the first render, Seedance 2.5, 18 s, 1080p, five shots with dialogue, exact prompt, reference map and frame review. Video at `04-washroom/renders/`.
 
 ## Reusable identity block (paste into any image prompt, always attach `reference/muse-mascot.webp` as the image reference)
 

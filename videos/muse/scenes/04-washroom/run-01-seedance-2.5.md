@@ -53,4 +53,16 @@ Camera Capture: wide-latitude cinema capture, Shot 1 a vintage 40mm 2x anamorphi
 
 ## Result
 
-Pending.
+`renders/run-01-seedance-2.5-1080p.mp4`, 1920x1080, 24 fps, HEVC, AAC audio, 18.05 s, 21.6 MB. Review frames in `renders/frames/`.
+
+Frame review (I cannot watch video, so this is from frames at 11 timestamps and the audio envelope):
+
+- Shot 1 holds the plan: low wide from behind, sun shaft left, teal shadow, door glowing ahead, Ashok ahead-right, Muse behind-left at belt height. The model added one extra angle inside the shot, a second wide from near the door as they arrive. Not asked for, but it cuts cleanly.
+- Shots 2 and 4 match each other: Muse centred on the threshold, tablet in both arms, warm door edge left, cool bathroom behind, spectacle glint. A soft out-of-focus hand appears at the top-right edge of frame in these shots, reading as Ashok inside the bathroom. Acceptable, slightly odd.
+- Shot 3 is the redesigned washroom: round brass mirror, globe sconce, travertine, zellige band, brush head in his mouth, profile. Clean.
+- Shot 5 lands the beat: lean out to his right, brush clamped, brow up, Muse's beret entering the bottom edge of frame.
+- Muse's face on "Already did." reads mildly worried rather than deadpan.
+- Timing drifted later than planned: shot 3 is still running at 12.5 s. Audio shows continuous speech 0 to 12.6 s, silence 12.6 to 14.7 s, a short sound at 14.7 to 15.3 s (consistent with the two-word line), then quiet to the end. Words not verified by ear.
+- Grade holds across all five shots: colour-negative look, teal-green shadows against amber sconce and golden sun, lifted blacks, no clipped highlights.
+
+Verdict: usable first pass. If re-rolling, the two asks are a flat deadpan on "Already did." and removing the stray hand at the edge of the Muse close-ups.
