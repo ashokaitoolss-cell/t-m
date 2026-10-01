@@ -1,0 +1,256 @@
+<title>Muse Voice Auditions</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Nunito:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<style>
+  /* Layout: one warm column, a plush header, then three stacked audition lists. The teal play button is the only loud element. */
+  :root {
+    --bg: #f7f1e8;          /* cream, the mascot's fur */
+    --surface: #fdf7f0;
+    --surface-2: #f1e6da;
+    --fg: #2b2724;
+    --muted: #8a7b70;
+    --line: #e4d6c8;
+    --accent: #4f8783;      /* the teal bow */
+    --accent-ink: #ffffff;
+    --blush: #e4aaa6;       /* the beret and cheeks */
+    --peach: #fbe3d2;       /* the face patch */
+    --star: #d99a3a;
+    --display: "Fredoka", "Nunito", "Segoe UI", system-ui, sans-serif;
+    --body: "Nunito", "Segoe UI", system-ui, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #1e1a18; --surface: #272220; --surface-2: #322b27; --fg: #f2eae0; --muted: #a79a8e;
+      --line: #3d342e; --accent: #7fb6b1; --accent-ink: #15201f; --blush: #c98f8b; --peach: #4a3a33; --star: #e4b25c;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #1e1a18; --surface: #272220; --surface-2: #322b27; --fg: #f2eae0; --muted: #a79a8e;
+    --line: #3d342e; --accent: #7fb6b1; --accent-ink: #15201f; --blush: #c98f8b; --peach: #4a3a33; --star: #e4b25c;
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body { background: var(--bg); color: var(--fg); font-family: var(--body); font-size: 16px; line-height: 1.5; }
+  .wrap { max-width: 760px; margin: 0 auto; padding-inline: 20px; padding-block: 28px 64px; }
+
+  header { display: flex; align-items: center; gap: 20px; margin-bottom: 20px; }
+  header img { width: 96px; height: 96px; object-fit: contain; border-radius: 50%; background: var(--peach); padding: 6px; flex: none; }
+  h1 { font-family: var(--display); font-weight: 600; font-size: clamp(28px, 6vw, 40px); line-height: 1.05; margin: 0 0 6px; text-wrap: balance; letter-spacing: -0.01em; }
+  .sub { color: var(--muted); margin: 0; }
+
+  .brief { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 16px 18px; margin-bottom: 26px; display: grid; gap: 10px; }
+  .brief p { margin: 0; }
+  .brief .line { font-style: italic; color: var(--fg); background: var(--peach); border-radius: 12px; padding: 10px 14px; }
+  .brief .how { color: var(--muted); font-size: 14px; }
+
+  h2 { font-family: var(--display); font-weight: 600; font-size: 20px; margin: 28px 0 4px; }
+  .lede { color: var(--muted); font-size: 14px; margin: 0 0 12px; }
+
+  ul.list { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+  .row { display: grid; grid-template-columns: 48px 1fr auto; gap: 12px; align-items: center; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 10px 12px; min-width: 0; }
+  .row.playing { border-color: var(--accent); background: var(--surface-2); }
+  .play { width: 48px; height: 48px; border-radius: 50%; border: 0; background: var(--accent); color: var(--accent-ink); cursor: pointer; display: grid; place-items: center; flex: none; transition: transform .12s ease; }
+  .play:hover { transform: scale(1.05); }
+  .play:focus-visible, .star:focus-visible, .copy:focus-visible, summary:focus-visible { outline: 3px solid var(--blush); outline-offset: 2px; }
+  .play svg { width: 20px; height: 20px; fill: currentColor; }
+  .play .ico-pause { display: none; }
+  .row.playing .play .ico-play { display: none; }
+  .row.playing .play .ico-pause { display: block; }
+  .meta { min-width: 0; display: grid; gap: 4px; }
+  .name { font-weight: 700; display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+  .chip { font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); background: var(--surface-2); border-radius: 999px; padding: 2px 8px; }
+  .note { font-size: 14px; color: var(--muted); }
+  .bar { position: relative; height: 6px; background: var(--surface-2); border-radius: 999px; overflow: hidden; cursor: pointer; }
+  .bar > i { position: absolute; inset: 0 auto 0 0; width: 0%; background: var(--accent); border-radius: 999px; }
+  .time { font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .star { width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--line); background: transparent; color: var(--muted); cursor: pointer; display: grid; place-items: center; }
+  .star svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.8; }
+  .star.on { color: var(--star); border-color: var(--star); }
+  .star.on svg { fill: currentColor; }
+
+  .shortlist { position: sticky; bottom: 0; margin-top: 28px; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 12px 14px; display: flex; gap: 12px; align-items: center; flex-wrap: wrap; padding-bottom: calc(12px + env(safe-area-inset-bottom, 0px)); }
+  .shortlist .names { flex: 1 1 200px; min-width: 0; font-size: 14px; }
+  .shortlist .names b { font-family: var(--display); font-weight: 600; }
+  .copy { border: 0; border-radius: 999px; background: var(--fg); color: var(--bg); font-weight: 700; padding: 10px 16px; cursor: pointer; font-family: var(--body); }
+  .copy[data-done="1"] { background: var(--accent); color: var(--accent-ink); }
+
+  details { margin-top: 20px; }
+  summary { cursor: pointer; font-family: var(--display); font-weight: 600; font-size: 18px; list-style: none; display: flex; align-items: center; gap: 8px; }
+  summary::-webkit-details-marker { display: none; }
+  summary::before { content: ""; width: 8px; height: 8px; border-right: 2px solid var(--muted); border-bottom: 2px solid var(--muted); transform: rotate(-45deg); transition: transform .15s; }
+  details[open] summary::before { transform: rotate(45deg); }
+  details .lede { margin-top: 4px; }
+
+  @media (max-width: 480px) {
+    .row { grid-template-columns: 44px 1fr auto; padding: 10px; }
+    .play { width: 44px; height: 44px; }
+    header { gap: 14px; }
+    header img { width: 72px; height: 72px; }
+  }
+  @media (prefers-reduced-motion: reduce) { .play { transition: none; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <img src="img/muse-mascot.webp" alt="The Muse mascot: a cream plush creature with a peach face and pink cheeks">
+    <div>
+      <h1>Muse Voice Auditions</h1>
+      <p class="sub">Press play. Star the ones that sound like Muse. Copy the shortlist and paste it back to me.</p>
+    </div>
+  </header>
+
+  <section class="brief">
+    <p class="line">"Good morning! Got the late-night flight. Give me a yes and I'll get my work started. We don't rest! Say yesss, say yesss, I'm ready to rollll! Only three of the eleven things on your list actually matter. The rest, I can handle. Last set. I believe in you. Mostly."</p>
+    <p class="how">What we are listening for: cute and bubbly, a friend who happens to remember everything. Not an assistant voice. "Already handled" should sound like a shrug and a grin, not a status report. The earlier batches used a slightly longer line that opened with "Recovery thirty-one... and it's red."</p>
+  </section>
+
+  <h2>Bubbly batch</h2>
+  <p class="lede">Twelve fresh reads aimed at fun and friendly. Start here.</p>
+  <ul class="list" id="list-bubbly"></ul>
+
+  <h2>Earlier female reads</h2>
+  <p class="lede">The first female pass, a little more composed. Pixie and Daisy each have an ElevenLabs read and a pitched-up Seed Audio read.</p>
+  <ul class="list" id="list-female"></ul>
+
+  <details>
+    <summary>Superseded male reads</summary>
+    <p class="lede">From before Muse was confirmed female. Kept for reference only.</p>
+    <ul class="list" id="list-male"></ul>
+  </details>
+
+  <div class="shortlist" id="shortlist">
+    <div class="names"><b>Shortlist:</b> <span id="shortlist-names">none yet</span></div>
+    <button class="copy" id="copy" type="button">Copy shortlist</button>
+  </div>
+</div>
+
+<script>
+  const SECTIONS = {
+    'list-bubbly': [
+      ['41-anush-elevenlabs', 'Anush', 'ElevenLabs', 'Indian-named preset, may carry the accent the cook beat needs'],
+      ['42-gracie-elevenlabs', 'Gracie', 'ElevenLabs', 'Light and bright'],
+      ['43-hallie-elevenlabs', 'Hallie', 'ElevenLabs', 'Warm, chatty'],
+      ['44-willow-elevenlabs', 'Willow', 'ElevenLabs', 'Soft and friendly'],
+      ['45-bella-elevenlabs', 'Bella', 'ElevenLabs', 'Playful'],
+      ['46-annie-elevenlabs', 'Annie', 'ElevenLabs', 'Upbeat'],
+      ['47-skye-elevenlabs', 'Skye', 'ElevenLabs', 'Airy'],
+      ['48-chloe-elevenlabs', 'Chloe', 'ElevenLabs', 'Quick, bright'],
+      ['49-zoe-elevenlabs', 'Zoe', 'ElevenLabs', 'Quick, bright'],
+      ['50-roxie-elevenlabs', 'Roxie', 'ElevenLabs', 'Bigger personality, slower'],
+      ['51-kiki-seed-pitchup3-fast', 'Kiki', 'Seed Audio, pitch +3, fast', 'Pitched up and quick for maximum bounce'],
+      ['52-pixie-seed-pitchup4-fast', 'Pixie', 'Seed Audio, pitch +4, fast', 'Pitched up and quick, highest of the set']
+    ],
+    'list-female': [
+      ['10-pixie-elevenlabs', 'Pixie', 'ElevenLabs', 'Soft high register'],
+      ['27-pixie-seed-pitchup2', 'Pixie', 'Seed Audio, pitch +2', 'A touch brighter and quicker'],
+      ['21-daisy-elevenlabs', 'Daisy', 'ElevenLabs', 'Light and friendly'],
+      ['28-daisy-seed-pitchup3', 'Daisy', 'Seed Audio, pitch +3', 'Pitched up, quicker'],
+      ['22-evie-elevenlabs', 'Evie', 'ElevenLabs', 'Young, bright'],
+      ['23-juno-elevenlabs', 'Juno', 'ElevenLabs', 'Warm, more grounded'],
+      ['24-hana-elevenlabs', 'Hana', 'ElevenLabs', 'Fast read'],
+      ['25-kiki-elevenlabs', 'Kiki', 'ElevenLabs', 'Playful'],
+      ['26-lucy-elevenlabs', 'Lucy', 'ElevenLabs', 'Soft, slower']
+    ],
+    'list-male': [
+      ['01-grady-elevenlabs', 'Grady', 'ElevenLabs', ''],
+      ['02-holden-elevenlabs', 'Holden', 'ElevenLabs', ''],
+      ['03-archie-elevenlabs', 'Archie', 'ElevenLabs', ''],
+      ['04-benji-elevenlabs', 'Benji', 'ElevenLabs', ''],
+      ['05-dylan-elevenlabs', 'Dylan', 'ElevenLabs', ''],
+      ['06-jasper-elevenlabs', 'Jasper', 'ElevenLabs', ''],
+      ['07-benji-seed-pitchup4', 'Benji', 'Seed Audio, pitch +4', ''],
+      ['08-archie-seed-pitchup5', 'Archie', 'Seed Audio, pitch +5', ''],
+      ['09-cody-seed-pitchup3', 'Cody', 'Seed Audio, pitch +3', ''],
+      ['11-evan-elevenlabs', 'Evan', 'ElevenLabs', '']
+    ]
+  };
+
+  const PLAY = '<svg class="ico-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg><svg class="ico-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5h4v14H6zm8 0h4v14h-4z"/></svg>';
+  const STAR = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L12 16.9l-5.3 2.8 1.1-5.9-4.3-4.1 5.9-.8z"/></svg>';
+
+  let stars = new Set();
+  try { stars = new Set(JSON.parse(localStorage.getItem('muse-shortlist') || '[]')); } catch (e) {}
+  const saveStars = () => { try { localStorage.setItem('muse-shortlist', JSON.stringify([...stars])); } catch (e) {} };
+
+  const rows = new Map();
+  let current = null;
+
+  const fmt = s => { if (!isFinite(s)) return '0:00'; const m = Math.floor(s / 60), r = Math.floor(s % 60); return m + ':' + String(r).padStart(2, '0'); };
+
+  function stopCurrent() {
+    if (!current) return;
+    current.audio.pause();
+    current.li.classList.remove('playing');
+    current = null;
+  }
+
+  function build(listId, items) {
+    const ul = document.getElementById(listId);
+    for (const [file, name, engine, note] of items) {
+      const li = document.createElement('li');
+      li.className = 'row';
+      li.innerHTML =
+        '<button class="play" type="button" aria-label="Play ' + name + ' ' + engine + '">' + PLAY + '</button>' +
+        '<div class="meta">' +
+          '<div class="name"><span>' + name + '</span><span class="chip">' + engine + '</span></div>' +
+          (note ? '<div class="note">' + note + '</div>' : '') +
+          '<div class="bar" role="progressbar" aria-label="Playback position"><i></i></div>' +
+          '<div class="time">0:00</div>' +
+        '</div>' +
+        '<button class="star" type="button" aria-pressed="false" aria-label="Star ' + name + '">' + STAR + '</button>';
+      ul.appendChild(li);
+
+      const audio = new Audio('auditions/' + file + '.mp3');
+      audio.preload = 'none';
+      const bar = li.querySelector('.bar'), fill = bar.firstElementChild, time = li.querySelector('.time');
+      const playBtn = li.querySelector('.play'), starBtn = li.querySelector('.star');
+      const entry = { audio, li, name, engine, file };
+      rows.set(file, entry);
+
+      playBtn.addEventListener('click', () => {
+        if (current && current.audio === audio) { stopCurrent(); return; }
+        stopCurrent();
+        current = entry;
+        li.classList.add('playing');
+        audio.play().catch(() => { li.classList.remove('playing'); current = null; time.textContent = 'Could not play'; });
+      });
+      audio.addEventListener('timeupdate', () => {
+        const d = audio.duration || 0;
+        fill.style.width = d ? (audio.currentTime / d * 100) + '%' : '0%';
+        time.textContent = fmt(audio.currentTime) + ' / ' + fmt(d);
+      });
+      audio.addEventListener('loadedmetadata', () => { time.textContent = '0:00 / ' + fmt(audio.duration); });
+      audio.addEventListener('ended', () => { li.classList.remove('playing'); if (current && current.audio === audio) current = null; fill.style.width = '0%'; });
+      bar.addEventListener('click', e => {
+        if (!audio.duration) return;
+        const r = bar.getBoundingClientRect();
+        audio.currentTime = Math.max(0, Math.min(1, (e.clientX - r.left) / r.width)) * audio.duration;
+      });
+
+      const label = name + ' (' + engine + ')';
+      const paint = () => { const on = stars.has(label); starBtn.classList.toggle('on', on); starBtn.setAttribute('aria-pressed', on ? 'true' : 'false'); };
+      starBtn.addEventListener('click', () => { if (stars.has(label)) stars.delete(label); else stars.add(label); saveStars(); paint(); renderShortlist(); });
+      paint();
+    }
+  }
+
+  function renderShortlist() {
+    const el = document.getElementById('shortlist-names');
+    el.textContent = stars.size ? [...stars].join(', ') : 'none yet';
+  }
+
+  for (const id in SECTIONS) build(id, SECTIONS[id]);
+  renderShortlist();
+
+  const copyBtn = document.getElementById('copy');
+  copyBtn.addEventListener('click', () => {
+    const text = stars.size ? 'Muse voice shortlist: ' + [...stars].join(', ') : 'Muse voice shortlist: none yet';
+    const done = () => { copyBtn.textContent = 'Copied'; copyBtn.dataset.done = '1'; setTimeout(() => { copyBtn.textContent = 'Copy shortlist'; delete copyBtn.dataset.done; }, 1600); };
+    const fallback = () => {
+      const r = document.createRange(); r.selectNodeContents(document.getElementById('shortlist-names'));
+      const s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      copyBtn.textContent = 'Selected, press copy';
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(done, fallback); else fallback();
+  });
+</script>
