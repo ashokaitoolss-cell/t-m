@@ -96,6 +96,23 @@ Earlier passes are kept for reference only:
 
 Optional, not done: tiny eyelashes on the dot eyes would push the female read further, but that edits the mascot's face. Say so if you want it.
 
+## Wardrobe by scene (`character-sheets/wardrobe/`)
+
+Constants in every scene: the mascot itself, round gold spectacles. The beret and bow are the "office" signature and come off only where the script changes her clothes (gym) or the time of day changes her (late night). Rendered with Seedream 5.0 Pro using the mascot plus the locked hero sheet as references.
+
+| Scene | Script beat | Outfit | File |
+|---|---|---|---|
+| 3. She's Here | Bedside, morning, "got the late-night flight", luggage | Beret, specs, bow, tiny camel belted trench with collar up, blush travel neck pillow, mint-green cabin suitcase with handle up, boarding pass in the pocket. No lanyard or tablet yet | `W1-arrival.png` |
+| 4. The Washroom | Follows him to the washroom door, dumping information | Base PA look: beret, specs, bow, lanyard with blank ID, tablet | `../S1-split.png` |
+| 5. Kitchen | Sits on the table at a laptop while he makes coffee | Beret, specs, bow, tiny open teal knitted cardigan with sleeves pushed up, cream coffee mug, small silver laptop | `W2-kitchen.png` |
+| 6. Muse at Work | At his desk, on a call ("Can you connect me to a real human?") | Base PA look plus a tiny black headset with boom mic over the beret, a blank yellow sticky note on her belly, tablet | `W3-at-work.png` |
+| 7. The Gym | "Muse spins into a tiny trainer outfit" | No beret: teal terry sweatband. Specs. Tiny teal zip track jacket with white sleeve stripes, white wristbands, silver whistle on a black cord in place of the bow, stopwatch. No lanyard or tablet | `W4-gym.png` |
+| 8. Ending | 11:02 PM, "Muse keeps working beside him" | No beret: blush knitted nightcap with pom-pom. Specs. Oversized cream cable-knit cardigan, no bow, open laptop with a warm screen glow, mug of chamomile | `W5-late-night.png` |
+
+`W0-lineup.png` shows all six side by side in script order for a one-glance continuity check.
+
+Colour logic holds across scenes: blush for anything on the head, teal for anything at the neck or on the body, cream for the cosy pieces so they read as "more of her".
+
 ## Reusable identity block (paste into any image prompt, always attach `reference/muse-mascot.webp` as the image reference)
 
 > The character is exactly the mascot from the reference image, unchanged: a chubby plush creature with cream off-white fluffy fur, one rounded hooded head-and-body silhouette with no neck, an oval smooth peach-toned face patch, two small glossy black dot eyes, soft pink blush circles on the cheeks, a tiny curved black smile, two short stubby rounded arms with no fingers, two short stubby legs, no ears, no tail, no nose, same fur colour, same face and same proportions as the reference. She is dressed as a female personal assistant: a soft blush-pink wool beret perched on top of the hooded head and tilted slightly to one side, round thin gold-wire spectacles resting on the face patch in front of the eyes, a muted teal satin ribbon around where the neck would be tied in a soft bow at the front with two short ribbon tails hanging down the belly, a thin black lanyard with a small blank white ID card on the belly below the bow, a slim black tablet tucked under the right stub arm, no other clothing. Soft 3D plush render matching the reference, realistic short fur strands, matte plush texture, soft wool texture on the beret, soft diffused studio lighting.
@@ -103,6 +120,6 @@ Optional, not done: tiny eyelashes on the dot eyes would push the female read fu
 ## Next steps
 
 - Confirm bow vs tie (recommend bow).
-- Gym variant: same beret and spectacles, teal sweatband or tiny teal track top, no bow.
+- Wardrobe by scene is done (see above). Remaining: a sitting pose per scene (table, desk, bedside) once plates exist.
 - Scene plates: comp Muse against Ashok's own plates using the belt line as the scale reference. Sitting-on-table and sitting-on-bed-with-luggage poses are the two most used in the script.
 - Voice: see `voice/VOICE.md`.
