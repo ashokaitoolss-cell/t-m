@@ -2,6 +2,7 @@
 project: muse
 status: rough idea, not finalized
 source: Muse — Script (Draft 3) PDF, @wawefilms, Oct 1 2026
+mascot: reference/muse-mascot.webp (supplied by Ashok, Oct 1 2026)
 ---
 
 # Muse — character brief
@@ -25,60 +26,62 @@ What the script needs from the character:
 - Warm, not cold: the "I believe in you. Mostly." and bedtime beats are affection, not nagging.
 - Costume changes are implied (trainer outfit at the gym), so the base look needs a strong silhouette that survives swaps: cap + spectacles + tie.
 
-**Open point:** the script writes Muse as "she". This brief follows the newer direction (male PA, "he") from today's message. If Muse stays "she", the sheets regenerate with the same wardrobe on a female character and the voice shortlist changes.
+**Pronoun note:** the script writes Muse as "she"; today's direction says "he". The mascot itself is genderless, so this only affects the script text and the voice pick.
 
-## Character bible — MUSE (locked unless changed)
+## The mascot (base, do not change)
+
+`reference/muse-mascot.webp` is the source of truth. Everything below is read off it:
 
 | Attribute | Spec |
 |---|---|
-| Role | Ashok's AI personal assistant, launched by Meta (fictional framing) |
-| Height | ~90 cm. Top of cap level with Ashok's belt line / waist (Ashok ≈ 175 cm) |
-| Proportions | Grown man, scaled down. Look A: true 1:7 adult ratio. Look B: gently stylized 1:5 head ratio (recommended) |
-| Age read | Mid-thirties, not a child, not a caricature |
-| Skin / heritage | Warm medium-brown South Asian skin |
-| Face | Oval, defined jawline, straight nose, closely trimmed short black beard and moustache |
-| Hair | Short black, side-parted, under the cap |
-| Eyes | Dark brown, muted catchlights, no glare |
-| Spectacles | Round, thin gold-wire frames |
-| Hat | Charcoal herringbone wool flat cap (newsboy) |
-| Shirt | Crisp white cotton oxford, sleeves rolled to the forearm |
-| Tie | Slim muted teal knitted tie, flat square bottom |
-| Waistcoat | Fitted charcoal, plain charcoal back panel |
-| Trousers | Slim navy tapered chinos, tan leather belt |
-| Shoes | Polished tan leather brogues |
-| Props | Thin black lanyard with a small blank white ID card. Slim black tablet under the left arm. No bag, no watch |
-| Default expression | Calm, confident slight smile |
-| Expression set | Neutral-attentive, playful good-morning grin, restless eyebrow raise, deadpan "already did it" smirk, whisper-and-wink, warm sleepy late-night smile |
+| Body | One rounded, hooded head-and-body silhouette, no neck, chubby |
+| Fur | Cream / off-white, short plush fur, matte |
+| Face | Oval smooth peach-toned face patch set into the fur |
+| Eyes | Two small glossy black dots |
+| Cheeks | Soft pink blush circles |
+| Mouth | Tiny curved black smile |
+| Arms | Two short stubby rounded arms, no fingers |
+| Legs | Two short stubby legs, no feet detail |
+| Not present | Ears, tail, nose, eyebrows |
+| Render | Soft 3D plush, realistic fur strands, soft diffused light, white seamless |
+
+## PA dressing (locked unless changed)
+
+| Item | Spec |
+|---|---|
+| Height | ~90 cm. Top of the cap level with Ashok's belt line / waist (Ashok ≈ 175 cm) |
+| Cap | Small charcoal herringbone wool flat cap perched on the hood |
+| Spectacles | Round thin gold-wire frames resting on the face patch |
+| Tie | Slim muted teal knitted tie, flat square bottom, hangs from the lower edge of the face patch down the belly |
+| Lanyard | Thin black cord around where the neck would be, small blank white ID card on the belly |
+| Prop | Slim black tablet tucked under the right stub arm |
+| Clothing | None otherwise, fur stays visible. Variant: tiny charcoal herringbone waistcoat with three buttons (see `M5`) |
+| Default expression | The mascot's own calm smile |
+| Expression set | Neutral, happy-arc-eyes grin, restless wide-eye "o", half-lid deadpan, wink with stub arm to mouth, closed-eye sleepy smile |
 
 ## Character sheets (`character-sheets/`)
 
-Two looks, same bible. Generated with GPT Image 2.5 (high, 2k) through Higgsfield on Oct 1 2026.
+Generated with GPT Image 2.5 (high, 2k) through Higgsfield on Oct 1 2026, with the mascot as the image reference.
 
 | File | What it is |
 |---|---|
-| `A1-photoreal-split.png` | Look A, live-action composite look. Full body + chest-up |
-| `A2-photoreal-turnaround.png` | Look A, front / 3/4 / profile / back |
-| `A3-photoreal-expressions.png` | Look A, full body + six expressions |
-| `A4-photoreal-scale.png` | Look A beside a 175 cm stand-in. **Came out too tall (chest height), needs a regen or a comp fix** |
-| `B1-3d-split.png` | Look B, stylized 3D. Full body + chest-up |
-| `B2-3d-turnaround.png` | Look B, front / 3/4 / profile / back |
-| `B3-3d-expressions.png` | Look B, full body + six expressions |
-| `B4-3d-scale.png` | Look B beside the stand-in. **Cap sits exactly on the waist line, this one is correct** |
+| `M1-split.png` | Hero sheet. Full body + chest-up close-up, base PA look |
+| `M2-turnaround.png` | Front / 3/4 / profile / back. Back view shows only cap, lanyard cord and fur |
+| `M3-expressions.png` | Full body + six expressions |
+| `M4-scale.png` | Beside a 175 cm stand-in, cap top on the belt line. Stand-in is an anonymous generated figure, not Ashok |
+| `M5-split-waistcoat-variant.png` | Same look plus a tiny charcoal waistcoat. Optional, dressier |
 
-**Recommendation: Look B (stylized 3D).** Reasons: it reads instantly as a character and not a composited small man, the slightly bigger head and softer features match the "cute and fluffy" voice direction, and it will sit more comfortably on a table or desk in live-action plates without uncanny-valley problems. Look A is kept as the fallback if the film wants Muse to feel like a tiny real person.
+`superseded-human-pa/` holds the first pass, built before the mascot was supplied. It treated Muse as a small human PA. Kept for reference only.
 
-The scale stand-in is an anonymous generated figure, not Ashok. For the real film, comp Muse against Ashok's own plate using the waist line as the reference.
+**Recommendation:** base look (`M1`) for the film. The waistcoat variant reads a touch "butler" and hides fur; keep it for a specific gag if one comes up.
 
-## Reusable identity block (paste into any image prompt)
+## Reusable identity block (paste into any image prompt, always attach `reference/muse-mascot.webp` as the image reference)
 
-> MUSE, an original character: a small adult man about 90 cm tall with adult proportions gently stylized, slightly larger head of about one to five head-to-body ratio, clearly a grown man in his mid-thirties and not a child, warm medium-brown South Asian skin, oval face with a defined jawline, straight nose, neat short black hair side-parted under the cap, closely trimmed short black beard and moustache, dark brown eyes behind round thin gold-wire spectacles, calm confident slight smile, wearing a charcoal herringbone wool flat cap, crisp white cotton oxford shirt with sleeves rolled to the forearm, a slim muted teal knitted tie with a flat square bottom, a fitted charcoal waistcoat, slim navy tapered trousers with a tan leather belt, polished tan leather brogues, a thin black lanyard with a small blank white ID card, a slim black tablet tucked under the left arm, no bag, no watch, stylized 3D character render, smooth subsurface-scattering skin, detailed hair strands and realistic wool, cotton and knit cloth materials.
-
-For Look A swap the render clause for: "visible fine skin texture with natural pores, no digital smoothing, no beauty filter, high-end unretouched commercial photography style, cinematic realism" and use "fully adult proportions simply scaled down, adult head-to-body ratio of about one to seven".
+> The character is exactly the mascot from the reference image, unchanged: a chubby plush creature with cream off-white fluffy fur, one rounded hooded head-and-body silhouette with no neck, an oval smooth peach-toned face patch, two small glossy black dot eyes, soft pink blush circles on the cheeks, a tiny curved black smile, two short stubby rounded arms with no fingers, two short stubby legs, no ears, no tail, no nose, same fur colour, same face and same proportions as the reference. Dressed as a personal assistant: a small charcoal herringbone wool flat cap perched on top of the hooded head, round thin gold-wire spectacles resting on the face patch in front of the eyes, a slim muted teal knitted tie with a flat square bottom hanging from the lower edge of the face patch down the belly, a thin black lanyard with a small blank white ID card on the belly, a slim black tablet tucked under the right stub arm, no other clothing. Soft 3D plush render matching the reference, realistic short fur strands, matte plush texture, soft diffused studio lighting.
 
 ## Next steps
 
-- Lock Look A vs B (recommend B).
-- Regenerate `A4` only if Look A is chosen.
-- Gym variant: same head, cap and spectacles, tiny trainer outfit (teal track top keeps the tie colour as the brand accent).
-- Train a reusable Soul / character reference from `B1` + `B2` so every scene plate gets the same face.
+- Confirm base look vs waistcoat variant (recommend base).
+- Gym variant: same cap and spectacles, tiny teal track top or sweatband, no tie.
+- Scene plates: comp Muse against Ashok's own plates using the belt line as the scale reference. Sitting-on-table and sitting-on-bed-with-luggage poses are the two most used in the script.
 - Voice: see `voice/VOICE.md`.
