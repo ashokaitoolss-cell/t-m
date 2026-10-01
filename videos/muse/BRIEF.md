@@ -4,6 +4,7 @@ status: rough idea, not finalized
 source: Muse — Script (Draft 3) PDF, @wawefilms, Oct 1 2026
 mascot: reference/muse-mascot.webp (supplied by Ashok, Oct 1 2026)
 character: female
+image model: Seedream 5.0 Pro (seedream_v5_pro) via Higgsfield, GPT Image 2.5 as alternate
 ---
 
 # Muse — character brief
@@ -53,7 +54,7 @@ Muse is female, matching the script's "she".
 | Height | ~90 cm. Top of the beret level with Ashok's belt line / waist (Ashok ≈ 175 cm) |
 | Hat | Soft blush-pink wool beret perched on the hood, tilted slightly to one side |
 | Spectacles | Round thin gold-wire frames resting on the face patch |
-| Neck | Muted teal satin ribbon tied in a soft bow at the lower edge of the face patch, two short tails down the belly |
+| Neck | Muted teal satin ribbon around where the neck would be, tied in a soft bow at the front, two short tails down the belly |
 | Lanyard | Thin black cord around where the neck would be, small blank white ID card on the belly below the bow |
 | Prop | Slim black tablet tucked under the right stub arm |
 | Clothing | None otherwise, fur stays visible |
@@ -65,27 +66,39 @@ Colour logic: the blush beret picks up the cheek blush, the teal bow is the sing
 
 ## Character sheets (`character-sheets/`)
 
-Generated with GPT Image 2.5 (high, 2k) through Higgsfield on Oct 1 2026, with the mascot as the image reference.
+Two renders of the same female dressing, both from the mascot as image reference, Oct 1 2026.
+
+**Primary: Seedream 5.0 Pro** (`S*`, requested model). Softer, more real-plush fur, felt beret. It tied the teal ribbon around the neck like a choker with the bow at the front, which reads well and is now the locked placement.
 
 | File | What it is |
 |---|---|
-| `F1-split.png` | Hero sheet. Full body + chest-up close-up |
-| `F2-turnaround.png` | Front / 3/4 / profile / back. Back view shows only beret, lanyard cord and fur |
-| `F3-expressions.png` | Full body + six expressions |
-| `F4-scale.png` | Beside a 175 cm stand-in, beret top on the belt line. Stand-in is an anonymous generated figure, not Ashok |
-| `F5-split-tie-variant.png` | Same look with the knitted tie in place of the bow. Optional |
+| `S1-split.png` | Hero sheet. Full body + chest-up close-up |
+| `S2-turnaround.png` | Front / 3/4 / profile / back. Body comes out slightly more egg-shaped than the mascot, use S1 for proportions |
+| `S3-expressions.png` | Full body + six expressions |
+| `S4-scale.png` | Beside a 175 cm stand-in, beret top just above the belt line (reads ~100 cm). Stand-in is an anonymous generated figure, not Ashok |
+| `S5-split-tie-variant.png` | Knitted tie in place of the bow. The full-body panel lost the lanyard, close-up has it. Optional |
+
+**Alternate: GPT Image 2.5** (`F*`). Tighter to the mascot proportions, bow sits at the face edge, lanyard consistent. Keep as the fallback if Seedream drifts on scene plates.
+
+| File | What it is |
+|---|---|
+| `F1-split.png` | Hero sheet |
+| `F2-turnaround.png` | Four views |
+| `F3-expressions.png` | Six expressions |
+| `F4-scale.png` | Scale against the stand-in |
+| `F5-split-tie-variant.png` | Tie variant |
 
 Earlier passes are kept for reference only:
 - `superseded-male-pa/`: the mascot dressed with a flat cap and tie, before the female direction.
 - `superseded-human-pa/`: the first pass, built before the mascot was supplied, which treated Muse as a small human.
 
-**Recommendation:** the bow look (`F1`). The tie variant is there if the tie gag matters more than the silhouette.
+**Recommendation:** the bow look, Seedream render (`S1`). The tie variant is there if the tie gag matters more than the silhouette.
 
 Optional, not done: tiny eyelashes on the dot eyes would push the female read further, but that edits the mascot's face. Say so if you want it.
 
 ## Reusable identity block (paste into any image prompt, always attach `reference/muse-mascot.webp` as the image reference)
 
-> The character is exactly the mascot from the reference image, unchanged: a chubby plush creature with cream off-white fluffy fur, one rounded hooded head-and-body silhouette with no neck, an oval smooth peach-toned face patch, two small glossy black dot eyes, soft pink blush circles on the cheeks, a tiny curved black smile, two short stubby rounded arms with no fingers, two short stubby legs, no ears, no tail, no nose, same fur colour, same face and same proportions as the reference. She is dressed as a female personal assistant: a soft blush-pink wool beret perched on top of the hooded head and tilted slightly to one side, round thin gold-wire spectacles resting on the face patch in front of the eyes, a neat muted teal satin ribbon tied in a soft pussy-bow at the lower edge of the face patch with two short ribbon tails hanging down the belly, a thin black lanyard with a small blank white ID card on the belly below the bow, a slim black tablet tucked under the right stub arm, no other clothing. Soft 3D plush render matching the reference, realistic short fur strands, matte plush texture, soft wool texture on the beret, soft diffused studio lighting.
+> The character is exactly the mascot from the reference image, unchanged: a chubby plush creature with cream off-white fluffy fur, one rounded hooded head-and-body silhouette with no neck, an oval smooth peach-toned face patch, two small glossy black dot eyes, soft pink blush circles on the cheeks, a tiny curved black smile, two short stubby rounded arms with no fingers, two short stubby legs, no ears, no tail, no nose, same fur colour, same face and same proportions as the reference. She is dressed as a female personal assistant: a soft blush-pink wool beret perched on top of the hooded head and tilted slightly to one side, round thin gold-wire spectacles resting on the face patch in front of the eyes, a muted teal satin ribbon around where the neck would be tied in a soft bow at the front with two short ribbon tails hanging down the belly, a thin black lanyard with a small blank white ID card on the belly below the bow, a slim black tablet tucked under the right stub arm, no other clothing. Soft 3D plush render matching the reference, realistic short fur strands, matte plush texture, soft wool texture on the beret, soft diffused studio lighting.
 
 ## Next steps
 
