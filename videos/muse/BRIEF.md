@@ -142,9 +142,10 @@ Soul 2.0 note: its single image slot is a subject reference, not a prop referenc
 | File | What it is |
 |---|---|
 | `A1-bathroom-fullbody.png` | Full-body base on mid-gray seamless |
-| `A2-bathroom-6panel.png` | Six-panel sheet: front, both profiles, back, face, toothbrush detail |
+| `A2-bathroom-3panel.png` | Three-panel sheet per Ashok's layout reference (`reference/layout-character-sheet-3panel.webp`): tight face portrait, full-body front, full-body back. Soul 2.0, 16:9 |
+| `A2-bathroom-3panel-alt-21x9-seedream.png` | Same three panels at the reference's 21:9 from Seedream 5.0 Pro using the Soul renders as identity references. Likeness a touch softer, kept as an alternate |
 | `A3-doorway-toothbrush-cu.png` | The script's last beat in the film grade: leaning out of the washroom door, toothbrush head in his mouth, the redesigned washroom behind him |
-| `superseded/` | Earlier takes: eight-panel sheet with sandals, close-ups with a printed tee or the brush head outside the mouth, and the generic blue brush before Ashok supplied the real one |
+| `superseded/` | Earlier takes: the six- and eight-panel sheets, close-ups with a printed tee, the brush head outside the mouth, the heavy vignette, the old washroom, and the generic blue brush before Ashok supplied the real one |
 
 ## Locations (`locations/`)
 
