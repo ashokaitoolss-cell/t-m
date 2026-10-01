@@ -143,23 +143,23 @@ Soul 2.0 note: its single image slot is a subject reference, not a prop referenc
 |---|---|
 | `A1-bathroom-fullbody.png` | Full-body base on mid-gray seamless |
 | `A2-bathroom-6panel.png` | Six-panel sheet: front, both profiles, back, face, toothbrush detail |
-| `A3-doorway-toothbrush-cu.png` | The script's last beat in the film grade: leaning out of the washroom door, toothbrush in mouth, disbelief |
+| `A3-doorway-toothbrush-cu.png` | The script's last beat in the film grade: leaning out of the washroom door, toothbrush head in his mouth, the redesigned washroom behind him |
 | `superseded/` | Earlier takes: eight-panel sheet with sandals, close-ups with a printed tee or the brush head outside the mouth, and the generic blue brush before Ashok supplied the real one |
 
 ## Locations (`locations/`)
 
-Empty plates rendered with Soul Cinema, 16:9, in the film grade. Same room in every plate: terrazzo floor, window camera-left of the bed, pale wooden shelf with a pleated lamp, a plant and an orange mushroom lamp, desk with monitor, ring light and tripod, mesh chair with a hoodie, ceiling fan, washroom door at the far end with off-white tile, a teal-green tile band, a frosted window and one bare warm bulb.
+Empty plates rendered with Soul Cinema, 16:9, in the film grade. Same apartment in every plate. Room: terrazzo floor, window camera-left of the bed, pale wooden shelf with a pleated lamp, a plant and an orange mushroom lamp, desk with monitor, ring light and tripod, mesh chair with a hoodie, ceiling fan. Washroom, redesigned on 1 Oct to match the room: the same terrazzo running through the door, warm travertine-toned stone walls, one glossy teal-green zellige band at waist height, a floating walnut vanity with a vessel basin and brass tap, a round brass mirror with one opal globe sconce above it, a frosted reeded window for cyan fill, a reeded-glass partition with a brass frame hiding the bathing area, a teak stool with towels, tan leather slippers on the sill. The first washroom (bare bulb, square mirror, water heater, bucket) read as a different, older building and is archived in `locations/superseded-old-washroom/`.
 
 | File | Angle | Used for |
 |---|---|---|
 | `L1-room-wide-toward-washroom.png` | From the foot of the bed toward the washroom door | Scene 4 shot 1, the walk from behind |
-| `L2-washroom-doorway-from-room.png` | Low, three steps back from the door, slippers on the threshold | Muse's close-ups beside the door |
-| `L3-washroom-interior-sink-mirror.png` | Inside, facing basin and mirror, bulb above, water heater, bucket | Ashok's close-up brushing |
+| `L2-washroom-doorway-from-room.png` | Low, three steps back from the door, slippers on the threshold, terrazzo continuous into the washroom | Muse's close-ups beside the door |
+| `L3-washroom-interior-vanity-mirror.png` | Inside, facing the walnut vanity and round brass mirror, globe sconce above, reeded partition right | Ashok's close-up brushing |
 | `L4-room-reverse-from-washroom.png` | From the washroom door back toward the bed and window, sun flaring | Reverse angles, Muse's eyeline, scene 3 and scene 8 backgrounds |
 
 Location sheets (two 4K pages, built from these plates, not new renders): `locations/sheets/LS1-ashoks-room.png` and `locations/sheets/LS2-washroom.png`. Each page: hero plate, two secondary angles, a top-down plan with camera positions and light sources, locked dressing, light, continuity notes. Source HTML and the render script are in `locations/sheets/src/` (render with `node render.mjs <outdir>`).
 
-Seedream 5.0 Pro six-angle sheets, generated from the plates as references: `locations/sheets/SD1-ashoks-room-6angles.png` (wide, reverse, doorway, desk corner, shelf corner, top-down plan) and `locations/sheets/SD2-washroom-6angles.png` (basin, looking out the door, threshold, heater corner, floor and bucket, top-down plan). Use the composed LS sheets for notes and the SD sheets for angles.
+Seedream 5.0 Pro six-angle sheets, generated from the plates as references: `locations/sheets/SD1-ashoks-room-6angles.png` (wide, reverse, doorway, desk corner, shelf corner, top-down plan) and `locations/sheets/SD2-washroom-6angles.png` (vanity and mirror, looking out the door, threshold, vanity corner, reeded partition with stool, top-down plan). Use the composed LS sheets for notes and the SD sheets for angles.
 
 Open continuity point from the sheets: L1 puts the window on the left wall, L4 puts one behind the bed. Treat as two windows or lock one before scene plates. Recommendation: left wall is the key, the end-wall window stays for the flare shot only.
 
