@@ -113,6 +113,52 @@ Constants in every scene: the mascot itself, round gold spectacles. The beret an
 
 Colour logic holds across scenes: blush for anything on the head, teal for anything at the neck or on the body, cream for the cosy pieces so they read as "more of her".
 
+## Look of the film (grade and lighting)
+
+Reference frames in `reference/grade/` (five stills Ashok supplied). What they share, and what every plate and prompt now carries:
+
+- Colour-negative film emulation, fine 35mm grain, lifted blacks, soft highlight roll-off, halation on bulbs and windows.
+- Teal-green shadows and cyan window daylight against warm amber tungsten practicals and low golden sun. Warm skin preserved through the grade.
+- Muted greens, ochres and creams in the dressing. Vintage anamorphic feel: shallow focus, oval bokeh, soft frame edges, occasional horizontal flare.
+- Lighting is motivated: one window, one bulb, one shaft of sun. No fill from nowhere.
+
+Three of the five frames contain recognisable actors, so they stay in the repo as mood only and are never uploaded as generation references.
+
+## Ashok — bathroom attire (`character-sheets/ashok/`)
+
+Rendered with Soul 2.0 on the trained identity **Ashok - 2026 New** (`soul_id 18a426eb-5fa2-466f-a1cd-1a5a64f6cbe0`). A second ready identity, "Ashok Reddy - Final", has longer hair and is not used. The Soul Cinema trainings of Ashok on the account are in a failed state, so Ashok renders through Soul 2.0 only.
+
+| Item | Spec |
+|---|---|
+| Hair | Thick messy black bedhead, pushed up on one side |
+| Face | Thin dark moustache, clean chin, medium-brown skin, half-lidded morning eyes |
+| Top | Slept-in faded olive-grey crew-neck cotton tee, stretched collar, no print |
+| Bottom | Soft navy cotton pyjama trousers, fine white check, drawstring |
+| Feet | Bare |
+| Props | Small cream cotton face towel over the left shoulder, blue plastic toothbrush |
+
+| File | What it is |
+|---|---|
+| `A1-bathroom-fullbody.png` | Full-body base on mid-gray seamless |
+| `A2-bathroom-6panel.png` | Six-panel sheet: front, both profiles, back, face, toothbrush detail |
+| `A3-doorway-toothbrush-cu.png` | The script's last beat in the film grade: leaning out of the washroom door, toothbrush in mouth, disbelief |
+| `superseded/` | First takes: an eight-panel sheet with sandals, and a close-up with a printed word on the tee |
+
+## Locations (`locations/`)
+
+Empty plates rendered with Soul Cinema, 16:9, in the film grade. Same room in every plate: terrazzo floor, window camera-left of the bed, pale wooden shelf with a pleated lamp, a plant and an orange mushroom lamp, desk with monitor, ring light and tripod, mesh chair with a hoodie, ceiling fan, washroom door at the far end with off-white tile, a teal-green tile band, a frosted window and one bare warm bulb.
+
+| File | Angle | Used for |
+|---|---|---|
+| `L1-room-wide-toward-washroom.png` | From the foot of the bed toward the washroom door | Scene 4 shot 1, the walk from behind |
+| `L2-washroom-doorway-from-room.png` | Low, three steps back from the door, slippers on the threshold | Muse's close-ups beside the door |
+| `L3-washroom-interior-sink-mirror.png` | Inside, facing basin and mirror, bulb above, water heater, bucket | Ashok's close-up brushing |
+| `L4-room-reverse-from-washroom.png` | From the washroom door back toward the bed and window, sun flaring | Reverse angles, Muse's eyeline, scene 3 and scene 8 backgrounds |
+
+## Scene prompts (`scenes/`)
+
+- `04-washroom/seedance-prompt.md`: the Washroom beat as one 15 s Seedance clip plus a two-clip split, with the @Image reference map.
+
 ## Reusable identity block (paste into any image prompt, always attach `reference/muse-mascot.webp` as the image reference)
 
 > The character is exactly the mascot from the reference image, unchanged: a chubby plush creature with cream off-white fluffy fur, one rounded hooded head-and-body silhouette with no neck, an oval smooth peach-toned face patch, two small glossy black dot eyes, soft pink blush circles on the cheeks, a tiny curved black smile, two short stubby rounded arms with no fingers, two short stubby legs, no ears, no tail, no nose, same fur colour, same face and same proportions as the reference. She is dressed as a female personal assistant: a soft blush-pink wool beret perched on top of the hooded head and tilted slightly to one side, round thin gold-wire spectacles resting on the face patch in front of the eyes, a muted teal satin ribbon around where the neck would be tied in a soft bow at the front with two short ribbon tails hanging down the belly, a thin black lanyard with a small blank white ID card on the belly below the bow, a slim black tablet tucked under the right stub arm, no other clothing. Soft 3D plush render matching the reference, realistic short fur strands, matte plush texture, soft wool texture on the beret, soft diffused studio lighting.
@@ -121,5 +167,5 @@ Colour logic holds across scenes: blush for anything on the head, teal for anyth
 
 - Confirm bow vs tie (recommend bow).
 - Wardrobe by scene is done (see above). Remaining: a sitting pose per scene (table, desk, bedside) once plates exist.
-- Scene plates: comp Muse against Ashok's own plates using the belt line as the scale reference. Sitting-on-table and sitting-on-bed-with-luggage poses are the two most used in the script.
+- Scene 4 is prompt-ready. Next scenes in order of reference need: 3 (bedside with luggage), 5 (kitchen table), 6 (desk), 7 (gym), 8 (bedside night). Each needs one or two Soul Cinema plates and Ashok in that scene's attire.
 - Voice: see `voice/VOICE.md`.
