@@ -159,6 +159,8 @@ Empty plates rendered with Soul Cinema, 16:9, in the film grade. Same room in ev
 
 Location sheets (two 4K pages, built from these plates, not new renders): `locations/sheets/LS1-ashoks-room.png` and `locations/sheets/LS2-washroom.png`. Each page: hero plate, two secondary angles, a top-down plan with camera positions and light sources, locked dressing, light, continuity notes. Source HTML and the render script are in `locations/sheets/src/` (render with `node render.mjs <outdir>`).
 
+Seedream 5.0 Pro six-angle sheets, generated from the plates as references: `locations/sheets/SD1-ashoks-room-6angles.png` (wide, reverse, doorway, desk corner, shelf corner, top-down plan) and `locations/sheets/SD2-washroom-6angles.png` (basin, looking out the door, threshold, heater corner, floor and bucket, top-down plan). Use the composed LS sheets for notes and the SD sheets for angles.
+
 Open continuity point from the sheets: L1 puts the window on the left wall, L4 puts one behind the bed. Treat as two windows or lock one before scene plates. Recommendation: left wall is the key, the end-wall window stays for the flare shot only.
 
 ## Scene prompts (`scenes/`)
