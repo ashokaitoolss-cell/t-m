@@ -1,47 +1,40 @@
 # Muse — voice
 
-Direction: **cute and fluffy**. Now that the mascot is a cream plush creature, this is the whole brief: a soft, round, bright little voice delivering ruthless efficiency ("Already did.") with total calm. The comedy is the gap between how it sounds and what it has done.
+Direction: **cute and fluffy, female**. A soft, round, bright little voice delivering ruthless efficiency ("Already did.") with total calm. The comedy is the gap between how she sounds and what she has already done.
 
 ## Target voice (the spec)
 
 | Trait | Target |
 |---|---|
-| Register | High and light. A boyish, airy tenor, pitched above a normal adult male voice. Reads as "he" per today's direction but could pass as genderless. Never a baby, never a chipmunk |
-| Texture | Soft, breathy, rounded. Think a plush toy that talks. No gravel, no rasp, no nasal edge |
+| Register | Light, high-ish young-woman voice. Airy and small, never a baby voice, never a squeak |
+| Texture | Soft, slightly breathy, rounded. Think a plush toy that talks. No rasp, no nasal edge, no vocal fry |
 | Energy | Bouncy on the good-morning lines, drops to a near-whisper for "Chatbots." and the 11:02 PM bedtime beat |
 | Pace | Brisk. Muse is always slightly ahead of Ashok. Clipped one-word replies ("Ordered." "Already did.") land dry, no upward lilt |
 | Accent | Neutral Indian-English or a light international English. Must say "daal" and the cook's Hindi naturally. Avoid a heavy American read |
-| Anti-reference | Not a robotic assistant voice, not Siri or Alexa, not a Minion, not a mascot squeak |
+| Anti-reference | Not Siri or Alexa, not a Minion, not an anime squeak, not a customer-service voice |
 
 ## Auditions in `auditions/`
 
-Rendered through Higgsfield on Oct 1 2026, all reading the same test line. I cannot listen to audio in this session, so these are candidates for you to A/B, not a ranked pick. The ElevenLabs renders are the closest preview of what ElevenLabs itself will give you.
+Rendered through Higgsfield on Oct 1 2026, all reading the same test line. I cannot listen to audio in this session, so these are candidates for you to A/B, not a ranked pick. ElevenLabs renders are the closest preview of what ElevenLabs itself will give you.
 
 Test line:
 > Recovery thirty-one… and it's red. Good morning! Got the late-night flight. Give me a yes and I'll get my work started. Only three of the eleven things on last night's to-do list matter. The rest, I can handle. Last set. I believe in you. Mostly.
 
-**Listen to these first** (the cute direction, matches the plush):
+**Listen to these first** (female, cute direction):
 
 | File | Preset | Engine | Why |
 |---|---|---|---|
-| `08-archie-seed-pitchup5.mp3` | Archie | Seed Audio, pitch +5, speed +10 | Highest and quickest |
-| `07-benji-seed-pitchup4.mp3` | Benji | Seed Audio, pitch +4, speed +8 | Pitched up, a little rounder |
-| `09-cody-seed-pitchup3.mp3` | Cody | Seed Audio, pitch +3, speed +6 | Gentlest lift |
-| `10-pixie-elevenlabs.mp3` | Pixie | ElevenLabs | Soft high register. Female preset, but the closest ElevenLabs reference for "fluffy" |
+| `10-pixie-elevenlabs.mp3` | Pixie | ElevenLabs | Soft high register, the closest "fluffy" reference |
+| `27-pixie-seed-pitchup2.mp3` | Pixie | Seed Audio, pitch +2, speed +8 | Same voice, a touch brighter and quicker |
+| `21-daisy-elevenlabs.mp3` | Daisy | ElevenLabs | Light and friendly |
+| `28-daisy-seed-pitchup3.mp3` | Daisy | Seed Audio, pitch +3, speed +8 | Pitched up, quicker |
+| `22-evie-elevenlabs.mp3` | Evie | ElevenLabs | Young, bright |
+| `23-juno-elevenlabs.mp3` | Juno | ElevenLabs | Warm, a little more grounded |
+| `24-hana-elevenlabs.mp3` | Hana | ElevenLabs | Shortest, fastest read |
+| `25-kiki-elevenlabs.mp3` | Kiki | ElevenLabs | Playful |
+| `26-lucy-elevenlabs.mp3` | Lucy | ElevenLabs | Soft, slower |
 
-**Baseline adult reads** (made before the mascot arrived, probably too grown-up now):
-
-| File | Preset | Engine |
-|---|---|---|
-| `01-grady-elevenlabs.mp3` | Grady | ElevenLabs |
-| `02-holden-elevenlabs.mp3` | Holden | ElevenLabs |
-| `03-archie-elevenlabs.mp3` | Archie | ElevenLabs |
-| `04-benji-elevenlabs.mp3` | Benji | ElevenLabs |
-| `05-dylan-elevenlabs.mp3` | Dylan | ElevenLabs |
-| `06-jasper-elevenlabs.mp3` | Jasper | ElevenLabs |
-| `11-evan-elevenlabs.mp3` | Evan | ElevenLabs |
-
-One render (Cody via ElevenLabs) failed on the provider side and was not retried.
+**Superseded male reads** (made before the female direction, kept for reference): `01`–`09`, `11`. One render (Cody via ElevenLabs) failed on the provider side and was not retried.
 
 ## Build it in ElevenLabs v4
 
@@ -49,9 +42,9 @@ Eleven v4 is the current flagship. It follows audio tags such as [whispers], [la
 
 **Step 1 — Voice Design prompt (Voices → Voice Design, model Eleven v4):**
 
-> A small, cute, fluffy plush creature that works as a hyper-efficient personal assistant. High, light, airy boyish voice, soft and slightly breathy with a warm rounded tone, clearly not a child and not a cartoon squeak. Neutral Indian-English accent, crisp consonants, fast confident pacing. Cheerful and bright, with a playful deadpan when delivering one-word answers. Not robotic. Studio-clean, close-mic, no reverb.
+> A small, cute, fluffy plush creature who works as a hyper-efficient personal assistant. Young woman, light and airy voice, soft and slightly breathy with a warm rounded tone, clearly not a child and not a cartoon squeak. Neutral Indian-English accent, crisp consonants, fast confident pacing. Cheerful and bright, with a playful deadpan when delivering one-word answers. Not robotic. Studio-clean, close-mic, no reverb.
 
-Generate 3 previews with the test line above. Pick the one where "Already did." lands flat and funny and "Good morning!" sounds like it is smiling.
+Generate 3 previews with the test line above. Pick the one where "Already did." lands flat and funny and "Good morning!" sounds like she is smiling.
 
 **Step 2 — Settings for the final generations (Eleven v4):**
 
@@ -88,6 +81,6 @@ Generate 3 previews with the test line above. Pick the one where "Already did." 
 
 ## Decision needed from you
 
-1. Pick the pitch and energy from 08 / 07 / 09 / 10 (or say "higher" / "lower" / "softer").
+1. Pick the pitch and energy from the female auditions above (or say "higher" / "lower" / "softer").
 2. Confirm the accent: neutral Indian-English (recommended, matches the Hindi cook beat) or light international English.
 3. Then I render the full Draft 3 line set in the chosen voice.
