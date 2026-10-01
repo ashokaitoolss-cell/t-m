@@ -128,6 +128,8 @@ Three of the five frames contain recognisable actors, so they stay in the repo a
 
 Rendered with Soul 2.0 on the trained identity **Ashok - 2026 New** (`soul_id 18a426eb-5fa2-466f-a1cd-1a5a64f6cbe0`). A second ready identity, "Ashok Reddy - Final", has longer hair and is not used. The Soul Cinema trainings of Ashok on the account are in a failed state, so Ashok renders through Soul 2.0 only.
 
+Soul 2.0 note: its single image slot is a subject reference, not a prop reference. Attaching the toothbrush photo there made the model render the toothbrush and drop Ashok. Props go in as text; the prop photo stays in `reference/` for the team and for Seedance.
+
 | Item | Spec |
 |---|---|
 | Hair | Thick messy black bedhead, pushed up on one side |
@@ -135,14 +137,14 @@ Rendered with Soul 2.0 on the trained identity **Ashok - 2026 New** (`soul_id 18
 | Top | Slept-in faded olive-grey crew-neck cotton tee, stretched collar, no print |
 | Bottom | Soft navy cotton pyjama trousers, fine white check, drawstring |
 | Feet | Bare |
-| Props | Small cream cotton face towel over the left shoulder, blue plastic toothbrush |
+| Props | Small cream cotton face towel over the left shoulder. Toothbrush per `reference/prop-toothbrush.png`: white body, sky-blue rubber grip panel and thumb pad, pale blue bristles, no brand text |
 
 | File | What it is |
 |---|---|
 | `A1-bathroom-fullbody.png` | Full-body base on mid-gray seamless |
 | `A2-bathroom-6panel.png` | Six-panel sheet: front, both profiles, back, face, toothbrush detail |
 | `A3-doorway-toothbrush-cu.png` | The script's last beat in the film grade: leaning out of the washroom door, toothbrush in mouth, disbelief |
-| `superseded/` | First takes: an eight-panel sheet with sandals, and a close-up with a printed word on the tee |
+| `superseded/` | Earlier takes: eight-panel sheet with sandals, close-ups with a printed tee or the brush head outside the mouth, and the generic blue brush before Ashok supplied the real one |
 
 ## Locations (`locations/`)
 
