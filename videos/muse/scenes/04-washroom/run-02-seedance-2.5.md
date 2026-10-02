@@ -64,4 +64,24 @@ Camera Capture: wide-latitude cinema capture, Shot 1 a vintage 40mm 2x anamorphi
 
 ## Result
 
-(pending)
+`renders/run-02-seedance-2.5-1080p.mp4`, 1920x1080, 24 fps, HEVC, AAC audio, 20.05 s, 27.7 MB. Review frames in `renders/frames-run-02/`: stills at 13 timestamps, a 1 fps contact sheet, 4 fps sheets for shots 1 and 5, a 2 fps sheet for shots 2 to 4.
+
+Frame review (from stills and the audio envelope; I cannot watch or listen to the clip):
+
+What the new rules bought:
+
+- Muse's close-ups (shots 2 and 4) now live in the bedroom world: camera at the threshold, the bedroom behind her (window with the low sun, bed, ladder shelf with the pleated lamp, ceiling fan), the pale green bedroom-side door jamb at frame right. Nobody else in frame, no stray hand. Her eyeline goes up toward camera, which is toward Ashok in the washroom.
+- Shot 3 is the only washroom-sheet shot and it holds: travertine, round brass mirror, cyan reeded window in the reflection, the white toothbrush with the sky-blue grip, head in his mouth, foam. The model mirrored the plan (face left third, mirror right). It works.
+- "Already did." reads deadpan: at 14 s her mouth is a flat line, dot eyes down on the tablet, no frown. Timing is back on plan: shot 2 to 3 cut at about 11 s, shot 3 to 4 at about 13.5 s, shot 5 from about 15.75 s. Audio: Ashok's line sits at 11.4 to 13.5 s, then a 1.6 s beat, then a short 0.6 s sound at 15.1 to 15.7 s consistent with the two-word line, then silence through shot 5 apart from one short sound at 18.2 s. Words not verified by ear.
+- No smoke, haze, fog, mist or particles in any sampled frame. Depth comes from focus. No morphing visible between sampled frames: faces, beret, spectacles, tie, tablet, towel, door and walls hold their shape. The only light effects are the window bloom in shot 1 and a thin anamorphic flare streak across the top of Muse's close-ups, both coming off the window.
+- Grade holds: colour-negative look, teal-green shadows against the amber sconce and golden sun, lifted blacks, no clipped highlights.
+
+Open issues:
+
+1. **The washroom behind Ashok in shot 5 is the old white-tile washroom** (white square tiles, thin teal border, globe bulb, slot window), not the redesigned travertine and zellige room from SD2. This is upstream of the prompt: the bedroom sheet SD1 itself shows that old washroom through the door in its top-right panel, and faintly in the top-left one, because SD1 was generated before the washroom redesign. Told to take the exterior look from SD1, Seedance did exactly that, and the same old glimpse appears through the door in the second half of shot 1. Fix: swap SD1's doorway panel for the approved redesigned doorway plate L2 and re-run. That corrected sheet is prepared as `locations/sheets/SD1b-ashoks-room-6angles-doorway-fixed.png` (not yet used in any run).
+2. **The toothbrush is missing from Ashok's mouth in shot 5.** He has foam on his lip and moustache and the beat still lands (eyes closed at the lean-out, wide by 17.5 s), but the brush clamped in shot 3 is gone. Continuity miss by the model. Next prompt: write the brush into shot 5 twice, in the mouth and, failing that, visible in his right hand on the door frame.
+3. Shot 1 again has an internal angle change at about 2.9 s, from the low tracking wide to a locked wide beside the doorway as he walks in and she stops. Clean cut, right blocking, but not the single take asked for.
+4. Muse's beret sits in the bottom-left corner for all of shot 5, not just the last second. Harmless.
+5. Door frame colour: pale green in shots 2, 4 and 5 (matching SD1's doorway panel), cream with a visible door leaf in the first half of shot 1. Minor.
+
+Verdict: better than run 01 on every point raised, and the exterior/interior split did what it was told. The one real continuity problem is in the bedroom sheet, not the prompt. Recommended next step: re-run with SD1b in place of SD1 (240 credits at 20 s), with the toothbrush written harder into shot 5.

@@ -173,9 +173,18 @@ Open continuity point from the sheets: L1 puts the window on the left wall, L4 p
 
 > The character is exactly the mascot from the reference image, unchanged: a chubby plush creature with cream off-white fluffy fur, one rounded hooded head-and-body silhouette with no neck, an oval smooth peach-toned face patch, two small glossy black dot eyes, soft pink blush circles on the cheeks, a tiny curved black smile, two short stubby rounded arms with no fingers, two short stubby legs, no ears, no tail, no nose, same fur colour, same face and same proportions as the reference. She is dressed as a female personal assistant: a soft blush-pink wool beret perched on top of the hooded head and tilted slightly to one side, round thin gold-wire spectacles resting on the face patch in front of the eyes, a muted teal satin ribbon around where the neck would be tied in a soft bow at the front with two short ribbon tails hanging down the belly, a thin black lanyard with a small blank white ID card on the belly below the bow, a slim black tablet tucked under the right stub arm, no other clothing. Soft 3D plush render matching the reference, realistic short fur strands, matte plush texture, soft wool texture on the beret, soft diffused studio lighting.
 
+## Standing prompt rules (apply to every image and video prompt on this project)
+
+Ashok's rule from 2 Oct 2026, to be carried into every prompt and prompting system without exception:
+
+- **No morphing, no smoke.** Every prompt carries an explicit stability clause: clear air in every shot (no smoke, haze, fog, mist, steam, dust or particles, nothing appearing out of nowhere); every object, face and body keeps one fixed shape, size, colour and identity from first frame to last (no morphing, warping, melting or stretching; no object, hand, limb or figure appearing or disappearing; props keep their form and count). Write it positively ("clear air", "every shape held") and also name the failure ("no smoke, no morphing"). Never describe atmosphere, haze, dust in light shafts or drifting particles as a look; get depth from focus falloff instead.
+- **Exterior from the room, interior from the washroom.** Any view of the washroom door from the bedroom side anchors to the bedroom sheet; only shots taken inside the washroom anchor to the washroom sheet. The two sheets must agree on what is seen through the door (see `locations/sheets/SD1b-ashoks-room-6angles-doorway-fixed.png`, which replaces SD1's doorway panel with the redesigned doorway plate L2).
+- **Grade and continuity** per "Look of the film" and the continuity table in each location sheet, every time.
+
 ## Next steps
 
 - Confirm bow vs tie (recommend bow).
 - Wardrobe by scene is done (see above). Remaining: a sitting pose per scene (table, desk, bedside) once plates exist.
-- Scene 4 is prompt-ready. Next scenes in order of reference need: 3 (bedside with luggage), 5 (kitchen table), 6 (desk), 7 (gym), 8 (bedside night). Each needs one or two Soul Cinema plates and Ashok in that scene's attire.
+- Scene 4: two Seedance 2.5 runs done (`scenes/04-washroom/run-01…`, `run-02…`). Run 02 is the keeper so far. Recommended next: run 03 with `SD1b` (doorway panel fixed) in place of `SD1`, toothbrush written harder into shot 5.
+- Scene 4 was prompt-ready before that; Next scenes in order of reference need: 3 (bedside with luggage), 5 (kitchen table), 6 (desk), 7 (gym), 8 (bedside night). Each needs one or two Soul Cinema plates and Ashok in that scene's attire.
 - Voice: see `voice/VOICE.md`.
