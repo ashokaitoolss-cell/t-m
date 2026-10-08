@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Generated from src/logo.html by scripts/build.py: edit the source, then rebuild. -->
+  </head>
+  <body>
+    <template>
+      <style>
+        #root {
+          position: absolute;
+          inset: 0;
+        }
+        #stage {
+          position: absolute;
+          inset: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        #push,
+        #settle {
+          position: relative;
+          width: 616px;
+          height: 616px;
+        }
+        /* The shadow follows whatever the tile's clip shows: a dot, then the square. */
+        #settle {
+          filter: drop-shadow(0 30px 48px rgba(33, 65, 143, 0.22)) drop-shadow(0 6px 12px rgba(33, 65, 143, 0.14));
+        }
+        #tile {
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(180deg, #3766b1, #21418f);
+        }
+        #icon {
+          position: absolute;
+          inset: 0;
+          width: 100%;
+          height: 100%;
+          overflow: visible;
+        }
+      </style>
+      <div id="root" data-composition-id="logo" data-width="1920" data-height="1080">
+        <div id="stage">
+          <div id="push">
+            <div id="settle">
+              <div id="tile"></div>
+              <svg id="icon" viewBox="0 0 616 616" role="img" aria-label="PozPad">
+                <defs>
+                  <linearGradient id="tileFill" x1="0" y1="0" x2="0" y2="616" gradientUnits="userSpaceOnUse">
+                    <stop offset="0" stop-color="#3766b1" />
+                    <stop offset="1" stop-color="#21418f" />
+                  </linearGradient>
+                  <linearGradient id="sheenFill" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="0" stop-color="#fff" stop-opacity="0" />
+                    <stop offset="0.5" stop-color="#fff" stop-opacity="0.16" />
+                    <stop offset="1" stop-color="#fff" stop-opacity="0" />
+                  </linearGradient>
+                  <clipPath id="tileClip"><rect width="616" height="616" rx="85" /></clipPath>
+                  <clipPath id="wordClip"><rect x="0" y="466" width="616" height="98.8" /></clipPath>
+                  <!-- A thick pen stroke along the P's centreline: drawing it on writes the P. -->
+                  <mask id="penMask" maskUnits="userSpaceOnUse" x="0" y="0" width="616" height="616">
+                    <path id="pen" d="M245.6 425L245.6 168.85L335.85 168.85A37 37 0 0 1 372.85 205.85L372.85 277.15A37 37 0 0 1 335.85 314.15L286 314.15" fill="none" stroke="#fff" stroke-width="52" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="1" />
+                  </mask>
+                </defs>
+
+                <g id="orbits" clip-path="url(#tileClip)" fill="none" stroke="#fff" stroke-width="2.4">
+                  <path id="ringInner" d="M157.4 86.58A215.7 215.7 0 0 1 458.6 395.42A215.7 215.7 0 0 1 157.4 86.58" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="1" />
+                  <path id="ringOuterL" d="M308 -68.4A309.4 309.4 0 0 0 97.78 468.02" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="1" />
+                  <path id="ringOuterR" d="M308 -68.4A309.4 309.4 0 0 1 517.43 468.75" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="1" />
+                </g>
+
+                <!-- Dots sit under the pin, so the orbiting one passes behind its tail. -->
+                <g id="dots" fill="#fff">
+                  <g id="bigOrbit"><circle id="dotBig" cx="160.7" cy="89.97" r="22.4" /></g>
+                  <circle id="dotRight" cx="519.1" cy="294.83" r="14.7" />
+                  <circle id="dotSmall" cx="55.41" cy="414.59" r="11.4" />
+                </g>
+
+                <g id="pin">
+                  <path id="bubble" d="M159.95 428.86L159.95 232.83C159.95 150.6 224.55 89.5 306.37 89.5C386.78 89.5 455.1 140.59 455.1 221.01L455.1 252.13C455.1 319.35 408.99 363.58 346.02 380.09Z" fill="#fbfbfb" />
+                  <path id="pcut" d="M221.5 165.8A11 11 0 0 1 232.5 154.8L349 154.8A46 46 0 0 1 395 200.8L395 282.2A46 46 0 0 1 349 328.2L286 328.2L286 300.1L322.7 300.1A28 28 0 0 0 350.7 272.1L350.7 210.9A28 28 0 0 0 322.7 182.9L269.7 182.9L269.7 401.59L221.5 414.22Z" fill="url(#tileFill)" mask="url(#penMask)" />
+                </g>
+
+                <g id="word" clip-path="url(#wordClip)" fill="#fff" fill-rule="evenodd">
+                  <g class="glyph"><path d="M149.3 482L184.5 482A14 14 0 0 1 198.5 496L198.5 517A14 14 0 0 1 184.5 531L166.3 531L166.3 524L177.5 524A9 9 0 0 0 186.5 515L186.5 498A9 9 0 0 0 177.5 489L161.5 489L161.5 564L149.3 564Z" /></g>
+                  <g class="glyph"><path d="M205.5 512A13 13 0 0 1 218.5 499L243.5 499A13 13 0 0 1 256.5 512L256.5 551A13 13 0 0 1 243.5 564L218.5 564A13 13 0 0 1 205.5 551ZM217.5 550A7 7 0 0 0 224.5 557L237.5 557A7 7 0 0 0 244.5 550L244.5 513A7 7 0 0 0 237.5 506L224.5 506A7 7 0 0 0 217.5 513Z" /></g>
+                  <g class="glyph"><path d="M263.7 499L305.1 499L305.1 506L276.1 557L305.7 557L305.7 564L263.3 564L263.3 557L292.3 506L263.7 506Z" /></g>
+                  <g class="glyph"><path d="M314.3 482L349.5 482A14 14 0 0 1 363.5 496L363.5 517A14 14 0 0 1 349.5 531L331.3 531L331.3 524L342.5 524A9 9 0 0 0 351.5 515L351.5 498A9 9 0 0 0 342.5 489L326.5 489L326.5 564L314.3 564Z" /></g>
+                  <g class="glyph"><path d="M372.6 499L397.5 499A14 14 0 0 1 411.5 513L411.5 564L376.5 564A12 12 0 0 1 364.5 552L364.5 537.2A12 12 0 0 1 376.5 525.2L391.5 525.2L391.5 532L382.5 532A6 6 0 0 0 376.5 538L376.5 551A6 6 0 0 0 382.5 557L399.5 557L399.5 513A7 7 0 0 0 392.5 506L372.6 506Z" /></g>
+                  <g class="glyph"><path d="M420.5 512A13 13 0 0 1 433.5 499L451.4 499L451.4 506L439.5 506A7 7 0 0 0 432.5 513L432.5 550A7 7 0 0 0 439.5 557L457.5 557L457.5 480L469.5 480L469.5 564L433.5 564A13 13 0 0 1 420.5 551Z" /></g>
+                </g>
+
+                <g clip-path="url(#tileClip)">
+                  <g transform="rotate(18 308 308)"><rect id="sheen" x="-420" y="-200" width="220" height="1016" fill="url(#sheenFill)" /></g>
+                </g>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          const tl = gsap.timeline({ paused: true });
+          const ORBIT = "308 241";
+          const origin = (id) => {
+            const c = document.getElementById(id);
+            return `${c.getAttribute("cx")} ${c.getAttribute("cy")}`;
+          };
+          const draw = (sel, t, duration, ease) =>
+            tl.fromTo(sel, { attr: { "stroke-dashoffset": 1 } }, { attr: { "stroke-dashoffset": 0 }, duration, ease }, t);
+          const pop = (id, t, duration = 0.3) => {
+            const o = origin(id);
+            tl.fromTo(`#${id}`, { scale: 0, svgOrigin: o }, { scale: 1, svgOrigin: o, duration, ease: "back.out(3)" }, t);
+          };
+
+          // 1. A blue dot pops at the centre and opens into the tile (one clip, two moves).
+          tl.fromTo("#tile", { clipPath: "inset(308px round 50%)" }, { clipPath: "inset(296px round 50%)", duration: 0.26, ease: "back.out(2.2)" }, 0.2);
+          tl.to("#tile", { clipPath: "inset(0px round 13.8%)", duration: 0.62, ease: "power4.inOut" }, 0.46);
+          tl.fromTo("#settle", { scale: 0.94 }, { scale: 1, duration: 1.3, ease: "power2.out" }, 0.46);
+
+          // 2. The pin grows out of its own tip; then the P is written into it.
+          tl.fromTo("#pin", { scale: 0, svgOrigin: "159.95 428.86" }, { scale: 1, svgOrigin: "159.95 428.86", duration: 0.5, ease: "back.out(1.5)" }, 0.98);
+          draw("#pen", 1.18, 0.62, "power2.inOut");
+
+          // 3. The big dot runs one full orbit, drawing the inner ring behind it and leaving the
+          //    right-hand dot where it passes; the outer arcs sweep down from the top and leave
+          //    the small dot. Dot and ring share one ease and duration, so the ring ends at the dot.
+          pop("dotBig", 1.34, 0.24);
+          tl.fromTo("#bigOrbit", { rotation: -360, svgOrigin: ORBIT }, { rotation: 0, svgOrigin: ORBIT, duration: 1.3, ease: "power3.inOut" }, 1.34);
+          draw("#ringInner", 1.34, 1.3, "power3.inOut");
+          pop("dotRight", 1.93);
+          draw(["#ringOuterL", "#ringOuterR"], 1.52, 1, "power2.inOut");
+          pop("dotSmall", 2.21);
+          // The big dot lands with a small tap.
+          const big = origin("dotBig");
+          tl.to("#dotBig", { scale: 1.14, svgOrigin: big, duration: 0.08, ease: "power2.out" }, 2.64 - 0.02);
+          tl.to("#dotBig", { scale: 1, svgOrigin: big, duration: 0.4, ease: "back.out(2.5)" }, 2.64 + 0.06);
+
+          // 4. The wordmark rises out of its baseline, letter by letter.
+          tl.fromTo("#word .glyph", { y: 100 }, { y: 0, duration: 0.7, ease: "expo.out", stagger: 0.055 }, 2.36);
+
+          // 5. One soft sheen across the tile, then a slow breath of push-in to the end.
+          tl.fromTo("#sheen", { attr: { x: -420 } }, { attr: { x: 820 }, duration: 0.95, ease: "power2.inOut" }, 3.25);
+          tl.fromTo("#push", { scale: 1 }, { scale: 1.018, duration: 5.5 - 2.9, ease: "sine.inOut" }, 2.9);
+
+          window.__timelines["logo"] = tl;
+          tl.seek(0);
+        })();
+      </script>
+    </template>
+  </body>
+</html>
