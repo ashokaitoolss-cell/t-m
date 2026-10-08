@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <!-- Generated from src/index.html by scripts/build.py: edit the source, then rebuild. -->
+    <script src="assets/vendor/gsap.min.js"></script>
+    <style>
+      :root {
+        --paper-hi: #fbfcfe;
+        --paper: #eff2f7;
+        --paper-lo: #e1e6ef;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: var(--paper);
+      }
+      #root {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+      .layer {
+        position: absolute;
+        inset: 0;
+      }
+      #backdrop {
+        background: radial-gradient(ellipse 62% 80% at 50% 46%, var(--paper-hi) 0%, var(--paper) 58%, var(--paper-lo) 100%);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="{{END}}" data-width="1920" data-height="1080" data-fps="60">
+      <div id="backdrop" class="layer clip" data-start="0" data-duration="{{END}}" data-track-index="0" data-label="Backdrop"></div>
+      <div id="logo-host" class="layer clip" data-composition-id="logo" data-composition-src="compositions/logo.html" data-start="0" data-duration="{{END}}" data-track-index="1" data-width="1920" data-height="1080" data-label="PozPad logo"></div>
+
+      <!-- Sound: soft, tactile, one cue per visual event. -->
+      <audio id="sfx-pop" src="assets/sfx/uiclick.wav" data-start="{{T_DOT}}" data-duration="0.1" data-track-index="2" data-volume="0.9" data-label="dot pops"></audio>
+      <audio id="sfx-open" src="assets/sfx/air.wav" data-start="0.56" data-duration="0.6" data-track-index="3" data-volume="0.6" data-label="tile opens"></audio>
+      <audio id="sfx-pin" src="assets/sfx/thump.wav" data-start="1.12" data-duration="0.5" data-track-index="2" data-volume="0.68" data-label="pin lands"></audio>
+      <audio id="sfx-write" src="assets/sfx/slide.wav" data-start="{{T_WRITE}}" data-duration="0.55" data-track-index="4" data-volume="0.4" data-label="P is written"></audio>
+      <audio id="sfx-orbit" src="assets/sfx/shimmer.wav" data-start="1.38" data-duration="1.0" data-track-index="3" data-volume="0.52" data-label="orbits draw"></audio>
+      <audio id="sfx-dot-right" src="assets/sfx/tick.wav" data-start="{{T_RIGHT_DOT}}" data-duration="0.12" data-track-index="5" data-volume="0.64" data-label="right dot"></audio>
+      <audio id="sfx-dot-small" src="assets/sfx/tick.wav" data-start="{{T_SMALL_DOT}}" data-duration="0.12" data-track-index="5" data-volume="0.56" data-label="small dot"></audio>
+      <audio id="sfx-land" src="assets/sfx/clinkB.wav" data-start="{{T_LAND}}" data-duration="0.25" data-track-index="2" data-volume="0.72" data-label="big dot lands"></audio>
+      <audio id="sfx-word" src="assets/sfx/warm.wav" data-start="{{T_WORD}}" data-duration="1.5" data-track-index="4" data-volume="0.6" data-label="wordmark"></audio>
+      <audio id="sfx-sheen" src="assets/sfx/sparkle.wav" data-start="{{T_SHEEN_SFX}}" data-duration="0.7" data-track-index="3" data-volume="0.36" data-label="sheen"></audio>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <!-- Generated from src/index.html by scripts/build.py: edit the source, then rebuild. -->
+    <script src="assets/vendor/gsap.min.js"></script>
+    <style>
+      :root {
+        --paper-hi: #ffffff;
+        --paper: #f5f6f7;
+        --paper-lo: #e9ebee;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: var(--paper);
+      }
+      #root {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+      .layer {
+        position: absolute;
+        inset: 0;
+      }
+      #backdrop {
+        background: radial-gradient(ellipse 66% 80% at 50% 48%, var(--paper-hi) 0%, var(--paper) 62%, var(--paper-lo) 100%);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="4.8" data-width="1920" data-height="1080" data-fps="60">
+      <div id="backdrop" class="layer clip" data-start="0" data-duration="4.8" data-track-index="0" data-label="Backdrop"></div>
+      <div id="logo-host" class="layer clip" data-composition-id="logo" data-composition-src="compositions/logo.html" data-start="0" data-duration="4.8" data-track-index="1" data-width="1920" data-height="1080" data-label="PozStar logo"></div>
+
+      <!-- Sound: soft, tactile, one cue per visual event. -->
+      <audio id="sfx-streak" src="assets/sfx/whoosh.wav" data-start="0.12" data-duration="0.55" data-track-index="2" data-volume="0.62" data-label="bars streak in"></audio>
+      <audio id="sfx-bar-1" src="assets/sfx/tick.wav" data-start="0.3" data-duration="0.12" data-track-index="3" data-volume="0.5" data-label="blue bar lands"></audio>
+      <audio id="sfx-bar-2" src="assets/sfx/tick.wav" data-start="0.39" data-duration="0.12" data-track-index="4" data-volume="0.43" data-label="orange bar lands"></audio>
+      <audio id="sfx-bar-3" src="assets/sfx/tick.wav" data-start="0.48" data-duration="0.12" data-track-index="3" data-volume="0.38" data-label="green bar lands"></audio>
+      <audio id="sfx-word" src="assets/sfx/slide.wav" data-start="0.62" data-duration="0.55" data-track-index="5" data-volume="0.53" data-label="wordmark slides out"></audio>
+      <audio id="sfx-word-land" src="assets/sfx/clinkB.wav" data-start="1.22" data-duration="0.25" data-track-index="4" data-volume="0.5" data-label="wordmark settles"></audio>
+      <audio id="sfx-tagline" src="assets/sfx/air2.wav" data-start="1.36" data-duration="0.65" data-track-index="3" data-volume="0.43" data-label="tagline"></audio>
+      <audio id="sfx-resolve" src="assets/sfx/warm.wav" data-start="1.6" data-duration="1.5" data-track-index="2" data-volume="0.62" data-label="resolve"></audio>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

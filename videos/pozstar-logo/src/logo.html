@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Generated from src/logo.html by scripts/build.py: edit the source, then rebuild. -->
+  </head>
+  <body>
+    <template>
+      <style>
+        #root {
+          position: absolute;
+          inset: 0;
+        }
+        #stage {
+          position: absolute;
+          inset: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        #push {
+          width: {{DISPLAY_W}}px;
+          height: {{DISPLAY_H}}px;
+        }
+        #mark {
+          display: block;
+          width: 100%;
+          height: 100%;
+          overflow: visible;
+        }
+      </style>
+      <div id="root" data-composition-id="logo" data-width="1920" data-height="1080">
+        <div id="stage">
+          <div id="push">
+            <svg id="mark" viewBox="{{VB}}" role="img" aria-label="PozStar: Perfect Positioning for Success!">
+              <defs>
+                <!-- Invisible slots: the bars come out of the left edge, the word out of the gap after them. -->
+                <clipPath id="barSlot"><rect x="0" y="-2" width="40" height="18" /></clipPath>
+                <clipPath id="wordSlot"><rect id="wordSlotEdge" x="0" y="-2" width="{{VB_W}}" height="19" /></clipPath>
+              </defs>
+              <g id="bars" clip-path="url(#barSlot)">
+{{BARS}}
+              </g>
+              <g id="word" clip-path="url(#wordSlot)" fill="{{INK}}">
+{{LETTERS}}
+              </g>
+              <g id="tagline" fill="{{INK}}">
+{{TAGLINE}}
+              </g>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          const tl = gsap.timeline({ paused: true });
+          const letters = gsap.utils.toArray("#word .letter");
+          const boxes = letters.map((p) => p.getBBox());
+          // The word's slot is the gap between the bars and the "P"; it slides out from behind it.
+          const slot = Math.min(...boxes.map((b) => b.x)) - 0.4;
+          const wordRight = Math.max(...boxes.map((b) => b.x + b.width));
+          document.getElementById("wordSlotEdge").setAttribute("x", slot);
+
+          // 1. The three bars shoot out of their slot, top to bottom, stretched by speed.
+          gsap.utils.toArray("#bars .bar").forEach((bar, i) => {
+            const w = bar.getBBox().width;
+            tl.fromTo(
+              bar,
+              { x: -(w * 1.35) - 0.5, scaleX: 1.35, transformOrigin: "0% 50%" },
+              { x: 0, scaleX: 1, transformOrigin: "0% 50%", duration: 0.6, ease: "expo.out" },
+              {{T_BARS}} + i * {{BAR_STAGGER}},
+            );
+          });
+
+          // 2. "PozStar" slides out of its slot; the last letter leads, so the letters arrive
+          //    a little spread and close up into the word.
+          tl.fromTo(
+            letters,
+            { x: -(wordRight - slot) - 0.3 },
+            { x: 0, duration: {{WORD_DUR}}, ease: "power4.out", stagger: { each: 0.035, from: "end" } },
+            {{T_WORD}},
+          );
+
+          // 3. The tagline fades up, glyph by glyph.
+          tl.fromTo("#tagline .glyph", { opacity: 0, y: 1.1 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out", stagger: 0.014 }, {{T_TAG}});
+
+          // 4. A slow breath of push-in to the end.
+          tl.fromTo("#push", { scale: 1 }, { scale: 1.015, duration: {{END}} - {{T_PUSH}}, ease: "sine.inOut" }, {{T_PUSH}});
+
+          window.__timelines["logo"] = tl;
+          tl.seek(0);
+        })();
+      </script>
+    </template>
+  </body>
+</html>
