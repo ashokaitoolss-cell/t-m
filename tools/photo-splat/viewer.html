@@ -1,0 +1,478 @@
+<title>__TITLE__</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+  /* Layout: a full-bleed stage for the splat, with a title block top-left and one control strip at the bottom. */
+  :root {
+    --stage: #dcdfe3;
+    --ink: #15171a;
+    --ink-soft: #565b63;
+    --glass: rgba(246, 247, 249, 0.82);
+    --line: rgba(21, 23, 26, 0.12);
+    --accent: #b85e0b;
+    --accent-ink: #ffffff;
+    --font-ui: "Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --font-data: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --stage: #0d0e10; --ink: #e8eaed; --ink-soft: #9aa0a8; --glass: rgba(24, 26, 30, 0.78);
+      --line: rgba(232, 234, 237, 0.14); --accent: #f0a145; --accent-ink: #1a1206; color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --stage: #0d0e10; --ink: #e8eaed; --ink-soft: #9aa0a8; --glass: rgba(24, 26, 30, 0.78);
+    --line: rgba(232, 234, 237, 0.14); --accent: #f0a145; --accent-ink: #1a1206; color-scheme: dark;
+  }
+  [hidden] { display: none !important; }
+  html, body { height: 100%; }
+  body {
+    margin: 0; overflow: hidden; background: var(--stage); color: var(--ink);
+    font: 14px/1.4 var(--font-ui);
+  }
+  #stage {
+    position: fixed; inset: 0; width: 100%; height: 100%; display: block;
+    touch-action: none; cursor: grab; outline: none;
+  }
+  #stage.dragging { cursor: grabbing; }
+  #stage:focus-visible { box-shadow: inset 0 0 0 2px var(--accent); }
+  .hud {
+    position: fixed; left: 16px; right: 16px; display: flex; gap: 12px;
+    pointer-events: none;
+  }
+  .hud > * { pointer-events: auto; }
+  .top { top: calc(16px + env(safe-area-inset-top, 0px)); justify-content: space-between; align-items: flex-start; }
+  .bottom { bottom: calc(16px + env(safe-area-inset-bottom, 0px)); flex-wrap: wrap; align-items: center; }
+  .plate {
+    background: var(--glass); border: 1px solid var(--line); border-radius: 10px;
+    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  }
+  .name { padding: 10px 14px; min-width: 0; max-width: min(28rem, 100%); }
+  .name h1 {
+    margin: 0; font-size: 17px; font-weight: 600; letter-spacing: -0.01em; text-wrap: balance;
+  }
+  .name p { margin: 2px 0 0; color: var(--ink-soft); font-size: 12.5px; }
+  .controls { display: flex; gap: 6px; padding: 6px; }
+  button {
+    font: 500 13px/1 var(--font-ui); color: var(--ink); background: transparent;
+    border: 1px solid var(--line); border-radius: 7px; padding: 8px 12px; cursor: pointer;
+  }
+  button:hover { background: var(--line); }
+  button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  button[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+  .readout {
+    display: flex; gap: 14px; padding: 9px 14px; font: 12px/1.2 var(--font-data);
+    font-variant-numeric: tabular-nums; color: var(--ink-soft); white-space: nowrap;
+  }
+  .readout b { font-weight: 500; color: var(--ink); }
+  .hint { color: var(--ink-soft); font-size: 12px; margin-left: auto; text-align: right; }
+  .error { position: fixed; inset: 0; display: grid; place-items: center; padding: 16px; text-align: center; }
+  @media (max-width: 640px) {
+    .hint { display: none; }
+    .readout { gap: 10px; }
+  }
+</style>
+<!-- body -->
+<canvas id="stage" tabindex="0" aria-label="3D view of the photo. Drag to orbit, scroll to zoom."></canvas>
+<div class="hud top">
+  <div class="name plate">
+    <h1 id="title"></h1>
+    <p id="caption"></p>
+  </div>
+</div>
+<div class="hud bottom">
+  <div class="controls plate">
+    <button id="sway" type="button" aria-pressed="true">Sway</button>
+    <button id="reset" type="button">Original view</button>
+  </div>
+  <div class="readout plate" aria-live="off">
+    <span>yaw <b id="yaw">+0.0°</b></span>
+    <span>pitch <b id="pitch">+0.0°</b></span>
+    <span>zoom <b id="zoom">1.00×</b></span>
+  </div>
+  <div class="hint">Drag to orbit · Shift-drag or two fingers to pan · Scroll or pinch to zoom · Double-click to reset</div>
+</div>
+<div id="error" class="error" hidden></div>
+<script id="splat-meta" type="application/json">__SPLAT_META__</script>
+<script id="splat-data" type="application/octet-stream">__SPLAT_DATA__</script>
+<script>
+"use strict";
+(() => {
+  const meta = JSON.parse(document.getElementById("splat-meta").textContent);
+  const canvas = document.getElementById("stage");
+  const $ = (id) => document.getElementById(id);
+  $("title").textContent = meta.title;
+  $("caption").textContent =
+    `Gaussian splat from one photo · ${meta.count.toLocaleString("en-US")} splats`;
+
+  const gl = canvas.getContext("webgl2", { antialias: false, alpha: false, premultipliedAlpha: false });
+  if (!gl) {
+    $("error").textContent = "This viewer needs WebGL 2, which this browser has turned off or does not support.";
+    $("error").hidden = false;
+    return;
+  }
+
+  // ---- Scene data: 32 bytes per splat (see export.py) -> 3 RGBA32UI texels per splat.
+  const b64 = document.getElementById("splat-data").textContent.trim();
+  const bin = atob(b64);
+  const bytes = new Uint8Array(bin.length);
+  for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+  const floats = new Float32Array(bytes.buffer);
+  const N = bytes.length / 32;
+  const PER_ROW = 682; // 3 texels each -> 2046 px, inside WebGL 2's guaranteed 2048
+  const rows = Math.ceil(N / PER_ROW);
+  const texels = new Uint32Array(2048 * rows * 4);
+  const texF = new Float32Array(texels.buffer);
+  const positions = new Float32Array(N * 3);
+  for (let i = 0; i < N; i++) {
+    const f = i * 8, b = i * 32;
+    const x = floats[f], y = floats[f + 1], z = floats[f + 2];
+    const sx = floats[f + 3], sy = floats[f + 4], sz = floats[f + 5];
+    let qw = (bytes[b + 28] - 128) / 128, qx = (bytes[b + 29] - 128) / 128;
+    let qy = (bytes[b + 30] - 128) / 128, qz = (bytes[b + 31] - 128) / 128;
+    const qn = Math.hypot(qw, qx, qy, qz) || 1;
+    qw /= qn; qx /= qn; qy /= qn; qz /= qn;
+    // M = R * diag(s); Sigma = M M^T
+    const m00 = (1 - 2 * (qy * qy + qz * qz)) * sx, m01 = 2 * (qx * qy - qw * qz) * sy, m02 = 2 * (qx * qz + qw * qy) * sz;
+    const m10 = 2 * (qx * qy + qw * qz) * sx, m11 = (1 - 2 * (qx * qx + qz * qz)) * sy, m12 = 2 * (qy * qz - qw * qx) * sz;
+    const m20 = 2 * (qx * qz - qw * qy) * sx, m21 = 2 * (qy * qz + qw * qx) * sy, m22 = (1 - 2 * (qx * qx + qy * qy)) * sz;
+    const row = Math.floor(i / PER_ROW), o = (row * 2048 + (i - row * PER_ROW) * 3) * 4;
+    texF[o] = x; texF[o + 1] = y; texF[o + 2] = z;
+    texels[o + 3] = (bytes[b + 24] | (bytes[b + 25] << 8) | (bytes[b + 26] << 16) | (bytes[b + 27] << 24)) >>> 0;
+    texF[o + 4] = m00 * m00 + m01 * m01 + m02 * m02;
+    texF[o + 5] = m00 * m10 + m01 * m11 + m02 * m12;
+    texF[o + 6] = m00 * m20 + m01 * m21 + m02 * m22;
+    texF[o + 7] = m10 * m10 + m11 * m11 + m12 * m12;
+    texF[o + 8] = m10 * m20 + m11 * m21 + m12 * m22;
+    texF[o + 9] = m20 * m20 + m21 * m21 + m22 * m22;
+    positions[i * 3] = x; positions[i * 3 + 1] = y; positions[i * 3 + 2] = z;
+  }
+
+  // ---- GL program. Same projection, low-pass, 3-sigma cut and alpha clamp as rasterize.py.
+  const VS = `#version 300 es
+  precision highp float; precision highp int; precision highp usampler2D;
+  uniform usampler2D u_data;
+  uniform mat3 u_rot; uniform vec3 u_trans;
+  uniform vec2 u_focal, u_principal, u_viewport, u_limit;
+  uniform float u_trainFocal;
+  in vec2 a_corner; in uint a_index;
+  out vec4 v_color; out vec2 v_xy;
+  void main() {
+    gl_Position = vec4(0.0, 0.0, 2.0, 1.0);
+    int i = int(a_index), row = i / ${PER_ROW};
+    ivec2 t = ivec2((i - row * ${PER_ROW}) * 3, row);
+    uvec4 d0 = texelFetch(u_data, t, 0);
+    vec4 s1 = uintBitsToFloat(texelFetch(u_data, t + ivec2(1, 0), 0));
+    vec2 s2 = uintBitsToFloat(texelFetch(u_data, t + ivec2(2, 0), 0).xy);
+    vec3 w = uintBitsToFloat(d0.xyz);
+    vec3 c = u_rot * w + u_trans;
+    if (c.z < 0.02) return;
+    float iz = 1.0 / c.z;
+    vec2 txy = clamp(c.xy * iz, -u_limit, u_limit) * c.z;
+    mat3 J = mat3(u_focal.x * iz, 0.0, 0.0,
+                  0.0, u_focal.y * iz, 0.0,
+                  -u_focal.x * txy.x * iz * iz, -u_focal.y * txy.y * iz * iz, 0.0);
+    mat3 V = mat3(s1.x, s1.y, s1.z, s1.y, s1.w, s2.x, s1.z, s2.x, s2.y);
+    mat3 T = J * u_rot;
+    mat3 cov = T * V * transpose(T);
+    // The trainer's 0.3 px low-pass, in training-image pixels: when a splat is magnified
+    // past the photo's resolution the filter grows with it, so the splats keep tiling.
+    float m = (u_focal.x * iz) / (u_trainFocal / max(w.z, 1e-6));
+    float dil = 0.3 * max(1.0, m * m);
+    float a = cov[0][0] + dil, b = cov[0][1], d = cov[1][1] + dil;
+    float mid = 0.5 * (a + d), rad = length(vec2(0.5 * (a - d), b));
+    float l1 = mid + rad, l2 = max(mid - rad, 0.01);
+    vec2 axis = abs(b) > 1e-12 ? normalize(vec2(b, l1 - a)) : (a >= d ? vec2(1.0, 0.0) : vec2(0.0, 1.0));
+    vec2 center = u_focal * c.xy * iz + u_principal;
+    float r = 3.0 * sqrt(l1);
+    if (center.x + r < 0.0 || center.x - r > u_viewport.x || center.y + r < 0.0 || center.y - r > u_viewport.y) return;
+    vec2 p = center + a_corner.x * 3.0 * sqrt(l1) * axis + a_corner.y * 3.0 * sqrt(l2) * vec2(-axis.y, axis.x);
+    v_color = vec4(d0.w & 255u, (d0.w >> 8) & 255u, (d0.w >> 16) & 255u, d0.w >> 24) / 255.0;
+    v_xy = a_corner * 3.0;
+    gl_Position = vec4(p.x / u_viewport.x * 2.0 - 1.0, 1.0 - p.y / u_viewport.y * 2.0, 0.0, 1.0);
+  }`;
+  const FS = `#version 300 es
+  precision highp float;
+  in vec4 v_color; in vec2 v_xy;
+  out vec4 fragColor;
+  void main() {
+    float r2 = dot(v_xy, v_xy);
+    if (r2 > 9.0) discard;
+    float alpha = min(0.99, v_color.a * exp(-0.5 * r2));
+    if (alpha < 1.0 / 255.0) discard;
+    fragColor = vec4(v_color.rgb * alpha, alpha);
+  }`;
+  function shader(type, src) {
+    const s = gl.createShader(type);
+    gl.shaderSource(s, src);
+    gl.compileShader(s);
+    if (!gl.getShaderParameter(s, gl.COMPILE_STATUS)) throw new Error(gl.getShaderInfoLog(s));
+    return s;
+  }
+  const prog = gl.createProgram();
+  gl.attachShader(prog, shader(gl.VERTEX_SHADER, VS));
+  gl.attachShader(prog, shader(gl.FRAGMENT_SHADER, FS));
+  gl.linkProgram(prog);
+  if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) throw new Error(gl.getProgramInfoLog(prog));
+  gl.useProgram(prog);
+  const U = {};
+  for (const n of ["u_data", "u_rot", "u_trans", "u_focal", "u_principal", "u_viewport", "u_limit", "u_trainFocal"]) {
+    U[n] = gl.getUniformLocation(prog, n);
+  }
+
+  const tex = gl.createTexture();
+  gl.bindTexture(gl.TEXTURE_2D, tex);
+  gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.NEAREST);
+  gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.NEAREST);
+  gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+  gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+  gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA32UI, 2048, rows, 0, gl.RGBA_INTEGER, gl.UNSIGNED_INT, texels);
+  gl.uniform1i(U.u_data, 0);
+  gl.uniform1f(U.u_trainFocal, meta.fx);
+
+  const vao = gl.createVertexArray();
+  gl.bindVertexArray(vao);
+  const quad = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, quad);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 1, -1, 1, 1, -1, 1]), gl.STATIC_DRAW);
+  const aCorner = gl.getAttribLocation(prog, "a_corner");
+  gl.enableVertexAttribArray(aCorner);
+  gl.vertexAttribPointer(aCorner, 2, gl.FLOAT, false, 0, 0);
+  const indexBuf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, indexBuf);
+  gl.bufferData(gl.ARRAY_BUFFER, N * 4, gl.DYNAMIC_DRAW);
+  const aIndex = gl.getAttribLocation(prog, "a_index");
+  gl.enableVertexAttribArray(aIndex);
+  gl.vertexAttribIPointer(aIndex, 1, gl.UNSIGNED_INT, 0, 0);
+  gl.vertexAttribDivisor(aIndex, 1);
+
+  gl.disable(gl.DEPTH_TEST);
+  gl.enable(gl.BLEND);
+  gl.blendFunc(gl.ONE, gl.ONE_MINUS_SRC_ALPHA); // premultiplied, drawn far to near
+
+  // ---- Depth sorting off the main thread: 16-bit counting sort, farthest first.
+  const sorter = new Worker(URL.createObjectURL(new Blob([`
+    let pos, n, keys, depth;
+    onmessage = (e) => {
+      if (e.data.positions) { pos = e.data.positions; n = pos.length / 3; keys = new Uint16Array(n); depth = new Float32Array(n); return; }
+      const [r0, r1, r2, tz] = e.data.axis;
+      let lo = Infinity, hi = -Infinity;
+      for (let i = 0; i < n; i++) {
+        const d = r0 * pos[3 * i] + r1 * pos[3 * i + 1] + r2 * pos[3 * i + 2] + tz;
+        depth[i] = d; if (d < lo) lo = d; if (d > hi) hi = d;
+      }
+      const scale = 65535 / Math.max(hi - lo, 1e-9);
+      const counts = new Uint32Array(65536);
+      for (let i = 0; i < n; i++) { const k = 65535 - ((depth[i] - lo) * scale) | 0; keys[i] = k; counts[k]++; }
+      for (let k = 1; k < 65536; k++) counts[k] += counts[k - 1];
+      const order = new Uint32Array(n);
+      for (let i = n - 1; i >= 0; i--) order[--counts[keys[i]]] = i;
+      postMessage({ order, id: e.data.id }, [order.buffer]);
+    };
+  `], { type: "text/javascript" })));
+  sorter.postMessage({ positions });
+  let sortBusy = false, sortedFor = null, haveOrder = false;
+  sorter.onmessage = (e) => {
+    gl.bindBuffer(gl.ARRAY_BUFFER, indexBuf);
+    gl.bufferSubData(gl.ARRAY_BUFFER, 0, e.data.order);
+    sortBusy = false;
+    haveOrder = true;
+    draw();
+  };
+
+  // ---- Camera: orbit around the scene's middle depth, starting at the photo's own viewpoint.
+  const target = meta.target;
+  const LIMIT = { yaw: 0.35, pitch: 0.25, zoomMin: 0.35, zoomMax: 1.8 };
+  const view = { yaw: 0, pitch: 0, zoom: 1, panX: 0, panY: 0 };
+  const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let sway = !reduceMotion, swayT = 0, swayBlend = sway ? 1 : 0;
+  let resetAnim = null;
+
+  function camera() {
+    let yaw = view.yaw, pitch = view.pitch;
+    if (swayBlend > 0) {
+      const a = (5 * Math.PI) / 180;
+      yaw += swayBlend * a * Math.sin(swayT);
+      pitch += swayBlend * 0.45 * a * Math.sin(2 * swayT);
+    }
+    const cy = Math.cos(yaw), sy = Math.sin(yaw), cp = Math.cos(pitch), sp = Math.sin(pitch);
+    // camera-to-world rotation Ry(yaw) Rx(pitch), row-major
+    const M = [cy, sy * sp, sy * cp, 0, cp, -sp, -sy, cy * sp, cy * cp];
+    const dist = target[2] * view.zoom;
+    const T = [
+      target[0] + M[0] * view.panX + M[1] * view.panY,
+      target[1] + M[3] * view.panX + M[4] * view.panY,
+      target[2] + M[6] * view.panX + M[7] * view.panY,
+    ];
+    const C = [T[0] - M[2] * dist, T[1] - M[5] * dist, T[2] - M[8] * dist];
+    // world-to-camera R = M^T, t = -R C
+    const R = [M[0], M[3], M[6], M[1], M[4], M[7], M[2], M[5], M[8]];
+    const t = [
+      -(R[0] * C[0] + R[1] * C[1] + R[2] * C[2]),
+      -(R[3] * C[0] + R[4] * C[1] + R[5] * C[2]),
+      -(R[6] * C[0] + R[7] * C[1] + R[8] * C[2]),
+    ];
+    return { R, t, yaw, pitch };
+  }
+
+  let W = 0, H = 0, fit = 1;
+  function resize() {
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    W = Math.max(1, Math.round(canvas.clientWidth * dpr));
+    H = Math.max(1, Math.round(canvas.clientHeight * dpr));
+    canvas.width = W; canvas.height = H;
+    fit = 0.86 * Math.min(W / meta.width, H / meta.height);
+    gl.viewport(0, 0, W, H);
+    draw();
+  }
+
+  let clear = [0, 0, 0];
+  function readStage() {
+    const m = getComputedStyle(document.body).backgroundColor.match(/[\d.]+/g) || [0, 0, 0];
+    clear = m.slice(0, 3).map((v) => +v / 255);
+    draw();
+  }
+
+  let pendingDraw = false;
+  function draw() {
+    if (pendingDraw) return;
+    pendingDraw = true;
+    requestAnimationFrame(frame);
+  }
+
+  let last = performance.now();
+  function frame(now) {
+    pendingDraw = false;
+    const dt = Math.min(0.05, (now - last) / 1000);
+    last = now;
+    let animating = false;
+    if (sway || swayBlend > 0) {
+      swayT += dt * 0.9;
+      swayBlend = Math.max(0, Math.min(1, swayBlend + (sway ? dt : -2 * dt)));
+      animating = sway || swayBlend > 0;
+    }
+    if (resetAnim) {
+      const k = Math.min(1, (now - resetAnim.start) / 450), e = 1 - Math.pow(1 - k, 3);
+      for (const key in resetAnim.from) view[key] = resetAnim.from[key] * (1 - e);
+      view.zoom = resetAnim.from.zoom + (1 - resetAnim.from.zoom) * e;
+      if (k >= 1) resetAnim = null; else animating = true;
+    }
+    const cam = camera();
+    const fx = meta.fx * fit, fy = meta.fy * fit;
+    gl.uniformMatrix3fv(U.u_rot, false, [cam.R[0], cam.R[3], cam.R[6], cam.R[1], cam.R[4], cam.R[7], cam.R[2], cam.R[5], cam.R[8]]);
+    gl.uniform3fv(U.u_trans, cam.t);
+    gl.uniform2f(U.u_focal, fx, fy);
+    gl.uniform2f(U.u_principal, W / 2, H / 2);
+    gl.uniform2f(U.u_viewport, W, H);
+    gl.uniform2f(U.u_limit, (1.3 * W) / 2 / fx, (1.3 * H) / 2 / fy);
+    gl.clearColor(clear[0], clear[1], clear[2], 1);
+    gl.clear(gl.COLOR_BUFFER_BIT);
+    if (haveOrder) gl.drawArraysInstanced(gl.TRIANGLE_FAN, 0, 4, N);
+
+    const axis = [cam.R[6], cam.R[7], cam.R[8], cam.t[2]];
+    const key = axis.map((v) => v.toFixed(4)).join();
+    if (!sortBusy && key !== sortedFor) {
+      sortBusy = true;
+      sortedFor = key;
+      sorter.postMessage({ axis });
+    }
+    const deg = (r) => `${r >= 0 ? "+" : "−"}${Math.abs((r * 180) / Math.PI).toFixed(1)}°`;
+    $("yaw").textContent = deg(cam.yaw);
+    $("pitch").textContent = deg(-cam.pitch);
+    $("zoom").textContent = `${(1 / view.zoom).toFixed(2)}×`;
+    if (animating || sortBusy) draw();
+  }
+
+  // ---- Interaction
+  const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
+  function setSway(on) {
+    sway = on;
+    $("sway").setAttribute("aria-pressed", String(on));
+    draw();
+  }
+  function orbit(dx, dy) {
+    view.yaw = clamp(view.yaw + dx * 0.004, -LIMIT.yaw, LIMIT.yaw);
+    view.pitch = clamp(view.pitch - dy * 0.004, -LIMIT.pitch, LIMIT.pitch);
+  }
+  function pan(dx, dy) {
+    const s = (target[2] * view.zoom) / (meta.fx * fit) * (window.devicePixelRatio || 1);
+    view.panX -= dx * s;
+    view.panY -= dy * s;
+  }
+  function zoomBy(f) {
+    view.zoom = clamp(view.zoom * f, LIMIT.zoomMin, LIMIT.zoomMax);
+  }
+  function reset() {
+    resetAnim = { start: performance.now(), from: { ...view } };
+    draw();
+  }
+
+  const pointers = new Map();
+  let pinch = null;
+  canvas.addEventListener("pointerdown", (e) => {
+    canvas.setPointerCapture(e.pointerId);
+    pointers.set(e.pointerId, { x: e.clientX, y: e.clientY, button: e.button, shift: e.shiftKey });
+    canvas.classList.add("dragging");
+    resetAnim = null;
+    if (sway) setSway(false);
+    if (pointers.size === 2) {
+      const [a, b] = [...pointers.values()];
+      pinch = { d: Math.hypot(a.x - b.x, a.y - b.y), x: (a.x + b.x) / 2, y: (a.y + b.y) / 2 };
+    }
+  });
+  canvas.addEventListener("pointermove", (e) => {
+    const p = pointers.get(e.pointerId);
+    if (!p) return;
+    const dx = e.clientX - p.x, dy = e.clientY - p.y;
+    p.x = e.clientX; p.y = e.clientY;
+    if (pointers.size === 2 && pinch) {
+      const [a, b] = [...pointers.values()];
+      const d = Math.hypot(a.x - b.x, a.y - b.y), x = (a.x + b.x) / 2, y = (a.y + b.y) / 2;
+      zoomBy(pinch.d / Math.max(d, 1));
+      pan(x - pinch.x, y - pinch.y);
+      pinch = { d, x, y };
+    } else if (pointers.size === 1) {
+      if (p.button === 2 || p.button === 1 || p.shift) pan(dx, dy); else orbit(dx, dy);
+    }
+    draw();
+  });
+  const release = (e) => {
+    pointers.delete(e.pointerId);
+    if (pointers.size < 2) pinch = null;
+    if (pointers.size === 0) canvas.classList.remove("dragging");
+  };
+  canvas.addEventListener("pointerup", release);
+  canvas.addEventListener("pointercancel", release);
+  canvas.addEventListener("contextmenu", (e) => e.preventDefault());
+  canvas.addEventListener("dblclick", reset);
+  canvas.addEventListener("wheel", (e) => {
+    e.preventDefault();
+    resetAnim = null;
+    zoomBy(Math.exp(e.deltaY * (e.deltaMode === 1 ? 0.05 : 0.0015)));
+    draw();
+  }, { passive: false });
+  canvas.addEventListener("keydown", (e) => {
+    const step = 12;
+    const keys = {
+      ArrowLeft: () => orbit(-step, 0), ArrowRight: () => orbit(step, 0),
+      ArrowUp: () => orbit(0, -step), ArrowDown: () => orbit(0, step),
+      "+": () => zoomBy(0.9), "=": () => zoomBy(0.9), "-": () => zoomBy(1.1),
+      "0": reset, " ": () => setSway(!sway),
+    };
+    if (!keys[e.key]) return;
+    e.preventDefault();
+    keys[e.key]();
+    draw();
+  });
+  $("sway").addEventListener("click", () => setSway(!sway));
+  $("reset").addEventListener("click", reset);
+  $("sway").setAttribute("aria-pressed", String(sway));
+
+  new ResizeObserver(resize).observe(canvas);
+  matchMedia("(prefers-color-scheme: dark)").addEventListener("change", readStage);
+  new MutationObserver(readStage).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+  readStage();
+  resize();
+})();
+</script>
