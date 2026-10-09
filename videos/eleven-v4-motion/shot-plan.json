@@ -1,0 +1,31 @@
+{
+  "category": "logo-reveal",
+  "duration_s": 6.5,
+  "fps": 60,
+  "canvas": { "w": 1920, "h": 1080, "aspect": "16:9" },
+  "style": "Minimal, UI-born. The supplied coral / green light-streak gradient is the stage and keeps moving the whole time; the lockup is typed in like a text field and its caret becomes the V4 chip.",
+  "palette": ["#ffffff", "#040907", "derive-from-asset"],
+  "font": "none (wordmark, pill and V4 traced from the supplied still)",
+  "beats": [0.1, 0.55, 1.3, 1.95, 2.12, 2.5, 3.02, 3.12],
+  "export": "mp4",
+  "asset_needs": [
+    { "role": "hero", "kind": "logo", "source": "assets/source/eleven-v4.webp", "treatment": "vectorize" }
+  ],
+  "block": null,
+  "customize": {
+    "note": "Hand-authored: the registry's gradient blocks (mesh-gradient, flowing-gradient) generate their own colours; this piece needed the user's own gradient plate driven by a timeline-seeked WebGL shader, and a caret-to-pill morph no block covers."
+  },
+  "content": {
+    "logo": "data/logo.json (traced glyphs) + assets/plate.png (gradient with the logo painted out)",
+    "tagline": null,
+    "url": null,
+    "shots": [
+      { "start": 0.0, "end": 2.4, "motion": "light streams in along the streaks out of the dark; long-exposure smear settles; camera eases out of a slight zoom and roll" },
+      { "start": 0.55, "end": 1.9, "motion": "caret wakes and blinks once; 'Eleven' streams in letter by letter (blur 10px -> 0, x -14 -> 0) as the caret steps past each glyph" },
+      { "start": 1.95, "end": 2.84, "motion": "caret fills out into a solid capsule, then opens into the pill ring (power4.inOut) while the word slides left to make room; fill dissolves into the outline" },
+      { "start": 2.5, "end": 3.3, "motion": "V and 4 rise inside the ring (expo.out, staggered 80 ms)" },
+      { "start": 3.02, "end": 4.5, "motion": "press (scale 0.955, back.out release), one hairline ripple, one ring of light through the gradient" },
+      { "start": 3.3, "end": 6.5, "motion": "hold; gradient keeps drifting with soft bands of light running up the streaks" }
+    ]
+  }
+}

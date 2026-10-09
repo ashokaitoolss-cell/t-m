@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Eleven V4 — logo sting</title>
+    <script src="assets/vendor/gsap.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: #040907;
+      }
+      #root {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: #040907;
+      }
+      .clip {
+        position: absolute;
+        inset: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="6.5" data-width="1920" data-height="1080" data-fps="60">
+      <div id="gradient" class="clip" data-composition-id="gradient" data-composition-src="compositions/gradient.html" data-start="0" data-duration="6.5" data-track-index="0" data-width="1920" data-height="1080" data-label="Living gradient (WebGL)"></div>
+      <div id="lockup" class="clip" data-composition-id="lockup" data-composition-src="compositions/lockup.html" data-start="0" data-duration="6.5" data-track-index="1" data-width="1920" data-height="1080" data-label="Eleven V4 lockup"></div>
+      <audio id="sting-audio" src="assets/audio/sting.wav" data-start="0" data-duration="6.5" data-track-index="2" data-volume="1" data-label="Sound (synthesized in code)"></audio>
+    </div>
+    <script>
+      // The two sub-compositions carry all the motion; the root only sets the frame and length.
+      window.__timelines["main"] = gsap.timeline({ paused: true });
+    </script>
+  </body>
+</html>
