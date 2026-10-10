@@ -19,8 +19,15 @@ python3 -m http.server 8000
 # open http://localhost:8000
 ```
 
-Any static host works (GitHub Pages, Netlify, Cloudflare Pages, …). Needs a
-browser with WebGL2: current Chrome, Edge, Firefox or Safari, desktop or mobile.
+Any static host works. Needs a browser with WebGL2: current Chrome, Edge,
+Firefox or Safari, desktop or mobile.
+
+### GitHub Pages
+
+`.github/workflows/pages.yml` publishes this folder to
+<https://ashokaitoolss-cell.github.io/t-m/> whenever a push to the default
+branch changes it (or when run by hand from the Actions tab). Once, beforehand:
+**Settings → Pages → Build and deployment → Source: GitHub Actions**.
 
 ## Using it
 

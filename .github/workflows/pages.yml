@@ -1,0 +1,42 @@
+# Publishes sites/splat-window to GitHub Pages:
+#   https://ashokaitoolss-cell.github.io/t-m/
+#
+# One-time setup: Settings → Pages → Build and deployment → Source: "GitHub Actions".
+# Pushes to the default branch that touch the site deploy it; on other
+# branches the job is skipped. It can also be run by hand from the Actions tab.
+name: Deploy Splat Window to Pages
+
+on:
+  push:
+    paths:
+      - 'sites/splat-window/**'
+      - '.github/workflows/pages.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# One deployment at a time; let a running one finish rather than cancel it.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    if: github.ref_name == github.event.repository.default_branch
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/configure-pages@v6
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: sites/splat-window
+      - id: deployment
+        uses: actions/deploy-pages@v5
