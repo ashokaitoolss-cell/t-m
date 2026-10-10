@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Level 0 · The Backrooms</title>
+  <meta name="description" content="Walk the endless yellow rooms of Backrooms Level 0 in first person. Steer with the keyboard and look around with the mouse, or with your head through the webcam.">
+  <meta name="theme-color" content="#1a1406">
+  <meta name="color-scheme" content="dark">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23c9a64a'/%3E%3Crect x='9' y='5' width='14' height='5' rx='1' fill='%23fff8e0'/%3E%3Cpath d='M4 27h24' stroke='%237a5c1c' stroke-width='3'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+  <script type="importmap">{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.module.js" } }</script>
+  <script type="module" src="js/main.js"></script>
+</head>
+<body>
+  <canvas id="view" aria-label="First-person view of Backrooms Level 0"></canvas>
+  <div class="fade" id="fade" aria-hidden="true"></div>
+
+  <div class="osd" id="osd" hidden aria-hidden="true">
+    <span class="rec"><i></i>REC</span>
+    <span class="osd-time" id="osd-time"></span>
+  </div>
+
+  <div class="status hud" id="status" role="status" aria-live="polite"><span class="dot" aria-hidden="true"></span><span id="status-text">Mouse look</span></div>
+  <p class="hint hud" id="hint" hidden></p>
+  <figure class="preview hud" id="preview" hidden><canvas id="preview-canvas" width="160" height="120" aria-label="Camera preview"></canvas></figure>
+
+  <section class="title" id="title">
+    <div class="title-card">
+      <p class="eyebrow">The Backrooms</p>
+      <h1>Level 0</h1>
+      <p class="lede">Moist carpet, mono-yellow wallpaper and the hum of fluorescent lights, in rooms that go on forever. Every visit is a different place.</p>
+      <div class="actions">
+        <button class="primary" id="enter-mouse" type="button">Enter with mouse</button>
+        <button class="ghost" id="enter-camera" type="button">Look with your head (camera)</button>
+      </div>
+      <dl class="keys">
+        <div><dt><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd></dt><dd>walk</dd></div>
+        <div><dt><kbd>Shift</kbd></dt><dd>run</dd></div>
+        <div><dt>mouse</dt><dd>look</dd></div>
+        <div><dt><kbd>←</kbd><kbd>→</kbd></dt><dd>turn</dd></div>
+        <div><dt><kbd>C</kbd></dt><dd>recenter head</dd></div>
+        <div><dt><kbd>Esc</kbd></dt><dd>menu</dd></div>
+      </dl>
+      <p class="keys-touch">Drag on the left half of the screen to walk (further to run), on the right half to look around.</p>
+      <p class="fine">Sound on, ideally headphones. With the camera, turn your head to look and lean to peek round corners; hold it turned to keep turning. Face tracking runs on your device and video never leaves your browser.</p>
+    </div>
+  </section>
+
+  <section class="pause" id="pause" hidden aria-label="Paused">
+    <div class="pause-card">
+      <h2>Paused</h2>
+      <button class="primary wide" id="resume" type="button">Resume</button>
+      <div class="rows">
+        <label class="row"><span>Mouse sensitivity</span><input type="range" id="opt-sensitivity" min="0.2" max="3" step="0.05"></label>
+        <label class="row"><span>Head look strength</span><input type="range" id="opt-head" min="1" max="4" step="0.1"></label>
+        <label class="row"><span>Volume</span><input type="range" id="opt-volume" min="0" max="1" step="0.01"></label>
+        <label class="row toggle"><span>Motion blur</span><input type="checkbox" id="opt-blur" role="switch"></label>
+        <label class="row toggle"><span>Camcorder lens and grain</span><input type="checkbox" id="opt-lens" role="switch"></label>
+        <label class="row toggle"><span>REC overlay</span><input type="checkbox" id="opt-overlay" role="switch"></label>
+        <label class="row toggle"><span>Invert mouse Y</span><input type="checkbox" id="opt-invert" role="switch"></label>
+        <label class="row toggle"><span>Camera preview</span><input type="checkbox" id="opt-preview" role="switch"></label>
+      </div>
+      <div class="buttons">
+        <button class="ghost" id="opt-camera" type="button">Look with your head (camera)</button>
+        <button class="ghost" id="recenter" type="button">Recenter head</button>
+      </div>
+      <p class="seed">Place <code id="seed"></code> · <button class="link" id="copy-link" type="button">copy link</button> · <button class="link" id="new-place" type="button">somewhere else</button></p>
+      <p class="credits">Carpet, ceiling and stain textures: <a href="https://ambientcg.com" target="_blank" rel="noopener">ambientCG</a> (CC0). Face tracking: <a href="https://ai.google.dev/edge/mediapipe/solutions/vision/face_landmarker" target="_blank" rel="noopener">MediaPipe</a>. Rendering: <a href="https://threejs.org" target="_blank" rel="noopener">three.js</a>.</p>
+    </div>
+  </section>
+
+  <div class="toast" id="toast" role="alert" hidden></div>
+  <div class="fatal" id="fatal" hidden><p><b>Level 0 can't open in this browser.</b><br><span id="fatal-text"></span></p></div>
+  <video id="camera" playsinline muted aria-hidden="true"></video>
+  <noscript><p class="noscript">This walk-through needs JavaScript and WebGL2.</p></noscript>
+</body>
+</html>

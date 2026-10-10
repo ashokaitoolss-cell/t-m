@@ -1,15 +1,17 @@
-# Publishes sites/splat-window to GitHub Pages:
-#   https://ashokaitoolss-cell.github.io/t-m/
+# Publishes everything under sites/ to GitHub Pages:
+#   https://ashokaitoolss-cell.github.io/t-m/              landing page
+#   https://ashokaitoolss-cell.github.io/t-m/splat-window/
+#   https://ashokaitoolss-cell.github.io/t-m/backrooms/
 #
 # One-time setup: Settings → Pages → Build and deployment → Source: "GitHub Actions".
-# Pushes to the default branch that touch the site deploy it; on other
+# Pushes to the default branch that touch a site deploy it; on other
 # branches the job is skipped. It can also be run by hand from the Actions tab.
-name: Deploy Splat Window to Pages
+name: Deploy sites to Pages
 
 on:
   push:
     paths:
-      - 'sites/splat-window/**'
+      - 'sites/**'
       - '.github/workflows/pages.yml'
   workflow_dispatch:
 
@@ -37,6 +39,6 @@ jobs:
       - uses: actions/configure-pages@v6
       - uses: actions/upload-pages-artifact@v5
         with:
-          path: sites/splat-window
+          path: sites
       - id: deployment
         uses: actions/deploy-pages@v5

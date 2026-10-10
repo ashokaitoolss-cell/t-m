@@ -24,10 +24,10 @@ Firefox or Safari, desktop or mobile.
 
 ### GitHub Pages
 
-`.github/workflows/pages.yml` publishes this folder to
-<https://ashokaitoolss-cell.github.io/t-m/> whenever a push to the default
-branch changes it (or when run by hand from the Actions tab). Once, beforehand:
-**Settings → Pages → Build and deployment → Source: GitHub Actions**.
+`.github/workflows/pages.yml` publishes `sites/` (this folder ends up at
+<https://ashokaitoolss-cell.github.io/t-m/splat-window/>) whenever a push to
+the default branch changes it, or when run by hand from the Actions tab. Once,
+beforehand: **Settings → Pages → Build and deployment → Source: GitHub Actions**.
 
 ## Using it
 
