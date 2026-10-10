@@ -10,10 +10,20 @@ in `tools/` (see [How this was measured](#how-this-was-measured)). Sound was mea
 spectrograms, not listened to. Statements marked *authored* are our rules for the new work rather
 than observations.
 
+**Pictures and video.** This file marks where each visual reference belongs (30 figures and 20
+clips, plus the full reference). Because they are frames from the reference and this repo is public,
+they are not committed.
+`tools/build_pack.py` renders them from the reference video into an illustrated PDF, HTML page and
+zip under `refs/pack/`. To brief another AI, give it that PDF, or the zip if it accepts video.
+
 > **The look in one line.** A lit tabletop world of real props and paper sets, where photo cut-out
 > people act like stiff paper puppets. One continuous camera travels through it, diving through
 > eyes, mouths and tears into the next world. The whole thing is animated on twos and scored so the
 > music hits the action.
+
+<!-- ref:overview-contact -->
+
+<!-- ref:style-board -->
 
 ---
 
@@ -53,6 +63,8 @@ If a frame breaks one of these, it is not this style.
 | Unique images | 12 per second (on twos) for 0–47.0 s; on ones for the 0.5 s title slam | Same |
 | Length | 51.05 s: 47 s of journey, 2 s title hold, 2 s fade to black | Set by the concept |
 
+<!-- ref:format-letterbox -->
+
 **Vertical (9:16) adaptation** (*authored*, since the reference is 2:1):
 - Keep the hero inside the central 60% band.
 - Use the top and bottom thirds as the zones where occluders enter and tags sit. Occluders come in
@@ -73,6 +85,12 @@ If a frame breaks one of these, it is not this style.
 - **Tags** sit in a corner away from the hero, rotated 5–15°, usually on the side the camera is
   moving away from.
 
+<!-- ref:comp-proscenium -->
+
+<!-- ref:comp-depth-planes -->
+
+<!-- ref:comp-tags -->
+
 ### Visual hierarchy (what the eye hits, in order)
 
 1. The hero's face, or the object replacing it (onion, sunflowers, document).
@@ -82,6 +100,8 @@ If a frame breaks one of these, it is not this style.
 5. Textured background.
 
 Only one thing is loud at a time.
+
+<!-- ref:comp-hierarchy -->
 
 ---
 
@@ -97,6 +117,8 @@ Only one thing is loud at a time.
 | Occluders | Arms, hands, fists, fish, birds, flower panels, gloves | Cross the lens fast. They are the transitions |
 | Tags | Torn-edge paper labels in orange, red, mustard, olive or cobalt, with white sans-serif text | Swing in, overshoot slightly, then sway (follow-through) |
 
+<!-- ref:art-layers -->
+
 **Gags that define the tone.** Each one replaces a face or object with an unexpected thing, held
 for about 1–2 s:
 - Onion for a head
@@ -107,8 +129,12 @@ for about 1–2 s:
 
 Use one per world, never two at once.
 
+<!-- ref:art-gags -->
+
 **Era props.** The reference is set in 1999: Game Boy, cassette, Y2K banner, 90s van. For a new
 concept, pick one coherent era or theme and draw the prop vocabulary from it (*authored*).
+
+<!-- ref:art-era -->
 
 ---
 
@@ -127,6 +153,8 @@ Measured on the active picture, one frame every 0.5 s, 0–47 s:
 | Vignette | corners at 78% of centre luminance | Moderate, natural lens falloff |
 | Grain | low (residual σ ≈ 0.6/255 after compression) | Fine grain at most; the texture comes from materials |
 | Motion blur | sharpness drops about 30% at peak speeds | Real shutter blur, about 180°, on fast moves |
+
+<!-- ref:grade-examples -->
 
 **Palette** (k-means over all sampled pixels, by share):
 
@@ -153,6 +181,8 @@ cobalt `#0B5791`, olive `#7B7608`, mustard, and a cinema red.
 - Printed paper maps
 - Newsprint
 
+<!-- ref:texture-materials -->
+
 ---
 
 ## 5. Transitions catalogue
@@ -178,6 +208,28 @@ Rules (*authored* from the observed pattern):
 - Do not use the same transition twice in a row.
 - Keep the round-object family (T3, T4) for the emotional middle and the build to the climax.
 
+### Transition references
+
+<!-- ref:tr-T1 -->
+
+<!-- ref:tr-T2 -->
+
+<!-- ref:tr-T3 -->
+
+<!-- ref:tr-T4 -->
+
+<!-- ref:tr-T5 -->
+
+<!-- ref:tr-T6 -->
+
+<!-- ref:tr-T7 -->
+
+<!-- ref:tr-T8 -->
+
+<!-- ref:tr-T9 -->
+
+<!-- ref:tr-T10 -->
+
 ---
 
 ## 6. Motion and timing (measured)
@@ -187,6 +239,8 @@ Rules (*authored* from the observed pattern):
 1 s to 47 s. The only exception is 47.0–47.6 s: the title slam is on ones (18 new images in that
 second). That is the Spider-Verse trick: twos for the handmade world, ones for the moment that must
 feel fast and decisive.
+
+<!-- ref:cadence-frames -->
 
 ### Speed graph
 Screen speed is in pixels per new image (736 px wide), from dense optical flow on unique frames:
@@ -225,6 +279,8 @@ graph. These are the reference's five move types, measured:
 | **Whip smear** | Constant high speed (about 30 px/image) with blur | Straight steep line | Linear. The eases are hidden in the smear frames |
 | **Title slam** | Speeds up for 0.4 s, freezes for one image, rebounds, settles by 0.8 s | S-curve with a small overshoot | Ease-in, an impact hold, then a 5–10% overshoot settling over 3–4 images, on ones |
 
+<!-- ref:ease-strips -->
+
 ### How speed changes perceived smoothness
 
 Smoothness is not frame rate alone. It is how far things jump between new images, whether the eye
@@ -238,6 +294,8 @@ is tracking them, and whether blur fills the gap. Expressed as a share of frame 
 | 2–4% | Pushes, prop flights | Clearly staccato. Must be eased at both ends |
 | 4–6% | Transition peaks (35–40 px) | Strobes unless there is blur, an occluder or a cut. The reference spends only 22 images in total above 35 px |
 | > 6% | Never seen sharp | Use only as smear frames (T6, T7) |
+
+<!-- ref:smooth-examples -->
 
 Why it works:
 - **On twos doubles every jump** compared with ones at the same speed. So slow moves stay smooth
@@ -271,6 +329,10 @@ Why it works:
 | Dimensionality | Flat cut-outs inside a 3D set | Keep the people flat and the world deep |
 | Masking | Portals and reverse portals (T3, T4) | Round masks only for the emotional middle |
 | Cloning | One hand becomes many; flowers multiply | Use for "many" or "more" beats in the script |
+
+<!-- ref:principles-strips -->
+
+<!-- ref:pr-exaggeration -->
 
 ---
 
@@ -317,6 +379,8 @@ Why it works:
 
   Paper and foley textures (crumple, rustle, clap) show as noisy bursts at 11–14 s, 16–20 s and
   30–40 s.
+
+<!-- ref:sound-events -->
 - **Mix.** −23.6 LUFS integrated, 4.6 LU loudness range, −5.9 dBTP true peak: a broadcast-level,
   gently compressed mix. *Authored:* master our social cuts to −14 LUFS and −1.5 dBTP, keeping the
   same dynamics.
@@ -355,6 +419,8 @@ What changes from the Vox skill's defaults:
 | 10 | Three motion reviews, full-frame QA, master to −14 LUFS | Section 9 | Free |
 
 ### Style tokens (paste into every image and Seedance prompt)
+
+<!-- ref:style-frames -->
 
 ```
 handcrafted collage diorama: photographic cut-out people printed on matte paper with crisp white
@@ -426,12 +492,19 @@ hard cuts without a transition, camera stopping dead mid-piece, more than one lo
 | 44.3–47.2 | Cassette with eyes, then a 1999 street | Four heroes from behind | T6 whip |
 | 47.3–51.0 | Title card on a sticker-covered surface | Slam on ones, overshoot, settle; fade to black | – |
 
+<!-- ref:scene-thumbs -->
+
 ---
 
 ## How this was measured
 
 `tools/analyze.sh <reference.mp4> refs/<name>` regenerates everything locally. Frame sheets go to
 `refs/`, which is gitignored: reference frames stay out of this public repo.
+
+`python3 tools/build_pack.py <reference.mp4> refs/pack` builds the illustrated copy. It renders each
+entry in `tools/pack.json` (stills, annotated frames, frame strips, clips with sound) at its
+`<!-- ref:id -->` marker, then writes `STYLE-illustrated.md`, a self-contained HTML page, a PDF
+(through headless Chromium) and `collage-diorama-reference-pack.zip`. It needs pandoc as well.
 
 | Tool | Measures |
 | --- | --- |

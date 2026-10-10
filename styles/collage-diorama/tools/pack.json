@@ -1,0 +1,172 @@
+{
+  "_about": "Visual references for STYLE.md. Each id matches a <!-- ref:id --> marker. Times are seconds in the reference; crops are [x0, y0, x1, y1] in the 736x370 active picture. build_pack.py renders these from the reference video into refs/pack/ (gitignored).",
+  "refs": {
+    "overview-contact": {
+      "type": "contact", "every": 1.0, "cols": 6, "tile_w": 300,
+      "caption": "The whole reference at one frame per second (0–50 s). One continuous journey through about 18 worlds."
+    },
+    "style-board": {
+      "type": "grid", "cols": 4, "tile_w": 440,
+      "items": [[4.9], [9.0], [13.2], [15.0], [19.9], [22.5], [26.6], [28.6], [34.6], [39.2], [41.6], [46.2]],
+      "caption": "Style board: twelve representative frames. Paper-puppet people, lit tabletop worlds, torn-paper tags, warm print grade."
+    },
+    "format-letterbox": {
+      "type": "annotate", "t": 22.5, "full": true,
+      "boxes": [[0, 0, 736, 22, "letterbox bar 22 px", "#ff5a36"], [0, 392, 736, 414, "letterbox bar 22 px", "#ff5a36"], [4, 26, 732, 388, "active picture 736 x 370 = 1.99:1", "#36c8ff"]],
+      "caption": "Format: a 2:1 picture letterboxed inside a 16:9 file."
+    },
+    "comp-depth-planes": {
+      "type": "annotate", "t": 6.4,
+      "boxes": [[0, 40, 185, 262, "1 foreground occluder (soft, cropped)", "#ff9a36"], [602, 122, 736, 368, "1 foreground occluder", "#ff9a36"], [298, 82, 452, 300, "2 hero cut-out", "#36c8ff"], [140, 70, 464, 334, "3 set piece (suitcase)", "#ffe036"], [604, 2, 734, 118, "4 backdrop", "#b6ff36"], [465, 100, 597, 157, "tag", "#ff36c8"]],
+      "caption": "Four depth planes: soft cropped foreground props, the hero cut-out, the set piece, the backdrop. A tag sits in 3D space."
+    },
+    "comp-proscenium": {
+      "type": "grid", "cols": 3, "tile_w": 480,
+      "items": [[4.9], [15.0], [22.5], [28.6], [34.6], [41.6]],
+      "caption": "Proscenium staging: frontal, eye level, hero centred, like a stage or shop window."
+    },
+    "comp-tags": {
+      "type": "grid", "cols": 3, "tile_w": 420, "tile_h": 170,
+      "items": [[4.9, [500, 52, 690, 118]], [9.0, [510, 248, 720, 338]], [16.8, [495, 220, 660, 315]], [19.6, [100, 88, 290, 150]], [26.6, [105, 40, 280, 145]], [28.6, [560, 205, 695, 310]], [34.6, [115, 200, 265, 298]], [37.5, [74, 110, 270, 180]], [44.6, [390, 198, 630, 315]]],
+      "caption": "Every torn-paper tag in the piece (crops, enlarged): terracotta, red, mustard, olive and cobalt paper; white or dark sans-serif text; rotated 5–15°; sitting in 3D space."
+    },
+    "comp-hierarchy": {
+      "type": "annotate", "t": 28.6,
+      "boxes": [[305, 40, 445, 222, "1 face / object swap", "#36c8ff"], [88, 18, 300, 330, "2 saturated accent", "#ffe036"], [560, 205, 695, 310, "3 tag", "#ff36c8"], [598, 42, 708, 198, "4 soft foreground", "#ff9a36"], [2, 2, 86, 368, "5 backdrop", "#b6ff36"]],
+      "caption": "Visual hierarchy in one frame: the eye goes 1 face (or its replacement), 2 the loudest accent, 3 the tag, 4 soft foreground, 5 backdrop."
+    },
+    "art-layers": {
+      "type": "rows", "tile_w": 300,
+      "rows": [
+        ["Backdrop", [[8.5], [13.2], [26.6]]],
+        ["Set piece", [[4.9], [39.2], [44.6]]],
+        ["Props", [[3.0], [6.4], [20.0]]],
+        ["Hero cut-outs", [[15.0], [9.0], [37.5]]],
+        ["Crowd / cloning", [[16.0], [42.8], [17.4]]],
+        ["Occluders", [[7.84], [21.0], [33.65], [35.3]]]
+      ],
+      "caption": "World-building layers, one row per layer."
+    },
+    "art-gags": {
+      "type": "grid", "cols": 3, "tile_w": 440,
+      "items": [[15.0, null, "document over half the face"], [16.8, null, "onion for a head"], [29.0, null, "sunflower eyes"], [26.6, null, "flower faces"], [44.6, null, "cassette with cut-out eyes"], [11.46, null, "SUV crumples into paper"]],
+      "caption": "The gags: one deadpan swap per world, held 1–2 s."
+    },
+    "art-era": {
+      "type": "grid", "cols": 4, "tile_w": 330,
+      "items": [[3.0, null, "toy props: cube, piggy bank, handheld console"], [44.6, null, "cassette"], [46.4, [80, 0, 710, 70], "Y2K banner"], [39.2, null, "90s van"]],
+      "caption": "Era prop vocabulary (the reference's era is 1999). Pick one coherent era or theme per piece."
+    },
+    "texture-materials": {
+      "type": "grid", "cols": 4, "tile_w": 330,
+      "items": [[15.0, [180, 20, 480, 330], "photo-paper cut-out"], [13.2, [360, 20, 640, 220], "torn paper layers"], [8.5, [140, 30, 520, 320], "torn paper over brick"], [41.0, [60, 60, 440, 330], "plush fur, button"], [36.0, [150, 40, 600, 330], "black leather"], [1.0, [180, 40, 560, 330], "brushed aluminium"], [34.6, [170, 0, 530, 370], "beans, paper wallpaper"], [19.6, [90, 0, 520, 330], "paper-skin collage"]],
+      "caption": "Materials, cropped and enlarged. The texture comes from real materials, not from grain or filters."
+    },
+    "grade-examples": {
+      "type": "grid", "cols": 4, "tile_w": 330,
+      "items": [[9.0, null, "warm brick, cream highlights"], [22.5, null, "blue world, still warm-shifted"], [26.6, null, "deep black void"], [39.2, null, "saturated accents on a muted base"]],
+      "caption": "The grade across very different worlds: warm mean, cream (never clipped) highlights, brown shadows."
+    },
+    "tr-T1": {
+      "type": "strips", "n": 10, "tile_w": 176,
+      "rows": [["arm wipe", 7.55, 8.05], ["fish wipe", 20.75, 21.35], ["fist punch-through", 33.15, 34.1], ["glove", 34.95, 35.45]],
+      "clips": [["T1-arm-wipe", 7.3, 8.6], ["T1-fish-wipe", 20.5, 21.6], ["T1-fist", 33.0, 34.4]],
+      "caption": "T1 occluder wipe: a foreground object fills the lens for 1–2 images and the new world is behind it."
+    },
+    "tr-T2": {
+      "type": "strips", "n": 10, "tile_w": 176,
+      "rows": [["map tears to brick", 7.84, 8.55], ["paper sea peels", 13.2, 14.2]],
+      "clips": [["T2-tear", 7.7, 8.9], ["T2-peel", 13.0, 14.4]],
+      "caption": "T2 tear / peel: the surface facing the camera tears, or its paper layers slide apart."
+    },
+    "tr-T3": {
+      "type": "strips", "n": 10, "tile_w": 176,
+      "rows": [["eye closes, opens on next world", 24.95, 26.45], ["spiral dive into mouth", 30.9, 32.25]],
+      "clips": [["T3-eye-portal", 24.6, 26.8], ["T3-mouth-dive", 29.8, 32.6]],
+      "caption": "T3 portal dive: push into an opening (eye, mouth); it closes or darkens, then opens on the next world."
+    },
+    "tr-T4": {
+      "type": "strips", "n": 10, "tile_w": 176,
+      "rows": [["pull out of a button eye", 40.15, 40.95], ["pull out of a cassette reel window", 43.25, 44.35]],
+      "clips": [["T4-button", 39.9, 41.3], ["T4-cassette", 43.0, 44.8]],
+      "caption": "T4 reverse portal: pulling back reveals the last world was inside a round object."
+    },
+    "tr-T5": {
+      "type": "strips", "n": 10, "tile_w": 176,
+      "rows": [["facade tilts to top-down", 11.0, 12.4], ["wall of papers becomes the floor", 17.75, 18.75]],
+      "clips": [["T5-tilt-top-down", 10.9, 12.8], ["T5-wall-to-floor", 17.5, 19.0]],
+      "caption": "T5 plane flip: a tilt turns a wall into a floor or table."
+    },
+    "tr-T6": {
+      "type": "strips", "n": 8, "tile_w": 176,
+      "rows": [["whip smear", 38.07, 38.66], ["whip into the title (on ones)", 47.0, 47.55]],
+      "clips": [["T6-whip", 37.8, 39.0], ["T6-title-slam", 46.5, 48.5]],
+      "caption": "T6 whip smear: 1–2 smeared images hide the cut."
+    },
+    "tr-T7": {
+      "type": "strips", "n": 10, "tile_w": 176,
+      "rows": [["crash-in", 9.46, 10.4]],
+      "clips": [["T7-crash-in", 9.2, 10.8]],
+      "caption": "T7 crash-in: a dark smear, then a big object slams in and settles."
+    },
+    "tr-T8": {
+      "type": "strips", "n": 10, "tile_w": 176,
+      "rows": [["SUV crumples into paper", 10.96, 11.97]],
+      "clips": [["T8-crumple", 10.8, 12.3]],
+      "caption": "T8 crumple away: an object crumples into paper and is carried off."
+    },
+    "tr-T9": {
+      "type": "strips", "n": 10, "tile_w": 176,
+      "rows": [["koi carries across three worlds", 10.2, 14.3]],
+      "clips": [["T9-koi-carry-over", 10.0, 14.5]],
+      "caption": "T9 carry-over element: the koi swims on through the crash, the top-down map and the peel."
+    },
+    "tr-T10": {
+      "type": "strips", "n": 10, "tile_w": 176,
+      "rows": [["onion swap, glasses fly off", 16.0, 16.9], ["face revealed in the suitcase", 4.0, 4.7]],
+      "clips": [["T10-onion-swap", 15.6, 17.4]],
+      "caption": "T10 substitution gag: an in-shot swap, not a scene change."
+    },
+    "cadence-frames": {
+      "type": "consecutive", "t": 31.25, "count": 8, "tile_w": 220,
+      "clips": [["cadence-slowmo-4x", 31.0, 32.0, 4.0]],
+      "caption": "Eight consecutive frames (24 fps file). Every image is held for two frames: animation on twos, even during camera moves."
+    },
+    "ease-strips": {
+      "type": "strips", "n": 10, "tile_w": 176,
+      "rows": [["drift hold: constant slow speed", 2.6, 7.0], ["portal dive: exponential ease-in, cut at peak", 29.8, 32.0], ["crash-in: fast in, settle", 9.4, 10.6], ["whip: constant fast, blurred", 38.0, 38.9], ["title slam: ease-in, impact hold, overshoot (on ones)", 46.9, 47.9]],
+      "caption": "The five measured move types, matching the ease-profile graphs above (left to right is time)."
+    },
+    "smooth-examples": {
+      "type": "strips", "n": 8, "tile_w": 220,
+      "rows": [["hold: ~0.9% of width per image, reads smooth", 3.0, 3.66], ["peak: ~5% per image, needs blur", 43.62, 44.2], ["smear: over 6% per image, used only as a smear", 38.16, 38.42]],
+      "caption": "Step size vs smoothness: consecutive new images at three speeds."
+    },
+    "principles-strips": {
+      "type": "strips", "n": 10, "tile_w": 176,
+      "rows": [["anticipation: near-still macro, then the slide", 0.0, 2.6], ["follow-through: tag swings in and sways", 4.2, 5.3, [430, 20, 736, 150]], ["offset & delay: hands enter staggered", 15.2, 16.4], ["arcs: koi swims a curve", 12.0, 13.6], ["secondary action: koi behind the crash", 10.2, 10.9], ["parallax: globes faster than the set", 5.2, 7.0], ["cloning: one raised hand becomes a crowd", 42.2, 43.1]],
+      "caption": "Animation principles as the reference uses them (consecutive new images)."
+    },
+    "pr-exaggeration": {
+      "type": "grid", "cols": 4, "tile_w": 330,
+      "items": [[19.6, null, "giant eye, tiny man"], [33.65, null, "fist fills the frame"], [41.6, null, "bear the size of a church"], [22.5, null, "the eye under water"]],
+      "caption": "Exaggeration through scale, not motion."
+    },
+    "sound-events": {
+      "type": "grid", "cols": 3, "tile_w": 440,
+      "items": [[8.0, null, "8.0 s tear: rising bass walk-up"], [9.96, null, "9.96 s van lands: hit + sub"], [18.2, null, "18.2 s drop: rising slide"], [20.95, null, "20.9 s fish wipe: whoosh"], [33.45, null, "33.45 s fist: hit"], [35.15, null, "35.15 s glove: punch + sub drop"], [38.2, null, "38.2 s whip: whoosh + crash"], [40.25, null, "40.25 s button: bass step"], [47.5, null, "47.5 s title: big hit"]],
+      "clips": [["sound-intro-bar-hits", 0.0, 10.5], ["sound-title-riser-glide-hit", 44.5, 51.0]],
+      "caption": "What the picture is doing at each sound event (the score hits the action)."
+    },
+    "style-frames": {
+      "type": "grid", "cols": 3, "tile_w": 440,
+      "items": [[6.4], [22.5], [28.6]],
+      "caption": "Candidate style frames to attach as @image1 (palette, materials, light and paper rendering only; never cast, text or composition)."
+    },
+    "scene-thumbs": {
+      "type": "grid", "cols": 6, "tile_w": 300,
+      "items": [[1.0], [4.9], [8.0], [9.0], [10.3], [12.6], [15.0], [19.9], [22.5], [26.6], [28.6], [32.6], [34.6], [37.5], [39.2], [41.6], [45.9], [48.0]],
+      "caption": "One frame per row of the scene map."
+    }
+  }
+}
