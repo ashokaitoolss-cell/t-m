@@ -95,10 +95,13 @@ Joy appears only in Acts 1–2. It never appears in Act 5.
 
 ## Look
 
-Recommended style: stylized 3D feature-animation, warm and tactile, with shallow depth of field.
-It keeps the boy's face consistent across ~30 generated clips more easily than photoreal, and it
-suits a cute robot. Photoreal cinematic also works and hits harder — it is your call; the story
-works either way.
+Hand-painted: chunky dry-brush strokes with a canvas-grain stipple, warm light against cool
+violet-grey shadows, and slightly caricatured shapes. The style lock and the Midjourney prompts
+are in `STYLE.md`. The robot's design is round 1 robot B, repainted in this style in
+`assets/painterly/`.
+
+Test the look in motion before generating all 30 shots: painted brush texture can shimmer from
+frame to frame in AI video.
 
 Colour by act:
 
