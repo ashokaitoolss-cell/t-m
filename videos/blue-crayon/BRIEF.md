@@ -1,14 +1,15 @@
 ---
 message: "The friend his father refused is the one who gives the boy back to him."
 aspect: 1920x1080
-language: none (no dialogue)
+language: English (eight short lines; the robot never speaks)
 length: 90s
 angle: silent short film, made with AI
 ---
 
 # Blue Crayon (working title)
 
-A 90-second silent short. Nobody speaks. The only word in the whole film is written in crayon.
+A 90-second short with almost no dialogue. The robot never speaks. The people say eight short
+lines between them, and the last one is a voiceover. The full screenplay is `SCRIPT.pdf`.
 
 ## Logline
 
@@ -114,7 +115,11 @@ Colour by act:
 
 ## Sound
 
-- No dialogue. Papa's phone call in Act 1 is indistinct murmur; his "No" is a head shake.
+- **Voices.** Eight short lines, all in `SCRIPT.fountain`. The robot never speaks, only whirs.
+  - Papa's flat "No." in the street is answered by the boy's "No!" when Papa tries to throw the
+    robot out.
+  - The boy's "Papa! Look!" (shot 15) comes back as the film's only voiceover, faint and far
+    away, when Papa finally looks at the drawing (shot 28).
 - **Bond motif:** the *rrrip* of tape and the scratch of crayon. A simple 4-note piano (or
   music-box) theme enters in the ritual montage.
 - **Act 3:** the theme drops out, leaving rain.

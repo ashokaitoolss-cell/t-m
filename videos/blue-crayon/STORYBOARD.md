@@ -19,7 +19,7 @@ cuts quickly inside its 5 s.
 ## Act 1 — The Ball (0:00–0:20)
 
 **01 · 0:00–0:03 · Wide.** Busy market street, golden morning. Papa at a stall, phone to his
-ear, talking over the vendor. The Boy bounces his red ball at his feet; it bounces off his shoe
+ear, talking over the vendor ("Friday. I said Friday."). The Boy bounces his red ball at his feet; it bounces off his shoe
 and away.
 
 **02 · 0:03–0:05 · Low, tracking the ball.** The ball rolls into a shadowed gap between stacked
@@ -36,7 +36,7 @@ Robot's three-fingered hand hesitates, then rests one fingertip in it. Cut to it
 curve up into arcs *(Joy)*.
 
 **06 · 0:14–0:17 · Medium.** The Boy tugs Papa's sleeve and points. Papa, still on the phone,
-glances over — a battered robot — and gives one hard head shake: *no*. He takes the Boy's
+glances over — a battered robot — and says one word: **"No."** He takes the Boy's
 wrist and walks him off.
 
 **07 · 0:17–0:20 · Boy's point of view, looking back.** The Boy is pulled away, looking back
@@ -47,7 +47,7 @@ The Boy's eyes.
 
 **08 · 0:20–0:23 · Night, apartment front door.** The Boy, in pyjamas, cracks the door open.
 The Robot is on the doormat, rain-wet: it followed them home. The Boy puts a finger to his lips
-and pulls it inside.
+(**"Shhh."**) and pulls it inside.
 
 **09 · 0:23–0:27 · Drawing corner, lamplight. The ritual is born.** The Robot tries to grip a
 blue crayon; it keeps slipping out of its stubby fingers. The Boy giggles, rips a strip of tape —
@@ -57,10 +57,10 @@ blue crayon; it keeps slipping out of its stubby fingers. The Boy giggles, rips 
 mouth, laughing.
 
 **11 · 0:29–0:31 · Doorway.** The light snaps on. Papa stands there, sees the Robot, and his face
-hardens. He points at the front door.
+hardens. He points at the front door: **"Out."**
 
 **12 · 0:31–0:34 · Low angle on the Boy.** The Boy jumps up and plants himself in front of the
-Robot, arms spread wide, chin trembling, eyes fierce. Behind his small arm, the Robot peeks out.
+Robot, arms spread wide, chin trembling, eyes fierce: **"No!"** Behind his small arm, the Robot peeks out.
 
 **13 · 0:34–0:36 · Papa.** Papa holds his son's stare, exhales hard, turns and walks off. It can
 stay. He doesn't like it.
@@ -74,8 +74,9 @@ stay. He doesn't like it.
 The 4-note theme enters.
 
 **15 · 0:41–0:44 · Papa in the doorway, home from work.** Coat still on. His son is in fits of
-laughter, the Robot is drawing a wobbly sun, and the wall is bursting with colour. The corner of
-Papa's mouth lifts despite himself. He catches it, and it's gone.
+laughter, the Robot is drawing a wobbly sun, and the wall is bursting with colour. The Boy holds
+up a drawing: **"Papa! Look!"** The corner of Papa's mouth lifts despite himself. He catches it,
+and it's gone. **This line comes back in shot 28.**
 
 **16 · 0:44–0:47 · Kitchen.** The Robot holds up its own wobbly drawing to Papa, a crooked stick
 figure of him. Papa walks past without looking. The Robot slowly lowers the paper *(Hurt)*.
@@ -90,7 +91,7 @@ sits on the edge of the bed pressing a cold cloth to his forehead, frightened.
 in both hands. Papa takes it without looking and gently shuts the door on it.
 
 **19 · 0:53–0:55 · Same door, later.** The Robot is back, holding the Boy's blanket. Papa,
-haggard, shakes his head, and the door closes again. The Robot faces the shut door. Its eyes dim.
+haggard, doesn't look up (**"Not now."**), and the door closes again. The Robot faces the shut door. Its eyes dim.
 
 **20 · 0:55–1:00 · Drawing corner, slow push-in.** The Robot sits alone at the little table. The
 last drawing lies there unfinished: crayons scattered, the tape roll on its side, the red ball
@@ -127,7 +128,7 @@ kitchen. Papa doesn't look. Then the glow falls on the paper, and he does.
 
 **28 · 1:19–1:22 · Insert: the drawing, lit by the Robot's eyes.** PAPA (backwards P), ME in
 the middle, the Robot — holding hands under a big yellow sun, a red heart over the Robot, Papa
-smiling.
+smiling. Over it, the film's only voiceover: the Boy, faint and far away, **"Papa. Look."**
 
 **29 · 1:22–1:26 · Close on Papa.** His jaw clamps and he tries to hold it in, but his face
 breaks. He pulls the Robot into his chest and sobs.
