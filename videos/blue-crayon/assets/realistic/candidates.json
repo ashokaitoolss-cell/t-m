@@ -1,0 +1,10 @@
+{
+  "note": "Photoreal five-year-old version of the 'Ashok - 2026 New' Soul 2.0 identity (soul_id 18a426eb-5fa2-466f-a1cd-1a5a64f6cbe0). Reference: a crop of that Soul's preview photo, uploaded as media 2cc3c350-92b4-4c48-b940-64f7b5285b92. Letters match assets/boards/boy_ashok_realistic.jpg.",
+  "A": {"file": "boy_ashok_gpt_a.jpg", "model": "gpt_image_2_5 (high, 2k)", "job_id": "4c7eb89b-da09-48e9-8215-8ac95b6163e6", "verdict": "strong likeness, reads about 8"},
+  "B": {"file": "boy_ashok_gpt_b.jpg", "model": "gpt_image_2_5 (high, 2k)", "job_id": "93e5308e-fb9d-4761-b587-94d4dfcf27a9", "verdict": "giggling, reads about 7-8"},
+  "C": {"file": "boy_ashok_nano.jpg", "model": "nano_banana_pro (2k)", "job_id": "676fc68b-020a-42d1-8b0b-84deaf2743e0", "verdict": "reads about 10"},
+  "D": {"file": "boy_ashok_seedream.jpg", "model": "seedream_v5_pro (2k)", "job_id": "f321e1a3-fd04-46af-98f6-c421fa723595", "verdict": "right age, weaker likeness"},
+  "E": {"file": "boy_ashok_soul.jpg", "model": "soul_2 with soul_id", "job_id": "9b2c0e8d-1d17-4986-a7ac-5d3ce4e30b53", "verdict": "unusable: the Soul identity kept the moustache"},
+  "F": {"file": "boy_ashok_gpt_younger.jpg", "model": "gpt_image_2_5 (high, 2k), refs A + adult photo", "job_id": "59db8fe2-5b40-4820-a041-6502975f7b63", "verdict": "A made younger: reads 5-6, strongest likeness"},
+  "G": {"file": "boy_ashok_seedream_closer.jpg", "model": "seedream_v5_pro (2k), refs D + adult photo", "job_id": "a02e995f-25eb-4977-98b8-1ec280c7679a", "verdict": "D pushed toward the adult likeness: reads 5"}
+}
