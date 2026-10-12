@@ -40,7 +40,7 @@ glances over — a battered robot — and gives one hard head shake: *no*. He ta
 wrist and walks him off.
 
 **07 · 0:17–0:20 · Boy's point of view, looking back.** The Boy is pulled away, looking back
-over his shoulder. The Robot steps half out of the shadows into the sun and lifts one small hand.
+over his shoulder. The Robot stays in the shadows between the crates and lifts one small hand.
 The Boy's eyes.
 
 ## Act 2 — The Crayon (0:20–0:47)

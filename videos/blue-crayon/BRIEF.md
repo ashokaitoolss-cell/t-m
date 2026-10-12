@@ -123,7 +123,7 @@ Colour by act:
 ## Changes from the original outline
 
 - In the street, Papa's refusal and the robot's "be my friend" are one exchange. The boy looks
-  back; the robot steps into the light and lifts one small hand.
+  back; the robot, still in the shadows, lifts one small hand.
 - The robot follows them home and the boy sneaks it in that night. Papa finds them drawing, and
   the boy stands in front of the robot with his arms spread.
 - The robot's attempt to win Papa over is holding up its own drawing. This sets up the mirror at
