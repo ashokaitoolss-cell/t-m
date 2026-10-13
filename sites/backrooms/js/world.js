@@ -32,10 +32,18 @@ export function hash3(i, j, k, seed) {
   return h / 4294967296;
 }
 
-// How a ceiling panel behaves: 0 = dead, 1 = steady, 2 = flickering.
-export function lightKind(i, j, seed) {
+// How a ceiling panel behaves: 0 = dead, 1 = steady, 2 = flickering. The
+// thresholds are the shaders' uDead and uFlicker.
+export function lightKind(i, j, seed, dead = 0.07, flicker = 0.035) {
   const r = hash3(i, j, 5, seed);
-  return r < 0.07 ? 0 : r > 0.965 ? 2 : 1;
+  return r < dead ? 0 : r > 1 - flicker ? 2 : 1;
+}
+
+export const DIRS = [[1, 0], [-1, 0], [0, 1], [0, -1]];
+
+// A number naming a cell, for maps and sets.
+export function cellKey(i, j) {
+  return (i + 50000) * 100000 + (j + 50000);
 }
 
 // Smooth 1D value noise along a grid line, so walls come in runs.
@@ -69,7 +77,8 @@ function density(i, j, seed) {
 export class World {
   constructor(seed) {
     this.seed = seed >>> 0;
-    this.chunks = new Map();
+    this.boxCache = new Map();
+    this.props = []; // extra solid boxes: phone tables
   }
 
   // Wall on the east (axis 0) or north (axis 1) edge of cell (i, j)?
@@ -92,6 +101,17 @@ export class World {
   // Solid boxes for the cell (i, j): the walls on its east and north edges
   // and a pillar on its south-west corner. [x0, x1, z0, z1, y0, y1]
   cellBoxes(i, j) {
+    const key = cellKey(i, j);
+    let boxes = this.boxCache.get(key);
+    if (!boxes) {
+      if (this.boxCache.size > 30000) this.boxCache.clear();
+      boxes = this.buildCellBoxes(i, j);
+      this.boxCache.set(key, boxes);
+    }
+    return boxes;
+  }
+
+  buildCellBoxes(i, j) {
     const boxes = [];
     const x0 = i * CELL, z0 = j * CELL;
     const t = WALL / 2;
@@ -170,6 +190,116 @@ export class World {
         for (const b of this.cellBoxes(i, j)) if (b[4] < 1.8) out.push(b);
       }
     }
+    for (const b of this.props) {
+      if (b[1] > x - CELL && b[0] < x + CELL && b[3] > z - CELL && b[2] < z + CELL) out.push(b);
+    }
     return out;
   }
+
+  // Walls and pillars that can overlap cell (i, j).
+  boxesAround(ci, cj) {
+    const out = [];
+    for (let i = ci - 1; i <= ci + 1; i++) for (let j = cj - 1; j <= cj + 1; j++) out.push(...this.cellBoxes(i, j));
+    return out;
+  }
+
+  // Is the point (x, y, z), grown by r sideways, inside a wall?
+  pointBlocked(x, z, r = 0, y = 1) {
+    return this.boxesAround(Math.floor(x / CELL), Math.floor(z / CELL)).some(
+      (b) => y >= b[4] && y <= b[5] && x > b[0] - r && x < b[1] + r && z > b[2] - r && z < b[3] + r,
+    );
+  }
+
+  // Can an eye at height y see from (x0, z0) to (x1, z1)?
+  lineOfSight(x0, z0, x1, z1, y = 1.5) {
+    const dx = x1 - x0, dz = z1 - z0;
+    const n = Math.ceil(Math.hypot(dx, dz) / 0.15);
+    let ci = NaN, cj = NaN, boxes = null;
+    for (let k = 1; k < n; k++) {
+      const x = x0 + (dx * k) / n, z = z0 + (dz * k) / n;
+      const i = Math.floor(x / CELL), j = Math.floor(z / CELL);
+      if (i !== ci || j !== cj) {
+        ci = i;
+        cj = j;
+        boxes = this.boxesAround(i, j);
+      }
+      for (const b of boxes) if (y >= b[4] && y <= b[5] && x > b[0] && x < b[1] && z > b[2] && z < b[3]) return false;
+    }
+    return true;
+  }
+
+  // Steps (through open edges and doorways) from cell (i0, j0) to every
+  // cell within maxDist of it: Map cellKey → steps.
+  distanceField(i0, j0, maxDist = 40, maxNodes = 6000) {
+    const dist = new Map([[cellKey(i0, j0), 0]]);
+    const queue = [[i0, j0, 0]];
+    for (let head = 0; head < queue.length && dist.size < maxNodes; head++) {
+      const [i, j, d] = queue[head];
+      if (d >= maxDist) continue;
+      for (const [di, dj] of DIRS) {
+        const key = cellKey(i + di, j + dj);
+        if (!dist.has(key) && this.passable(i, j, di, dj)) {
+          dist.set(key, d + 1);
+          queue.push([i + di, j + dj, d + 1]);
+        }
+      }
+    }
+    return dist;
+  }
+
+  // Where to cross from cell (i, j) into its neighbour (di, dj): the middle
+  // of the doorway, or of the open edge. [x, z, throughDoor]
+  crossing(i, j, di, dj) {
+    if (di) {
+      const ei = di === 1 ? i : i - 1;
+      const e = this.edge(0, ei, j);
+      return [(ei + 1) * CELL, (j + (e && e.door !== null ? e.door : 0.5)) * CELL, !!e];
+    }
+    const ej = dj === 1 ? j : j - 1;
+    const e = this.edge(1, i, ej);
+    return [(i + (e && e.door !== null ? e.door : 0.5)) * CELL, (ej + 1) * CELL, !!e];
+  }
+
+  // A walkable route from (x, z) to the cell at the root of `field`, then on
+  // to (tx, tz): [[x, z, throughDoor], ...], or null if (x, z) is outside it.
+  route(field, x, z, tx, tz) {
+    let i = Math.floor(x / CELL), j = Math.floor(z / CELL);
+    let d = field.get(cellKey(i, j));
+    if (d === undefined) return null;
+    const pts = [[x, z, false]];
+    for (let guard = 0; d > 0 && guard < 120; guard++) {
+      let step = null;
+      for (const [di, dj] of DIRS) {
+        if (field.get(cellKey(i + di, j + dj)) === d - 1 && this.passable(i, j, di, dj)) {
+          step = [di, dj];
+          break;
+        }
+      }
+      if (!step) return null;
+      pts.push(this.crossing(i, j, step[0], step[1]));
+      i += step[0];
+      j += step[1];
+      d--;
+      if (d > 0) pts.push([(i + 0.5) * CELL, (j + 0.5) * CELL, false]);
+    }
+    pts.push([tx, tz, false]);
+    return pts;
+  }
+
+  addProp(box) {
+    this.props.push(box);
+    return box;
+  }
+
+  removeProp(box) {
+    const k = this.props.indexOf(box);
+    if (k >= 0) this.props.splice(k, 1);
+  }
+}
+
+// Length of a polyline [[x, z], ...].
+export function routeLength(pts) {
+  let len = 0;
+  for (let k = 1; k < pts.length; k++) len += Math.hypot(pts[k][0] - pts[k - 1][0], pts[k][1] - pts[k - 1][1]);
+  return len;
 }

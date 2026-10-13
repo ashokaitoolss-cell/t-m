@@ -1,11 +1,16 @@
 import * as THREE from 'three';
-import { World, CELL, HEIGHT, hash3, lightKind } from './world.js';
+import { World, CELL, hash3, lightKind } from './world.js';
 import { ChunkManager } from './chunks.js';
 import { createMaterials, createPost } from './shaders.js';
 import { Player } from './player.js';
 import { Input } from './input.js';
 import { HeadTracker } from './head-tracker.js';
 import { Ambience } from './audio.js';
+import { Horror } from './sfx.js';
+import { Operator } from './voice.js';
+import { Eyes } from './eyes.js';
+import { Hud } from './hud.js';
+import { Game } from './game.js';
 
 const $ = (s) => document.querySelector(s);
 const params = new URLSearchParams(location.search);
@@ -36,6 +41,11 @@ function readSettings() {
     overlay: s.overlay === true,
     invertY: s.invertY === true,
     preview: s.preview !== false,
+    reducedScares: s.reducedScares === true,
+    reduceFlashing: s.reduceFlashing === true,
+    captions: s.captions !== false,
+    voice: s.voice !== false,
+    hideDigits: s.hideDigits === true,
   };
 }
 
@@ -76,6 +86,7 @@ camera.rotation.order = 'YXZ';
 
 const textures = loadTextures();
 const materials = createMaterials(textures, seed);
+if (settings.reduceFlashing) materials.shared.uFlicker.value = 0;
 const chunks = new ChunkManager(world, materials, scene, 3);
 
 const post = createPost();
@@ -117,7 +128,14 @@ player.roll = 0;
 const input = new Input(canvas);
 const tracker = new HeadTracker($('#camera'));
 const audio = new Ambience();
+const sfx = new Horror(audio);
+const operator = new Operator(sfx);
+const eyes = new Eyes();
+const hud = new Hud();
+let game = null;
 input.sensitivity = settings.sensitivity;
+operator.enabled = settings.voice;
+operator.volume = settings.volume;
 input.invertY = settings.invertY;
 audio.volume = settings.volume;
 player.onStep = (intensity) => audio.step(intensity);
@@ -126,6 +144,9 @@ const state = {
   started: false,
   paused: false,
   mode: 'mouse', // or 'camera'
+  kind: 'game', // or 'walk'
+  touchHold: false,
+  tapAnswer: false,
   quality: 1,
   slow: 0,
   fast: 0,
@@ -157,7 +178,7 @@ let fpsTime = last, fpsFrames = 0;
 const debug = params.has('debug') ? Object.assign(document.createElement('div'), { className: 'debug' }) : null;
 if (debug) {
   document.body.append(debug);
-  window.backrooms = { player, world, chunks, tracker, state, settings, input };
+  window.backrooms = { player, world, chunks, tracker, state, settings, input, eyes, sfx, materials, get game() { return game; } };
 }
 
 function frame(now) {
@@ -167,6 +188,28 @@ function frame(now) {
 
   const active = state.started && !state.paused;
   const sample = active ? input.sample(dt) : (input.sample(dt), { move: [0, 0], run: false, look: [state.started || reducedMotion ? 0 : 0.07 * dt, 0] });
+  const touch = matchMedia('(pointer: coarse)').matches;
+  if (game && active) {
+    const mode = state.mode === 'camera' && tracker.running ? 'camera' : 'manual';
+    if (eyes.mode !== mode) {
+      eyes.mode = mode;
+      eyes.reset();
+    }
+    game.update(dt, {
+      holding: input.keys.has('Space') || state.touchHold,
+      blink: input.took('KeyB'),
+      answer: input.took('KeyE') || state.tapAnswer,
+      hfov: 2 * Math.atan(Math.tan((camera.fov * DEG) / 2) * camera.aspect),
+      touch,
+    });
+    state.tapAnswer = false;
+    if (game.lockMove) {
+      sample.move = [0, 0];
+      sample.run = false;
+    }
+    if (game.phase === 'caught' && game.scareT < 1.4) sample.look = [0, 0];
+  }
+  input.pressed.clear();
   const head = headLook(dt, now);
   if (head && active) {
     // Hold the head turned past ~14° and the body keeps turning that way.
@@ -188,6 +231,12 @@ function frame(now) {
   materials.shared.uTime.value = time;
   post.uniforms.uTime.value = time;
   post.uniforms.uLens.value = settings.lens ? 1 : 0;
+  const caught = game && game.phase === 'caught';
+  document.body.classList.toggle('scare', !!caught);
+  post.uniforms.uLid.value = game && !caught ? eyes.lid : 0;
+  post.uniforms.uStrain.value = game && !caught ? eyes.strain : 0;
+  post.uniforms.uScare.value = game ? game.scare : 0;
+  post.uniforms.uExposure.value = 1.08 * (1 + (game ? 0.9 * game.flash + 6 * game.whiteout : 0));
   const vfov = camera.fov * DEG;
   const hfov = 2 * Math.atan(Math.tan(vfov / 2) * camera.aspect);
   const blur = settings.blur && !reducedMotion ? SHUTTER : 0;
@@ -202,7 +251,11 @@ function frame(now) {
   renderer.setRenderTarget(null);
   renderer.render(postScene, postCamera);
 
-  if (state.started) updateAudio(time);
+  if (state.started) {
+    updateAudio(time);
+    sfx.setListener(c.x, c.y, c.z, c.yaw, c.pitch);
+    sfx.update();
+  }
   if (settings.preview && tracker.running && state.mode === 'camera') tracker.drawPreview($('#preview-canvas'));
   if (settings.overlay) updateOverlay(time);
   state.frames++;
@@ -254,7 +307,7 @@ function updateAudio(time) {
   let near = 0, crackle = 0;
   for (let i = ci - 1; i <= ci + 1; i++) {
     for (let j = cj - 1; j <= cj + 1; j++) {
-      const kind = lightKind(i, j, seed);
+      const kind = lightKind(i, j, seed, materials.shared.uDead.value, materials.shared.uFlicker.value);
       if (kind === 0) continue;
       const d2 = ((i + 0.5) * CELL - player.x) ** 2 + ((j + 0.5) * CELL - player.z) ** 2;
       near = Math.max(near, Math.exp(-d2 / 6));
@@ -265,7 +318,7 @@ function updateAudio(time) {
       }
     }
   }
-  audio.update(near, crackle);
+  audio.update(near, crackle, materials.shared.uPower.value);
 }
 
 function adaptQuality(dt) {
@@ -293,6 +346,7 @@ function resize() {
     target.setSize(pw, ph);
   }
   const aspect = w / h;
+  post.uniforms.uAspect.value = aspect;
   const vfov = clamp(2 * Math.atan(Math.tan(HFOV / 2) / aspect), 52 * DEG, 80 * DEG);
   if (camera.aspect !== aspect || Math.abs(camera.fov - vfov / DEG) > 1e-3) {
     camera.aspect = aspect;
@@ -303,10 +357,14 @@ function resize() {
 
 // ------------------------------------------------------------------ UI
 
-function start(mode) {
+// kind: 'camera' (the game, watching your real eyes), 'eyes' (the game
+// without a camera) or 'walk' (Level 0 with nothing in it).
+function start(kind) {
   if (state.started) return;
   document.activeElement?.blur?.(); // so Space/Enter can't press the button again
+  const mode = kind === 'camera' ? 'camera' : 'mouse';
   state.mode = mode;
+  state.kind = kind === 'walk' ? 'walk' : 'game';
   state.started = true;
   state.startTime = performance.now();
   document.body.classList.add('playing');
@@ -322,6 +380,14 @@ function start(mode) {
   player.roll = 0.35;
   audio.start();
   audio.setMuted(false);
+  if (state.kind === 'game') {
+    sfx.init();
+    operator.warm();
+    eyes.mode = 'manual';
+    game = new Game({ world, scene, materials, player, eyes, tracker, sfx, operator, hud, settings, seed });
+    game.start();
+    document.body.classList.add('game');
+  }
   if (mode === 'camera') startCamera();
   else input.lock();
   updateStatus();
@@ -336,7 +402,11 @@ async function startCamera() {
     await tracker.start();
   } catch (err) {
     state.mode = 'mouse';
-    toast(`${err.message} Using the mouse instead. Click to look around.`);
+    toast(
+      game
+        ? `${err.message} Playing without the camera: your eyes will dry out. Hold Space to keep them open. Click to look around.`
+        : `${err.message} Using the mouse instead. Click to look around.`,
+    );
   }
   updateStatus();
 }
@@ -345,8 +415,13 @@ function setPaused(paused) {
   state.paused = paused;
   $('#pause').hidden = !paused;
   document.body.classList.toggle('paused', paused);
-  if (paused) audio.setMuted(true);
-  else audio.setMuted(state.muted === true);
+  if (paused) {
+    audio.setMuted(true);
+    operator.pause();
+  } else {
+    audio.setMuted(state.muted === true);
+    operator.resume();
+  }
   updateHint();
 }
 
@@ -359,7 +434,7 @@ input.onlockchange = (locked) => {
   if (locked) {
     input.lockedBefore = true;
     if (state.paused) setPaused(false);
-  } else if (state.started && state.mode === 'mouse' && !capture) {
+  } else if (state.started && state.mode === 'mouse' && !capture && !(game && ['caught', 'won'].includes(game.phase))) {
     setPaused(true); // Esc releases the mouse: pause
   }
   updateHint();
@@ -388,8 +463,9 @@ function updateHint() {
   let text = '';
   if (state.started && !state.paused) {
     if (matchMedia('(pointer: coarse)').matches) text = state.hintHidden ? '' : 'Drag left to walk · drag right to look';
+    else if (game && ['caught', 'won'].includes(game.phase)) text = '';
     else if (state.mode === 'mouse' && !input.locked) text = 'Click to look around';
-    else if (!state.hintHidden) text = 'WASD to walk · Shift to run · Esc for menu';
+    else if (!state.hintHidden) text = game ? 'WASD to walk · E to answer · Space keeps your eyes open · Esc for menu' : 'WASD to walk · Shift to run · Esc for menu';
   }
   hint.textContent = text;
   hint.hidden = !text;
@@ -420,11 +496,13 @@ function fatal(message) {
 }
 
 function wireUi() {
-  $('#enter-mouse').addEventListener('click', () => start('mouse'));
-  $('#enter-camera').addEventListener('click', () => start('camera'));
+  $('#play-camera').addEventListener('click', () => start('camera'));
+  $('#play-eyes').addEventListener('click', () => start('eyes'));
+  $('#just-walk').addEventListener('click', () => start('walk'));
   canvas.addEventListener('click', () => {
     if (state.started && !state.paused && !matchMedia('(pointer: coarse)').matches) input.lock();
   });
+  wireGameUi();
   $('#resume').addEventListener('click', resume);
   $('#opt-camera').addEventListener('click', () => {
     if (state.mode === 'camera') {
@@ -466,7 +544,10 @@ function wireUi() {
   };
   bindRange('#opt-sensitivity', 'sensitivity', (v) => (input.sensitivity = v));
   bindRange('#opt-head', 'headGain');
-  bindRange('#opt-volume', 'volume', (v) => audio.setVolume(v));
+  bindRange('#opt-volume', 'volume', (v) => {
+    audio.setVolume(v);
+    if (!state.muted) operator.volume = v;
+  });
   const bindToggle = (id, key, apply) => {
     const el = $(id);
     el.checked = settings[key];
@@ -481,15 +562,31 @@ function wireUi() {
   bindToggle('#opt-overlay', 'overlay', (on) => ($('#osd').hidden = !on));
   bindToggle('#opt-invert', 'invertY', (on) => (input.invertY = on));
   bindToggle('#opt-preview', 'preview', updateStatus);
+  bindToggle('#opt-gentle', 'reducedScares');
+  bindToggle('#opt-flashing', 'reduceFlashing', (on) => (game ? game.setLights(game.lights) : (materials.shared.uFlicker.value = on ? 0 : 0.035)));
+  bindToggle('#opt-captions', 'captions');
+  bindToggle('#opt-voice', 'voice', (on) => {
+    operator.enabled = on;
+    if (!on) operator.cancel();
+  });
+  bindToggle('#opt-hide', 'hideDigits', () => game && hud.digits(game.code, game.found, settings.hideDigits));
   $('#osd').hidden = !settings.overlay;
 
   window.addEventListener('keydown', (e) => {
     if (!state.started || capture) return;
+    if (game?.phase === 'dial' && !state.paused) {
+      const digit = /^(Digit|Numpad)([0-9])$/.exec(e.code);
+      if (digit) game.dialKey(digit[2]);
+      else if (e.code === 'Backspace') game.dialKey('back');
+      if (digit || e.code === 'Backspace') return;
+    }
     if (e.code === 'Escape' && state.mode === 'camera' && !input.locked) setPaused(!state.paused);
     else if (e.code === 'KeyC') toast(recenterHead() ? 'Head look centred.' : 'Recenter works with the camera on.');
     else if (e.code === 'KeyM') {
       state.muted = !state.muted;
       audio.setMuted(state.muted);
+      operator.volume = state.muted ? 0 : settings.volume;
+      if (state.muted) operator.cancel();
       toast(state.muted ? 'Sound off' : 'Sound on');
     } else if (e.code === 'KeyV') {
       settings.overlay = !settings.overlay;
@@ -516,7 +613,51 @@ function wireUi() {
     }
   });
   document.addEventListener('visibilitychange', () => (document.hidden ? audio.suspend() : audio.resume()));
-  if (matchMedia('(pointer: coarse)').matches) $('#enter-mouse').textContent = 'Enter with touch';
+  if (matchMedia('(pointer: coarse)').matches) $('#play-eyes').textContent = 'Play without camera (touch)';
+}
+
+function wireGameUi() {
+  $('#menu').addEventListener('click', () => {
+    input.unlock();
+    setPaused(true);
+  });
+  $('#prompt').addEventListener('click', () => (state.tapAnswer = true));
+  const hold = $('#hold-eyes');
+  const setHold = (on) => {
+    state.touchHold = on;
+    hold.classList.toggle('held', on);
+  };
+  hold.addEventListener('pointerdown', (e) => {
+    hold.setPointerCapture(e.pointerId);
+    setHold(true);
+  });
+  for (const type of ['pointerup', 'pointercancel', 'lostpointercapture']) hold.addEventListener(type, () => setHold(false));
+  hold.addEventListener('contextmenu', (e) => e.preventDefault());
+  $('#keypad').addEventListener('click', (e) => {
+    const key = e.target.closest('button')?.dataset.key;
+    if (key) game?.dialKey(key);
+  });
+  $('#dial-hang').addEventListener('click', () => game?.hangUp());
+  $('#end-redial').addEventListener('click', () => {
+    game?.retry();
+    if (state.mode === 'mouse') input.lock();
+    updateHint();
+  });
+  const leave = (newPlace) => {
+    const next = new URL(location.href);
+    if (newPlace) next.searchParams.set('seed', String((Math.random() * 2 ** 32) >>> 0));
+    else next.searchParams.delete('seed');
+    location.href = next.href;
+  };
+  $('#end-again').addEventListener('click', () => leave(true));
+  $('#end-quit').addEventListener('click', () => leave(false));
+  // The end cards need the mouse back.
+  new MutationObserver(() => {
+    if (!$('#ending').hidden) {
+      input.unlock();
+      updateHint();
+    }
+  }).observe($('#ending'), { attributes: true, attributeFilter: ['hidden'] });
 }
 
 function clamp(v, lo, hi) {

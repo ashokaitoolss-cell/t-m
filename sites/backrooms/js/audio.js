@@ -17,7 +17,14 @@ export class Ambience {
     const ctx = (this.ctx = new AC());
     this.master = ctx.createGain();
     this.master.gain.value = this.muted ? 0 : this.volume;
-    this.master.connect(ctx.destination);
+    // A limiter, so a scream on top of everything else doesn't clip.
+    const limiter = ctx.createDynamicsCompressor();
+    limiter.threshold.value = -10;
+    limiter.knee.value = 6;
+    limiter.ratio.value = 8;
+    limiter.attack.value = 0.003;
+    limiter.release.value = 0.25;
+    this.master.connect(limiter).connect(ctx.destination);
 
     // Mains hum: 60 Hz and its harmonics, slightly detuned so it beats.
     this.hum = ctx.createGain();
@@ -103,13 +110,16 @@ export class Ambience {
   }
 
   // nearLight: 0..1 how close the nearest lit panel is; flicker: 0..1 a
-  // flickering panel nearby is currently off/on-ing.
-  update(nearLight, flicker) {
+  // flickering panel nearby is currently off/on-ing; power: 0 in a blackout
+  // (everything electrical stops at once).
+  update(nearLight, flicker, power = 1) {
     if (!this.ctx) return;
     const t = this.ctx.currentTime;
-    this.buzz.gain.setTargetAtTime(0.012 + 0.05 * nearLight, t, 0.3);
-    this.hum.gain.setTargetAtTime(0.035 + 0.035 * nearLight, t, 0.3);
-    this.crackleGain.gain.setTargetAtTime(flicker * 0.05, t, 0.02);
+    const p = Math.min(1, power);
+    const tc = p < 0.5 ? 0.01 : 0.3;
+    this.buzz.gain.setTargetAtTime((0.012 + 0.05 * nearLight) * p, t, tc);
+    this.hum.gain.setTargetAtTime((0.035 + 0.035 * nearLight) * p, t, tc);
+    this.crackleGain.gain.setTargetAtTime(flicker * 0.05 * p, t, 0.02);
   }
 
   step(intensity) {

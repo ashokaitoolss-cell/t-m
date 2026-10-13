@@ -10,6 +10,7 @@ export class Input {
   constructor(surface) {
     this.surface = surface;
     this.keys = new Set();
+    this.pressed = new Set(); // keys that went down since the last frame
     this.lookX = 0;
     this.lookY = 0;
     this.sensitivity = 1;
@@ -22,6 +23,7 @@ export class Input {
     window.addEventListener('keydown', (e) => {
       if (e.target instanceof Element && e.target.closest('input, select, textarea')) return;
       this.keys.add(e.code);
+      if (!e.repeat) this.pressed.add(e.code);
       if (e.code.startsWith('Arrow') || e.code === 'Space') e.preventDefault();
     });
     window.addEventListener('keyup', (e) => this.keys.delete(e.code));
@@ -113,6 +115,11 @@ export class Input {
       run: k('ShiftLeft') || k('ShiftRight') || (this.stick && Math.hypot(this.stick.x - this.stick.x0, this.stick.y - this.stick.y0) > 110),
       look,
     };
+  }
+
+  // Was `code` pressed since the last frame? (Each press counts once.)
+  took(code) {
+    return this.pressed.delete(code);
   }
 
   get moving() {

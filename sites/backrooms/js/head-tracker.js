@@ -6,6 +6,9 @@
 //             camera: x to the viewer's right, y up, z towards the viewer
 //   yaw       radians, positive when the viewer turns to their right
 //   pitch     radians, positive when they look up
+//   eyesClosed  whether the viewer's real eyes are shut right now (blinks),
+//             from the eyeBlink blendshapes against a threshold that adapts
+//             to the viewer's face, glasses and light
 // The MediaPipe library (~11 MB of WASM) and model only load when the camera
 // is first switched on.
 
@@ -36,6 +39,9 @@ export class HeadTracker {
     this.filters = [new OneEuro(1.0, 0.01), new OneEuro(1.0, 0.01), new OneEuro(0.5, 0.006)];
     this.angleFilters = [new OneEuro(1.2, 0.8), new OneEuro(1.2, 0.8)];
     this.landmarkerPromise = null;
+    this.eyesClosed = false;
+    this.eyeClosure = 0; // 0 open … 1 shut
+    this.blinkModel = { open: 0.12, shut: 0.5, index: null };
     this.lastTs = 0;
     this.lastVideoTime = -1;
   }
@@ -98,6 +104,8 @@ export class HeadTracker {
     this.yaw = 0;
     this.pitch = 0;
     this.landmarks = null;
+    this.eyesClosed = false;
+    this.eyeClosure = 0;
   }
 
   setState(state) {
@@ -151,9 +159,35 @@ export class HeadTracker {
       this.yaw = this.angleFilters[0].filter(yaw, t);
       this.pitch = this.angleFilters[1].filter(pitch, t);
     }
+    const shapes = result.faceBlendshapes && result.faceBlendshapes[0] && result.faceBlendshapes[0].categories;
+    if (shapes) this.updateBlink(shapes);
     this.landmarks = face;
     this.lastSeen = ts;
     this.setState('tracking');
+  }
+
+  // Blink detection. The eyeBlink scores sit somewhere between ~0.02 and
+  // ~0.35 for open eyes depending on the face, and peak at 0.5–0.95 in a
+  // blink; we follow the open level (lower envelope) and the shut level
+  // (upper envelope) and switch with hysteresis between them.
+  updateBlink(shapes) {
+    const m = this.blinkModel;
+    if (!m.index) {
+      const find = (name) => shapes.findIndex((c) => c.categoryName === name);
+      m.index = [find('eyeBlinkLeft'), find('eyeBlinkRight')];
+      if (m.index.some((k) => k < 0)) m.index = [9, 10];
+    }
+    let s = (shapes[m.index[0]].score + shapes[m.index[1]].score) / 2;
+    // Looking down lowers the lids a little; don't call that a blink.
+    s -= Math.max(0, -this.pitch - 0.12) * 0.5;
+    if (!this.eyesClosed) m.open += (s - m.open) * (s < m.open ? 0.25 : 0.006);
+    const floor = m.open + 0.3;
+    m.shut += s > m.shut ? (s - m.shut) * 0.5 : (floor - m.shut) * 0.004;
+    m.shut = Math.max(m.shut, floor);
+    const closure = clamp01((s - m.open) / (m.shut - m.open));
+    this.eyeClosure = closure;
+    if (!this.eyesClosed && closure > 0.5 && s - m.open > 0.14) this.eyesClosed = true;
+    else if (this.eyesClosed && closure < 0.3) this.eyesClosed = false;
   }
 
   // Mirrored camera image with the tracked eyes marked, for the preview tile.
@@ -173,7 +207,7 @@ export class HeadTracker {
       ctx.globalAlpha = 1;
       if (this.landmarks && this.state === 'tracking') {
         const toCanvas = (p) => [(w - vw) / 2 + p.x * vw, (h - vh) / 2 + p.y * vh];
-        ctx.fillStyle = '#7dffb2';
+        ctx.fillStyle = this.eyesClosed ? '#ff5a4a' : '#7dffb2';
         for (const pair of [RIGHT_EYE, LEFT_EYE]) {
           const [x, y] = toCanvas(mid(this.landmarks[pair[0]], this.landmarks[pair[1]]));
           ctx.beginPath();
@@ -194,6 +228,7 @@ async function createLandmarker() {
     runningMode: 'VIDEO',
     numFaces: 1,
     outputFacialTransformationMatrixes: true,
+    outputFaceBlendshapes: true,
     minFaceDetectionConfidence: 0.5,
     minFacePresenceConfidence: 0.5,
     minTrackingConfidence: 0.5,
@@ -229,6 +264,10 @@ function eyePosition(face, width, height) {
 function headAngles(m) {
   const fx = m[8], fy = m[9], fz = m[10];
   return [-Math.atan2(fx, fz), Math.atan2(fy, Math.hypot(fx, fz))];
+}
+
+function clamp01(v) {
+  return v < 0 ? 0 : v > 1 ? 1 : v;
 }
 
 function mid(p, q) {
