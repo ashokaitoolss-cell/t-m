@@ -1,0 +1,22 @@
+{
+  "note": "Three storyboard stills in the flat-plane gouache style, made with the user's character art (assets/flat/) as references. Rows on assets/boards/stills_compare.jpg are shots, columns are models.",
+  "character_refs": {"robot": "703aa867-16e5-4019-bf27-80696dc5eeb7", "papa": "14e549aa-c724-490a-9b30-813da062654d", "boy": "bc48b483-3d97-4443-b866-90fbafe31992"},
+  "shot_05_palm": {
+    "gpt_a": {"file": "s05_gpt_a.jpg", "job_id": "179f5980-6b75-46b4-8bc7-f2cfc2225bba"},
+    "gpt_b": {"file": "s05_gpt_b.jpg", "job_id": "0c7ebc67-a12b-4d53-8ff9-14be8ae913d3"},
+    "nano": {"file": "s05_nano.jpg", "job_id": "7aca584d-2d57-4350-b160-d3edd9ee6f9e"},
+    "seedream": {"file": "s05_seedream.jpg", "job_id": "8485320a-d5c6-46df-9e56-1070e1cec261"}
+  },
+  "shot_15_smile": {
+    "gpt_a": {"file": "s15_gpt_a.jpg", "job_id": "d4353a49-8bbf-4b21-acf8-f2b5382c58a6"},
+    "gpt_b": {"file": "s15_gpt_b.jpg", "job_id": "ae2b4b38-b2ee-4404-9777-1cc72fb0edf2"},
+    "nano": {"file": "s15_nano.jpg", "job_id": "84cf4b82-e350-4969-86bb-518c808fb5fc"},
+    "seedream": {"file": "s15_seedream.jpg", "job_id": "465b6c3d-8475-4a11-9bdd-42222cafe9f6"}
+  },
+  "shot_30_hug": {
+    "gpt_a": {"file": "s30_gpt_a.jpg", "job_id": "113db0ee-1f99-4e5f-8c0b-cdbc55107300"},
+    "gpt_b": {"file": "s30_gpt_b.jpg", "job_id": "d7c1308c-1f7a-482f-aa8e-22dbe14bc823"},
+    "nano": {"file": "s30_nano.jpg", "job_id": "f0ed368a-c90c-46c8-a4bf-e98ad0cb4763"},
+    "seedream": {"file": "s30_seedream.jpg", "job_id": "ecc4cdd2-98dd-455b-aa29-810641336791"}
+  }
+}
