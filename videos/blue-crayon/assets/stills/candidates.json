@@ -1,22 +1,119 @@
 {
   "note": "Three storyboard stills in the flat-plane gouache style, made with the user's character art (assets/flat/) as references. Rows on assets/boards/stills_compare.jpg are shots, columns are models.",
-  "character_refs": {"robot": "703aa867-16e5-4019-bf27-80696dc5eeb7", "papa": "14e549aa-c724-490a-9b30-813da062654d", "boy": "bc48b483-3d97-4443-b866-90fbafe31992"},
+  "character_refs": {
+    "robot": "703aa867-16e5-4019-bf27-80696dc5eeb7",
+    "papa": "14e549aa-c724-490a-9b30-813da062654d",
+    "boy": "bc48b483-3d97-4443-b866-90fbafe31992"
+  },
   "shot_05_palm": {
-    "gpt_a": {"file": "s05_gpt_a.jpg", "job_id": "179f5980-6b75-46b4-8bc7-f2cfc2225bba"},
-    "gpt_b": {"file": "s05_gpt_b.jpg", "job_id": "0c7ebc67-a12b-4d53-8ff9-14be8ae913d3"},
-    "nano": {"file": "s05_nano.jpg", "job_id": "7aca584d-2d57-4350-b160-d3edd9ee6f9e"},
-    "seedream": {"file": "s05_seedream.jpg", "job_id": "8485320a-d5c6-46df-9e56-1070e1cec261"}
+    "gpt_a": {
+      "file": "s05_gpt_a.jpg",
+      "job_id": "179f5980-6b75-46b4-8bc7-f2cfc2225bba"
+    },
+    "gpt_b": {
+      "file": "s05_gpt_b.jpg",
+      "job_id": "0c7ebc67-a12b-4d53-8ff9-14be8ae913d3"
+    },
+    "nano": {
+      "file": "s05_nano.jpg",
+      "job_id": "7aca584d-2d57-4350-b160-d3edd9ee6f9e"
+    },
+    "seedream": {
+      "file": "s05_seedream.jpg",
+      "job_id": "8485320a-d5c6-46df-9e56-1070e1cec261"
+    }
   },
   "shot_15_smile": {
-    "gpt_a": {"file": "s15_gpt_a.jpg", "job_id": "d4353a49-8bbf-4b21-acf8-f2b5382c58a6"},
-    "gpt_b": {"file": "s15_gpt_b.jpg", "job_id": "ae2b4b38-b2ee-4404-9777-1cc72fb0edf2"},
-    "nano": {"file": "s15_nano.jpg", "job_id": "84cf4b82-e350-4969-86bb-518c808fb5fc"},
-    "seedream": {"file": "s15_seedream.jpg", "job_id": "465b6c3d-8475-4a11-9bdd-42222cafe9f6"}
+    "gpt_a": {
+      "file": "s15_gpt_a.jpg",
+      "job_id": "d4353a49-8bbf-4b21-acf8-f2b5382c58a6"
+    },
+    "gpt_b": {
+      "file": "s15_gpt_b.jpg",
+      "job_id": "ae2b4b38-b2ee-4404-9777-1cc72fb0edf2"
+    },
+    "nano": {
+      "file": "s15_nano.jpg",
+      "job_id": "84cf4b82-e350-4969-86bb-518c808fb5fc"
+    },
+    "seedream": {
+      "file": "s15_seedream.jpg",
+      "job_id": "465b6c3d-8475-4a11-9bdd-42222cafe9f6"
+    }
   },
   "shot_30_hug": {
-    "gpt_a": {"file": "s30_gpt_a.jpg", "job_id": "113db0ee-1f99-4e5f-8c0b-cdbc55107300"},
-    "gpt_b": {"file": "s30_gpt_b.jpg", "job_id": "d7c1308c-1f7a-482f-aa8e-22dbe14bc823"},
-    "nano": {"file": "s30_nano.jpg", "job_id": "f0ed368a-c90c-46c8-a4bf-e98ad0cb4763"},
-    "seedream": {"file": "s30_seedream.jpg", "job_id": "ecc4cdd2-98dd-455b-aa29-810641336791"}
+    "gpt_a": {
+      "file": "s30_gpt_a.jpg",
+      "job_id": "113db0ee-1f99-4e5f-8c0b-cdbc55107300"
+    },
+    "gpt_b": {
+      "file": "s30_gpt_b.jpg",
+      "job_id": "d7c1308c-1f7a-482f-aa8e-22dbe14bc823"
+    },
+    "nano": {
+      "file": "s30_nano.jpg",
+      "job_id": "f0ed368a-c90c-46c8-a4bf-e98ad0cb4763"
+    },
+    "seedream": {
+      "file": "s30_seedream.jpg",
+      "job_id": "ecc4cdd2-98dd-455b-aa29-810641336791"
+    }
+  },
+  "shot_09_tape": {
+    "gpt": {
+      "file": "s09_gpt.jpg",
+      "job_id": "4c46e053-e225-4cdc-aecf-5deb75f6099a"
+    },
+    "nano": {
+      "file": "s09_nano.jpg",
+      "job_id": "ccf390f0-1e05-429b-bb09-2a9616f86a3f"
+    },
+    "seedream": {
+      "file": "s09_seedream.jpg",
+      "job_id": "c998bb38-e141-490b-9ea7-577500d7d513"
+    }
+  },
+  "shot_12_arms_spread": {
+    "gpt": {
+      "file": "s12_gpt.jpg",
+      "job_id": "3fd713d2-ec60-45c5-a345-d216d7e33ba6"
+    },
+    "nano": {
+      "file": "s12_nano.jpg",
+      "job_id": "5812be70-f005-4785-8aec-c9728a786c2f"
+    },
+    "seedream": {
+      "file": "s12_seedream.jpg",
+      "job_id": "e5bf8698-1df2-4fd3-830b-f5619b588a31"
+    }
+  },
+  "shot_20_alone_rain": {
+    "gpt": {
+      "file": "s20_gpt.jpg",
+      "job_id": "20cc49ba-6dfb-4ed5-8d3d-b9fd53946b32"
+    },
+    "nano": {
+      "file": "s20_nano.jpg",
+      "job_id": "cc3aa8c9-edba-4988-9ba6-abe316f07c42",
+      "note": "first attempt 4d719d75 was flagged as unsafe (false positive); prompt softened"
+    },
+    "seedream": {
+      "file": "s20_seedream.jpg",
+      "job_id": "d6e97107-b451-47fa-ab62-aef38785eefe"
+    }
+  },
+  "shot_24_kitchen": {
+    "gpt": {
+      "file": "s24_gpt.jpg",
+      "job_id": "c3f4f698-6ee2-4d27-852c-efea182c01bc"
+    },
+    "nano": {
+      "file": "s24_nano.jpg",
+      "job_id": "b992e6f4-5f6d-4a0c-8e0f-699f98619dee"
+    },
+    "seedream": {
+      "file": "s24_seedream.jpg",
+      "job_id": "2f34539f-acb9-4ab0-93b3-405ac43ccef8"
+    }
   }
 }
