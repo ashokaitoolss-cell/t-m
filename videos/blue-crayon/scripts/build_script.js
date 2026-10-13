@@ -1,6 +1,6 @@
-// Builds SCRIPT.docx (Hollywood format) from SCRIPT.fountain.
-// Run from videos/blue-crayon:
-//   NODE_PATH=$(npm root -g) node scripts/build_script.js
+// Builds a .docx screenplay (Hollywood format) from a .fountain file, written next
+// to it with the same name. Defaults to SCRIPT.fountain. Run from videos/blue-crayon:
+//   NODE_PATH=$(npm root -g) node scripts/build_script.js [path/to/file.fountain]
 // then convert to PDF:
 //   soffice --headless --convert-to pdf SCRIPT.docx
 //
@@ -42,7 +42,8 @@ const trans = (t) =>
 const center = (t, opts = {}) =>
   new Paragraph({ spacing: { before: opts.before ?? 0, after: opts.after ?? 240, line: 240 }, alignment: AlignmentType.CENTER, children: [run(t, opts)] });
 
-const src = fs.readFileSync(path.join(__dirname, "..", "SCRIPT.fountain"), "utf8").replace(/\r/g, "");
+const input = path.resolve(process.argv[2] || path.join(__dirname, "..", "SCRIPT.fountain"));
+const src = fs.readFileSync(input, "utf8").replace(/\r/g, "");
 const [titleBlock, ...rest] = src.split(/\n\s*\n/);
 const title = Object.fromEntries(
   titleBlock.split("\n").map((l) => { const i = l.indexOf(":"); return [l.slice(0, i).trim().toLowerCase(), l.slice(i + 1).trim()]; })
@@ -113,7 +114,7 @@ const doc = new Document({
 });
 
 Packer.toBuffer(doc).then((buf) => {
-  const out = path.join(__dirname, "..", "SCRIPT.docx");
+  const out = input.replace(/\.fountain$/, "") + ".docx";
   fs.writeFileSync(out, buf);
   console.log(`wrote ${out} (${sceneNum} scenes)`);
 });
