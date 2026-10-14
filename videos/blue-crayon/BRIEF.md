@@ -1,150 +1,159 @@
 ---
-message: "The friend his father refused is the one who gives the boy back to him."
+message: "The thing he threw away is the thing his son left him."
 aspect: 1920x1080
-language: English (eight short lines; the robot never speaks)
-length: 90s
-angle: silent short film, made with AI
+language: English (one whispered line; the robot never speaks)
+length: 57s
+angle: near-silent short film, made with AI
 ---
 
-# Blue Crayon (working title)
+# Blue Crayon — "The Knock"
 
-A 90-second short with almost no dialogue. The robot never speaks. The people say eight short
-lines between them, and the last one is a voiceover. The full screenplay is `SCRIPT.pdf`.
+A 57-second short with a single line of dialogue. The screenplay is `SCRIPT.pdf`, and the shot
+list is `STORYBOARD.md`. Earlier drafts (the 90-second cut and short versions A and B) are in
+`drafts/`.
 
 ## Logline
 
-A frightened stray robot becomes a five-year-old's best friend through one ritual: drawing
-together, with a crayon taped to its clumsy finger. The boy's father never accepts it. After
-the boy is gone, the robot brings the father the last drawing his son made — and it is the
-first time the father takes anything from its hand.
+On the night of his son's funeral, a father throws the boy's robot out into the rain. It keeps
+knocking, because it still has one last thing to deliver.
 
-## The ritual: the taped crayon
+## Structure
 
-The robot's three stubby fingers can't hold a crayon; it keeps slipping. The boy giggles, rips a
-strip of tape and tapes a blue crayon to the robot's finger. From then on that is how every
-drawing session starts — *rrrip*, tape, crayon — and the drawings go up on the wall by the
-living-room window until the wall is covered.
+1. **The hook (0:00–0:09).** A man in a funeral suit drags a little robot out of his home and
+   leaves it by the bins in the rain. It knocks. Inside, he sits against the door and doesn't
+   move. Why would he do that?
+2. **The flashback (0:09–0:31).**
+   - The robot once knocked on this same door, scared, and the boy let it in, against Papa's
+     wishes.
+   - He taped a crayon to its finger so it could draw with him.
+   - When he was sick, he gave it a folded drawing: **"Give it to Papa... when he's sad."**
+   - Then the bed is empty.
+3. **The payoff (0:31–0:57).**
+   - The robot slides the drawing under the door.
+   - It shows Papa holding the robot's hand, with the boy drawn up in the sky as the sun.
+   - Papa breaks, opens the door, and hugs the robot in the rain.
+   - Over his shoulder, the robot can't cry; the rain runs down its visor instead.
 
-Why this one:
+## The door and the knock
 
-- **Wordless.** Tape, crayon, a wall filling up: readable in a second, no explanation needed.
-- **It's about the boy making room for the robot.** The robot can't do the thing; the boy finds a
-  way so it can. That is their whole friendship in one gesture.
-- **The wall is a progress bar.** It fills during the fun, a drawing falls off it during the
-  grief.
-- **It gives the robot something to carry at the end.** The last drawing, unfinished on the
-  little table, is the "thing lying there" the robot stares at, and the thing it brings the father.
-- **The crayon stays taped on.** Through the whole grief montage the robot never takes it off.
-- **A mirror.** Earlier the robot holds up its own drawing to the father and he walks past without
-  looking. At the end it holds up a drawing the same way, and this time he looks.
+The door is the spine of the film. Every important beat happens at it, and the knock is the
+robot's only voice: two small, light metal taps.
 
-### The last drawing (the reveal)
+| When | Who is at the door | What happens |
+| --- | --- | --- |
+| 01 | Papa | He throws the robot out and shuts the door |
+| 03 | The robot | It knocks; Papa doesn't move |
+| 04 (flashback) | The robot | It knocks timidly; the boy opens the door and lets it in |
+| 10 | The robot | It knocks once more, then slides the drawing under the door |
+| 14 | Papa | He opens the door toward it, and the same warm light spills out |
 
-Crayon on paper, five-year-old style: a tall stick figure labelled **PAPA** (backwards first P),
-a small one labelled **ME** in the middle, and the robot (boxy body, big round eyes) — all
-three holding hands under a big yellow sun, with a red heart over the robot. Papa is smiling.
+Shots 01, 04 and 14 use the same doorstep framing, so the audience feels the rhyme.
 
-The boy drew the three of them as a family, with himself as the bridge holding both their
-hands. In the final hug the bridge is gone and the father and the robot hold each other directly.
-Never show this drawing clearly until shot 28.
+## The taped crayon
+
+The robot's three stubby fingers can't hold a crayon. The boy giggles, tears a strip of tape,
+and tapes a blue crayon to its finger. That is their whole friendship in one gesture: the robot
+can't do something, so the boy finds a way. The crayon is still taped on in the rain, as the
+boy's mark on it.
+
+## The last drawing (the reveal)
+
+Crayon on paper, drawn in a five-year-old's style:
+
+- A tall stick figure labelled **PAPA**, with the first P backwards.
+- Papa is holding hands with the round robot, which has big eyes.
+- Above them is a big yellow sun with a smiling face, labelled **ME**.
+- The sky is scribbled in wobbly blue, the robot's colour, because they drew it together.
+
+The boy drew himself out of the picture and into the sky, and left Papa holding the robot's
+hand. The thing Papa just threw away is the thing his son left him.
+
+How the drawing appears through the film:
+
+- Folded in four, it is the thing the robot hunches over in shot 02.
+- It is wet at the edges by shot 11.
+- Never show it clearly before shot 12.
+- Generate it once as a single still and reuse it in every shot.
+
+## The line
+
+**"Give it to Papa... when he's sad."** The boy whispers it in shot 08, and it is the only
+spoken line in the film. It explains why the robot keeps knocking: it is keeping a promise.
 
 ## Characters
 
-Lock each one with a character sheet before generating any shots.
+Lock each character with a character sheet before generating shots.
 
-**The Boy (5).** Small, messy hair, oversized yellow hoodie, red sneakers, always has his red
-rubber ball. Fearless, giggly, stubborn when it matters.
+**The Boy (5).**
+- Warm tan skin, round face, rosy cheeks, big dark-brown eyes, ears that stick out a little.
+- Thick wavy dark-brown hair with one curl sticking up.
+- An oversized mustard-yellow hoodie two sizes too big over a white tee, navy joggers, and red
+  canvas high-tops.
+- Seen only in the flashback.
 
-**Papa (mid-30s).** Stubble, tired eyes, rolled-up shirt sleeves, wristwatch, always half on his
-phone. Not a villain: busy, tired and protective. Later: black suit, then a stained undershirt,
-unshaven.
+**Papa (30s).**
+- Tall, short black beard, brown skin, tired eyes.
+- In the present: a black funeral suit with the tie pulled loose.
+- In the flashback: a work shirt.
+- He is grieving, not a villain. Throwing the robot out is grief, because it is the boy's.
 
-**The Robot.** About the boy's height (~1 m). Rounded egg-shaped head with a dark glass face
-screen showing two large, round, soft warm-white eyes; small body; short legs; stubby
-three-fingered hands. Faded pale-mint paint, scuffs, rust streaks, a dent on the head, one
-mismatched bolt — it was thrown away. It moves slowly with hunched shoulders and makes no
-voice sounds, only soft servo whirs. Its eyes glow, and in the dark acts that glow is the only
-light.
+**The Robot.**
+- About the boy's height.
+- An egg-shaped head with a dent, a dark visor, and two glowing eyes.
+- Sage-mint paint with rust streaks, and stubby three-fingered hands.
+- It moves slowly and makes no voice sounds, only soft servo whirs and the knock.
 
-Keep its range of expression small. These are the only five states:
+Keep the robot's range of expression small. These are its only states:
 
 | State | Eyes | Body |
 | --- | --- | --- |
-| Fear | small, quick blinks | curled up, trembling |
+| Fear | small, quick blinks | hunched, trembling |
 | Curious | widen, slow blink | head tilts |
 | Joy | curve up into arcs | small bounce |
 | Hurt | dim, look down | head lowers, arms hang |
-| Resolve | brighten | straightens up |
 
-Joy appears only in Acts 1–2. It never appears in Act 5.
+Joy appears only in the flashback.
 
-**Props.**
-- Red rubber ball: brings them together, then lies deflated under the table.
+## Props
+
 - Blue crayon and a roll of tape.
-- The drawing wall.
-- The last drawing.
+- The last drawing, folded.
+- Small red sneakers on the hall mat.
+- Bins at the foot of the doorstep.
+- Papa's black suit and loosened tie.
 
 ## Locations
 
-- **Market street.** Busy, sunlit stalls, and a shadowed gap between crates where the robot hides.
-- **Apartment, living room.** The drawing corner: a low kid's table by the window, with the wall
-  of drawings beside it. This is where the ritual happens and where the robot waits after the boy
-  is gone.
-- **Apartment, boy's bedroom.** Where he is sick, behind the door Papa keeps shut on the robot,
-  and where Papa sits in the dark at the end.
-- **Apartment, kitchen and hallway.**
+- **Apartment doorstep.** A few steps up to a front door with a small window, bins at the side,
+  and one street lamp. Seen at night in pouring rain (01–03, 10, 14–16) and on a sunny day
+  (04).
+- **Front hall.** Dark, with Papa against the door and the red sneakers on the mat (03, 11, 13).
+- **Living room drawing corner.** Lamplight, a low kid's table, and a wall filling with
+  drawings (06, 07).
+- **The boy's bedroom.** Grey rain light and a small bed (08, 09).
 
-## Look
+## Light and colour
 
-Hand-painted: chunky dry-brush strokes with a canvas-grain stipple, warm light against cool
-violet-grey shadows, and slightly caricatured shapes. The style lock and the Midjourney prompts
-are in `STYLE.md`. The robot's design is round 1 robot B, repainted in this style in
-`assets/painterly/`.
-
-Test the look in motion before generating all 30 shots: painted brush texture can shimmer from
-frame to frame in AI video.
-
-Colour by act:
-
-1. **The Ball.** Golden morning, busy, saturated.
-2. **The Crayon.** Warm lamplight; crayon primaries on the wall.
-3. **The Fever.** Grey-blue daylight, rain on the window.
-4. **Empty.** Near-black and desaturated. The only colour is the drawing wall in the shadows.
-5. **The Drawing.** Darkness lit only by the robot's warm eye-glow. The drawing's crayon colours
-   are the brightest thing on screen.
+- **Present.** Cold blue-black night and rain. The only warm light is the robot's eye-glow,
+  until Papa opens the door and warm hall light spills out (14–16).
+- **Flashback.** Warm and golden, until the bedroom, which is grey.
+- **The drawing.** The brightest colours in the film.
 
 ## Sound
 
-- **Voices.** Eight short lines, all in `SCRIPT.fountain`. The robot never speaks, only whirs.
-  - Papa's flat "No." in the street is answered by the boy's "No!" when Papa tries to throw the
-    robot out.
-  - The boy's "Papa! Look!" (shot 15) comes back as the film's only voiceover, faint and far
-    away, when Papa finally looks at the drawing (shot 28).
-- **Bond motif:** the *rrrip* of tape and the scratch of crayon. A simple 4-note piano (or
-  music-box) theme enters in the ritual montage.
-- **Act 3:** the theme drops out, leaving rain.
-- **Act 4:** near silence: a clock, a bottle on a table, a fading siren.
-- **Act 5:** a servo creak as the robot rises, the paper rustling, then Papa's breath breaking
-  into sobs. The 4-note theme returns once, slowly, unfinished, on the final shot. Cut to black
-  in silence.
+- Rain under the whole present.
+- The knock: two small metal taps, every time the same.
+- The *rrrip* of tape in the flashback.
+- A four-note piano theme that plays only in the flashback. It returns once at the end, but
+  only three notes play.
+- The boy's whisper.
+- Papa's breath catching, then a sob.
+- Cut to black in silence.
 
-## Changes from the original outline
+## Look
 
-- In the street, Papa's refusal and the robot's "be my friend" are one exchange. The boy looks
-  back; the robot, still in the shadows, lifts one small hand.
-- The robot follows them home and the boy sneaks it in that night. Papa finds them drawing, and
-  the boy stands in front of the robot with his arms spread.
-- The robot's attempt to win Papa over is holding up its own drawing. This sets up the mirror at
-  the end.
-- The drawing corner is in the living room, so the robot can sit by it while it's shut out of the
-  sick room.
-- The death is shown only through ambulance lights at night and Papa coming home alone, in the
-  rain, in a black suit.
-- At the end Papa is in the boy's bedroom. The robot walks in through the door that was shut on it.
+The art style is being locked from new references: a soft painterly digital illustration with
+visible brush strokes, warm rosy skin, cool violet-lavender shadows and a lavender rim light.
+The references and the first character tests are in `assets/painted/`.
 
-## Before generating
-
-1. Character sheets for the Boy, Papa and the Robot. Include the robot's five eye states.
-2. Generate the last drawing as one still and reuse it, so it is identical in shots 20, 25 and 28.
-3. Generate one clip per shot, then trim. Shots run 2–4 s, so a 5 s generation per shot leaves
-   room to trim.
+`STYLE.md` and `assets/flat/` hold the earlier looks.

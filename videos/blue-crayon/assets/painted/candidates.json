@@ -1,0 +1,13 @@
+{
+  "note": "The boy from refs/boy_ref.jpg redrawn in the art style of refs/style_ref.jpg (both supplied by the user on 14 Oct). Compared on assets/boards/boy_painted.jpg.",
+  "refs": {
+    "style_ref": {"file": "refs/style_ref.jpg", "media_id": "4eaf1a6a-47d5-464c-9873-f87fc6676af6"},
+    "boy_ref": {"file": "refs/boy_ref.jpg", "media_id": "b91db92f-cac4-4573-b464-aae4dbc7ee2a"}
+  },
+  "boy": {
+    "gpt_a": {"file": "boy_gpt_a.jpg", "model": "gpt_image_2_5 (high, 2k)", "job_id": "a8d3b387-1123-460c-828e-ab22a03b5ab6"},
+    "gpt_b": {"file": "boy_gpt_b.jpg", "model": "gpt_image_2_5 (high, 2k)", "job_id": "3d86f201-489d-4a9a-8929-af474f6b1a6e"},
+    "nano": {"file": "boy_nano.jpg", "model": "nano_banana_pro (2k)", "job_id": "7500824b-97fb-454a-9c9d-1df7b8f06c93"},
+    "seedream": {"file": "boy_seedream.jpg", "model": "seedream_v5_pro (2k)", "job_id": "2ae44338-49ac-47da-8cdb-9535764a21e9"}
+  }
+}

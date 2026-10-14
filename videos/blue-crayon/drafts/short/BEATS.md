@@ -1,9 +1,8 @@
 # Blue Crayon — short cuts
 
-Three versions of the film, each under a minute. **C, "The Knock", is the recommended one.** It
-is free to change the plot, and it opens on a hook instead of building up to one. A and B
-are kept below for comparison. The 90-second cut in `../SCRIPT.pdf` and `../STORYBOARD.md`
-is unchanged until one of these is picked.
+Three versions of the film, each under a minute. **C, "The Knock", was picked on 14 October.**
+It is now the main script (`../../SCRIPT.pdf`) and storyboard (`../../STORYBOARD.md`). A and B
+are kept here for reference, and the 90-second cut is in `../90s/`.
 
 | | C — "The Knock" | A — "Look" | B — "The Blue Sun" |
 | --- | --- | --- | --- |
