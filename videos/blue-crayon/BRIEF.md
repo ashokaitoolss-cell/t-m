@@ -73,7 +73,8 @@ How the drawing appears through the film:
 - Folded in four, it is the thing the robot hunches over in shot 02.
 - It is wet at the edges by shot 11.
 - Never show it clearly before shot 12.
-- Generate it once as a single still and reuse it in every shot.
+- Generate it once as a single still and reuse it in every shot. The locked drawing is
+  `assets/knock/drawing.jpg`.
 
 ## The line
 

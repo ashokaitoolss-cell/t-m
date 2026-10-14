@@ -5,7 +5,9 @@ duration: 57
 shots: 16
 ---
 
-Three movements, 16 shots, 0:57. Each shot runs 3–5 s. Cuts are hard throughout, except a
+Three movements, 16 shots, 0:57. Each shot runs 3–5 s. Key stills for shots 01, 03, 06, 08, 12
+and 16 are in `assets/knock/`, shown in order on `assets/boards/knock_keyframes.jpg`; the backgrounds
+for every shot are in `assets/locations/`. Cuts are hard throughout, except a
 slow dissolve into the flashback on the robot's flickering eyes.
 
 | Movement | Time | Length | Light |
