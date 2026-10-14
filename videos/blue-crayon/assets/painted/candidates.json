@@ -41,7 +41,8 @@
     }
   },
   "locked": {
-    "boy": "boy.gpt_a"
+    "boy": "boy.gpt_a",
+    "papa": "papa.gpt_a"
   },
   "papa": {
     "gpt_a": {
@@ -63,6 +64,32 @@
       "file": "papa_seedream.jpg",
       "model": "seedream_v5_pro (2k)",
       "job_id": "13b9811b-d768-44de-a3ae-b40b8022083f"
+    }
+  },
+  "papa_suit": {
+    "file": "papa_suit.jpg",
+    "model": "gpt_image_2_5 (high, 2k)",
+    "job_id": "763198e9-23de-477c-91e1-02d926b5c720",
+    "refs": [
+      "papa.gpt_a job",
+      "papa_style_ref"
+    ]
+  },
+  "robot": {
+    "sheet": {
+      "file": "robot_sheet.jpg",
+      "model": "gpt_image_2_5 (high, 2k)",
+      "job_id": "662a9c22-8802-48ae-be66-4fae12d09cdf",
+      "refs": [
+        "flat/robot.jpg media 703aa867-16e5-4019-bf27-80696dc5eeb7",
+        "papa_style_ref"
+      ]
+    },
+    "eyes": {
+      "file": "robot_eyes.jpg",
+      "model": "gpt_image_2_5 (high, 2k)",
+      "job_id": "eeae2fdc-a930-4216-a5ef-b6f5e47252a0",
+      "note": "Fear, Curious, Joy, Hurt, left to right"
     }
   }
 }

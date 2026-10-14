@@ -1,0 +1,52 @@
+{
+  "note": "Empty location plates for 'The Knock', painted from the user's refs in refs/. GPT Image 2.5, high, 2k, 16:9.",
+  "refs": {
+    "kitchen_night": {
+      "file": "refs/kitchen_night.jpg",
+      "media_id": "9fb22640-c350-4eb2-9d7d-7d6f974b212a"
+    },
+    "market_morning": {
+      "file": "refs/market_morning.jpg",
+      "media_id": "feef1204-dfdf-48f6-a3cf-26ca95455a0b"
+    },
+    "drawing_corner_night": {
+      "file": "refs/drawing_corner_night.jpg",
+      "media_id": "b44c48ad-c97f-43fb-8a32-0b134deb0dd1"
+    },
+    "crate_gap_night": {
+      "file": "refs/crate_gap_night.jpg"
+    }
+  },
+  "plates": {
+    "doorstep_night": {
+      "file": "doorstep_night.jpg",
+      "shots": "01-03, 10, 14-16",
+      "job_id": "6ba38008-4bf7-4758-b398-9514798c4a97"
+    },
+    "front_hall_night": {
+      "file": "front_hall_night.jpg",
+      "shots": "03, 11, 13",
+      "job_id": "d82800bf-c056-4906-addb-f722290ebb30"
+    },
+    "bedroom_day": {
+      "file": "bedroom_day.jpg",
+      "shots": "08",
+      "job_id": "daf0ec1c-5d49-4264-8bc3-5164878297cf"
+    },
+    "doorstep_day": {
+      "file": "doorstep_day.jpg",
+      "shots": "04, 05",
+      "job_id": "cb1a7032-d4de-4e5a-aa19-086755c4681e"
+    },
+    "drawing_corner_lamplight": {
+      "file": "drawing_corner_lamplight.jpg",
+      "shots": "06, 07",
+      "job_id": "f907609b-eeca-4abd-928a-70880310d689"
+    },
+    "bedroom_day_empty": {
+      "file": "bedroom_day_empty.jpg",
+      "shots": "09",
+      "job_id": "2cd05392-2e1f-4770-9b45-c74ec884d87d"
+    }
+  }
+}

@@ -165,10 +165,27 @@ The style is a painterly digital illustration, like a frame from an animated fea
 
 The style anchor is `assets/painted/refs/papa_style_ref.jpg`.
 
-Characters, all in `assets/painted/`:
-- **The boy:** locked to `boy_gpt_a.jpg` (GPT Image 2.5).
-- **Papa:** candidates are on `assets/boards/papa_painted.jpg`.
-- **The robot:** still to do.
+All characters and plates are made with GPT Image 2.5. The characters are in
+`assets/painted/` and shown together on `assets/boards/cast_painted.jpg`:
+- **The boy:** `boy_gpt_a.jpg` (locked).
+- **Papa:** `papa_gpt_a.jpg` (locked), plus `papa_suit.jpg` for the present-day scenes.
+- **The robot:** `robot_sheet.jpg`, with the taped crayon, and `robot_eyes.jpg`, which shows
+  its four eye states.
+
+### Location plates
+
+Empty backgrounds for every scene are in `assets/locations/`, painted from the references
+below and shown together on `assets/boards/locations_plates.jpg`. The job IDs are in
+`assets/locations/candidates.json`.
+
+| Plate | Shots |
+| --- | --- |
+| `doorstep_night.jpg` | 01–03, 10, 14–16 |
+| `doorstep_day.jpg` (same framing, morning sun) | 04, 05 |
+| `front_hall_night.jpg` (red sneakers on the mat, the boy's hoodie on a hook) | 03, 11, 13 |
+| `drawing_corner_lamplight.jpg` | 06, 07 |
+| `bedroom_day.jpg` | 08 |
+| `bedroom_day_empty.jpg` (same frame, bed made) | 09 |
 
 ### Location references
 
@@ -182,7 +199,5 @@ through windows in saturated ultramarine.
 | `kitchen_night.jpg` | A dark tenement kitchen, a single ceiling light, a blue window | The look of the dark front hall (03, 11, 13), and of every night interior |
 | `market_morning.jpg` | A brick street, low gold sun, long shadows, fire escapes | The look of the sunny doorstep (04), and of the exteriors at night |
 | `crate_gap_night.jpg` | A dark gap between crates | Not used in this cut; it was the robot's hiding place in the 90-second version |
-
-There are no references yet for the doorstep, the front hall or the boy's bedroom.
 
 `STYLE.md` and `assets/flat/` hold the earlier looks.
