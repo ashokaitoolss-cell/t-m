@@ -1,0 +1,10 @@
+{
+  "note": "Video model test for shot 01: the same Seedream start frame (assets/knock/s01.jpg, job 91ee7c11-94b9-47c7-a033-dcc42525c9b7) and the same prompt, 5 s at 1080p (Hailuo: 6 s, no audio). Board: assets/boards/video_models_s01.jpg.",
+  "s01": {
+    "seedance_2_0": { "job": "73df07eb-d9da-43e5-bb9d-d2bffd89d893", "credits": 60, "verdict": "recommended: static camera, painted look kept, right action, rain and footstep audio" },
+    "seedance_2_5": { "job": "5641f3bd-a57b-42fc-bb6f-54ac4be9b5ec", "credits": 80, "verdict": "same strengths, slightly more expressive face, quieter audio" },
+    "kling_3_0_pro": { "job": "db50ebcb-a209-4f3c-abd7-ae914b5ccfa6", "credits": 10, "verdict": "camera pushes in, look turns glossy 3D" },
+    "cinema_studio_3_0": { "job": "bc0b56e8-7de1-4803-a7bb-c996ea058c69", "credits": 65, "verdict": "reframes around a huge bin, 3D render look" },
+    "hailuo_2_3": { "job": "447046db-e2aa-4db7-ba1c-f49f1b929fe7", "credits": 10, "verdict": "no audio, robot walks off by itself" }
+  }
+}
