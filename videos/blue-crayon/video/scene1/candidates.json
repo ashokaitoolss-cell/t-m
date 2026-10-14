@@ -1,0 +1,43 @@
+{
+  "note": "Scene 1 generated as multi-shot sequences from character and location references (no start frame). Prompts in video/scene1/PROMPTS.md; the cut is scene1_cut_v1.mp4 from edl.json. The Seedance 2.0 takes are not committed (large files); fetch them by job ID.",
+  "references": {
+    "papa_suit_full": "084a701b-8efb-465d-9884-41c5807ca315",
+    "papa_suit_head": "6248247e-4f5d-4cba-b79f-57e7d2c5b626",
+    "robot_full": "77b6324a-4a14-4cd0-85dd-ae50eef9d211",
+    "robot_head": "a4eb5e7a-4671-483f-a918-955a866e6437",
+    "doorstep_night": "63c66e79-1b9f-4827-95e2-9812b2b856d5",
+    "front_hall_night": "12a2203b-ad9e-4651-a7c3-4035299234bf"
+  },
+  "takes": {
+    "s1_outside_sd25.mp4": {
+      "job": "b677d255-074d-4cc9-b867-6908e0e61bd7",
+      "model": "seedance_2_5 omni_reference 1080p 12 s",
+      "credits": 192,
+      "verdict": "used: backlit close-up, plate-matched wide, slam and eye dim, knock insert"
+    },
+    "s1_outside_sd20.mp4": {
+      "job": "2b0963f5-7900-48da-be3b-d27bc9181814",
+      "model": "seedance_2_0 std 1080p 12 s",
+      "credits": 144,
+      "verdict": "same four shots; glossier 3D look and a shakier close-up"
+    },
+    "s1_inside_sd25_b.mp4": {
+      "job": "2fe1ce22-1a11-4d98-9d7e-6b9602b4a3f0",
+      "model": "seedance_2_5 omni_reference 1080p 7 s",
+      "credits": 112,
+      "verdict": "used: the flinch, swallow and breath out"
+    },
+    "s1_inside_sd25.mp4": {
+      "job": "40f8164c-36c0-4da6-a52c-85a7a4103677",
+      "model": "seedance_2_5 omni_reference 1080p 7 s",
+      "credits": 112,
+      "verdict": "too still"
+    },
+    "s1_inside_sd20.mp4": {
+      "job": "ba816fa5-1727-4660-851f-d46abfb942cc",
+      "model": "seedance_2_0 std 1080p 7 s",
+      "credits": 84,
+      "verdict": "wide frozen; eyes open in the close-up"
+    }
+  }
+}

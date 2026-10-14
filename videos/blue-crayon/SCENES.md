@@ -3,15 +3,20 @@
 The 16 storyboard shots are grouped into six scenes, each one continuous place and time, so
 each scene is made as one batch with the same plates, cast and light.
 
-How each shot is made:
-1. A Seedream 5.0 Pro still is used as the start frame.
-2. That still is animated with an image-to-video model into a 5 s clip.
-3. The clip is trimmed to the shot's length.
-4. `scripts/lens_pass.py` runs over it.
-5. The clip goes into the edit.
+How each scene is made (see `DIRECTION.md`):
+1. Each continuous stretch of a scene is generated as one multi-shot sequence on Seedance 2.5,
+   10–12 s long, with three or four cuts between close, wide, medium and insert. It is generated
+   from character and location references, not from a start frame.
+2. `scripts/cut.py` trims the shots out of the takes and joins them per `video/sceneN/edl.json`.
+3. The scene goes into the edit.
 
-Stills marked *have* are in `assets/knock/`; the others are still to make. Plates are in
-`assets/locations/`, and the cast is in `assets/painted/`.
+The Seedream stills in `assets/knock/` are now look references, not start frames. Plates are
+in `assets/locations/`. The cast is in `assets/painted/`, with single-view crops for video in
+`assets/painted/video_refs/`.
+
+Scene 1 is done: `video/scene1/scene1_cut_v1.mp4`, 15.4 s. With its close-ups and holds it runs
+about 6 s over its slot in the table below, so the later scenes need tightening to bring the
+film back near a minute.
 
 | Scene | Time | Shots | Place | Who |
 | --- | --- | --- | --- | --- |
