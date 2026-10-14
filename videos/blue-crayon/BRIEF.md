@@ -187,7 +187,13 @@ Two layers keep this consistent:
    final frame and clip, with `--focus` set to the subject. This evens out shots where a
    video model has sharpened the edges again.
 
-All characters and plates are made with GPT Image 2.5. The characters are in
+**Models.** The character sheets and location plates are made with GPT Image 2.5. Final
+frames are made with **Seedream 5.0 Pro**, using those sheets and plates as references; it
+blends the characters into the painted light without GPT's blocky strokes. The six-model test
+is on `assets/boards/models_s01/s06/s16.jpg`. Both Nano Banana models refuse shots with the
+boy as a false positive.
+
+The characters are in
 `assets/painted/` and shown together on `assets/boards/cast_painted.jpg`:
 - **The boy:** `boy_gpt_a.jpg` (locked).
 - **Papa:** `papa_gpt_a.jpg` (locked), plus `papa_suit.jpg` for the present-day scenes.
