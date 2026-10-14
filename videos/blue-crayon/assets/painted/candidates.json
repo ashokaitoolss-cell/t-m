@@ -1,13 +1,68 @@
 {
-  "note": "The boy from refs/boy_ref.jpg redrawn in the art style of refs/style_ref.jpg (both supplied by the user on 14 Oct). Compared on assets/boards/boy_painted.jpg.",
+  "note": "Characters redrawn in the user's painted style (14 Oct). Boards: assets/boards/boy_painted.jpg, assets/boards/papa_painted.jpg.",
   "refs": {
-    "style_ref": {"file": "refs/style_ref.jpg", "media_id": "4eaf1a6a-47d5-464c-9873-f87fc6676af6"},
-    "boy_ref": {"file": "refs/boy_ref.jpg", "media_id": "b91db92f-cac4-4573-b464-aae4dbc7ee2a"}
+    "style_ref": {
+      "file": "refs/style_ref.jpg",
+      "media_id": "4eaf1a6a-47d5-464c-9873-f87fc6676af6"
+    },
+    "boy_ref": {
+      "file": "refs/boy_ref.jpg",
+      "media_id": "b91db92f-cac4-4573-b464-aae4dbc7ee2a"
+    },
+    "papa_style_ref": {
+      "file": "refs/papa_style_ref.jpg",
+      "media_id": "f97b0e24-81ae-475c-9c69-21b51bea6ba0"
+    },
+    "papa_ref": {
+      "file": "refs/papa_ref.jpg",
+      "media_id": "c5916734-9c9c-45cf-9b00-229728ffc29e"
+    }
   },
   "boy": {
-    "gpt_a": {"file": "boy_gpt_a.jpg", "model": "gpt_image_2_5 (high, 2k)", "job_id": "a8d3b387-1123-460c-828e-ab22a03b5ab6"},
-    "gpt_b": {"file": "boy_gpt_b.jpg", "model": "gpt_image_2_5 (high, 2k)", "job_id": "3d86f201-489d-4a9a-8929-af474f6b1a6e"},
-    "nano": {"file": "boy_nano.jpg", "model": "nano_banana_pro (2k)", "job_id": "7500824b-97fb-454a-9c9d-1df7b8f06c93"},
-    "seedream": {"file": "boy_seedream.jpg", "model": "seedream_v5_pro (2k)", "job_id": "2ae44338-49ac-47da-8cdb-9535764a21e9"}
+    "gpt_a": {
+      "file": "boy_gpt_a.jpg",
+      "model": "gpt_image_2_5 (high, 2k)",
+      "job_id": "a8d3b387-1123-460c-828e-ab22a03b5ab6"
+    },
+    "gpt_b": {
+      "file": "boy_gpt_b.jpg",
+      "model": "gpt_image_2_5 (high, 2k)",
+      "job_id": "3d86f201-489d-4a9a-8929-af474f6b1a6e"
+    },
+    "nano": {
+      "file": "boy_nano.jpg",
+      "model": "nano_banana_pro (2k)",
+      "job_id": "7500824b-97fb-454a-9c9d-1df7b8f06c93"
+    },
+    "seedream": {
+      "file": "boy_seedream.jpg",
+      "model": "seedream_v5_pro (2k)",
+      "job_id": "2ae44338-49ac-47da-8cdb-9535764a21e9"
+    }
+  },
+  "locked": {
+    "boy": "boy.gpt_a"
+  },
+  "papa": {
+    "gpt_a": {
+      "file": "papa_gpt_a.jpg",
+      "model": "gpt_image_2_5 (high, 2k)",
+      "job_id": "189db0aa-5b3e-4cc1-8c3b-cfcae22ddb7b"
+    },
+    "gpt_b": {
+      "file": "papa_gpt_b.jpg",
+      "model": "gpt_image_2_5 (high, 2k)",
+      "job_id": "2c7089b6-b308-488f-b142-bb1a9452c3a1"
+    },
+    "nano": {
+      "file": "papa_nano.jpg",
+      "model": "nano_banana_pro (2k)",
+      "job_id": "15cc3811-c69c-4451-a5ec-d4d104bedd3a"
+    },
+    "seedream": {
+      "file": "papa_seedream.jpg",
+      "model": "seedream_v5_pro (2k)",
+      "job_id": "13b9811b-d768-44de-a3ae-b40b8022083f"
+    }
   }
 }

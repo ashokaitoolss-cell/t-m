@@ -92,9 +92,13 @@ Lock each character with a character sheet before generating shots.
 - Seen only in the flashback.
 
 **Papa (30s).**
-- Tall, short black beard, brown skin, tired eyes.
+- Very tall and lanky, with a long neck.
+- A long, narrow, angular face: long nose, pointed chin, heavy straight brows and tired,
+  half-closed eyes. Clean-shaven with a shadow, light olive-tan skin, and wavy dark-brown hair
+  swept back.
 - In the present: a black funeral suit with the tie pulled loose.
-- In the flashback: a work shirt.
+- In the flashback: a periwinkle-blue work shirt open at the collar with the sleeves rolled, a
+  worn brown belt, grey trousers, tan shoes, and a steel watch.
 - He is grieving, not a villain. Throwing the robot out is grief, because it is the boy's.
 
 **The Robot.**
@@ -152,8 +156,33 @@ Joy appears only in the flashback.
 
 ## Look
 
-The art style is being locked from new references: a soft painterly digital illustration with
-visible brush strokes, warm rosy skin, cool violet-lavender shadows and a lavender rim light.
-The references and the first character tests are in `assets/painted/`.
+The style is a painterly digital illustration, like a frame from an animated feature:
+- Visible dry brush strokes and flat, hard-edged planes of colour.
+- Stylised, elongated shapes.
+- One strong light source per scene, with warm light against cool blue-violet and teal
+  shadows.
+- Deep shadow masses, and a letterboxed widescreen frame.
+
+The style anchor is `assets/painted/refs/papa_style_ref.jpg`.
+
+Characters, all in `assets/painted/`:
+- **The boy:** locked to `boy_gpt_a.jpg` (GPT Image 2.5).
+- **Papa:** candidates are on `assets/boards/papa_painted.jpg`.
+- **The robot:** still to do.
+
+### Location references
+
+Four references are in `assets/locations/refs/`. They set the world: a brick tenement city
+with fire escapes, double-hung windows, radiators, worn cream cabinets, and night light coming
+through windows in saturated ultramarine.
+
+| Reference | What it shows | Use in "The Knock" |
+| --- | --- | --- |
+| `drawing_corner_night.jpg` | A kid's table by a rainy window, crayons, a drawing taped to the wall | The drawing corner (06, 07). Relight it to warm lamplight for the flashback. |
+| `kitchen_night.jpg` | A dark tenement kitchen, a single ceiling light, a blue window | The look of the dark front hall (03, 11, 13), and of every night interior |
+| `market_morning.jpg` | A brick street, low gold sun, long shadows, fire escapes | The look of the sunny doorstep (04), and of the exteriors at night |
+| `crate_gap_night.jpg` | A dark gap between crates | Not used in this cut; it was the robot's hiding place in the 90-second version |
+
+There are no references yet for the doorstep, the front hall or the boy's bedroom.
 
 `STYLE.md` and `assets/flat/` hold the earlier looks.
