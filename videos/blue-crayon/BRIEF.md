@@ -165,6 +165,27 @@ The style is a painterly digital illustration, like a frame from an animated fea
 
 The style anchor is `assets/painted/refs/papa_style_ref.jpg`.
 
+### Lens
+
+Every frame is shot through a soft, old lens, as in the location references:
+- Detail is crisp only around the subject.
+- Toward the edges and corners the paint goes loose, soft and blurred.
+- Out-of-focus foreground shapes cut into a corner, such as a parked car, a door frame or a
+  sofa arm.
+- The corners fall off into shadow, with a faint red and blue fringe at the very edges.
+
+Two layers keep this consistent:
+1. **Painted in.** Add this clause to every still and video prompt, naming the shot's own
+   focal point and foreground shape:
+   > Cinematic lens treatment: crisp, detailed brushwork only around [the focal point]; toward
+   > the edges and corners of the frame the painting becomes loose, soft and blurred, with
+   > broad strokes and less detail, like a shallow depth of field; [a foreground object] is a
+   > large out-of-focus shape cutting into a corner; the corners fall off into shadow; a faint
+   > red and blue colour fringe at the very edges of the frame.
+2. **Finishing pass.** Run `scripts/lens_pass.py` at its default strength (0.5) on every
+   final frame and clip, with `--focus` set to the subject. This evens out shots where a
+   video model has sharpened the edges again.
+
 All characters and plates are made with GPT Image 2.5. The characters are in
 `assets/painted/` and shown together on `assets/boards/cast_painted.jpg`:
 - **The boy:** `boy_gpt_a.jpg` (locked).
@@ -175,8 +196,9 @@ All characters and plates are made with GPT Image 2.5. The characters are in
 ### Location plates
 
 Empty backgrounds for every scene are in `assets/locations/`, painted from the references
-below and shown together on `assets/boards/locations_plates.jpg`. The job IDs are in
-`assets/locations/candidates.json`.
+below with the lens falloff (see Lens) and shown together on
+`assets/boards/locations_plates.jpg`. The first, sharp-edged versions are kept in
+`assets/locations/sharp/`. The job IDs are in `assets/locations/candidates.json`.
 
 | Plate | Shots |
 | --- | --- |
