@@ -1,0 +1,24 @@
+{
+  "note": "Final-frame model test: the same location plate, character sheets and prompt per shot, rendered by six models. Cinema Studio 2.5 failed with three references. Boards: assets/boards/models_s01/s06/s16.jpg.",
+  "s01": {
+    "nano_banana_pro": "f7cab47c-6e59-4e54-8956-efd2fb32fb5e",
+    "nano_banana_2_1": "fcec1d38-060d-45ec-bb5a-00f2449b523c",
+    "seedream_v5_pro": "91ee7c11-94b9-47c7-a033-dcc42525c9b7",
+    "flux_3_image": "ade5c0ba-1761-43e7-9c95-bfcb5108a1b9",
+    "kling_omni_image": "4f700450-a6fe-453f-b7d6-1c478c0707e9"
+  },
+  "s06": {
+    "nano_banana_pro": "blocked",
+    "nano_banana_2_1": "blocked (nsfw false positive)",
+    "seedream_v5_pro": "6e4347b3-e76f-4e1a-96d5-bba6aca9afeb",
+    "flux_3_image": "d8d262c2-00dd-418f-b387-0f2b7ada251a",
+    "kling_omni_image": "ced76183-a20c-4de4-9394-70b9caebac37"
+  },
+  "s16": {
+    "nano_banana_pro": "b0851a55-3bc5-4fba-986d-e4c0d2803d1f",
+    "nano_banana_2_1": "cca00167-8156-41b3-ac23-65131009d44d",
+    "seedream_v5_pro": "a93a4057-9686-4ff9-a76c-69e2ab8f61b5",
+    "flux_3_image": "5acb2aa1-2ccf-46ec-9aa3-f5f4f654a724",
+    "kling_omni_image": "40e16db9-da92-4f63-bb9d-213fde56ae4c"
+  }
+}

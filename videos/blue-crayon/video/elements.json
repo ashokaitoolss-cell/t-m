@@ -1,0 +1,6 @@
+{
+  "note": "Higgsfield reference elements for Blue Crayon. Put <<<id>>> in a Seedance 2.0 prompt and the element's images are injected; no start frame, no medias. Seedance 2.5 does not take elements, so use media references there (see video/scene1/PROMPTS.md).",
+  "char_bc-boy": {"id": "62c0db78-dcf7-4f9b-af0d-317e0d77c848", "images": ["assets/painted/video_refs/boy_full.jpg", "assets/painted/video_refs/boy_head.jpg"]},
+  "char_bc-robot": {"id": "60d05bfb-7c57-4870-a360-ae335afa47ed", "images": ["assets/painted/video_refs/robot_full.jpg", "assets/painted/video_refs/robot_head.jpg"]},
+  "loc_bc-doorstep-day": {"id": "1d0656c4-6917-481d-92d7-5d567eee4797", "images": ["assets/locations/doorstep_day.jpg"]}
+}

@@ -1,0 +1,76 @@
+{
+  "note": "Empty location plates for 'The Knock', painted from the user's refs in refs/ with the cinematic lens falloff (sharp focal area, soft edges, out-of-focus foreground, dark corners). GPT Image 2.5, high, 2k, 16:9. The first, sharp-edged versions are in sharp/.",
+  "refs": {
+    "kitchen_night": {
+      "file": "refs/kitchen_night.jpg",
+      "media_id": "9fb22640-c350-4eb2-9d7d-7d6f974b212a"
+    },
+    "market_morning": {
+      "file": "refs/market_morning.jpg",
+      "media_id": "feef1204-dfdf-48f6-a3cf-26ca95455a0b"
+    },
+    "drawing_corner_night": {
+      "file": "refs/drawing_corner_night.jpg",
+      "media_id": "b44c48ad-c97f-43fb-8a32-0b134deb0dd1"
+    },
+    "crate_gap_night": {
+      "file": "refs/crate_gap_night.jpg"
+    }
+  },
+  "plates": {
+    "doorstep_night": {
+      "file": "doorstep_night.jpg",
+      "shots": "01-03, 10, 14-16",
+      "job_id": "63c66e79-1b9f-4827-95e2-9812b2b856d5",
+      "sharp": {
+        "file": "sharp/doorstep_night.jpg",
+        "job_id": "6ba38008-4bf7-4758-b398-9514798c4a97"
+      }
+    },
+    "front_hall_night": {
+      "file": "front_hall_night.jpg",
+      "shots": "03, 11, 13",
+      "job_id": "12a2203b-ad9e-4651-a7c3-4035299234bf",
+      "sharp": {
+        "file": "sharp/front_hall_night.jpg",
+        "job_id": "d82800bf-c056-4906-addb-f722290ebb30"
+      }
+    },
+    "bedroom_day": {
+      "file": "bedroom_day.jpg",
+      "shots": "08",
+      "job_id": "de5b840a-732d-488f-8652-9066725d12e7",
+      "sharp": {
+        "file": "sharp/bedroom_day.jpg",
+        "job_id": "daf0ec1c-5d49-4264-8bc3-5164878297cf"
+      }
+    },
+    "doorstep_day": {
+      "file": "doorstep_day.jpg",
+      "shots": "04, 05",
+      "job_id": "270d1b4a-2f26-43b6-9117-d62f77de6e27",
+      "sharp": {
+        "file": "sharp/doorstep_day.jpg",
+        "job_id": "cb1a7032-d4de-4e5a-aa19-086755c4681e"
+      }
+    },
+    "drawing_corner_lamplight": {
+      "file": "drawing_corner_lamplight.jpg",
+      "shots": "06, 07",
+      "job_id": "71f8b7cf-0ff6-4b46-9ee8-2cb6d6df5903",
+      "sharp": {
+        "file": "sharp/drawing_corner_lamplight.jpg",
+        "job_id": "f907609b-eeca-4abd-928a-70880310d689"
+      }
+    },
+    "bedroom_day_empty": {
+      "file": "bedroom_day_empty.jpg",
+      "shots": "09",
+      "job_id": "c1007a0a-c15a-4206-a77f-56f17cf13702",
+      "sharp": {
+        "file": "sharp/bedroom_day_empty.jpg",
+        "job_id": "2cd05392-2e1f-4770-9b45-c74ec884d87d"
+      }
+    }
+  }
+}

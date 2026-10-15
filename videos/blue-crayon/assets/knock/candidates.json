@@ -1,0 +1,135 @@
+{
+  "note": "Key stills for 'The Knock'. Final frames are Seedream 5.0 Pro (2k), made from the GPT Image 2.5 cast in assets/painted/ and the location plates in assets/locations/. The earlier GPT Image 2.5 versions are in gpt/. Shown in story order on assets/boards/knock_keyframes.jpg.",
+  "drawing": {
+    "file": "drawing.jpg",
+    "job_id": "fe60a829-2fc4-4046-ab64-a032ec968c85",
+    "alt": {
+      "file": "alts/drawing_b.jpg",
+      "job_id": "cefe891d-4200-46e0-b0e9-3fe754e6a212"
+    }
+  },
+  "shots": {
+    "01": {
+      "file": "s01.jpg",
+      "job_id": "91ee7c11-94b9-47c7-a033-dcc42525c9b7",
+      "refs": [
+        "doorstep_night",
+        "papa_suit",
+        "robot_sheet"
+      ]
+    },
+    "03": {
+      "file": "s03.jpg",
+      "job_id": "b56d66a1-7216-417e-a569-320f9f9e87f2",
+      "refs": [
+        "front_hall_night",
+        "papa_suit"
+      ]
+    },
+    "06": {
+      "file": "s06.jpg",
+      "job_id": "6e4347b3-e76f-4e1a-96d5-bba6aca9afeb",
+      "refs": [
+        "drawing_corner_lamplight",
+        "boy",
+        "robot_sheet"
+      ]
+    },
+    "08": {
+      "file": "s08.jpg",
+      "job_id": "7d4128bc-15ee-49fa-8784-77852333f06f",
+      "refs": [
+        "bedroom_day",
+        "boy",
+        "robot_sheet"
+      ]
+    },
+    "12": {
+      "file": "s12.jpg",
+      "job_id": "8bc34c4f-a288-4c31-8eed-3aa435935364",
+      "refs": [
+        "drawing",
+        "front_hall_night",
+        "papa_suit"
+      ]
+    },
+    "16": {
+      "file": "s16.jpg",
+      "job_id": "a93a4057-9686-4ff9-a76c-69e2ab8f61b5",
+      "refs": [
+        "papa_suit",
+        "robot_sheet",
+        "doorstep_night"
+      ]
+    }
+  },
+  "final_model": "seedream_v5_pro",
+  "gpt_shots": {
+    "01": {
+      "file": "gpt/s01.jpg",
+      "job_id": "1faf97e7-9182-45cd-9c51-18f7ea421e26",
+      "refs": [
+        "doorstep_night",
+        "papa_suit",
+        "robot_sheet"
+      ],
+      "alts": [
+        {
+          "file": "alts/s01_shove.jpg",
+          "job_id": "257e4107-c8ee-44d7-87f7-f3bf30878d3d",
+          "why_not": "the drawing flies out of the robot's hand"
+        },
+        {
+          "file": "alts/s01_walk.jpg",
+          "job_id": "05709aff-79c7-4e08-a230-1521ab8ed23c",
+          "why_not": "reads as Papa gently leading it by the hand"
+        }
+      ]
+    },
+    "03": {
+      "file": "gpt/s03.jpg",
+      "job_id": "7c4887e5-36c9-499b-819d-beaedb70415f",
+      "refs": [
+        "front_hall_night",
+        "papa_suit"
+      ]
+    },
+    "06": {
+      "file": "gpt/s06.jpg",
+      "job_id": "f71adbf5-b53e-4619-8836-f735214fb2eb",
+      "refs": [
+        "drawing_corner_lamplight",
+        "boy",
+        "robot_sheet",
+        "robot_eyes"
+      ]
+    },
+    "08": {
+      "file": "gpt/s08.jpg",
+      "job_id": "6c7dfc49-9057-45b2-b3c8-3157fd384583",
+      "refs": [
+        "bedroom_day",
+        "boy",
+        "robot_sheet"
+      ]
+    },
+    "12": {
+      "file": "gpt/s12.jpg",
+      "job_id": "6877d15d-3b0b-46ec-8ad7-4560419d1466",
+      "refs": [
+        "drawing",
+        "front_hall_night",
+        "papa_suit"
+      ]
+    },
+    "16": {
+      "file": "gpt/s16.jpg",
+      "job_id": "1fe7b56d-947b-4c11-9993-8508d6204a84",
+      "refs": [
+        "papa_suit",
+        "robot_sheet",
+        "doorstep_night"
+      ]
+    }
+  }
+}

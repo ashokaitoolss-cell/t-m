@@ -1,0 +1,9 @@
+{"out": "video/scene1/scene1_cut_v1.mp4",
+ "shots": [
+  {"src": "video/scene1/takes/s1_outside_sd25.mp4",  "in": 0.0,    "out": 2.375,  "note": "01 close: the robot dragged down the steps, looking back at the light (helpless)"},
+  {"src": "video/scene1/takes/s1_outside_sd25.mp4",  "in": 3.5,    "out": 6.708,  "note": "01 wide: the man flings it by the bins and goes back up (what is happening)"},
+  {"src": "video/scene1/takes/s1_outside_sd25.mp4",  "in": 6.708,  "out": 10.208, "note": "02 medium: the slam cuts off the light, its eyes dim (abandoned)"},
+  {"src": "video/scene1/takes/s1_outside_sd25.mp4",  "in": 10.208, "out": 11.95,  "note": "03a insert: knock-knock (it won't give up)"},
+  {"src": "video/scene1/takes/s1_inside_sd25_b.mp4", "in": 2.4,    "out": 4.333,  "note": "03b wide: Papa against the door, the red sneakers (shut off)"},
+  {"src": "video/scene1/takes/s1_inside_sd25_b.mp4", "in": 4.333,  "out": 7.0,    "note": "03b close: the muffled knock, he flinches and breathes out (he is hurting too)"}
+ ]}

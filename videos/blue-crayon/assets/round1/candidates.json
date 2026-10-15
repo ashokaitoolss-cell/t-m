@@ -1,0 +1,31 @@
+{
+  "note": "Round 1 character and prop sheets for Blue Crayon. job_id can be passed as a Higgsfield media reference. Board letters match assets/boards/*_round1.jpg.",
+  "robot": {
+    "A": {"file": "robot_gpt_a.jpg", "model": "gpt_image_2_5 (high, 2k)", "job_id": "8d039481-5537-42ca-b750-924a53772061"},
+    "B": {"file": "robot_gpt_b.jpg", "model": "gpt_image_2_5 (high, 2k)", "job_id": "5d70bef3-25e7-4c57-98e3-51214672c209"},
+    "C": {"file": "robot_nano_a.jpg", "model": "nano_banana_pro (2k)", "job_id": "f6e65ee8-176a-4c5e-bc62-db942471191f"},
+    "D": {"file": "robot_seedream_a.jpg", "model": "seedream_v5_pro (2k)", "job_id": "12bc16ab-e692-42f6-a89c-b5923f561e77"},
+    "E": {"file": "robot_seedream_b.jpg", "model": "seedream_v5_pro (2k)", "job_id": "0a28dee5-4d1e-4e25-a0e5-669cedd499df"}
+  },
+  "boy": {
+    "A": {"file": "boy_gpt_a.jpg", "model": "gpt_image_2_5 (high, 2k)", "job_id": "a767a967-d84f-41ed-b0a2-d84a976f6af4"},
+    "B": {"file": "boy_gpt_b.jpg", "model": "gpt_image_2_5 (high, 2k)", "job_id": "7f16f672-8656-499b-b711-03b88391155d"},
+    "C": {"file": "boy_nano_a.jpg", "model": "nano_banana_pro (2k)", "job_id": "0f4e809d-5723-42d1-9bda-d7b44f45f725"},
+    "D": {"file": "boy_nano_b.jpg", "model": "nano_banana_pro (2k)", "job_id": "7caf8cef-5653-4cd2-9c82-65f3a8cb5d2d"},
+    "E": {"file": "boy_seedream_a.jpg", "model": "seedream_v5_pro (2k)", "job_id": "5931e8ac-5312-4264-9b4b-5468dbfaca0e"},
+    "F": {"file": "boy_seedream_b.jpg", "model": "seedream_v5_pro (2k)", "job_id": "5c736871-bc35-4e6b-9e20-d436f2f1c1df"}
+  },
+  "papa": {
+    "A": {"file": "papa_gpt_a.jpg", "model": "gpt_image_2_5 (high, 2k)", "job_id": "bedddcac-5f4c-40ac-8c4b-76741ef6f15b"},
+    "B": {"file": "papa_gpt_b.jpg", "model": "gpt_image_2_5 (high, 2k)", "job_id": "0a6f6981-7f74-47be-9462-663a179d115d"},
+    "C": {"file": "papa_nano_a.jpg", "model": "nano_banana_pro (2k)", "job_id": "239fd453-748d-4ba4-8e52-d2340cf55409"},
+    "D": {"file": "papa_nano_b.jpg", "model": "nano_banana_pro (2k)", "job_id": "539cb750-0e89-4778-b615-c0a9950b026b"},
+    "E": {"file": "papa_seedream_a.jpg", "model": "seedream_v5_pro (2k)", "job_id": "4434cfcc-932c-45b4-9008-00b6c7876866"},
+    "F": {"file": "papa_seedream_b.jpg", "model": "seedream_v5_pro (2k)", "job_id": "bf030d72-7cfe-49e9-87e8-2e264db247ed"}
+  },
+  "drawing": {
+    "A": {"file": "drawing_gpt_a.jpg", "model": "gpt_image_2_5 (high, 2k)", "job_id": "cf22a617-138b-4fc5-a40f-505dac0f4c4b"},
+    "B": {"file": "drawing_nano_a.jpg", "model": "nano_banana_pro (2k)", "job_id": "6df67126-21f5-4444-b64d-ec220e7feb8b"},
+    "C": {"file": "drawing_seedream_a.jpg", "model": "seedream_v5_pro (2k)", "job_id": "095f18ad-a732-4bf1-a92e-82d666ed5052"}
+  }
+}

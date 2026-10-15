@@ -1,0 +1,5 @@
+{
+  "note": "Boy test: the first knock (shot 04), 5 s on Seedance 2.0 from elements char_bc-boy, char_bc-robot and loc_bc-doorstep-day, no start frame. Over the robot's shoulder the door opens on the boy; cut to his close-up from the robot's eye level as wonder turns into a grin.",
+  "boy_door_a.mp4": {"job": "d91c0e9b-9fd6-4fb1-b3f3-3af5b646e564", "verdict": "sunburst as the door opens, the boy small in the doorway; close-up grin"},
+  "boy_door_b.mp4": {"job": "82a4407f-13b6-4884-9b92-cbb91d62ff30", "verdict": "full-body reveal in the doorway (hoodie, joggers, red high-tops); bigger acting, eyes squeeze shut in a laugh"}
+}

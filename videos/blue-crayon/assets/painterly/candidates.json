@@ -1,0 +1,59 @@
+{
+  "note": "Robot B (round 1) repainted in the painterly look from STYLE.md. All used robot B (job 5d70bef3-25e7-4c57-98e3-51214672c209) as the design reference. Letters match assets/boards/robot_painterly.jpg.",
+  "A": {
+    "file": "robot_curious_gpt.jpg",
+    "model": "gpt_image_2_5 (high, 2k)",
+    "job_id": "67d6d73d-f5f5-44b0-a611-022b1436c450"
+  },
+  "B": {
+    "file": "robot_curious_nano.jpg",
+    "model": "nano_banana_pro (2k)",
+    "job_id": "eba8901b-8263-472b-8b31-361697be9301"
+  },
+  "C": {
+    "file": "robot_curious_seedream.jpg",
+    "model": "seedream_v5_pro (2k)",
+    "job_id": "d3d812bc-748c-4599-b8d9-c10a7622623b"
+  },
+  "D": {
+    "file": "robot_fear_gpt.jpg",
+    "model": "gpt_image_2_5 (high, 2k)",
+    "job_id": "5a6bf491-acce-4a49-a346-51be61f0a3df"
+  },
+  "E": {
+    "file": "robot_sheet_gpt.jpg",
+    "model": "gpt_image_2_5 (high, 2k)",
+    "job_id": "2eeaed2f-f924-4f65-9116-ea161476b9f6"
+  },
+  "boy": {
+    "note": "Design: round 1 boy E (Seedream, job 5931e8ac-5312-4264-9b4b-5468dbfaca0e).",
+    "A": {
+      "file": "boy_sheet_a.jpg",
+      "model": "gpt_image_2_5 (high, 2k)",
+      "style_ref": "robot sheet E",
+      "job_id": "c73a9c40-6b39-44a8-9f08-bc75275d938a"
+    },
+    "B": {
+      "file": "boy_sheet_b.jpg",
+      "model": "gpt_image_2_5 (high, 2k)",
+      "style_ref": "robot portrait A",
+      "job_id": "87e13c35-7a37-4c0c-8b57-bc1998cac523"
+    }
+  },
+  "papa": {
+    "note": "Design: round 1 papa F (Seedream, job bf030d72-7cfe-49e9-87e8-2e264db247ed).",
+    "A": {
+      "file": "papa_sheet_a.jpg",
+      "model": "gpt_image_2_5 (high, 2k)",
+      "style_ref": "robot sheet E",
+      "job_id": "77ca6199-e945-442e-9e44-114dfe39af69"
+    },
+    "B": {
+      "file": "papa_sheet_b.jpg",
+      "model": "gpt_image_2_5 (high, 2k)",
+      "style_ref": "robot portrait A",
+      "job_id": "a96457fc-2d82-440f-b868-6e462f8080f5"
+    }
+  },
+  "robot_pick": "E (model sheet) in the GPT Image 2.5 painterly look, chosen by the user"
+}
