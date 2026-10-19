@@ -95,24 +95,24 @@ const total = M.slides.length;
 const foot = (i) => `<div class="handle">${esc(M.handle)}</div><div class="page">${String(i + 1).padStart(2, '0')} / ${String(total).padStart(2, '0')}</div>`;
 
 const R = {
-  // Mirrors the reference cover: full-bleed hero left, small inset top-right, loop arrow, headline, sub.
+  // Even split: each model gets a full-height half, labelled; hook sits across both on a fade.
   cover: (s, i) => `<section class="slide">
-      ${frame(s.hero.model, s.hero.src, 'left:0;top:0;width:500px;height:1350px', `<div class="tag">${chip(s.hero.model)}</div>`)}
-      ${frame(s.inset.model, s.inset.src, 'left:520px;top:0;width:500px;height:550px', `<div class="tag">${chip(s.inset.model)}</div>`)}
-      ${frame(s.peek.model + ' peek', s.peek.src, 'left:1040px;top:0;width:40px;height:1350px')}
-      ${arrow('left:540px;top:630px')}
-      <div class="h1" style="position:absolute;left:540px;top:900px;width:460px">${s.title}</div>
-      <div class="sub" style="position:absolute;left:540px;top:1088px;width:440px">${s.sub}</div>
+      ${frame('a', s.a, 'left:0;top:0;width:537px;height:1350px', `<div class="tag">${chip('a')}</div>`)}
+      ${frame('b', s.b, 'left:543px;top:0;width:537px;height:1350px', `<div class="tag" style="left:auto;right:20px">${chip('b')}</div>`)}
+      <div style="position:absolute;left:0;right:0;bottom:0;height:620px;background:linear-gradient(to bottom, rgba(14,15,19,0) 0%, rgba(14,15,19,.82) 45%, var(--bg) 100%)"></div>
+      <div class="kicker" style="position:absolute;left:var(--gutter);top:840px;color:var(--text)">${esc(s.kicker)}</div>
+      <div class="h1" style="position:absolute;left:var(--gutter);top:892px;width:800px;font-size:92px">${s.title}</div>
+      <div class="sub" style="position:absolute;left:var(--gutter);top:1100px;width:700px">${s.sub}</div>
+      ${arrow('right:90px;top:1010px;width:120px;height:168px')}
     </section>`,
 
   // The test card: prompt + identical settings for both models.
   setup: (s, i) => `<section class="slide">
-      ${frame(s.peek.model + ' peek', s.peek.src, 'left:-40px;top:0;width:40px;height:1350px')}
       <div style="position:absolute;left:var(--gutter);top:110px;right:var(--gutter)">
         <div class="kicker">${esc(s.kicker)}</div>
         <div class="h2" style="margin-top:22px;max-width:860px">${s.title}</div>
         <div style="margin-top:56px;background:var(--panel);border:1px solid var(--line);border-radius:28px;padding:40px 44px">
-          <div class="kicker" style="margin-bottom:18px">Same prompt, word for word</div>
+          <div class="kicker" style="margin-bottom:18px">Same input, same settings, both models</div>
           ${s.prompts.map((p, j) => `<div class="body" style="padding:22px 0;${j ? 'border-top:1px solid var(--line)' : ''}"><span style="color:var(--muted)">0${j + 1}</span>&nbsp;&nbsp;${esc(p)}</div>`).join('')}
         </div>
         <div style="margin-top:28px;display:grid;grid-template-columns:1fr 1fr;gap:20px">

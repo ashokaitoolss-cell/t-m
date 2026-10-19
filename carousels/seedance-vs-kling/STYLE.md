@@ -6,7 +6,7 @@ Only slide 1 of each was reachable without logging in. The story structure below
 ## What the reference posts do
 
 - **Canvas:** 1080×1350 (4:5 portrait).
-- **Cover grid:** the result image runs full-bleed down the left half (0–500 px). A small "before" image sits top right (520–1020 × 0–550). Under it are a hand-drawn loop arrow, a 2-line headline and a 3-line sub.
+- **Cover grid (reference):** the result image runs full-bleed down the left half (0–500 px). A small "before" image sits top right (520–1020 × 0–550). Under it are a hand-drawn loop arrow, a 2-line headline and a 3-line sub.
 - **Seamless swipe:** a 40 px strip of the next slide's image shows on the right edge of the cover. That strip pulls people to swipe.
 - **Type:** one tight grotesk (Inter Display) at negative tracking. The headline is bold and the sub is medium. There's no second typeface.
 - **Colour:** a near-black background with one accent colour for all text and the arrow (mint on green, blush on navy). There are no gradients or boxes behind the text.
@@ -29,7 +29,7 @@ Every image carries a model chip (a dot plus the name, in that model's colour). 
 
 ## Slide flow
 
-1. **Cover:** the reference grid. Model A runs full-bleed, model B is inset, then the arrow and the hook.
+1. **Cover:** an even split. Model A takes the left half and model B the right, both full-height and labelled, with the hook on a fade across the bottom.
 2. **The test:** the prompts word for word, plus each model's settings side by side.
 3. **Rounds:** for each prompt there's a result slide (two 9:16 stills, labelled) and a notes slide. The notes cover motion realism, visual quality and prompt following, with one line per model and a 5-dot score.
 4. **Scoreboard:** the totals across all rounds.
