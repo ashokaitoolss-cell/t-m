@@ -50,126 +50,180 @@ Photorealistic side-profile product shot of a modern café-racer motorcycle faci
 ### 1C: Location reference (image, 9:16)
 
 ```
-Photorealistic empty location plate: a tight hairpin bend on a narrow mountain road at evening golden hour. Smooth dark asphalt with a faded white centre line, a low weathered stone wall on the outside of the bend, scattered small gravel at the edge of the road. Beyond the wall, a deep green valley falls away to layered blue ridgelines and a winding river far below. The sky is clear and calm, warm gold near the horizon fading to soft blue, with a few thin high clouds. The low sun sits just above the far ridges, raking long shadows across the road. No people, no vehicles. Shot on 35mm, natural colour, light haze in the valley, fine film grain.
+Photorealistic empty location plate: a sweeping right-hand hairpin on a narrow mountain pass at evening golden hour, seen from the inside of the bend at road level, from the mountain side, looking across the road toward the valley. In the foreground, the rough rock face and a strip of gravel shoulder on the inside of the bend. Across the smooth dark asphalt, with its faded white centre line, a low weathered stone wall runs along the outside of the bend. Beyond the wall, a deep green valley drops away to layered blue ridgelines. The low sun hangs just above the far ridges, directly behind the road, backlighting the scene and raking long shadows across the asphalt toward camera. Uphill to the right, the road climbs toward a crest with a small stone viewpoint. Clear, calm sky, gold at the horizon fading to soft blue. No people, no vehicles. Shot on 35mm, natural colour, light valley haze, fine film grain.
 ```
 
-### 1D: Video (references: @Image1 = 1A sheet, @Image2 = 1B bike, @Image3 = 1C, 12 s, audio off)
+### 1D: Video (references: @Image1 = 1A sheet, @Image2 = 1B bike, @Image3 = 1C, 15 s, audio off)
 
 ```
-Create a 12-second vertical 9:16 live-action film of one continuous moment: a motorcyclist leaning through a mountain hairpin at golden hour, covered from four camera angles joined by hard cuts at 3, 6 and 9 seconds. Use @Image1 as the only rider, @Image2 as the only motorcycle and @Image3 as the only location.
-The four angles must cut together like professional film coverage of one real take. Each shot continues the action exactly where the previous shot ended, with no time skipped and no action repeated. The bike always travels from screen left to screen right. The camera never crosses to the other side of the action. The low sun stays on screen left, ahead of the rider, in every angle.
+Create a 15-second vertical 9:16 live-action film in five shots joined by hard cuts at 3, 6, 9 and 12 seconds. Use @Image1 as the only rider, @Image2 as the only motorcycle and @Image3 as the only location.
+
+THE STORY
+A rider is racing the sunset. The sun is about to drop behind the far ridges, and he wants to reach the viewpoint at the top of the pass before it does. One hairpin stands between him and the crest. He attacks it like he has ridden it a hundred times: late on the brakes, body off the bike, footpeg scraping, front wheel lifting on the way out. He makes it over the crest just as the last sliver of sun disappears. This is a film about style, skill and intent. Every movement he makes is decisive, precise and confident. Nothing is casual, hesitant or slow.
+
+THE 180-DEGREE RULE (APPLIES TO EVERY SHOT)
+The line of action is the rider's direction of travel through the bend. Every camera stays on the same side of that line: the inside of the bend, the mountain side of the road, looking out across the road toward the valley.
+Because of this, in every single shot:
+- the rider travels from screen left to screen right
+- he leans toward camera through the corner
+- the stone wall, the valley and the low sun are always behind him
+No shot ever crosses to the valley side of the road, and no shot ever shows him moving right to left.
 
 THE WORLD
-Build the road from @Image3 as one complete physical place. The hairpin bends tightly to the right. The smooth dark asphalt has a faded white centre line and loose gravel scattered along its edge. A low weathered stone wall runs along the outside of the bend, and beyond it a deep green valley drops away to layered blue ridgelines and a thin silver river. The sky is clear and calm: gold at the horizon, soft blue above, with a few thin high clouds lit warm. The sun is low above the far ridges, raking long hard-edged shadows across the road. A light haze softens the valley.
+The road from @Image3 is a narrow mountain pass. It has a sweeping right-hand hairpin with rough rock and a gravel shoulder on the inside, and a low weathered stone wall on the outside. Beyond the wall, a deep green valley falls away to layered blue ridgelines. The sun is a hand's width above the far ridges, directly behind the road from the camera's side, and sinking. It backlights everything with hot gold light and throws long shadows across the asphalt toward camera. Uphill to screen right, the road climbs to a crest with a small stone viewpoint.
 
 IDENTIFY AND PRESERVE THE RIDER AND BIKE
-The rider is the man in @Image1. Take his face from the close-up panel: a lean South Asian man in his mid-thirties with dark-brown eyes, thick dark eyebrows, a thin pale scar through his left eyebrow and two-day stubble. Take his gear from the front and back panels: a gloss-black full-face helmet with the clear visor flipped up, a worn tan leather jacket with dark armour panels and a small orange chest stripe, black gloves, dark-grey riding jeans and black ankle boots.
-The motorcycle is the one in @Image2: a café racer with a matte olive-green tank and thin cream pinstripe, black frame, brown leather seat, round headlight, brushed-steel exhaust on the right side and black spoked wheels.
-Rider and bike stay identical in every shot. Ignore the sheet layout and the grey backdrops.
+The rider is the man in @Image1. Take his face from the close-up panel: a lean South Asian man in his mid-thirties with short black wavy hair, dark-brown eyes, thick eyebrows, a thin pale scar through his left eyebrow and two-day stubble. Take his clothes from the front and back panels: the worn tan leather jacket with dark armour and a small orange chest stripe, half-zipped over a charcoal tee, black gloves, dark-grey riding jeans and black ankle boots. He rides without a helmet; the wind moves his hair in every shot.
+The motorcycle is the one in @Image2: a café racer with a matte olive-green tank and thin cream pinstripe, black frame, brown leather seat, round headlight, brushed-steel exhaust on the right side (the side facing camera) and black spoked wheels.
+Rider and bike are identical in every shot. Ignore the sheet layout and grey backdrops.
 
-0–3 SECONDS — THE APPROACH (DRONE, HIGH WIDE)
-Open high above and slightly behind the bike, looking down the road toward the hairpin, the valley opening up on the right of frame. The bike is small in the lower left third, travelling left to right along the road toward the bend, its long shadow stretching behind it.
-At about 2 seconds the rider sits up slightly and brakes: the front fork compresses, the bike's nose dips, and its speed visibly drops.
-The drone glides forward and descends slowly, following at a constant distance. End the shot just as the bike reaches the entry of the bend and begins to tip right.
-
-HARD CUT
-
-3–6 SECONDS — THE LEAN (LOW ANGLE, ROAD LEVEL)
-Cut to a low camera at road level on the inside of the bend, near the centre line. The bike enters frame from the left already tipping into the lean, continuing the exact motion from the end of shot 1, and sweeps through the frame toward the right.
-The lean is physically real: the bike and rider tip together to about 35 degrees, and the rider's inside knee drops out toward the asphalt. The front tyre deforms slightly where it meets the road, and the suspension loads up under the cornering force. Fine gravel at the road's edge skitters away from the rear tyre. The rear tyre leaves the faintest dust trail lit gold by the low sun behind it.
-The sun sits low on screen left, just behind the bike, producing a soft lens flare and a bright rim of light along the tank, the rider's helmet and his jacket shoulders. The asphalt texture is crisp in the foreground and falls away into shallow depth of field.
-The camera pans right to follow the bike, staying at road level. End as the bike reaches the apex of the turn, at maximum lean.
+0–3 SECONDS — THE DEADLINE (TRACKING, ROAD LEVEL, ALONGSIDE)
+A low tracking camera runs alongside the bike at the same speed on the mountain side of the road. It frames rider and bike in profile, moving left to right, with the valley and the sinking sun beyond the stone wall.
+He is tucked low on the straight before the bend. He lifts his eyes and glances at the sun as it nears the ridgeline; his jaw sets. He twists the throttle hard with his right hand, the gloved wrist rolling down sharply. The bike surges: the rear squats, the front goes light, the exhaust facing camera shimmers with heat, and the wind flattens his hair back and presses his jacket against his chest.
+The camera keeps pace, then falls slightly behind as the bike pulls away toward screen right and the bend.
 
 HARD CUT
 
-6–9 SECONDS — THE FACE AT THE APEX (CLOSE-UP, MOUNTED)
-Cut to a camera rigidly mounted on the front of the bike, low on the tank, looking back up at the rider. He is still at maximum lean through the apex, so the horizon behind him is tilted.
-His visor is up. His eyes are fixed ahead through the turn, narrowed slightly against the wind and the sun, and he blinks once. Sunlight slides across the gloss helmet shell as the bike rotates through the bend, and a moving reflection of the sky and ridges travels across it.
-His skin is fully real at this distance: visible pores on his nose and cheekbones, individual stubble hairs lit gold at the edge of the helmet opening, a light sheen of sweat on his brow, and his eyes wet and reflective with the sun as a small bright catchlight. The wind presses the leather jacket against his shoulders and ripples the loose fabric at his upper arm. His gloved hands grip the bars, and the leather creases at the knuckles.
-Vibration from the engine and road passes through the mount as a fine, constant micro-shake. Behind him, the valley streams past in motion blur while he stays sharp.
-At about 8.5 seconds he begins to pull the bike upright, and the horizon starts to level. End as the horizon is almost level.
+3–6 SECONDS — LATE ON THE BRAKES (HIGH ANGLE, INSIDE OF THE BEND)
+Cut to a high angle above the rock face on the inside of the bend, looking down across the hairpin toward the valley. The bike rushes in from screen left, much faster than looks safe.
+At the last possible moment he brakes hard. The front fork dives, the rear wheel goes light and twitches, and the bike's nose drops. In the same motion he shifts his body off the seat toward the inside of the bend (toward camera), pushes his right knee out wide and drops his head and shoulders low and inside.
+The bike tips into the lean in one decisive motion. The camera holds steady, with just a slight tilt down to follow him into the bend.
 
 HARD CUT
 
-9–12 SECONDS — THE EXIT (WIDE SIDE PROFILE)
-Cut to a wide side-profile view from across the road at the exit of the bend, the stone wall and the drop to the valley behind the road. The bike comes out of the bend from screen left, completing the stand-up from shot 3, then levels fully upright and accelerates toward screen right.
-The rear suspension squats under acceleration, and the rider tucks slightly forward toward the tank. The exhaust's brushed steel catches a bright glint of sun. A thin haze of dust lifted from the road edge hangs in the sunbeams behind the bike and slowly settles.
-The camera pans smoothly right with the bike at a steady speed, keeping it slightly left of centre, the valley and far ridges sliding behind it in parallax. End on the bike leaving frame right, the dust still settling and the sun touching the far ridges.
+6–9 SECONDS — THE SCRAPE (LOW ANGLE, APEX, ROAD LEVEL)
+Cut to a camera on the asphalt at the apex, on the inside line, looking across the road with the stone wall and the blazing sun behind. The bike sweeps through from screen left at a deep lean, around 40 degrees, leaning toward camera, so that his knee and the right footpeg come within a hand's width of the lens.
+The footpeg kisses the asphalt and throws a short spray of orange sparks that tumble toward camera. His right knee hovers just above the road. The tyre deforms against the asphalt and holds its line; fine gravel skitters from under it toward the lens. The sun blazes directly behind him, a bright rim of light runs along his hair, shoulders and the curve of the tank, and a soft lens flare spills across the frame.
+The camera pans with him to screen right. He passes close and fast, and the motion blur on the spokes is consistent with real wheel speed.
+
+HARD CUT
+
+9–12 SECONDS — EYES ON THE EXIT (CLOSE-UP, TANK-MOUNTED)
+Cut to a camera rigidly mounted low on the tank, looking back up at his face. He is still deep in the lean through the second half of the bend. The horizon behind him is tilted, the rock face blurs past on screen left, and the valley and sun are on screen right.
+His eyes are locked on the exit of the bend, not on the road in front of him. He is completely focused, then the corner of his mouth lifts into a small, sure half-smile: he knows he has nailed it.
+His skin is fully real at this distance: visible pores on his nose and cheekbones, individual stubble hairs lit gold along the jaw, a light sheen of sweat at the hairline, and wet, reflective eyes with the sun as a bright catchlight. His hair whips in the wind. The jacket leather ripples at the shoulder and creases at the elbow, and his gloved hands grip the bars with the leather tight across the knuckles. A fine constant vibration runs through the mount.
+At around 11.5 seconds he starts to pull the bike upright, and the horizon begins to level.
+
+HARD CUT
+
+12–15 SECONDS — THE LAST LIGHT (WIDE PROFILE, EXIT TO CREST)
+Cut to a wide profile on the mountain side of the road at the exit of the hairpin, looking across toward the valley, with the crest and viewpoint at screen right. The bike snaps upright out of the bend, still moving left to right.
+He opens the throttle fully. The rear squats and the front wheel lifts a few inches off the asphalt for half a second, then sets down cleanly. He tucks in and charges up the last stretch to the crest.
+As he reaches the top, the sun slips behind the far ridgeline. The last sliver of gold flares across the lens, then is gone, leaving the sky glowing and his silhouette sharp against it at the viewpoint.
+The camera pans with him to screen right at a steady speed. The valley and ridges slide behind in parallax. Dust lifted by the bike hangs glowing in the last light and slowly settles. End on his silhouette at the crest against the afterglow.
 
 SKIN, PHYSICS AND MOTION
-Everything happens in real time with real mass and real speed; there is no slow motion. The bike behaves like a real 200 kg machine: it dips under braking, rolls into the lean, holds a constant line through the apex and squats on acceleration. Rider and bike move as one system, with his body weight shifting into the turn before the bike follows. Tyres stay in contact with the road and the wheels spin at a speed that matches the road speed. Wind, dust and gravel react to the bike's passage. His skin, the leather and the helmet stay textured and real in every shot; nothing is smoothed or waxy.
+Everything happens in real time with real speed and mass; there is no slow motion. The bike moves like a real 200 kg machine. It dives hard under braking, snaps into the lean, holds a precise line through the apex, squats and lifts the front wheel under full throttle, and sets down with a small compression of the fork. The rider's body leads the bike: his weight moves to the inside before the bike tips, and his eyes look ahead to the exit before the bike turns.
+Every movement is sharp and committed. There are no floaty, hesitant or lazy motions. Tyres stay in contact with the road, and wheel spin matches road speed. Sparks, gravel, dust, hair and leather all react physically. Skin, leather and steel stay textured and real; nothing is smoothed or waxy.
 
 CAMERA, STYLE AND CONTINUITY
-Hyper-realistic live-action cinema shot on one camera system: 35mm anamorphic look, natural film grain, soft highlight roll-off and a warm natural golden-hour grade. The only light is the low evening sun and the open sky, with no artificial light.
-Continuity across all four cuts:
-- the bike always travels left to right
-- the sun always sits low on screen left
-- each cut matches the action at the moment it happens
-- rider, helmet, jacket, gloves and bike are identical
-- the road, wall, valley and time of day are identical
-Four shots in this order: high wide, low, close, wide.
-No slow motion, speed ramps, crash zooms, dissolves, sudden time-of-day changes, extra vehicles, extra people, floating or sliding wheels, warped spokes, morphing faces, plastic skin, text, subtitles or logos.
+High-end live-action motorsport cinema with a 35mm anamorphic look, natural film grain, soft highlight roll-off and a warm golden-hour grade. Every camera move is purposeful: tracking alongside, holding high and steady, sitting at road level, mounted on the bike, then panning wide.
+Continuity:
+- every camera stays on the mountain side of the road
+- the rider always moves left to right
+- the sun always sits behind the road over the valley, sinking a little in each shot until it sets in the final one
+- each cut lands on the action at the moment it happens
+Rider, clothes, hair and bike are identical in every shot.
+No crossing the 180-degree line, mirrored or flipped shots, right-to-left movement, slow motion, speed ramps, crash zooms, dissolves, lazy or floaty riding, extra vehicles, extra people, floating or sliding wheels, warped spokes, morphing faces, plastic skin, text, subtitles or logos.
 ```
 
 ---
 
 
-## Test 2: Animated scene
+## Test 2: Animated story (stop-motion claymation)
 
-**Tests:** whether the animation style holds for the whole clip, whether the character acts with clear intent, and how well the camera move and lighting are staged.
+**Tests:** whether the model holds a hand-made stop-motion look (clay texture, fingerprints, choppy frame rate, a real miniature set), plus comic timing, character acting, and story across five shots.
+
+**The story:** a baby clay dragon wants to catch a glowing firefly circling the kitchen lamp. It fails twice, comically. Then a sugar sneeze accidentally turns into its first flight.
 
 ### 2A: Character sheet (image, 21:9)
 
 ```
-Character reference sheet for a 3D animated feature film, three panels side by side on one wide canvas, the same girl in every panel, no text, no labels, no captions, no watermarks.
+Stop-motion claymation character reference sheet, three panels side by side on one wide canvas, the same character in every panel, no text, no labels, no captions, no watermarks.
 
-Panel 1 (left, about 40% of the width): tight close-up of her face filling the frame, looking into the camera with a confident grin. A 10-year-old girl inventor, messy copper bob, oversized brass flying goggles pushed up on her forehead, freckles, big expressive green eyes. Warm soft key light, dark teal background.
+Panel 1 (left, about 40% of the width): tight close-up of the face of a baby dragon sculpted from plasticine clay, filling the frame, looking straight into the lens with a hopeful expression. A rounded mint-green head with a short snout and two tiny nostrils, big glossy black bead eyes with a white highlight, small soft orange horn nubs, a cream-coloured belly and chin, rosy cheeks. Visible fingerprints, tiny tool marks and slight smudges in the clay surface. Warm practical lamp light from the side, dark warm background, macro lens, shallow depth of field.
 
-Panel 2 (middle): full-body front view, standing straight, arms relaxed at her sides. Yellow raincoat covered in patches and small tools, red rubber boots, goggles on her forehead. Plain light-grey studio backdrop, flat even lighting.
+Panel 2 (middle): full-body front view, standing on its hind legs, arms at its sides. Chubby pear-shaped body about the size of a teacup, stubby legs with three rounded toes, small arms, a short curled tail. Two small bat-like wings in pale orange clay with thin darker veins, slightly too small for its body. Plain warm-grey studio backdrop, soft even lighting.
 
-Panel 3 (right): full-body back view, same outfit and pose, same grey backdrop, showing the back of the raincoat with its patches and the goggle strap.
+Panel 3 (right): full-body back view, same pose and backdrop, showing the wings folded on its back, a row of tiny orange spine bumps down its back, and the curled tail.
 
-Stylised 3D animation look, soft subsurface skin, soft global illumination, consistent proportions and colours across the panels, clean thin gaps between panels.
+Handmade plasticine stop-motion look, consistent colours and proportions across the panels, clean thin gaps between panels.
 ```
 
 ### 2B: Location reference (image, 9:16)
 
 ```
-3D animated feature-film environment: a floating rooftop workshop on a cloud-top town at golden hour. Crooked chimneys, hanging lanterns, a half-built wooden glider with canvas wings in the centre, scattered gears and blueprints, a windsock, fluffy stylised clouds below and a warm orange sky. No characters. Stylised shapes, rich saturated colour, soft volumetric light.
+Stop-motion claymation miniature set: a cosy old kitchen at night, built at tabletop scale from clay, wood, card and fabric. A worn wooden kitchen table fills the lower half of frame, with a checked red-and-cream cloth at its far end, a small open sugar bowl, a teacup and a few crumbs. Above the table, on the right, a warm brass pendant lamp hangs on a cord and casts a cone of golden light. Behind, a window shows a dark blue night with a felt moon. Shelves with tiny jars line the back wall. No characters. Handmade textures everywhere: visible wood grain, felt and fabric weave, clay fingerprints. Warm practical lighting with deep cosy shadows. Macro lens, shallow depth of field.
 ```
 
-### 2C: Video (references: @Image1 = 2A sheet, @Image2 = 2B, 10 s, audio off)
+### 2C: Video (references: @Image1 = 2A sheet, @Image2 = 2B, 15 s, audio off)
 
 ```
-Create a 10-second vertical 9:16 3D animated feature-film scene in three continuous beats with no cuts. The camera moves in one connected path from her face, across the rooftop, and out into the sky. Use @Image1 as the only character and @Image2 as the only location. The whole clip stays in high-end stylised 3D animation; nothing turns photoreal.
+Create a 15-second vertical 9:16 stop-motion claymation short film in five shots joined by hard cuts at 3, 6, 9 and 12 seconds. Use @Image1 as the only character and @Image2 as the only set. It must look and move like real handmade stop-motion animation shot frame by frame on a miniature set: plasticine characters, a physical tabletop set, real macro lenses and practical lights. Nothing looks like smooth CG.
 
-THE WORLD
-Build the rooftop workshop from @Image2 as a complete 3D set floating above a sea of soft clouds at golden hour. The roof tiles have real thickness and slight unevenness. Crooked chimneys and hanging lanterns sit around its edges. The half-built wooden glider sits near the edge of the roof: a wooden frame with canvas wings stretched over ribs. Blueprints, loose papers and small gears are scattered on the tiles. A warm low sun sits behind the scene, throwing long soft shadows and rim-lighting every edge.
+THE STORY
+A tiny clay dragon has never flown. Tonight, a glowing firefly is circling the kitchen lamp above the table, and the dragon wants to reach it more than anything. It jumps and flops. It flaps and crash-lands into the sugar bowl. Covered in sugar, it sneezes, and the sneeze bursts out as a puff of fire that blasts it into the air. For the first time, it is flying. It loops the lamp and ends up nose to nose with the firefly, which lands gently on its snout. The film is about determination, comic failure and a joyful surprise. Every action has clear intention and big, readable emotion: hope, frustration, grit, shock, joy.
 
-IDENTIFY AND PRESERVE THE CHARACTER
-The girl is the character in @Image1. Take her face from the close-up panel: a ten-year-old girl with a messy copper bob, freckles across her nose and cheeks, and big expressive green eyes. Take her outfit from the front and back panels: oversized brass flying goggles, a yellow raincoat covered in patches and small tools, and red rubber boots. Her proportions, colours and design stay on-model in every frame. Ignore the sheet layout.
+THE 180-DEGREE RULE (APPLIES TO EVERY SHOT)
+The line of action runs along the long edge of the table, from the dragon to the lamp. Every camera stays on the near side of the table, the side facing the viewer.
+In every shot:
+- the dragon is on the left and the lamp and firefly are on the right
+- every jump and flight moves from screen left toward screen right
+- the window and shelves are always in the background
+No shot crosses to the far side of the table.
 
-0–3 SECONDS — GOGGLES DOWN
-Begin on a low-angle close-up of her face against the golden sky. She reaches up with both hands and pulls the goggles down over her eyes. First comes a small anticipation as she grips the strap; then the goggles snap down, and the strap stretches and settles against her hair. Her copper bob bounces with the movement and settles with a slight overlap.
-She takes a breath (her shoulders rise and fall), then gives one firm nod. Her cheeks squash slightly at the bottom of the nod and spring back.
-The camera slowly pulls back and down, keeping her centred, until her whole upper body and the roof behind her are visible.
+IDENTIFY AND PRESERVE THE CHARACTER AND SET
+The dragon is the character in @Image1. It has a mint-green clay body, a cream belly and chin, big glossy black bead eyes, small orange horn nubs, rosy cheeks, pale-orange bat wings that are slightly too small, tiny orange spine bumps and a curled tail. It stays on-model in every shot, with visible fingerprints and tool marks on its clay.
+The set is @Image2:
+- the worn wooden table with a checked cloth at the far end, the sugar bowl and the teacup
+- the brass pendant lamp hanging on the right, casting a warm cone of light
+- the night window with a felt moon, and the shelves of tiny jars behind
+The firefly is a tiny clay beetle with a soft glowing yellow-green tail, and it circles slowly inside the lamp's cone of light.
 
-3–6 SECONDS — THE RUN AND THE LEAP
-Without a cut, the camera swings to the side and tracks alongside her at waist height as she sprints toward the glider. Her run has clear weight and timing. Her boots strike the tiles and leave small scuff marks. The coat tails flap behind her with a fraction of a second's delay, the tools on her coat jiggle, and her arms pump.
-At the roof edge she crouches (a squash), then springs (a stretch) and lands in the glider's seat. The whole glider dips under her weight, its wooden frame flexing and its canvas wings rippling.
-The glider tips forward off the edge. Her takeoff kicks up blueprints and loose papers, which lift off the roof and swirl behind her in a spiral, tumbling and catching the light.
+0–3 SECONDS — THE WISH (MEDIUM, EYE LEVEL WITH THE DRAGON)
+The camera is at table height on the near side. The dragon stands on the table at screen left, looking up and to the right at the firefly circling the lamp.
+Its eyes go wide, and its pupils follow the firefly's loops. It clasps its little hands together. Its tail curls tighter with longing. It takes a big determined breath, so its belly swells and its cheeks puff, and it narrows its eyes at the target.
 
-6–10 SECONDS — CATCH THE WIND
-The camera rises off the roof and swings into a wide arc around the glider. The glider drops toward the clouds and gains speed, its nose pointing down and its wingtips flexing upward under the load. It skims the top of a cloud and kicks up a soft wake of cloud vapour, then catches the wind and swoops upward in a smooth curve. Its wings bend and recover as the air takes the weight.
-She throws one arm up in triumph. Her coat ripples in the wind, and her hair streams back from under the goggle strap.
-The camera finishes its arc slightly above and behind the glider. End on the glider climbing toward the low sun, the rooftop town small in the distance.
+HARD CUT
 
-ANIMATION, PHYSICS AND MOTION
-Every action follows clear animation principles: anticipation before each big move, squash and stretch, overlapping action on her hair, coat and goggle strap, and follow-through after every stop. The glider has believable aerodynamics and weight. It dips when she lands, sinks before it lifts, and banks into its turns. Paper, cloth and cloud vapour react to wind and movement; nothing floats without a cause.
+3–6 SECONDS — FAIL ONE (WIDE, TABLE LEVEL)
+Cut to a wide view along the table, with the dragon on the left and the lamp high on the right. The dragon crouches, wiggles its bottom and leaps up and to the right toward the light, with its tiny wings flapping frantically.
+It rises only a few centimetres, hangs there for one frozen comic beat, then drops flat on its belly on the table with a SPLAT squash. Its body flattens and spreads, then springs back into shape. It peels its face off the wood, and a fingerprint smudge is left on its cheek.
+
+HARD CUT
+
+6–9 SECONDS — FAIL TWO, THE SUGAR BOWL (MEDIUM, SLIGHTLY HIGHER)
+Cut to a slightly higher angle on the middle of the table. The sugar bowl is just to the right of the dragon, and the lamp is above on the right.
+The dragon backs up for a run-up, then sprints left to right with its little feet pattering and flaps as hard as it can. This time it lifts off, wobbles, and veers straight into the sugar bowl. It tumbles inside, and a shower of sugar grains bursts up and rains down around it. It pops its head out of the bowl coated in white sugar: dazed, its eyes crossed, its wings drooping.
+Then it shakes itself off and climbs out with grim determination, its brow furrowed and its fists clenched.
+
+HARD CUT
+
+9–12 SECONDS — THE SNEEZE (CLOSE-UP ON THE FACE)
+Cut to a close-up of the dragon's sugar-dusted face, facing right toward the lamp.
+Sugar tickles its nose. Its nostrils twitch, its eyes squeeze shut, its head tilts back: "ah… ah…" Then it sneezes with a huge head snap. A puff of stylised clay-and-cotton fire, orange and yellow and shaped like a little cloud, bursts out of its nose. The recoil blasts the dragon backward and upward and out of the top of the frame. The fire puff hangs for a beat and dissolves into wisps of cotton smoke.
+
+HARD CUT
+
+12–15 SECONDS — FIRST FLIGHT (WIDE, LOW ANGLE LOOKING UP AT THE LAMP)
+Cut to a low angle from table level, looking up at the lamp on the right with the night window behind. The dragon shoots up into frame from screen left, carried by the momentum of the sneeze.
+Its eyes open in shock, and it realises it is flying. Its wings start beating properly at last, strong and even. A delighted grin spreads across its face. It swoops left to right in a full loop around the lamp cord, its tail streaming behind, and comes to a hover nose to nose with the firefly in the cone of light.
+The firefly circles once and settles gently on the tip of its snout. The dragon goes cross-eyed looking at it, then giggles, its cheeks glowing rosy. The firefly's soft yellow-green light glows on its face. End on that warm, still moment.
+
+STOP-MOTION CRAFT, PHYSICS AND MOTION
+The film is animated on twos at a choppy 12 frames per second, like real stop-motion. Every frame is a slightly different physical pose. The clay surface boils subtly between frames: fingerprints shift, highlights flicker, tiny smudges appear.
+Squash and stretch is exaggerated and readable: it flattens on landing, stretches on take-off, and its cheeks puff when it breathes. Every action has a clear anticipation and follow-through. The wings flap with visible effort, and the tail and belly jiggle and overlap after each stop.
+The set has real miniature physics: sugar grains are tiny physical beads that bounce and scatter, and the fire and smoke are handmade from cotton, cellophane and clay. The lamp light is a real practical bulb, creating warm hotspots and soft falloff.
+The emotions are big and clear: hope, frustration, grit, shock, joy.
 
 CAMERA, STYLE AND CONTINUITY
-Use one continuous camera path with no cuts: close-up, pull-back, tracking run, then the rising aerial arc. Keep the stylised 3D feature-film look throughout, with soft subsurface skin, painterly volumetric golden light, rich saturated colour and gentle rim light. Lighting direction stays consistent, with the sun low and behind.
-No style shifts, photoreal elements, extra characters, text, logos, cuts or dissolves, and no character drifting off-model.
+Classic handmade claymation look, shot on a real macro lens with shallow depth of field and tiny-scale bokeh, warm practical tungsten light, cosy deep shadows and a gentle film grain.
+Continuity:
+- every camera stays on the near side of the table
+- the dragon starts on the left and every move goes left to right toward the lamp on the right
+- each cut picks up exactly where the last shot ended
+- the dragon's design, the sugar on its face after the sugar bowl and the set stay consistent
+No smooth CG motion, plastic or glossy rendering, live-action elements, crossing the 180-degree line, mirrored shots, extra characters, text, subtitles, logos or dissolves.
 ```
 
 ---
