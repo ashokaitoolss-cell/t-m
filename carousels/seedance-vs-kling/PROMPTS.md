@@ -38,49 +38,48 @@ Photorealistic, consistent outfit and proportions across the panels, clean thin 
 ### 1B: Location reference (image, 9:16)
 
 ```
-Photorealistic empty location plate: a narrow night-market alley in Bangkok just after rain. Wet asphalt reflecting red and amber paper lanterns, steam rising from a closed noodle stall on the left, tangled overhead cables, a flickering green neon pharmacy sign at the far end, puddles with ripples. No people. Shot on 35mm at eye level, shallow depth of field, cinematic teal-and-amber grade, fine film grain.
+Photorealistic empty location plate: a gentle grassy hillside above a calm valley lake at evening golden hour. A narrow dirt footpath winds up through waist-high wild grass and scattered yellow wildflowers toward an old weathered wooden fence near the crest. Below, the lake is still and mirror-like, with soft forested hills on the far shore. The sky is clear and peaceful, pale blue fading to warm peach near the horizon, with a few thin high clouds catching the light. The sun is low, just above the far hills, backlighting the grass so every seed head glows. No people. Shot on 35mm at eye level, natural colour, gentle haze in the valley, fine film grain.
 ```
 
 ### 1C: Video (references: @Image1 = 1A sheet, @Image2 = 1B, 12 s, audio off)
 
 ```
-Create a 12-second vertical 9:16 live-action film in three shots joined by two hard cuts, at 4 seconds and 8 seconds. Use @Image1 as the only character and @Image2 as the only location. The result should feel like footage from a real camera on a real wet night: true skin, true fabric weight, true water, real-time speed.
+Create a 12-second vertical 9:16 live-action film in three shots joined by two hard cuts, at 4 seconds and 8 seconds. Use @Image1 as the only character and @Image2 as the only location. The result should feel like real footage on a calm evening at golden hour: true skin in warm sunlight, true fabric weight, grass and air that move with the breeze, real-time speed.
 
 THE WORLD
-Build the alley from @Image2 as a complete physical space. Wet asphalt runs the length of the alley with shallow puddles in its low points. Red and amber paper lanterns hang in a line overhead, each glowing from inside and casting a soft pool of light on the ground beneath it. A closed noodle stall sits on the left, steam rising from a vent at its back. Tangled cables cross overhead. At the far end, a green neon pharmacy sign buzzes on the right-hand wall. Every surface that is wet reflects the lanterns and the neon, and those reflections move when the water moves.
+Build the hillside from @Image2 as a complete physical space. A narrow dirt footpath winds up through waist-high wild grass and scattered yellow wildflowers to an old wooden fence near the crest. Below lies a still valley lake with forested hills on the far shore. The sky is clear and peaceful: pale blue overhead, fading to warm peach at the horizon, with a few thin high clouds lit gold. The sun sits low above the far hills. It backlights the grass so every seed head glows, and it throws long soft shadows down the slope toward camera. A light, steady breeze moves through the grass in slow visible waves. A faint haze hangs over the valley.
 
 IDENTIFY AND PRESERVE THE CHARACTER
-The man is the person in @Image1. Take his face from the close-up panel: a lean South Asian face in his mid-thirties, short black hair with a slight wave, two-day stubble, a thin pale scar crossing his left eyebrow, tired dark-brown eyes with soft shadows beneath them. Take his clothes from the front and back panels: a faded olive field jacket worn open, a charcoal crew-neck tee, a worn leather watch on his left wrist, dark-grey cargo trousers, scuffed brown leather boots. These stay identical in all three shots. Ignore the sheet layout and grey backdrop; only the man and his clothes come from @Image1.
+The man is the person in @Image1. Take his face from the close-up panel: a lean South Asian face in his mid-thirties, short black hair with a slight wave, two-day stubble, a thin pale scar crossing his left eyebrow, dark-brown eyes. Take his clothes from the front and back panels: a faded olive field jacket worn open, a charcoal crew-neck tee, a worn leather watch on his left wrist, dark-grey cargo trousers, scuffed brown leather boots. These stay identical in all three shots. Ignore the sheet layout and grey backdrop; only the man and his clothes come from @Image1.
 
-0–4 SECONDS — OUT OF THE STEAM
-Open on a low, eye-level wide shot from the far end of the alley, looking back toward the stall. The man is small in the centre of frame, walking toward camera through the drifting steam, hands in his jacket pockets.
-His walk has real weight: each step lands heel first and rolls onto the ball of the foot, his shoulders counter-rotate slightly against his hips, and the open jacket swings with the stride, its hem lagging a fraction behind his body. Where a boot lands in a puddle, a small crown of droplets lifts and falls, rings spread outward, and the lantern reflections break apart and slowly re-form behind him.
-The steam does not pass through him; it parts around his shoulders and curls into the space he leaves behind. As he walks under each lantern, warm light slides down his face and chest and falls away again, so his face moves between light and shadow.
-The camera pushes slowly toward him, handheld, with small organic drift rather than shake. Focus stays on him, so the lanterns nearest the lens soften into large out-of-focus discs.
-
-HARD CUT
-
-4–8 SECONDS — THE GLANCE BACK
-Cut to a tight close-up of his face in left profile, his face filling the right two-thirds of frame. The green neon behind him dissolves into soft bokeh on the left.
-He stops. For a beat he is completely still except for his breathing: his nostrils flare slightly on the inhale, and a faint cloud of breath leaves his lips on the exhale and fades in the cold air. Then he turns his head to look back over his shoulder. The turn starts with his eyes, his head follows, and his neck muscles and the tendon below his ear tighten as he turns.
-Skin is fully real at this distance: visible pores across the nose and cheek, individual stubble hairs catching the light, a faint oily sheen on the bridge of the nose, fine lines at the corner of the eye, slightly uneven skin tone with natural redness at the ear and nose tip. The scar is a slightly raised pale line that interrupts the eyebrow hairs. Damp hair strands cling to his temple.
-A single raindrop falls from the lantern above and lands on his cheekbone. It sits there, holds its shape, and starts a slow run downward through the stubble. He blinks once, naturally, with the upper lid doing most of the movement.
-The camera is locked off. Very shallow depth of field holds focus on his eye and scar; his ear and the back of his head already begin to soften.
+0–4 SECONDS — UP THROUGH THE GRASS
+Open on a wide shot from higher up the path, looking down the slope with the lake and the low sun behind him. The man walks up the path toward camera, framed slightly left of centre, in near-silhouette with a bright golden rim of light around his hair, shoulders and jacket edges.
+His walk has real weight on the slope: he leans slightly forward, each step lands flat and pushes off, his knees bend a little more on the incline, and the open jacket swings with the stride, its hem lagging a fraction behind his body. His right hand trails out to the side and brushes the tops of the grass; the stems bend under his fingers, then spring back and sway after he passes. Small dust motes lift from the path at each footfall and drift sideways in the sunbeams.
+The breeze sends slow waves across the grass around him. Seed heads glow where the sun shines through them, and his long shadow stretches up the path ahead of him.
+The camera is handheld and eases backward with him at walking pace, with small organic drift rather than shake. Out-of-focus grass stems in the near foreground pass through the bottom of frame.
 
 HARD CUT
 
-8–12 SECONDS — THE NOTE AND THE NEON
-Cut to an over-the-shoulder view from behind his right shoulder. The back of the olive jacket fills the left third of frame; the jacket is darker across the shoulders where the rain has soaked into it. Beyond him the alley stretches away to the green neon sign.
-He takes a small folded paper note from his jacket pocket and opens it with both hands. The paper behaves like paper: it resists slightly at the crease, the fold stays visible as a ridge once it is open, and the edges flutter a little in the damp air. His fingers press the note flat, the knuckles shifting under the skin, and the watch slides a few millimetres on his wrist as he raises his hands.
-At around the 11-second mark the neon sign flickers twice and goes dark. The green light vanishes from the wet asphalt, the walls and the edge of his jacket at the same instant, leaving only the warm lantern light. The reflections in the puddles change to match.
-The camera stays perfectly still, focused on the note in his hands. End on his silhouette holding the open note, the far end of the alley now dark.
+4–8 SECONDS — FACE IN THE SUN
+Cut to a close-up of his face in three-quarter profile, facing right, with the low sun just behind his head and to the left. Soft lens flare blooms at the left edge of frame; the far hills and lake melt into warm bokeh.
+He stops at the crest and turns his face toward the sun. His eyes narrow slightly against the light, and the fine skin around them gathers into small creases. He takes a slow, deep breath: his nostrils flare, his chest and shoulders rise and settle, and his jaw relaxes on the exhale.
+Skin is fully real in this warm light: visible pores across the nose and cheek, individual stubble hairs lit gold along the jaw, fine peach fuzz glowing on the cheekbone and the rim of the ear, the ear's edge glowing warm red-orange where the sun shines through it, slight natural redness at the nose tip, and a light natural sheen on the forehead. The scar is a slightly raised pale line that interrupts the eyebrow hairs. The breeze lifts a few loose strands of his hair, which catch the light and settle. His eyes are wet and reflective, with the sun as a small bright catchlight. He blinks once, naturally.
+The camera is locked off with very shallow depth of field, focused on his eye and the scar.
+
+HARD CUT
+
+8–12 SECONDS — AT THE FENCE
+Cut to an over-the-shoulder view from behind his right shoulder. The back of the olive jacket fills the left third of frame, with the lake, the far hills and the low sun beyond him.
+He rests his forearms on the old wooden fence. The weathered rail takes his weight, and his jacket sleeves bunch and crease at the elbows. He unscrews the cap of a small steel thermos, pours hot tea into the cap and holds it in both hands. The tea pours as a thin, steady stream that splashes slightly as it fills the cup; steam rises from the cup and is caught and lit gold by the backlight, then drifts sideways with the breeze. His watch catches a glint of sun as he lifts the cup.
+At around 10 seconds, a small flock of birds crosses the sky far above the lake from right to left, wings beating unevenly. Their reflections move across the still water below.
+The camera stays perfectly still, with focus on his hands and the steaming cup. End on him holding the cup at the fence, looking out over the lake, as the sun touches the far hills.
 
 SKIN, PHYSICS AND MOTION
-Everything moves at real-time speed with real mass. The body moves as one connected system: breathing lifts the chest and shoulders, a head turn pulls on the neck, a step moves the jacket. Water, steam, light and fabric all react to him; he never passes through anything. Skin stays textured and imperfect in every shot, never smoothed, waxy or airbrushed. Eyes stay wet and reflective, with lantern highlights in them.
+Everything moves at real-time speed with real mass. His body moves as one connected system: breathing lifts the chest and shoulders, the slope changes how he walks, and leaning on the fence moves weight into his forearms. Grass, hair, steam and fabric all react to the same steady breeze from the left, at the same strength in every shot. Sunlight stays warm and directional, with real backlight, rim light, translucency through the ear and grass, and gentle bounce light from the ground filling the shadow side of his face. His skin stays textured and imperfect in every shot, never smoothed, waxy or airbrushed.
 
 CAMERA, STYLE AND CONTINUITY
-Hyper-realistic live-action cinema with a 35mm anamorphic feel, natural film grain, and a teal-and-amber night grade. All light comes from practical sources only: the lanterns, the neon and their reflections. Light direction stays consistent across the cuts: lanterns above and to his right, neon behind him. Exactly three shots, with clean hard cuts at 4 and 8 seconds. His identity, wardrobe and watch are identical in every shot.
-No slow motion, music-video gloss, beauty filter, plastic skin, face morphing, extra fingers, extra people, text, subtitles, logos, dissolves or crash zooms.
+Hyper-realistic live-action cinema with a 35mm anamorphic feel, natural film grain, soft highlight roll-off and a natural warm golden-hour grade. All light comes from the low evening sun and the open sky; there is no artificial light. The sun's direction stays consistent across the cuts, low and behind him. Exactly three shots, with clean hard cuts at 4 and 8 seconds. His identity, wardrobe and watch are identical in every shot.
+No slow motion, music-video gloss, beauty filter, plastic skin, overexposed or blown-out faces, face morphing, extra fingers, extra people, text, subtitles, logos, dissolves or crash zooms.
 ```
 
 ---

@@ -25,7 +25,7 @@ window.CAROUSEL = {
     { type: "setup", kicker: "The test",
       title: "Four tests.<br>One prompt each.",
       prompts: [
-        "Multi-shot realism: one character, one location, three cuts.",
+        "Multi-shot realism: one character, golden-hour hillside, three cuts.",
         "Animated scene: stylised world, camera move, character action.",
         "UGC: creator talks to a phone camera about a product.",
         "First frame: both models start from the exact same image.",
