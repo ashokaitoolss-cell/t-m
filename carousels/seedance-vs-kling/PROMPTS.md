@@ -10,6 +10,8 @@ Ground rules for every test:
 - Generate once per model and use the first result. Rerolling until one wins skews the comparison.
 - If you do reroll, do it the same number of times on both and note it.
 
+Reference tags: the video prompts use Seedance's `@Image1 / @Image2 / @Image3` tags, numbered in the order you upload the images. In Kling 4.0, keep the prompt text identical and only swap each tag for however Kling labels its reference slots (attach the images in the same order).
+
 Workflow: make the character sheets and location images first (any image model), then reuse those exact files as references in both video models. Each character sheet is one wide image with three panels: a face close-up, a full-body front view and a full-body back view.
 The "no text, no labels" line matters: image models like to invent garbled catalogue text on sheets like this, and that text can leak into the video.
 
@@ -39,18 +41,43 @@ Photorealistic, consistent outfit and proportions across the panels, clean thin 
 Photorealistic empty location plate: a narrow night-market alley in Bangkok just after rain. Wet asphalt reflecting red and amber paper lanterns, steam rising from a closed noodle stall on the left, tangled overhead cables, a flickering green neon pharmacy sign at the far end, puddles with ripples. No people. Shot on 35mm at eye level, shallow depth of field, cinematic teal-and-amber grade, fine film grain.
 ```
 
-### 1C: Video (references: 1A sheet + 1B, 12 s, audio off)
+### 1C: Video (references: @Image1 = 1A sheet, @Image2 = 1B, 12 s, audio off)
 
 ```
-Cinematic multi-shot sequence, extreme photorealism, the man from the reference in the alley from the reference. Keep his face, scar, jacket and watch identical in every shot.
+[REFERENCES]
+@Image1 is the character: use his face, scar, hair, stubble, field jacket, tee, watch, trousers and boots exactly as shown. The close-up panel defines his face; the front and back panels define his outfit. Ignore the sheet layout and its grey backdrop.
+@Image2 is the location: the rain-soaked Bangkok night-market alley. Keep its lanterns, closed noodle stall on the left, overhead cables and green neon pharmacy sign at the far end.
 
-Shot 1 (0–4s): Wide shot from the end of the alley. He walks toward camera through the steam, hands in jacket pockets, lantern light sliding across his face. Slow handheld push-in.
+[STYLE]
+Hyper-realistic live-action cinema, 35mm anamorphic look, shallow depth of field, natural film grain, teal-and-amber night grade, practical light only (paper lanterns, neon, wet reflections). Real skin with pores and stubble, fabric with weight, water that behaves like water. No beauty filter, no slow motion, no music-video gloss.
 
-Shot 2 (4–8s): Hard cut to a close-up of his face in profile. He stops, glances over his shoulder, breath visible in the cold air, raindrops falling from the lantern above him. Shallow focus, background neon bokeh.
+[SUBJECT LOCK]
+One man only, the man from @Image1, in every shot. Same face, same scar through the left eyebrow, same olive jacket worn open, same leather watch on the left wrist. No other people in the alley. Lighting direction stays consistent: lanterns above and to his right, green neon behind him.
 
-Shot 3 (8–12s): Hard cut to an over-the-shoulder shot from behind him. He pulls a folded paper note from his pocket and opens it; the green neon sign flickers out. Camera holds still.
+[SHOT 1 | 0–4s | WIDE, HANDHELD PUSH-IN]
+Frame: low eye-level wide from the far end of the alley, the man small in the centre of frame, lanterns lining both sides, steam drifting from the closed noodle stall on the left.
+Action: he walks toward camera at an unhurried pace, hands in his jacket pockets, boots splashing through shallow puddles; red and amber lantern light slides across his face as he passes under each lantern.
+Camera: slow handheld push-in, subtle natural shake, focus pulling with him.
+Detail: puddle ripples and reflections break as his boots land; steam bends around his shoulders.
 
-Natural motion, real-world physics, realistic skin and fabric, no slow motion, no text, no music video look.
+[HARD CUT]
+
+[SHOT 2 | 4–8s | CLOSE-UP, PROFILE]
+Frame: tight close-up of his face in left profile, filling the right two-thirds of frame; green neon bokeh behind him on the left.
+Action: he stops walking, holds still for a beat, then turns his head to glance back over his shoulder; breath fogs in the cold air; a single raindrop falls from the lantern above and lands on his cheek.
+Camera: locked off, very shallow focus on his eye and scar, background melting into bokeh.
+Detail: micro-movements in the jaw and eyes, wet hair strands catching light, no plastic skin.
+
+[HARD CUT]
+
+[SHOT 3 | 8–12s | OVER-THE-SHOULDER, STATIC]
+Frame: over his right shoulder from behind, the back of the olive jacket filling the left third of frame, the alley stretching away with the green neon sign at the far end.
+Action: he pulls a small folded paper note from his jacket pocket, unfolds it with both hands, and reads it; at second 11 the green neon sign flickers twice and goes dark, leaving only lantern light.
+Camera: static, no movement, focus on the note in his hands.
+Last frame: his silhouette holding the open note, the far end of the alley now dark.
+
+[CONSTRAINTS]
+Exactly three shots with clean hard cuts at 4s and 8s. Identity, wardrobe and watch identical across all shots. Real-world physics and real-time speed. No text, no subtitles, no logos, no extra characters, no morphing faces or hands, no camera-shake blur on the faces.
 ```
 
 ---
@@ -79,14 +106,37 @@ Stylised 3D animation look, soft subsurface skin, soft global illumination, cons
 3D animated feature-film environment: a floating rooftop workshop on a cloud-top town at golden hour. Crooked chimneys, hanging lanterns, a half-built wooden glider with canvas wings in the centre, scattered gears and blueprints, a windsock, fluffy stylised clouds below and a warm orange sky. No characters. Stylised shapes, rich saturated colour, soft volumetric light.
 ```
 
-### 2C: Video (references: 2A sheet + 2B, 10 s, audio off)
+### 2C: Video (references: @Image1 = 2A sheet, @Image2 = 2B, 10 s, audio off)
 
 ```
-3D animated feature-film scene, keep the exact style of the references. The girl from the reference stands in the rooftop workshop from the reference.
+[REFERENCES]
+@Image1 is the character: the girl inventor. Use her face, copper bob, freckles, green eyes, brass goggles, patched yellow raincoat and red rubber boots exactly as shown. The close-up panel defines her face; the front and back panels define her outfit. Ignore the sheet layout and backdrop.
+@Image2 is the location: the floating rooftop workshop above the clouds at golden hour, with the half-built wooden glider in the centre.
 
-She pulls her goggles down over her eyes, gives a determined nod, runs across the roof and leaps into the wooden glider. The glider tips off the edge, dips toward the clouds, then catches the wind and swoops upward. Blueprints and loose papers swirl in the air behind her.
+[STYLE]
+High-end 3D animated feature film. Stylised proportions, soft subsurface skin, painterly volumetric golden-hour light, rich saturated colour, gentle rim light. Expressive animation with clear anticipation, squash and stretch, and follow-through on her hair, coat tails and goggle strap. The whole clip stays in this style; nothing photoreal.
 
-Camera: starts in a low-angle close-up on her face, pulls back to a wide shot as she runs, then follows the glider in a sweeping arc over the clouds. Golden hour light and expressive animation timing with squash and stretch. No live-action elements, no text.
+[SUBJECT LOCK]
+One character only, the girl from @Image1. Same face, outfit and proportions throughout. The glider matches @Image2: wooden frame, canvas wings.
+
+[BEAT 1 | 0–3s | LOW-ANGLE CLOSE-UP]
+Frame: low-angle close-up of her face, sky and lanterns behind her.
+Action: she pulls the brass goggles down over her eyes with both hands, takes a breath, and gives one determined nod; her copper hair bounces with the motion.
+Camera: slow pull-back that keeps her centred.
+
+[BEAT 2 | 3–6s | WIDE, TRACKING]
+Frame: wide shot of the rooftop, the glider at the edge in the centre-right.
+Action: she sprints across the roof, boots slapping the tiles, coat tails flapping, and leaps into the glider's seat; the glider tips forward off the edge; blueprints and loose papers lift off the roof and swirl behind her.
+Camera: tracks alongside her at waist height, then rises as the glider drops.
+
+[BEAT 3 | 6–10s | SWEEPING AERIAL ARC]
+Frame: the glider small against a huge golden sky, clouds below.
+Action: the glider dips toward the clouds, skims their surface, catches the wind and swoops upward; she throws one arm up in triumph.
+Camera: continuous sweeping arc around the glider, ending slightly above and behind it.
+Last frame: the glider climbing toward the sun, the rooftop town small in the background.
+
+[CONSTRAINTS]
+One continuous camera move per beat, no hard cuts. The character stays on-model and the art style never shifts. No text, no logos, no live-action elements, no extra characters.
 ```
 
 ---
@@ -123,14 +173,34 @@ Photorealistic empty location plate: a small sunlit apartment bedroom, unmade be
 Product photo of a matte sage-green insulated tumbler with a bamboo lid and a short metal straw, small embossed leaf logo, on a plain white surface, soft daylight, realistic.
 ```
 
-### 3C: Video (references: 3A sheet + 3A-2 + 3B, 10 s, audio ON)
+### 3C: Video (references: @Image1 = 3A sheet, @Image2 = 3A-2 bedroom, @Image3 = 3B product, 10 s, audio ON)
 
 ```
-Vertical UGC video, filmed on an iPhone front camera held at arm's length, slight natural hand shake. The woman from the reference sits on her bed and holds the green tumbler from the reference up to the camera.
+[REFERENCES]
+@Image1 is the creator: use her face, curly hair in a claw clip, gold hoops and cream knit sweater exactly as shown. The close-up panel defines her face. Ignore the sheet layout and grey backdrop.
+@Image2 is the setting: her sunlit bedroom with fairy lights and the cluttered nightstand.
+@Image3 is the product: the matte sage-green tumbler with bamboo lid, short metal straw and embossed leaf logo. Keep its shape, colour and logo exactly.
 
-She says, casual and excited, talking straight into the lens: "Okay, I've had this thing for three weeks and my coffee is still hot by lunch. Like… actually hot." She taps the bamboo lid, takes a sip through the straw, then laughs and shrugs at the camera.
+[STYLE]
+Real vertical UGC footage shot on an iPhone front camera. Natural window light, slight wide-angle lens distortion, mild compression, auto-exposure and autofocus behaving like a real phone. No cinematic grade, no studio lighting, no captions, no music.
 
-Accurate lip-sync, natural pauses and facial expressions, realistic hand gripping the tumbler, autofocus breathing slightly. Real phone footage look: no cinematic grading, no studio lighting, no captions, no music.
+[SUBJECT LOCK]
+One person only, the woman from @Image1, sitting cross-legged on the bed from @Image2, framed from mid-chest up, centred, at arm's length. She holds the tumbler from @Image3 in her right hand. The phone is in her left hand (the camera itself, never visible).
+
+[PERFORMANCE | 0–10s, ONE CONTINUOUS TAKE]
+0–2s: she lifts the tumbler into frame beside her face, logo toward camera; the autofocus briefly hunts and then locks onto the tumbler.
+2–7s: she looks straight into the lens and says, casual and excited, in a natural American accent:
+"Okay, I've had this thing for three weeks and my coffee is still hot by lunch. Like… actually hot."
+Accurate lip-sync, a small pause before "Like…", eyebrows raised on "actually hot".
+7–9s: she taps the bamboo lid twice with one finger, then takes a sip through the metal straw.
+9–10s: she laughs and gives a little shrug at the camera.
+Camera: handheld at arm's length with slight natural sway, no zoom, no cuts.
+
+[AUDIO]
+Her voice close to the phone mic with slight room echo; two soft taps on bamboo; a faint sip; quiet bedroom ambience. No music.
+
+[CONSTRAINTS]
+One take, no cuts. The tumbler keeps its shape and logo and never merges with her hand. Five fingers on each hand. No on-screen text, no subtitles, no extra people.
 ```
 
 ---
@@ -145,10 +215,24 @@ Accurate lip-sync, natural pauses and facial expressions, realistic hand grippin
 Photorealistic cinematic still: a middle-aged Japanese chef with a white headband and a grey linen apron stands behind a steel counter in a dim, narrow restaurant kitchen, holding a carbon-steel wok over a high flame, a pile of fresh vegetables and a small bowl of sauce on the counter. Warm tungsten practicals, steam in the air, deep shadows, shot on 35mm at chest height, shallow depth of field, film grain.
 ```
 
-### 4B: Video (first frame: 4A, 8 s, audio off)
+### 4B: Video (first frame: @Image1 = 4A, 8 s, audio off)
 
 ```
-Starting exactly from the provided first frame. The chef pours the sauce into the wok; a tall burst of flame erupts and lights up his face, then dies down as he tosses the vegetables in two quick flips. Steam and smoke curl up past the hanging lamp. Slow push-in toward the wok. Keep his face, clothing, kitchen layout and lighting identical to the first frame. Realistic fire, liquid and food physics, no cuts, no text.
+[FIRST FRAME]
+@Image1 is the exact first frame. Frame 0 must match it pixel for pixel: the chef's face, white headband and grey linen apron, the steel counter, the wok, the vegetables, the sauce bowl, the lighting and the composition. Animate from it; do not re-imagine it.
+
+[STYLE]
+Hyper-realistic live-action cinema, matching @Image1: warm tungsten practicals, deep shadows, steam in the air, 35mm film grain, shallow depth of field.
+
+[ACTION | 0–8s, ONE CONTINUOUS SHOT]
+0–2s: the chef picks up the small sauce bowl with his left hand and pours the dark sauce into the hot wok in one smooth motion.
+2–4s: a tall burst of orange flame erupts from the wok, lighting up his face and the steel counter, then settles down.
+4–7s: he tosses the vegetables with two quick flips of the wok; the vegetables arc up and land back in the pan; oil spits.
+7–8s: steam and smoke curl up past the hanging lamp; he glances down into the wok, satisfied.
+Camera: slow, steady push-in toward the wok from chest height; no cuts.
+
+[CONSTRAINTS]
+His face, clothing, kitchen layout and lighting stay identical to @Image1. Realistic fire, liquid, oil and food physics with real weight and timing. Hands keep five fingers and a natural grip on the wok handle. No text, no cuts, no extra people, no slow motion.
 ```
 
 ---
