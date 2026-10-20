@@ -17,72 +17,102 @@ The "no text, no labels" line matters: image models like to invent garbled catal
 
 ---
 
-## Test 1: Multi-shot, extreme realism
+## Test 1: Multi-angle realism (mountain hairpin)
 
-**Tests:** whether the face and outfit stay the same across cuts, whether each cut lands where the prompt says, and how real the skin, light and handheld camera feel.
+**Tests:** whether one continuous action stays coherent across four camera angles: the same rider, the same bike, the same direction of travel and the same sun at every cut. It also tests the physics of the lean and how real the skin, light and speed feel.
 
-### 1A: Character sheet (image, 21:9)
+**Cinematography rules baked into the prompt:**
+- **One action, no time jumps:** each shot picks up exactly where the last one ended (cutting on the action).
+- **Same screen direction:** the bike always travels left to right, and the camera never crosses to the other side of the action.
+- **Fixed light:** the sun stays low on screen left in every angle.
+- **Shot order:** wide, low, close, wide.
+
+### 1A: Rider character sheet (image, 21:9)
 
 ```
-Character reference sheet, three panels side by side on one wide canvas, the same man in every panel, no text, no labels, no captions, no watermarks.
+Character reference sheet, three panels side by side on one wide canvas, the same rider in every panel, no text, no labels, no captions, no watermarks.
 
-Panel 1 (left, about 40% of the width): tight close-up portrait filling the frame, face slightly turned, looking straight into the lens. A 34-year-old South Asian man, lean face, short black hair with a slight wave, two-day stubble, a thin scar through his left eyebrow, tired dark-brown eyes. Dark moody background, warm low-key side light, 35mm film look, visible pores and fine skin texture, no retouching.
+Panel 1 (left, about 40% of the width): tight close-up of his face inside a gloss-black full-face motorcycle helmet with the clear visor flipped fully up, filling the frame, looking straight into the lens. A 34-year-old South Asian man, lean face, dark-brown eyes, thick dark eyebrows, a thin pale scar through his left eyebrow, two-day stubble visible around the chin bar opening. Warm low-key side light, dark background, 35mm film look, visible pores and fine skin texture, no retouching.
 
-Panel 2 (middle): full-body front view, standing straight, arms relaxed at his sides, framed from the chin down to the shoes. Faded olive field jacket worn open over a charcoal crew-neck tee, a worn leather watch on his left wrist, dark-grey straight-leg cargo trousers, scuffed brown leather boots. Plain mid-grey seamless studio backdrop, flat even lighting, catalogue-style.
+Panel 2 (middle): full-body front view, standing straight, arms relaxed at his sides, framed from the helmet down to the boots. Gloss-black full-face helmet with visor up. Worn tan leather motorcycle jacket with dark armour panels at the shoulders and elbows, a small orange stripe across the chest, black leather gloves, dark-grey riding jeans, black ankle riding boots. Plain mid-grey seamless studio backdrop, flat even lighting, catalogue-style.
 
-Panel 3 (right): full-body back view, same outfit and pose, same framing and grey backdrop, showing the back of the jacket and boots.
+Panel 3 (right): full-body back view, same outfit and pose, same framing and grey backdrop, showing the back of the helmet, the jacket's back protector panel and the boots.
 
 Photorealistic, consistent outfit and proportions across the panels, clean thin gaps between panels.
 ```
 
-### 1B: Location reference (image, 9:16)
+### 1B: Motorcycle reference (image, 16:9)
 
 ```
-Photorealistic empty location plate: a gentle grassy hillside above a calm valley lake at evening golden hour. A narrow dirt footpath winds up through waist-high wild grass and scattered yellow wildflowers toward an old weathered wooden fence near the crest. Below, the lake is still and mirror-like, with soft forested hills on the far shore. The sky is clear and peaceful, pale blue fading to warm peach near the horizon, with a few thin high clouds catching the light. The sun is low, just above the far hills, backlighting the grass so every seed head glows. No people. Shot on 35mm at eye level, natural colour, gentle haze in the valley, fine film grain.
+Photorealistic side-profile product shot of a modern café-racer motorcycle facing right: matte olive-green fuel tank with a thin cream pinstripe, black frame, short brown leather seat, round headlight, brushed-steel exhaust running along the right side, black spoked wheels with road tyres, low clip-on handlebars. Clean, slightly used, no logos or text. Plain mid-grey studio backdrop, soft even light, sharp detail.
 ```
 
-### 1C: Video (references: @Image1 = 1A sheet, @Image2 = 1B, 12 s, audio off)
+### 1C: Location reference (image, 9:16)
 
 ```
-Create a 12-second vertical 9:16 live-action film in three shots joined by two hard cuts, at 4 seconds and 8 seconds. Use @Image1 as the only character and @Image2 as the only location. The result should feel like real footage on a calm evening at golden hour: true skin in warm sunlight, true fabric weight, grass and air that move with the breeze, real-time speed.
+Photorealistic empty location plate: a tight hairpin bend on a narrow mountain road at evening golden hour. Smooth dark asphalt with a faded white centre line, a low weathered stone wall on the outside of the bend, scattered small gravel at the edge of the road. Beyond the wall, a deep green valley falls away to layered blue ridgelines and a winding river far below. The sky is clear and calm, warm gold near the horizon fading to soft blue, with a few thin high clouds. The low sun sits just above the far ridges, raking long shadows across the road. No people, no vehicles. Shot on 35mm, natural colour, light haze in the valley, fine film grain.
+```
+
+### 1D: Video (references: @Image1 = 1A sheet, @Image2 = 1B bike, @Image3 = 1C, 12 s, audio off)
+
+```
+Create a 12-second vertical 9:16 live-action film of one continuous moment: a motorcyclist leaning through a mountain hairpin at golden hour, covered from four camera angles joined by hard cuts at 3, 6 and 9 seconds. Use @Image1 as the only rider, @Image2 as the only motorcycle and @Image3 as the only location.
+The four angles must cut together like professional film coverage of one real take. Each shot continues the action exactly where the previous shot ended, with no time skipped and no action repeated. The bike always travels from screen left to screen right. The camera never crosses to the other side of the action. The low sun stays on screen left, ahead of the rider, in every angle.
 
 THE WORLD
-Build the hillside from @Image2 as a complete physical space. A narrow dirt footpath winds up through waist-high wild grass and scattered yellow wildflowers to an old wooden fence near the crest. Below lies a still valley lake with forested hills on the far shore. The sky is clear and peaceful: pale blue overhead, fading to warm peach at the horizon, with a few thin high clouds lit gold. The sun sits low above the far hills. It backlights the grass so every seed head glows, and it throws long soft shadows down the slope toward camera. A light, steady breeze moves through the grass in slow visible waves. A faint haze hangs over the valley.
+Build the road from @Image3 as one complete physical place. The hairpin bends tightly to the right. The smooth dark asphalt has a faded white centre line and loose gravel scattered along its edge. A low weathered stone wall runs along the outside of the bend, and beyond it a deep green valley drops away to layered blue ridgelines and a thin silver river. The sky is clear and calm: gold at the horizon, soft blue above, with a few thin high clouds lit warm. The sun is low above the far ridges, raking long hard-edged shadows across the road. A light haze softens the valley.
 
-IDENTIFY AND PRESERVE THE CHARACTER
-The man is the person in @Image1. Take his face from the close-up panel: a lean South Asian face in his mid-thirties, short black hair with a slight wave, two-day stubble, a thin pale scar crossing his left eyebrow, dark-brown eyes. Take his clothes from the front and back panels: a faded olive field jacket worn open, a charcoal crew-neck tee, a worn leather watch on his left wrist, dark-grey cargo trousers, scuffed brown leather boots. These stay identical in all three shots. Ignore the sheet layout and grey backdrop; only the man and his clothes come from @Image1.
+IDENTIFY AND PRESERVE THE RIDER AND BIKE
+The rider is the man in @Image1. Take his face from the close-up panel: a lean South Asian man in his mid-thirties with dark-brown eyes, thick dark eyebrows, a thin pale scar through his left eyebrow and two-day stubble. Take his gear from the front and back panels: a gloss-black full-face helmet with the clear visor flipped up, a worn tan leather jacket with dark armour panels and a small orange chest stripe, black gloves, dark-grey riding jeans and black ankle boots.
+The motorcycle is the one in @Image2: a café racer with a matte olive-green tank and thin cream pinstripe, black frame, brown leather seat, round headlight, brushed-steel exhaust on the right side and black spoked wheels.
+Rider and bike stay identical in every shot. Ignore the sheet layout and the grey backdrops.
 
-0–4 SECONDS — UP THROUGH THE GRASS
-Open on a wide shot from higher up the path, looking down the slope with the lake and the low sun behind him. The man walks up the path toward camera, framed slightly left of centre, in near-silhouette with a bright golden rim of light around his hair, shoulders and jacket edges.
-His walk has real weight on the slope: he leans slightly forward, each step lands flat and pushes off, his knees bend a little more on the incline, and the open jacket swings with the stride, its hem lagging a fraction behind his body. His right hand trails out to the side and brushes the tops of the grass; the stems bend under his fingers, then spring back and sway after he passes. Small dust motes lift from the path at each footfall and drift sideways in the sunbeams.
-The breeze sends slow waves across the grass around him. Seed heads glow where the sun shines through them, and his long shadow stretches up the path ahead of him.
-The camera is handheld and eases backward with him at walking pace, with small organic drift rather than shake. Out-of-focus grass stems in the near foreground pass through the bottom of frame.
-
-HARD CUT
-
-4–8 SECONDS — FACE IN THE SUN
-Cut to a close-up of his face in three-quarter profile, facing right, with the low sun just behind his head and to the left. Soft lens flare blooms at the left edge of frame; the far hills and lake melt into warm bokeh.
-He stops at the crest and turns his face toward the sun. His eyes narrow slightly against the light, and the fine skin around them gathers into small creases. He takes a slow, deep breath: his nostrils flare, his chest and shoulders rise and settle, and his jaw relaxes on the exhale.
-Skin is fully real in this warm light: visible pores across the nose and cheek, individual stubble hairs lit gold along the jaw, fine peach fuzz glowing on the cheekbone and the rim of the ear, the ear's edge glowing warm red-orange where the sun shines through it, slight natural redness at the nose tip, and a light natural sheen on the forehead. The scar is a slightly raised pale line that interrupts the eyebrow hairs. The breeze lifts a few loose strands of his hair, which catch the light and settle. His eyes are wet and reflective, with the sun as a small bright catchlight. He blinks once, naturally.
-The camera is locked off with very shallow depth of field, focused on his eye and the scar.
+0–3 SECONDS — THE APPROACH (DRONE, HIGH WIDE)
+Open high above and slightly behind the bike, looking down the road toward the hairpin, the valley opening up on the right of frame. The bike is small in the lower left third, travelling left to right along the road toward the bend, its long shadow stretching behind it.
+At about 2 seconds the rider sits up slightly and brakes: the front fork compresses, the bike's nose dips, and its speed visibly drops.
+The drone glides forward and descends slowly, following at a constant distance. End the shot just as the bike reaches the entry of the bend and begins to tip right.
 
 HARD CUT
 
-8–12 SECONDS — AT THE FENCE
-Cut to an over-the-shoulder view from behind his right shoulder. The back of the olive jacket fills the left third of frame, with the lake, the far hills and the low sun beyond him.
-He rests his forearms on the old wooden fence. The weathered rail takes his weight, and his jacket sleeves bunch and crease at the elbows. He unscrews the cap of a small steel thermos, pours hot tea into the cap and holds it in both hands. The tea pours as a thin, steady stream that splashes slightly as it fills the cup; steam rises from the cup and is caught and lit gold by the backlight, then drifts sideways with the breeze. His watch catches a glint of sun as he lifts the cup.
-At around 10 seconds, a small flock of birds crosses the sky far above the lake from right to left, wings beating unevenly. Their reflections move across the still water below.
-The camera stays perfectly still, with focus on his hands and the steaming cup. End on him holding the cup at the fence, looking out over the lake, as the sun touches the far hills.
+3–6 SECONDS — THE LEAN (LOW ANGLE, ROAD LEVEL)
+Cut to a low camera at road level on the inside of the bend, near the centre line. The bike enters frame from the left already tipping into the lean, continuing the exact motion from the end of shot 1, and sweeps through the frame toward the right.
+The lean is physically real: the bike and rider tip together to about 35 degrees, and the rider's inside knee drops out toward the asphalt. The front tyre deforms slightly where it meets the road, and the suspension loads up under the cornering force. Fine gravel at the road's edge skitters away from the rear tyre. The rear tyre leaves the faintest dust trail lit gold by the low sun behind it.
+The sun sits low on screen left, just behind the bike, producing a soft lens flare and a bright rim of light along the tank, the rider's helmet and his jacket shoulders. The asphalt texture is crisp in the foreground and falls away into shallow depth of field.
+The camera pans right to follow the bike, staying at road level. End as the bike reaches the apex of the turn, at maximum lean.
+
+HARD CUT
+
+6–9 SECONDS — THE FACE AT THE APEX (CLOSE-UP, MOUNTED)
+Cut to a camera rigidly mounted on the front of the bike, low on the tank, looking back up at the rider. He is still at maximum lean through the apex, so the horizon behind him is tilted.
+His visor is up. His eyes are fixed ahead through the turn, narrowed slightly against the wind and the sun, and he blinks once. Sunlight slides across the gloss helmet shell as the bike rotates through the bend, and a moving reflection of the sky and ridges travels across it.
+His skin is fully real at this distance: visible pores on his nose and cheekbones, individual stubble hairs lit gold at the edge of the helmet opening, a light sheen of sweat on his brow, and his eyes wet and reflective with the sun as a small bright catchlight. The wind presses the leather jacket against his shoulders and ripples the loose fabric at his upper arm. His gloved hands grip the bars, and the leather creases at the knuckles.
+Vibration from the engine and road passes through the mount as a fine, constant micro-shake. Behind him, the valley streams past in motion blur while he stays sharp.
+At about 8.5 seconds he begins to pull the bike upright, and the horizon starts to level. End as the horizon is almost level.
+
+HARD CUT
+
+9–12 SECONDS — THE EXIT (WIDE SIDE PROFILE)
+Cut to a wide side-profile view from across the road at the exit of the bend, the stone wall and the drop to the valley behind the road. The bike comes out of the bend from screen left, completing the stand-up from shot 3, then levels fully upright and accelerates toward screen right.
+The rear suspension squats under acceleration, and the rider tucks slightly forward toward the tank. The exhaust's brushed steel catches a bright glint of sun. A thin haze of dust lifted from the road edge hangs in the sunbeams behind the bike and slowly settles.
+The camera pans smoothly right with the bike at a steady speed, keeping it slightly left of centre, the valley and far ridges sliding behind it in parallax. End on the bike leaving frame right, the dust still settling and the sun touching the far ridges.
 
 SKIN, PHYSICS AND MOTION
-Everything moves at real-time speed with real mass. His body moves as one connected system: breathing lifts the chest and shoulders, the slope changes how he walks, and leaning on the fence moves weight into his forearms. Grass, hair, steam and fabric all react to the same steady breeze from the left, at the same strength in every shot. Sunlight stays warm and directional, with real backlight, rim light, translucency through the ear and grass, and gentle bounce light from the ground filling the shadow side of his face. His skin stays textured and imperfect in every shot, never smoothed, waxy or airbrushed.
+Everything happens in real time with real mass and real speed; there is no slow motion. The bike behaves like a real 200 kg machine: it dips under braking, rolls into the lean, holds a constant line through the apex and squats on acceleration. Rider and bike move as one system, with his body weight shifting into the turn before the bike follows. Tyres stay in contact with the road and the wheels spin at a speed that matches the road speed. Wind, dust and gravel react to the bike's passage. His skin, the leather and the helmet stay textured and real in every shot; nothing is smoothed or waxy.
 
 CAMERA, STYLE AND CONTINUITY
-Hyper-realistic live-action cinema with a 35mm anamorphic feel, natural film grain, soft highlight roll-off and a natural warm golden-hour grade. All light comes from the low evening sun and the open sky; there is no artificial light. The sun's direction stays consistent across the cuts, low and behind him. Exactly three shots, with clean hard cuts at 4 and 8 seconds. His identity, wardrobe and watch are identical in every shot.
-No slow motion, music-video gloss, beauty filter, plastic skin, overexposed or blown-out faces, face morphing, extra fingers, extra people, text, subtitles, logos, dissolves or crash zooms.
+Hyper-realistic live-action cinema shot on one camera system: 35mm anamorphic look, natural film grain, soft highlight roll-off and a warm natural golden-hour grade. The only light is the low evening sun and the open sky, with no artificial light.
+Continuity across all four cuts:
+- the bike always travels left to right
+- the sun always sits low on screen left
+- each cut matches the action at the moment it happens
+- rider, helmet, jacket, gloves and bike are identical
+- the road, wall, valley and time of day are identical
+Four shots in this order: high wide, low, close, wide.
+No slow motion, speed ramps, crash zooms, dissolves, sudden time-of-day changes, extra vehicles, extra people, floating or sliding wheels, warped spokes, morphing faces, plastic skin, text, subtitles or logos.
 ```
 
 ---
+
 
 ## Test 2: Animated scene
 
