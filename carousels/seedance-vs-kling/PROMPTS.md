@@ -30,15 +30,15 @@ The "no text, no labels" line matters: image models like to invent garbled catal
 ### 1A: Rider character sheet (image, 21:9)
 
 ```
-Character reference sheet, three panels side by side on one wide canvas, the same rider in every panel, no text, no labels, no captions, no watermarks.
+Character reference sheet, three panels side by side on one wide canvas, the same man in every panel, no text, no labels, no captions, no watermarks.
 
-Panel 1 (left, about 40% of the width): tight close-up of his face inside a gloss-black full-face motorcycle helmet with the clear visor flipped fully up, filling the frame, looking straight into the lens. A 34-year-old South Asian man, lean face, dark-brown eyes, thick dark eyebrows, a thin pale scar through his left eyebrow, two-day stubble visible around the chin bar opening. Warm low-key side light, dark background, 35mm film look, visible pores and fine skin texture, no retouching.
+Panel 1 (left, about 40% of the width): tight close-up portrait of his face filling the frame, face slightly turned, looking straight into the lens. A 34-year-old South Asian man, lean face with defined cheekbones, short black hair with a slight wave, pushed back and a little windswept, dark-brown eyes, thick dark eyebrows, a thin pale scar through his left eyebrow, two-day stubble. Warm low-key side light, dark background, 35mm film look, visible pores and fine skin texture, natural under-eye shadows, no retouching.
 
-Panel 2 (middle): full-body front view, standing straight, arms relaxed at his sides, framed from the helmet down to the boots. Gloss-black full-face helmet with visor up. Worn tan leather motorcycle jacket with dark armour panels at the shoulders and elbows, a small orange stripe across the chest, black leather gloves, dark-grey riding jeans, black ankle riding boots. Plain mid-grey seamless studio backdrop, flat even lighting, catalogue-style.
+Panel 2 (middle): full-body front view, standing straight, arms relaxed at his sides, framed from the chin down to the boots. Worn tan leather motorcycle jacket with dark armour panels at the shoulders and elbows, a small orange stripe across the chest, zipped halfway over a charcoal crew-neck tee, black leather riding gloves, dark-grey riding jeans, black ankle riding boots. Plain mid-grey seamless studio backdrop, flat even lighting, catalogue-style.
 
-Panel 3 (right): full-body back view, same outfit and pose, same framing and grey backdrop, showing the back of the helmet, the jacket's back protector panel and the boots.
+Panel 3 (right): full-body back view, same outfit and pose, same framing and grey backdrop, showing the back of his head and hair, the jacket's back protector panel and the boots.
 
-Photorealistic, consistent outfit and proportions across the panels, clean thin gaps between panels.
+Photorealistic, consistent outfit, hair and proportions across the panels, clean thin gaps between panels.
 ```
 
 ### 1B: Motorcycle reference (image, 16:9)
